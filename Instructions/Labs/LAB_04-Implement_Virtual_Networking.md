@@ -47,7 +47,7 @@ Nesta tarefa, você criará uma rede virtual com várias sub-redes usando o port
 
     | Configuração | Valor |
     | --- | --- |
-    | Subscription | o nome da assinatura do Azure que você usará neste laboratório |
+    | Assinatura | o nome da assinatura do Azure que você usará neste laboratório |
     | Grupo de recursos | O nome de um **novo** grupo de recursos **az104-04-rg1** |
     | Nome | **az104-04-vnet1** |
     | Region | o nome de qualquer região do Azure disponível na assinatura que você usará neste laboratório |
@@ -160,6 +160,8 @@ Nesta tarefa, você configurará a atribuição estática de endereços IP públ
 
 1. Selecione **Associar endereço IP público** e, na lista suspensa **Endereço IP público**, selecione **az104-04-pip0**.
 
+>**Observação:** Se você receber um erro, *o nome de domínio já está em uso*, esse é um problema conhecido. Você precisará localizar o endereço IP público e associá-lo à NIC separadamente. 
+
 1. Selecione **Salvar**.
 
 1. Navegue de volta para a folha **folha az104-04-vnet1**.
@@ -173,6 +175,8 @@ Nesta tarefa, você configurará a atribuição estática de endereços IP públ
 1. Verifique se a **Alocação** é **Estática**.
 
 1. Selecione **Associar endereço IP público** e, na lista suspensa **Endereço IP público**, selecione **az104-04-pip1**.
+
+>**Observação:** Se você receber um erro, *o nome de domínio já está em uso*, esse é um problema conhecido. Você precisará localizar o endereço IP público e associá-lo à NIC separadamente. 
 
 1. Selecione **Salvar**.
    
@@ -204,7 +208,7 @@ Nesta tarefa, você configurará grupos de segurança de rede para permitir cone
 
     | Configuração | Valor |
     | --- | --- |
-    | Subscription | nome da assinatura que você está usando neste laboratório |
+    | Assinatura | o nome da assinatura do Azure que você está usando neste laboratório |
     | Grupo de recursos | **az104-04-rg1** |
     | Nome | **az104-04-nsg01** |
     | Region | o nome da região do Azure onde você implantou todos os outros recursos neste laboratório |
@@ -261,7 +265,7 @@ Nesta tarefa, você configurará a resolução de nomes DNS em uma rede virtual 
 
     | Configuração | Valor |
     | --- | --- |
-    | Subscription | nome da assinatura que você está usando neste laboratório |
+    | Assinatura | o nome da assinatura do Azure que você está usando neste laboratório |
     | Grupo de recursos | **az104-04-rg1** |
     | Nome | **contoso.org** |
 
@@ -278,7 +282,7 @@ Nesta tarefa, você configurará a resolução de nomes DNS em uma rede virtual 
     | Configuração | Valor |
     | --- | --- |
     | Nome do link | **az104-04-vnet1-link** |
-    | Subscription | nome da assinatura que você está usando neste laboratório |
+    | Assinatura | nome da assinatura que você está usando neste laboratório |
     | Rede virtual | **az104-04-vnet1** |
     | Habilitar o registro automático | Habilitado |
 
@@ -317,7 +321,7 @@ Nesta tarefa, você configurará a resolução de nomes DNS externos usando zona
 
     | Configuração | Valor |
     | --- | --- |
-    | Subscription | nome da assinatura que você está usando neste laboratório |
+    | Assinatura | o nome da assinatura do Azure que você está usando neste laboratório |
     | Grupo de recursos | **az104-04-rg1** |
     | Nome | o nome de domínio DNS que você identificou anteriormente nesta tarefa |
 
