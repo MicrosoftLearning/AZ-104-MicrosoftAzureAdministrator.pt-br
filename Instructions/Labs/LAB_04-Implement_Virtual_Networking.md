@@ -52,9 +52,9 @@ Nesta tarefa, você criará uma rede virtual com várias sub-redes usando o port
     | Nome | **az104-04-vnet1** |
     | Region | o nome de qualquer região do Azure disponível na assinatura que você usará neste laboratório |
 
-1. Clique em **Avançar: Endereços IP**. O **Endereço inicial** é **10.40.0.0**. O **Tamanho do espaço do endereço** é **/20**. Certifique-se de clicar em **Adicionar**. 
+1. Clique em **Avançar: Endereços IP**. O **Endereço inicial** é **10.40.0.0**. O **Tamanho do espaço do endereço** é **/20**. 
 
-1. Clique em **+ Adicionar sub-rede**, insira os valores a seguir e, em seguida, clique em **Adicionar**.
+1. Clique em **+ Adicionar sub-rede**. Exclua a sub-rede **padrão** existente. Insira os valores a seguir e clique em **Adicionar**. 
 
     | Configuração | Valor |
     | --- | --- |
@@ -160,7 +160,14 @@ Nesta tarefa, você configurará a atribuição estática de endereços IP públ
 
 1. Selecione **Associar endereço IP público** e, na lista suspensa **Endereço IP público**, selecione **az104-04-pip0**.
 
->**Observação:** Se você receber um erro, *o nome de domínio já está em uso*, esse é um problema conhecido. Você precisará localizar o endereço IP público e associá-lo à NIC separadamente. 
+    >**Observação:** Se você receber um erro, *o nome de domínio já está em uso*, esse é um problema conhecido. Você precisará localizar o endereço IP público e associá-lo à NIC separadamente.
+    >
+    > + Acesse **Endereços IP públicos**
+    > + Clique em **az104-04-pip0**
+    > + No painel **Visão geral**, clique em **Associar IP**
+    > + Defina o **Tipo de recurso** como **Interface de rede**
+    > + Defina a **Interface de rede** como **az104-04-nic0**
+    > + Repita para **az104-04-pip1** e **az104-04-nic1**
 
 1. Selecione **Salvar**.
 
