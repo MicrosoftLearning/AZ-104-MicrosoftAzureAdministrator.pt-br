@@ -48,7 +48,7 @@ Nesta tarefa, você vai implantar máquinas virtuais do Azure em diferentes zona
 
     | Configuração | Valor |
     | --- | --- |
-    | Subscription | o nome da assinatura do Azure que você usará neste laboratório |
+    | Assinatura | o nome da assinatura do Azure que você usará neste laboratório |
     | Grupo de recursos | o nome de um novo grupo de recursos **az104-08-rg01** |
     | Nome da máquina virtual | **az104-08-vm0** |
     | Region | selecione uma das regiões que dão suporte às zonas de disponibilidade e onde você pode provisionar máquinas virtuais do Azure |
@@ -142,14 +142,14 @@ Nesta tarefa, você instalará a função de servidor Web do Windows Server nas 
 
 1. No portal do Azure, pesquise e selecione **Contas de armazenamento** e na folha **Contas de armazenamento**, clique na entrada que representa a conta de armazenamento de diagnóstico que você criou na tarefa anterior.
 
-1. Na folha da conta de armazenamento, na seção **Armazenamento de Dados**, clique em **Contêineres** e em **+ Contêiner**.
+1. Na folha da conta de armazenamento, na seção **Armazenamento de Dados**, clique em **Contêineres** e, em seguida, clique em **+ Contêiner**.
 
-1. Na folha **Novo contêiner**, especifique as seguintes configurações (deixe as outras com seus valores padrão) e clique em **Criar**:
+1. Na folha **Novo Contêiner**, especifique as seguintes configurações (deixe as outras com seus valores padrão) e clique em **Criar**:
 
     | Configuração | Valor |
     | --- | --- |
     | Nome | **scripts** |
-    | Nível de acesso público | **Privado (sem acesso anônimo**) |
+    | Nível de acesso público | **Privado (sem acesso anônimo)**) |
 
 1. De volta à folha da conta de armazenamento que exibe a lista de contêineres, clique em **scripts**.
 
@@ -363,7 +363,7 @@ Nesta tarefa, você implantará o conjunto de dimensionamento de máquina virtua
 
     | Configuração | Valor |
     | --- | --- |
-    | Subscription | nome da assinatura que você está usando neste laboratório |
+    | Assinatura | o nome da assinatura do Azure que você está usando neste laboratório |
     | Grupo de recursos | o nome de um novo grupo de recursos **az104-08-rg02** |
     | Nome do conjunto de dimensionamento de máquinas virtuais | **az10408vmss0** |
     | Region | selecione uma das regiões que dão suporte às zonas de disponibilidade e onde você pode provisionar máquinas virtuais do Azure diferentes daquela usada para implantar máquinas virtuais anteriormente neste laboratório |
@@ -494,7 +494,7 @@ Nesta tarefa, você instalará a função de Servidor Web do Windows Server nas 
 
     >**Observação**: Aguarde a conclusão da instalação da extensão antes de prosseguir para a próxima etapa.
 
-1. Na seção **Configurações** da folha **az10408vmss0**, clique em **Instâncias**, selecione as caixas de seleção ao lado das duas instâncias do conjunto de dimensionamento de máquinas virtuais, clique em **Atualizar** e, em seguida, quando solicitar a confirmar, clique em **Sim**.
+1. Na seção **Visão Geral** da folha **az10408vmss0**, clique em **Instâncias**, selecione as caixas de seleção ao lado das duas instâncias do conjunto de dimensionamento de máquinas virtuais, clique em **Atualizar** e, quando solicitado, para confirmar, clique em **Sim**.
 
     >**Observação:** aguarde a conclusão da atualização antes de prosseguir para a próxima etapa.
 
