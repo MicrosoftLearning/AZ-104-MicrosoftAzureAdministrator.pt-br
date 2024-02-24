@@ -285,17 +285,17 @@ Nesta tarefa, você configurará o acesso à rede para o Armazenamento do Micros
 
     > **Observação**: Se você não gravou a URL SAS da tarefa 4, você deve gerar uma nova com a mesma configuração. Use a Tarefa 4 (etapas 4 a 6) como um guia para gerar uma nova URL SAS de blob. 
 
-1. O conteúdo da **página The MIT License (MIT)** deverá ser apresentado a você.
+1. Você deve ser capaz de fazer o download do arquivo LICENSE.txt.
 
     > **Observação**: Isso é esperado, já que você está se conectando a partir do endereço IP do cliente.
 
 1. Feche a janela do navegador do modo InPrivate, retorne à janela do navegador mostrando a folha **Rede** da conta de Armazenamento do Microsoft Azure.
 
-1. No portal do Azure, abra o **Azure Cloud Shell** clicando no ícone no canto superior direito do portal do Azure.
+1. No portal do Azure, pesquise e selecione **Máquinas virtuais** e, na lista de máquinas virtuais, selecione **az104-07-vm0**.
 
-1. Se for solicitado que você selecione **Bash** ou **PowerShell**, selecione **Bash**.
+1. Na folha **az104-07-vm0**, na seção **Operações**, clique em **Executar comando**.
 
-1. No painel do Cloud Shell, execute o seguinte para tentar baixar o blob LICENSE do contêiner **az104-07-container** da conta de armazenamento (substitua o espaço reservado `[blob SAS URL]` pela URL SAS de blob gerada na tarefa anterior):
+1. Na folha **Executar Script de Comando**, execute o seguinte no painel **Script do PowerShell** para tentar fazer o download do blob LICENSE do contêiner **az104-07-container** da conta de armazenamento (substitua o espaço reservado `[blob SAS URL]` pela URL do SAS do blob que você gerou na tarefa anterior):
 
    ```powershell
    Invoke-WebRequest -URI '[blob SAS URL]'
@@ -303,8 +303,6 @@ Nesta tarefa, você configurará o acesso à rede para o Armazenamento do Micros
 1. Verifique se a tentativa de download falhou.
 
     > **Observação**: Você deve receber a mensagem informando **AuthorizationFailure: Esta solicitação não está autorizada a executar esta operação**. Isso é esperado, já que você está se conectando a partir do endereço IP atribuído a uma VM do Azure que hospeda a instância do Cloud Shell.
-
-1. Feche o painel do Cloud Shell.
 
 ## Limpar os recursos
 
