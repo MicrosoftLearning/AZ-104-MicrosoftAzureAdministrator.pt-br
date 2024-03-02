@@ -1,103 +1,91 @@
 ---
 lab:
-  title: Implementar os Aplicativos de Contêiner do Azure
+  title: 'Laboratório 09c: Implementar os Aplicativos de Contêiner do Azure'
   module: Administer PaaS Compute Options
 ---
 
-# Implementar os Aplicativos de Contêiner do Azure
-# Manual do aluno
+# Laboratório 09c: implementar os Aplicativos de Contêiner do Azure
+
+## Introdução ao laboratório
+
+Neste laboratório, você aprenderá a implementar e implantar os Aplicativos de Contêiner do Azure.
+
+Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode afetar a disponibilidade de recursos neste laboratório. Você pode alterar a região, mas as etapas são escritas usando o **Leste dos EUA**.
+
+## Tempo estimado: 15 minutos
 
 ## Cenário do laboratório
-Os Aplicativos de Contêiner do Azure permitem que você execute microsserviços e aplicativos conteinerizados em uma plataforma sem servidor. Com os aplicativos de contêiner, você aproveita os benefícios da execução de contêineres, deixando para trás as preocupações de configurar manualmente a infraestrutura de nuvem e orquestradores de contêineres complexos.
 
-## Objetivos
+Sua organização tem um aplicativo Web que é executado em uma máquina virtual em seu data center local. A organização deseja mover todos os aplicativos para a nuvem, mas não quer ter um grande número de servidores para gerenciar. Você decide avaliar os Aplicativos de Contêiner do Azure.
 
-Neste laboratório, você vai:
-- Criar um aplicativo de contêiner e um ambiente de aplicativo de contêiner
-- Implantar o aplicativo de contêiner
-- Tarefa 3: Testar e verificar a implantação do aplicativo de contêiner
+## Simulações interativas do laboratório
 
-Para começar, entre no [portal do Azure](https://portal.azure.com).
+Não há simulações interativas do laboratório para este tópico. 
 
-## Tempo estimado: 20 minutos
+## Habilidades de trabalho
 
-## Criar um aplicativo de contêiner e um ambiente de aplicativo de contêiner
+- Tarefa 1: Crie e configure um aplicativo de contêiner do Azure e um ambiente.
+- Tarefa 2: Teste e verifique a implantação do aplicativo de contêiner do Azure.
 
-Para criar o aplicativo de contêiner, comece na home page do portal do Azure.
+## Diagrama de arquitetura
 
-1. Pesquise  na barra de pesquisa .
-1. Selecione **Aplicativos de Contêiner** nos resultados da pesquisa.
-1. Selecione o botão **Criar**.
+![Faça um diagrama das tarefas.](../media/az104-lab09b-aca-architecture.png)
 
-### Guia Básico
+## Tarefa 1: Criar e configurar um Aplicativo de Contêiner do Azure e um ambiente
 
-Na guia *Básico*, execute as ações a seguir.
+Os Aplicativos de Contêiner do Azure levam o conceito de um cluster Kubernetes gerenciado um passo adiante e gerenciam também o ambiente do cluster, além de fornecerem outros serviços gerenciados sobre o cluster. Ao contrário de um cluster do Kubernetes no Azure, onde você ainda precisa gerenciar o cluster, uma instância dos Aplicativos de Contêiner do Azure remove parte da complexidade na configuração de um cluster do Kubernetes.
 
-1. Insira os valores a seguir na seção *Detalhes do projeto*.
+1. No portal do Azure, pesquise e selecione `Container Apps`.
+
+1. Em **Aplicativos de Contêiner**, selecione **Criar**.
+
+1. Use as informações a seguir para preencher os detalhes na guia **Básico**.*.
 
     | Configuração | Ação |
     |---|---|
-    | Subscription | Selecione sua assinatura do Azure. |
-    | Resource group | Selecione **Criar novo** e insira `az104-09c-rg1`. |
-    | Nome do aplicativo de contêiner |  Digite `my-container-app`. |
+    | Assinatura | Selecione sua Assinatura do Azure. |
+    | Grupo de recursos | `az104-rg9` |
+    | Nome do aplicativo de contêiner |  `my-app` |
+    | Region    | **Leste dos EUA** (ou uma região disponível perto de você) |
+    | Ambiente de Aplicativos de Contêiner | Manter o padrão |
 
-#### Criar um ambiente
+1. Na guia **Contêiner**, verifique se **Uso da imagem de início rápido** está habilitado e se a imagem de início rápido está definida como **Simples contêiner olá mundo**.
 
-Em seguida, crie um ambiente para seu aplicativo de contêiner.
+1. Selecione **Examinar e criar** e, em seguida, **Criar**.
 
-1. Selecione a região apropriada.
+    >**Observação:** Aguarde a implantação do aplicativo de contêiner. Isso levará alguns minutos. 
+ 
+## Tarefa 2: Testar e verificar a implantação do aplicativo de contêiner do Azure
 
-    | Configuração | Valor |
-    |--|--|
-    | Region | **Sua escolha** |
-
-1. No campo *Criar ambiente de Aplicativos de Contêiner*, selecione o link **Criar novo**.
-1. Na página *Criar Ambiente de Aplicativos de Contêiner*, na guia *Básico*, insira os seguintes valores:
-
-    | Configuração | Valor |
-    |--|--|
-    | Nome do ambiente | Digite `my-environment`. |
-    | Redundância de zona | Selecione **Desabilitado** |
-
-1. Selecione a guia **Monitoramento** para criar um workspace do Log Analytics.
-1. Selecione o link **Criar novo** no campo *Workspace do Log Analytics* e insira os valores a seguir.
-
-    | Configuração | Valor |
-    |--|--|
-    | Nome | Inserir `my-container-apps-logs` |
-  
-    O campo Local é preenchido previamente com EUA Central para você.
-
-1. Selecione **OK** e, em seguida, **Criar**. 
-
-1. Clique em **Avançar: Contêiner**.
-
-1. Marque a caixa ao lado de Usar imagem** de **início rápido.
-
-1. Selecione o botão **Revisar e criar** na parte inferior da página. Isso poderá levar alguns minutos para ser executado. 
-
-    Em seguida, as configurações no Aplicativo de Contêiner são verificadas. Se nenhum erro for encontrado, o botão *Criar* será habilitado.  
-
-    Se houver erros, qualquer guia que contiver erros será marcada com um ponto vermelho.  Navegue até a guia apropriada. Os campos que contiverem erros serão realçados em vermelho.  Depois que todos os erros forem corrigidos, selecione **Revisar e criar** novamente.
-
-1. Selecione **Criar**.
-
-    Uma página com a mensagem *A implantação está em andamento* é exibida.  Depois que a implantação for concluída com êxito, você verá a mensagem *Sua implantação foi concluída*.
-   
-## Tarefa 2: Testar e verificar a implantação do aplicativo de contêiner
+Por padrão, o aplicativo de contêiner do Azure que você criar aceitará o tráfego na porta 80 usando o aplicativo de exemplo “Olá, Mundo”. Os Aplicativos de Contêiner do Azure fornecerão um nome DNS para o aplicativo. Copie e navegue até essa URL para garantir que o aplicativo esteja em execução.
 
 1. Selecione **Ir para o recurso** para exibir o novo aplicativo de contêiner.
 
 1. Selecione o link ao lado de *URL do Aplicativo* para exibir o aplicativo.
 
-1. Verifique se você recebe a **mensagem Your Azure Container Apps app is live (Seu aplicativo de contêiner do Azure) está em tempo real** .
+    ![Captura de tela da página de visão geral dos ACA no portal.](../media/az104-lab09b-aca-overview.png)
 
+1. Verifique se você recebeu a mensagem **Seu aplicativo dos Aplicativos de Contêiner do Azure está ativo**.
+   
 ## Limpar os recursos
 
-Se caso não pretende usar esse aplicativo, você pode excluir a instância de Aplicativos de Contêiner do Azure e todos os serviços associados removendo o grupo de recursos.
+Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto para excluir os recursos do laboratório. Isso garantirá que os recursos sejam liberados e que o custo seja minimizado. A maneira mais fácil de excluir os recursos do laboratório é excluir o grupo de recursos do laboratório. 
 
-1. Selecione o grupo de recursos **my-container-apps** na seção *Visão geral*.
-1. Selecione o botão **Excluir grupo de recursos** na parte superior da *Visão geral* do grupo de recursos.
-1. Insira o nome do grupo de recursos e confirme que deseja excluí-lo. 
-1. Selecione **Excluir**.
-1. O processo para excluir o grupo de recursos pode levar alguns minutos para ser concluído.
++ No portal do Azure, selecione o grupo de recursos e, em seguida, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
++ Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Usar a CLI, `az group delete --name resourceGroupName`.
+
+
+
+## Principais aspectos a serem lembrados
+
+Parabéns por concluir o laboratório. Aqui estão as principais lições deste laboratório. 
+
++ Os Aplicativos de Contêiner do Azure (ACA) são uma plataforma sem servidor que permite manter menos infraestrutura e economizar custos durante a execução de aplicativos conteinerizados.
++ Os Aplicativos de Contêiner fornecem a configuração do servidor, a orquestração de contêineres e os detalhes da implantação. 
++ As cargas de trabalho nos ACA geralmente são processos de execução prolongada, como um aplicativo Web.
+
+## Saiba mais com treinamento individual
+
++ [Configure um aplicativo de contêiner nos Aplicativos de Contêiner do Azure](https://learn.microsoft.com/training/modules/configure-container-app-azure-container-apps/). Examina os recursos e as capacidades dos Aplicativos de Contêiner do Azure e se concentra em como criar, configurar, dimensionar e gerenciar aplicativos de contêiner usando os Aplicativos de Contêiner do Azure.
+     

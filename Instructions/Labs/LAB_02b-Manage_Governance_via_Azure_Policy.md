@@ -1,227 +1,257 @@
 ---
 lab:
-  title: 'Laboratório: gerenciar a governança por meio do Azure Policy'
+  title: 'Laboratório 02b: Gerenciar a governança por meio do Azure Policy'
   module: Administer Governance and Compliance
 ---
 
-# Laboratório: gerenciar a governança por meio do Azure Policy
-# Manual do aluno
+# Laboratório 02b - Gerenciar a Governança por meio do Azure Policy
 
-## Cenário do laboratório
+## Introdução ao laboratório
 
-Para melhorar o gerenciamento de recursos do Azure na Contoso, você foi encarregado de implementar a seguinte funcionalidade:
+Neste laboratório, você aprenderá a implementar os planos de governança da sua organização. Você aprenderá como as políticas do Azure podem garantir que as decisões operacionais sejam impostas em toda a organização. Você aprenderá a usar a marcação de recursos para melhorar os relatórios. 
 
-- marcação de grupos de recursos que incluem apenas recursos de infraestrutura (como contas de armazenamento do Cloud Shell)
-
-- garantir que apenas recursos de infraestrutura devidamente marcados possam ser adicionados a grupos de recursos de infraestrutura
-
-- Corrigir recursos sem conformidade
-
-**Nota:** Uma **[simulação](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%203)** de laboratório interativa está disponível que permite que você clique neste laboratório no seu próprio ritmo. Você pode encontrar pequenas diferenças entre a simulação interativa e o laboratório hospedado, mas os principais conceitos e ideias que estão sendo demonstrados são os mesmos. 
-
-## Objetivos
-
-Neste laboratório, você vai:
-
-+ Tarefa 1: criar e atribuir marcas por meio do portal do Azure.
-+ Tarefa 2: impor a marcação usando uma política do Azure.
-+ Tarefa 3: Aplicar marcação por meio de uma política do Azure
+Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode afetar a disponibilidade de recursos neste laboratório. Você pode alterar a região, mas as etapas são escritas usando o **Leste dos EUA**. 
 
 ## Tempo estimado: 30 minutos
 
+## Cenário do laboratório
+
+O volume de nuvem da sua organização cresceu consideravelmente no último ano. Durante uma auditoria recente, você descobriu um número substancial de recursos que não têm um proprietário, projeto ou centro de custo definido. Para melhorar o gerenciamento de recursos do Azure em sua organização, você decide implementar a seguinte funcionalidade:
+
+- aplicar marcas de recurso para anexar metadados importantes aos recursos do Azure
+
+- impor o uso de marcas de recurso para novos recursos usando a política do Azure
+
+- atualizar os recursos existentes com as marcas de recurso
+
+- usar bloqueios de recursos para proteger os recursos configurados
+
+## Simulações interativas de laboratório
+
+Há várias simulações interativas de laboratório que podem ser úteis para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Há diferenças entre a simulação interativa e este laboratório, mas muitos dos principais conceitos são os mesmos. Uma assinatura do Azure não é necessária. 
+
++ [Gerenciar bloqueios de recursos](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2015). Adicione um bloqueio de recurso e teste para confirmar.
+  
++ [Criar uma política do Azure](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2017). Crie uma política do Azure que restrinja a localização dos recursos. Crie um novo recurso e verifique se a política está imposta. 
+
++ [Gerenciar governança por meio da política do Azure](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%203). Crie e atribua marcas por meio do portal do Azure. Crie uma política do Azure que exija marcação. Corrija os recursos sem conformidade.
+
 ## Diagrama de arquitetura
 
-![imagem](../media/lab02b.png)
+![Faça um diagrama da arquitetura da tarefa.](../media/az104-lab02b-architecture.png)
 
-### Instruções
+## Habilidades de trabalho
 
-## Exercício 1
++ Tarefa 1: criar e atribuir marcas por meio do portal do Azure.
++ Tarefa 2: Impor marcação por meio de um Azure Policy.
++ Tarefa 3: Aplicar marcação por meio de um Azure Policy.
++ Tarefa 4: Configurar e testar bloqueios de recursos. 
 
-## Tarefa 1: criar e atribuir marcas por meio do portal do Azure.
+## Tarefa 1: Atribuir marcas por meio do portal do Azure
 
-Nesta tarefa, você criará e atribuirá uma marca a um grupo de recursos do Azure por meio do portal do Azure.
+Nesta tarefa, você criará e atribuirá uma marca a um grupo de recursos do Azure por meio do portal do Azure. As marcas são um componente crítico de uma estratégia de governança, conforme descrito pelo Microsoft Well-Architected Framework e pelo Cloud Adoption Framework. As marcas podem permitir que você identifique rapidamente proprietários de recursos, datas do pôr do sol, contatos do grupo e outros pares de nome/valor que sua organização considera importantes. Para essa tarefa, você atribui uma marca que identifica a função de recurso (''Infra'' para ''Infraestrutura'').
 
-1. No portal do Azure, abra a sessão **PowerShell** no painel **Cloud Shell**.
+1. Entre no **portal do Azure** - `https://portal.azure.com`.
+      
+1. Pesquise e selecione `Resource groups`.
 
-    >Se esta for a primeira vez que você está iniciando o Cloud Shell e você receber a mensagem Você não tem nenhum armazenamento montado, selecione a assinatura que você está usando no laboratório e selecione Criar armazenamento. 
-
-1. No painel Cloud Shell, execute o seguinte para identificar o nome da conta de armazenamento usada pelo Cloud Shell:
-
-   ```powershell
-   df
-   ```
-
-1. Na saída do comando, observe a primeira parte do caminho totalmente qualificado que designa a montagem da unidade inicial do Cloud Shell (marcada aqui como `xxxxxxxxxxxxxx`:
-
-   ```
-   //xxxxxxxxxxxxxx.file.core.windows.net/cloudshell   (..)  /usr/csuser/clouddrive
-   ```
-
-1. No portal do Azure, pesquise e selecione **Contas** de armazenamento e, na lista das contas de armazenamento, clique na entrada que representa a conta de armazenamento identificada na etapa anterior.
-
-1. Na folha Conta de armazenamento, clique no link que representa o nome do grupo de recursos que contém a conta de armazenamento.
-
-    **Observação**: observe em qual grupo de recursos a conta de armazenamento está, você precisará dela mais tarde no laboratório.
-
-1. Na folha do grupo de recursos, clique **em Marcas** no menu esquerdo e crie uma nova marca.
-
-1. Crie uma tag com as seguintes configurações e Aplique sua alteração:
+1. Nos grupos de recursos, selecione **+ Criar**.
 
     | Configuração | Valor |
     | --- | --- |
-    | Nome | **Função** |
-    | Valor | Infra |
+    | Nome da assinatura | sua assinatura |
+    | Nome do grupo de recursos | `az104-rg2` |
+    | Localidade | **Leste dos EUA** |
 
-1. Clique em **Aplicar** e feche a janela de edição de tags para navegar de volta para a folha da conta de armazenamento. clique nas reticências na conta de armazenamento e selecione **Editar tags** para observar que a nova tag não foi atribuída automaticamente à conta de armazenamento. 
+    >**Observação:** Para cada laboratório neste curso, você criará um novo grupo de recursos. Isso permite que você localize e gerencie rapidamente os recursos do laboratório. 
 
-## Tarefa 2: impor a marcação usando uma política do Azure.
-
-Nesta tarefa, você atribuirá a política interna Exigir uma marca e seu valor na política de recursos ao grupo de *recursos* e avaliará o resultado. 
-
-1. No portal do Azure, pesquise e selecione **Política**. 
-
-1. Na seção **Definições da compilação**, clique em **+ Novo**. Reserve um momento para navegar pela lista de definições de política internas que estão disponíveis para uso. Liste todas as políticas internas que envolvem o uso de tags selecionando a **entrada Tags** (e desmarcando todas as outras entradas) na **lista suspensa Categoria** . 
-
-1. Localize a política interna **Exigir uma marca e o valor dela em recursos** e examine a definição.
-
-1. **Na folha Exigir uma marca e seu valor em recursos** internos de definição de política, clique em **Atribuir**.
-
-1. Especifique o **Escopo** clicando no botão de reticências e selecionando os seguintes valores:
+1. Selecione **Avançar: Marcas** e crie uma nova marca.
 
     | Configuração | Valor |
     | --- | --- |
-    | Subscription | Nome da assinatura que você está usando neste laboratório |
-    | Grupo de recursos | o nome do grupo de recursos que contém a conta do Cloud Shell que você identificou na tarefa anterior |
+    | Nome | `Cost Center` |
+    | Valor | `000` |
 
-    >Um escopo determina em quais recursos ou agrupamento de recursos a atribuição de política é imposta. Você pode atribuir essa política no nível de grupos de recursos, assinaturas ou grupos de gerenciamento. Você também tem a opção de especificar exclusões, como assinaturas individuais, grupos de recursos ou recursos (dependendo do escopo da atribuição). 
+1. Clique em **Examinar + Criar**, depois em **Criar**.
 
-1. Configure as propriedades Basics** da atribuição especificando as **seguintes configurações (deixe outras pessoas com seus padrões):
+## Tarefa 2: Impor marcação por meio de um Azure Policy
+
+Nesta tarefa, você atribuirá a política interna *Exigir uma marca e seu valor nos recursos* ao grupo de recursos e avaliará o resultado. O Azure Policy pode ser usado para impor a configuração e, nesse caso, a governança, aos recursos do Azure. 
+
+1. No portal do Azure, pesquise e selecione `Policy`. 
+
+1. Na folha **Criação**, selecione **Definições**. Reserve um momento para navegar pela lista de definições de [política internas](https://learn.microsoft.com/azure/governance/policy/samples/built-in-policies) que estão disponíveis para uso. Observe que você também pode pesquisar uma definição.
+
+    ![Captura de tela da definição da política.](../media/az104-lab02b-policytags.png)
+
+1. Clique na entrada que representa a política interna **Exigir uma marca e seu valor nos recursos**. Reserve um minuto para examinar a definição. 
+
+1. Na folha de definição da política interna **Exigir uma marca e seu valor nos recursos**, clique em **Atribuir**.
+
+1. Especifique o **Escopo** clicando no botão de reticências e selecionando os valores a seguir. Clique em **Selecionar** quando terminar. 
 
     | Configuração | Valor |
     | --- | --- |
-    | Nome da atribuição | **Exigir marca Role com valor Infra**|
-    | Descrição | **Exigir marca de função com valor de infra para todos os recursos no grupo de recursos do Cloud Shell**|
-    | Imposição de política | Habilitado |
+    | Subscription | *sua assinatura* |
+    | Grupo de recursos | **az104-rg2** |
 
-    >O Nome da atribuição é automaticamente preenchido com o nome da política selecionada, mas você pode alterá-lo. Você também pode adicionar uma **Descrição**opcional. **Atribuído por** é preenchido automaticamente com base no nome de usuário que cria a atribuição. 
+    >**Observação**: Você pode atribuir políticas no nível do grupo de gerenciamento, assinatura ou grupo de recursos. Você também tem a opção de especificar exclusões, como assinaturas individuais, grupos de recursos ou recursos. Nesse cenário, queremos a marca em todos os recursos do grupo de recursos.
 
-1. Clique em **Avançar** duas vezes e defina **Parâmetros** para os seguintes valores:
+1. Configure as propriedades **Noções básicas** da atribuição especificando as seguintes configurações (deixe as outras com os seus padrões):
 
     | Configuração | Valor |
     | --- | --- |
-    | Nome da Marca | **Função** |
-    | Valor da marca | Infra |
+    | Nome da atribuição | `Require Cost Center tag with Default value`|
+    | Descrição | `Require Cost Center tag with default value for all resources in the resource group`|
+    | Aplicação de políticas | Enabled |
 
-1. Clique em **Avançar** e revise a guia Remediação **. Deixe a ****caixa de seleção Criar uma identidade** gerenciada desmarcada. 
+    >**Observação**: O **Nome da atribuição** é preenchido automaticamente com o nome da política selecionada, mas você pode alterá-lo. A **Descrição** é opcional. Observe que você pode desabilitar a política a qualquer momento. 
 
-    >**Nota**: Essa configuração pode ser usada quando a política ou iniciativa inclui o **efeito deployIfNotExists** ou **Modify** .
+1. Clique em **Avançar** duas vezes e defina os **Parâmetros** como os valores a seguir:
+
+    | Configuração | Valor |
+    | --- | --- |
+    | Nome da Marca | `Cost Center` |
+    | Valor da marca | `000` |
+
+1. Clique em **Avançar** e examine a guia **Correção**. Deixe a caixa de seleção **Criar uma Identidade Gerenciada** desmarcada. 
 
 1. Clique em **Examinar + Criar** e em **Criar**.
 
-    >**Observação**: agora você verificará se a nova atribuição de política está em vigor tentando criar outra conta de Armazenamento do Azure no grupo de recursos sem adicionar explicitamente a marca necessária. 
+    >**Observação**: Agora você verificará se a nova atribuição da política está em vigor ao tentar criar uma conta de Armazenamento do Microsoft Azure no grupo de recursos. Você criará a conta de armazenamento sem adicionar a marca necessária. 
     
-    >**Observação**: pode levar entre 5 e 15 minutos para que a política entre em vigor.
+    >**Observação**: Pode levar entre 5 e 10 minutos para que a política entre em vigor.
 
-1. Navegue de volta para a folha do grupo de recursos que hospeda a conta de armazenamento usada para a unidade inicial do Cloud Shell, que você identificou na tarefa anterior.
+1. No portal, pesquise e selecione `Storage Account`, e selecione **+ Criar**. 
 
-1. Na folha do grupo de recursos, clique em + Criar e, em seguida, procure Conta de Armazenamento e clique em ****+ Criar****.**** 
-
-1. **Na guia Noções Básicas** da folha Criar conta** de armazenamento, verifique se você está usando o Grupo de **Recursos ao qual a Política foi aplicada e especifique as seguintes configurações (deixe outras pessoas com seus padrões), clique em Revisar** e em ****Criar**:
+1. Na guia **Noções básicas** da folha **Criar conta de armazenamento**, conclua a configuração.
 
     | Configuração | Valor |
     | --- | --- |
-    | Nome da conta de armazenamento | Qualquer nome global exclusivo com 3 a 24 caracteres composto por dígitos e letras em minúsculas e começando com uma letra |
+    | Grupo de recursos | **az104-rg2** |
+    | Nome da conta de armazenamento | *qualquer combinação globalmente exclusiva entre 3 e 24 letras minúsculas e dígitos, começando com uma letra* |
 
-    >**Nota**: Você pode receber uma falha na **validação. Clique aqui para detalhes** do erro; Em caso afirmativo, clique na mensagem de erro para identificar o motivo da falha e ignore a próxima etapa. 
+1. Selecione **Examinar** e clique em **Criar**:
 
-1. Depois de criar a implantação, você verá a **mensagem Falha** na implantação na **lista Notificações** do portal. Na **lista Notificações** , navegue até a visão geral da implantação e clique em Falha na **implantação. Clique aqui para obter a mensagem de detalhes** para identificar o motivo da falha. 
+1. Depois de criar a implantação, você deverá ver a mensagem **Falha de implantação** na lista de **Notificações** do portal. Na lista de **Notificações**, navegue até a visão geral da implantação e clique na mensagem **Implantação com falha. Clique aqui para obter detalhes** para identificar o motivo da falha. 
 
-    >**Nota**: Verifique se a mensagem de erro indica que a implantação de recursos não foi permitida pela diretiva. 
+    ![Captura de tela do erro de política não permitida.](../media/az104-lab02b-policyerror.png) 
 
-    >**Nota**: Ao clicar na **guia Erro** bruto, você pode encontrar mais detalhes sobre o erro, incluindo o nome da marca de definição **de função Exigir função com valor** Infra. A implantação falhou porque a conta de armazenamento que você tentou criar não tinha uma marca chamada **Role** com seu valor definido como **Infra**.
+    >**Observação**: Verifique se a mensagem de erro indica que a implantação do recurso não foi permitida pela política. 
 
-## Tarefa 3: Aplicar marcação por meio de uma política do Azure
+    >**Observação**: Clicando na guia **Erro Bruto**, você poderá encontrar mais detalhes sobre o erro, incluindo o nome da definição de função **Exigir marca do Centro de Custo com o Valor padrão**. A implantação falhou porque a conta de armazenamento que você tentou criar não tinha uma marca chamada **Centro de Custo** com seu valor definido como **Padrão**.
 
-Nesta tarefa, usaremos uma definição de política diferente para corrigir quaisquer recursos não compatíveis. 
+## Tarefa 3: Aplicar marca por meio de uma política do Azure
 
-1. No portal do Azure, pesquise e selecione **Política**. 
+Nesta tarefa, usaremos a nova definição da política para corrigir os recursos sem conformidade. Nesse cenário, faremos com que todos os recursos filho de um grupo de recursos herdem a marca **Centro de Custo** que foi definida no grupo de recursos.
 
-1. Na seção **Criação**, selecione **Atribuições**. 
+1. No portal do Azure, pesquise e selecione `Policy`. 
 
-1. Na lista de atribuições, clique no ícone de reticências na linha que representa a **marca Exigir Função com atribuição de política de valor** Infra e use o **item de menu Excluir atribuição** para excluir a atribuição.
+1. Na seção **Criação**, clique em **Atribuições**. 
+
+1. Na lista de atribuições, clique no ícone de reticências na linha que representa a atribuição da política **Exigir a marca Centro de Custo com o valor Padrão** e use o item de menu **Excluir atribuição** para excluir a atribuição.
 
 1. Clique em **Atribuir política** e especifique o **Escopo** clicando no botão de reticências e selecionando os seguintes valores:
 
     | Configuração | Valor |
     | --- | --- |
-    | Subscription | Nome da assinatura que você está usando neste laboratório |
-    | Grupo de recursos | o nome do grupo de recursos que contém a conta do Cloud Shell que você identificou na primeira tarefa |
+    | Subscription | sua assinatura do Azure |
+    | Grupo de recursos | `az104-rg2` |
 
-1. Para especificar a **definição** de política, clique no botão de reticências e, em seguida, procure e selecione **Herdar uma marca do grupo de recursos, se estiver ausente**.
+1. Para especificar a **Definição da política**, clique no botão de reticências e pesquise e selecione `Inherit a tag from the resource group if missing`.
 
-1. Configure as propriedades Básicas** restantes **da atribuição especificando as seguintes configurações (deixe outras pessoas com seus padrões):
-
-    | Configuração | Valor |
-    | --- | --- |
-    | Nome da atribuição | **Herdar a marca Role e seu valor Infra do grupo de recursos do Cloud Shell se estiver ausente**|
-    | Descrição | **Herdar a marca Role e seu valor Infra do grupo de recursos do Cloud Shell se estiver ausente**|
-    | Imposição de política | Habilitado |
-
-1. Clique em **Avançar** duas vezes e defina **Parâmetros** para os seguintes valores:
+1. Selecione **Adicionar** e configure as propriedades **Noções básicas** restantes da atribuição.
 
     | Configuração | Valor |
     | --- | --- |
-    | Nome da Marca | **Função** |
+    | Nome da atribuição | `Inherit the Cost Center tag and its value 000 from the resource group if missing` |
+    | Descrição | `Inherit the Cost Center tag and its value 000 from the resource group if missing` |
+    | Aplicação de políticas | Enabled |
 
-1. Clique em **Avançar** e, na **guia Remediação** , defina as seguintes configurações (deixe outras pessoas com seus padrões):
+1. Clique em **Avançar** duas vezes e defina os **Parâmetros** como os valores a seguir:
+
+    | Configuração | Valor |
+    | --- | --- |
+    | Nome da Marca | `Cost Center` |
+
+1. Clique em **Avançar** e, na guia **Correção**, defina as seguintes configurações (deixe as outras com os seus padrões):
 
     | Configuração | Valor |
     | --- | --- |
     | Criar uma tarefa de correção | Habilitado |
     | Política a ser corrigida | **Herdar uma marca do grupo de recursos, se ela estiver ausente** |
 
-    >**Nota**: Esta definição de política inclui o **efeito Modificar** .
+    >**Observação**: Esta definição de política inclui o efeito **Modificar**. Portanto, uma identidade gerenciada é necessária. 
+
+    ![Captura de tela da página de correção da política. ](../media/az104-lab02b-policyremediation.png) 
 
 1. Clique em **Examinar + Criar** e em **Criar**.
 
-    >**Observação**: para verificar se a nova atribuição de política está em vigor, você criará outra conta de Armazenamento do Azure no mesmo grupo de recursos sem adicionar explicitamente a marca necessária. 
+    >**Observação**: Para verificar se a nova atribuição da política está em vigor, você criará outra conta de armazenamento do Azure no mesmo grupo de recursos sem adicionar explicitamente a marca necessária. 
     
-    >**Observação**: pode levar entre 5 e 15 minutos para que a política entre em vigor.
+    >**Observação**: Pode levar entre 5 e 10 minutos para que a política entre em vigor.
 
-1. Navegue de volta para a folha do grupo de recursos que hospeda a conta de armazenamento usada para a unidade inicial do Cloud Shell, que você identificou na primeira tarefa.
+1. Pesquise e selecione `Storage Account`e clique em **+ Criar**. 
 
-1. Na folha do grupo de recursos, clique em + Criar e, em seguida, procure Conta de Armazenamento e clique em ****+ Criar****.**** 
-
-1. **Na guia Noções básicas** da folha Criar conta** de **armazenamento, verifique se você está usando o Grupo de Recursos ao qual a Política foi aplicada e especifique as seguintes configurações (deixe outras pessoas com seus padrões) e clique em **Revisar**:
+1. Na guia **Noções básicas** da folha **Criar conta de armazenamento**, verifique se você está usando o Grupo de Recursos ao qual a Política foi aplicada e especifique as seguintes configurações (deixe as outras com os seus padrões) e clique em **Examinar**:
 
     | Configuração | Valor |
     | --- | --- |
-    | Nome da conta de armazenamento | Qualquer nome global exclusivo com 3 a 24 caracteres composto por dígitos e letras em minúsculas e começando com uma letra |
+    | Nome da conta de armazenamento | *qualquer combinação globalmente exclusiva entre 3 e 24 letras minúsculas e dígitos, começando com uma letra* |
 
-1. Verifique se desta vez a validação passou e clique em **Criar**.
+1. Verifique se, desta vez, a validação passou e clique em **Criar**.
 
-1. Depois que a nova conta de armazenamento for provisionada, clique no **botão Ir para** recurso e, na **folha Visão geral** da conta de armazenamento recém-criada, observe que a marca **Role** com o valor **Infra** foi atribuída automaticamente ao recurso.
+1. Depois que a nova conta de armazenamento for provisionada, clique em **Ir para o recurso**.
 
-## Tarefa 4: limpar recursos
+1. Na folha **Marcas**, observe que a marca **Centro de Custo** com o valor **000** foi atribuída automaticamente ao recurso.
 
-   >Lembre-se de remover todos os recursos do Azure que acabam de ser criados e que você não usa mais. A remoção de recursos não utilizados garante que você não verá cobranças inesperadas, embora tenha em mente que as políticas do Azure não incorrem em custo extra.
+    >**Você sabia?** Se você pesquisar e selecionar **Marcas** no portal, poderá exibir os recursos com uma marca específica. 
+
+## Tarefa 4: Configurar e testar bloqueios de recursos
+
+Nesta tarefa, você configura e testa um bloqueio de recurso. Os bloqueios impedem exclusões ou modificações de um recurso. 
+
+1. Pesquise e selecione seu grupo de recursos.
    
-   >**Nota**: Não se preocupe se os recursos do laboratório não puderem ser removidos imediatamente. Às vezes, os recursos têm dependências e levam mais tempo para serem excluídos. É uma tarefa comum do Administrador monitorar o uso de recursos, portanto, basta revisar periodicamente seus recursos no Portal para ver como a limpeza está indo. 
+1. Na folha **Configurações**, selecione **Bloqueios**.
 
-1. No portal do Azure, pesquise e selecione **Política**.
+1. Selecione **Adicionar** e conclua as informações de bloqueio de recursos. Quando terminar, selecione **Ok**. 
 
-1. **Na seção Criação**, clique em Atribuições **, clique no ícone de reticências à direita da atribuição criada na tarefa anterior e clique **em **Excluir atribuição**. 
+    | Configuração | Valor |
+    | --- | --- |
+    | Nome do bloqueio | `rg-lock` |
+    | Tipo de bloqueio | **excluir** (observe a seleção somente leitura) |
+    
+1. Navegue até a folha **Visão geral** do grupo de recursos e selecione **Excluir grupo de recursos**.
 
-1. No portal do Azure, procure e selecione **Contas de armazenamento**.
+1. Na caixa de texto **Inserir o nome do grupo de recursos para confirmar a exclusão**, forneça o nome do grupo de recursos, `az104-rg2`. Observe que você pode copiar e colar o nome do grupo de recursos. 
 
-1. Na lista de contas de armazenamento, selecione o grupo de recursos correspondente à conta de armazenamento criada na última tarefa deste laboratório. Selecione **Tags** e clique em **Excluir** (Lixeira à direita) para a **tag Role:Infra** e pressione **Aplicar**. 
+1. Observe o aviso: A exclusão deste grupo de recursos e seus recursos dependentes é uma ação permanente e não pode ser desfeita. Selecione **Excluir**.
 
-1. Clique em Visão geral** e clique em ****Excluir** na parte superior da folha da conta de armazenamento. Quando for solicitada a confirmação, na **folha Excluir conta de armazenamento, digite o nome da conta** de armazenamento a ser confirmada e clique em **Excluir**. 
+1. Você deve receber uma notificação negando a exclusão. 
 
-## Revisão
+    ![Captura de tela da falha ao excluir a mensagem.](../media/az104-lab02b-failuretodelete.png) 
 
-Neste laboratório, você vai:
+## Limpar os recursos
 
-- Tarefa 1: criar e atribuir marcas por meio do portal do Azure.
-- Marcação imposta por meio de uma política do Azure
-- Marcação aplicada por meio de uma política do Azure
+Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto para excluir os recursos do laboratório. Isso garantirá que os recursos sejam liberados e que o custo seja minimizado. A maneira mais fácil de excluir os recursos do laboratório é excluir o grupo de recursos do laboratório. 
+
++ No portal do Azure, selecione o grupo de recursos, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
++ Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Usar a CLI, `az group delete --name resourceGroupName`.
+
+## Principais aspectos a serem lembrados
+
+Parabéns por concluir o laboratório. Aqui estão as principais lições deste laboratório. 
+
++ As marcas do Azure são metadados que consistem em um par chave-valor. As marcas descrevem um recurso específico em seu ambiente. Em particular, a marcação no Azure permite que você rotule seus recursos de uma forma lógica.
++ O Azure Policy estabelece convenções para recursos. As definições de política descrevem as condições de conformidade do recurso e o efeito a ser tomada se uma condição for atendida. Uma condição compara um field ou um value da propriedade de recurso com um valor obrigatório. Há muitas definições de políticas internas e você pode personalizar as políticas. 
++ O recurso de tarefa de correção do Azure Policy é usado para colocar recursos em conformidade com base em uma definição e atribuição. Os recursos sem conformidade com uma atribuição de definição modify ou deployIfNotExist podem ser colocados em conformidade usando uma tarefa de correção.
++ Você pode configurar um bloqueio de recurso em uma assinatura, grupo de recursos ou recurso. O bloqueio pode proteger um recurso contra exclusões e modificações acidentais do usuário. O bloqueio substitui todas as permissões que o usuário tenha.
++ O Azure Policy é uma prática de segurança de pré-implantação. O RBAC e os bloqueios de recursos são práticas de segurança pós-implantação. 
+
+## Saiba mais com treinamento individual
+
++ [Criar uma estratégia de governança corporativa](https://learn.microsoft.com/training/modules/enterprise-governance/). Use o RBAC e o Azure Policy para limitar o acesso às soluções do Azure e determinar qual é o método certo para suas metas de segurança.
+  
+

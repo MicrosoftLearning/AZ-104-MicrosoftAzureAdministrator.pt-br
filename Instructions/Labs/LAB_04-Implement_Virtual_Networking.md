@@ -1,422 +1,365 @@
 ---
 lab:
   title: 'Laboratório 04: Implementar Redes Virtuais'
-  module: Administer Virtual Networking
+  module: Implement Virtual Networking
 ---
 
 # Laboratório 04 - Implementar Redes Virtuais
 
-# Manual do laboratório do aluno
+## Introdução ao laboratório
 
-## Cenário do laboratório
+Este laboratório é o primeiro de três laboratórios que se concentra na rede virtual. Nesse laboratório, você aprenderá os conceitos básicos de rede virtual e sub-rede. Você aprenderá a proteger sua rede com grupos de segurança de rede e grupos de segurança de aplicativos. Você também aprenderá sobre zonas e registros DNS. 
 
-Você precisa explorar os recursos de rede virtual do Azure. Para começar, você planeja criar uma rede virtual no Azure que hospedará algumas máquinas virtuais do Azure. Como você pretende implementar a segmentação baseada em rede, você os implantará em diferentes sub-redes da rede virtual. Você também quer ter certeza de que seus endereços IP privados e públicos não serão alterados ao longo do tempo. Para estar em conformidade com os requisitos de segurança da Contoso, você precisa proteger pontos de extremidade públicos de máquinas virtuais do Azure acessíveis pela Internet. Finalmente, você precisa implementar a resolução de nomes DNS para máquinas virtuais do Azure dentro da rede virtual e da Internet.
+Esse laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode afetar a disponibilidade de recursos nesse laboratório. Você pode alterar a região, mas as etapas são escritas usando o **Leste dos EUA**.
 
-**Observação:** uma **[simulação de laboratório interativo](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%208)** está disponível e permite que você clique neste laboratório em seu próprio ritmo. Você pode encontrar pequenas diferenças entre a simulação interativa e o laboratório hospedado, mas os principais conceitos e ideias que estão sendo demonstrados são os mesmos. 
+## Tempo estimado: 50 minutos
 
-## Objetivos
+## Cenário do laboratório 
 
-Neste laboratório, você vai:
+Sua organização global planeja implementar redes virtuais. A meta imediata é acomodar todos os recursos existentes. No entanto, a organização está em uma fase de crescimento e quer garantir que haja capacidade adicional para o crescimento.
 
-+ Tarefa 1: Criar e configurar uma rede virtual
-+ Tarefa 2: implantar máquinas virtuais na rede virtual
-+ Tarefa 3: configurar endereços IP públicos e privados de VMs do Azure
-+ Tarefa 4: configurar grupos de segurança de rede
-+ Tarefa 5: configurar o DNS do Azure para resolução de nomes interna
-+ Tarefa 6: configurar o DNS do Azure para resolução de nomes externos
+A rede virtual **CoreServicesVnet** tem o maior número de recursos. Uma grande quantidade de crescimento está prevista, portanto, um espaço de endereços grande é necessário para essa rede virtual.
 
-## Tempo estimado: 40 minutos
+A rede virtual **ManufacturingVnet** contém sistemas para as operações das instalações de fabricação. A organização está antecipando um grande número de dispositivos conectados internos para que seus sistemas recuperem dados. 
+
+## Simulações interativas do laboratório
+
+Há várias simulações interativas do laboratório que podem ser úteis para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Há diferenças entre a simulação interativa e este laboratório, mas muitos dos principais conceitos são os mesmos. Não é necessária uma assinatura do Azure. 
+
++ [Tráfego de rede seguro](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2013). Crie uma máquina virtual, uma rede virtual e um grupo de segurança de rede. Adicione regras de grupo de segurança de rede para permitir e proibir tráfego.
+  
++ [Criar uma rede virtual simples](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%204). Crie uma rede virtual com duas máquinas virtuais. Demonstre que as máquinas virtuais podem se comunicar. 
+
++ [Projetar e implementar uma rede virtual no Azure](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Design%20and%20implement%20a%20virtual%20network%20in%20Azure). Crie um grupo de recursos e crie redes virtuais com sub-redes.  
+
++ [Implementar redes virtuais](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%208). Crie e configure uma rede virtual, implante máquinas virtuais, configure grupos de segurança de rede e configure o DNS do Azure.
 
 ## Diagrama de arquitetura
 
-![imagem](../media/lab04.png)
+![Layout de rede](../media/az104-lab04-architecture.png)
 
-### Instruções
+Essas redes virtuais e sub-redes são estruturadas de forma a acomodar os recursos existentes e ainda permitir o crescimento projetado. Vamos criar essas redes virtuais e sub-redes para estabelecer a base para nossa infraestrutura de rede.
 
-## Exercício 1
+>**Você sabia?**: É uma boa prática evitar a sobreposição de intervalos de endereços IP para reduzir problemas e simplificar a solução de problemas. A sobreposição é uma preocupação em toda a rede, seja na nuvem ou no local. Muitas organizações projetam um esquema de endereçamento IP em toda a empresa para evitar a sobreposição e planejar o crescimento futuro.
 
-## Tarefa 1: Criar e configurar uma rede virtual
+## Habilidades de trabalho
 
-Nesta tarefa, você criará uma rede virtual com várias sub-redes usando o portal do Azure
++ Tarefa 1: Criar uma rede virtual com sub-redes usando o portal.
++ Tarefa 2: Criar uma rede virtual e sub-redes usando um modelo.
++ Tarefa 3: Criar e configurar a comunicação entre um Grupo de Segurança de Aplicativos e um Grupo de Segurança de Rede.
++ Tarefa 4: Configurar zonas DNS públicas e privadas do Azure.
+  
+## Tarefa 1: Criar uma rede virtual com sub-redes usando o portal
 
-1. Entre no [portal do Azure](https://portal.azure.com).
+A organização planeja uma grande quantidade de crescimento para os principais serviços. Nesta tarefa, você cria a rede virtual e as sub-redes associadas para acomodar os recursos existentes e o crescimento planejado. Nesta tarefa, você usará o portal do Azure. 
 
-1. No portal do Azure, procure e selecione **Redes virtuais** e, na folha **Redes virtuais**, clique em **+ Criar**.
-
-1. Crie uma rede virtual com as seguintes configurações (deixe outras pessoas com seus valores padrão):
-
-    | Configuração | Valor |
-    | --- | --- |
-    | Assinatura | o nome da assinatura do Azure que você usará neste laboratório |
-    | Grupo de recursos | O nome de um **novo** grupo de recursos **az104-04-rg1** |
-    | Nome | **az104-04-vnet1** |
-    | Region | o nome de qualquer região do Azure disponível na assinatura que você usará neste laboratório |
-
-1. Clique em **Avançar: Endereços IP**. O **Endereço inicial** é **10.40.0.0**. O **Tamanho do espaço do endereço** é **/20**. 
-
-1. Clique em **+ Adicionar sub-rede**. Exclua a sub-rede **padrão** existente. Insira os valores a seguir e clique em **Adicionar**. 
-
-    | Configuração | Valor |
-    | --- | --- |
-    | Nome da sub-rede | **subnet0** |
-    | Endereço inicial | **10.40.0.0** |
-    | Tamanho da sub-rede | **/24 (256 endereços)** |
-
-1. Aceite os padrões e clique em **Revisar e Criar**. Deixe a validação ocorrer e clique em **Criar** novamente para enviar sua implantação.
-
-    >**Observação:** aguarde até que a rede virtual seja provisionada. Isso deve levar menos de um minuto.
-
-1. Clique em **Ir para o recurso**
-
-1. Na folha de rede virtual **az104-04-vnet1**, clique em **Sub-redes** e, em seguida, clique em **+ Sub-rede**.
-
-1. Crie uma sub-rede com as seguintes configurações (deixe outras com seus valores padrão):
-
-    | Configuração | Valor |
-    | --- | --- |
-    | Nome | **subnet1** |
-    | Intervalo de endereços (bloco CIDR) | **10.40.1.0/24** |
-    | Grupo de segurança de rede | **Nenhuma** |
-    | Tabela de rotas | **Nenhuma** |
-
-1. Clique em **Salvar**
-
-## Tarefa 2: implantar máquinas virtuais na rede virtual
-
-Nesta tarefa, você implantará máquinas virtuais do Azure em diferentes sub-redes da rede virtual usando um modelo ARM
-
-1. No portal do Azure, abra o **Azure Cloud Shell** clicando no ícone no canto superior direito do portal do Azure.
-
-1. Se for solicitado que você selecione **Bash** ou **PowerShell**, selecione **Bash**.
-
-    >**Observação**: se esta for a primeira vez que você está iniciando o **Cloud Shell** e você receber a mensagem **Você não tem nenhum armazenamento montado**, selecione a assinatura que você está usando no laboratório e selecione **Criar armazenamento**.
-
-1. Na barra de ferramentas do painel Cloud Shell, clique no ícone **Carregar/Baixar arquivos**, e no menu suspenso, clique em **Carregar**. Faça upload de **\\Allfiles\\Labs\\04\\az104-04-vms-loop-template.json** e **\\Allfiles\\Labs\\04\\az104-04-vms-loop-parameters.json** no diretório base do Cloud Shell.
-
-    >**Observação**: você deve fazer upload de cada arquivo separadamente. Após o upload, use **dir** para garantir que ambos os arquivos foram carregados com êxito.
-
-1. No painel Cloud Shell, execute o seguinte para implantar duas máquinas virtuais usando os arquivos de modelo e parâmetro:
-    >**Observação**: você será solicitado a fornecer uma senha.
-    
-   ```powershell
-   $rgName = 'az104-04-rg1'
-
-   New-AzResourceGroupDeployment `
-      -ResourceGroupName $rgName `
-      -TemplateFile $HOME/az104-04-vms-loop-template.json `
-      -TemplateParameterFile $HOME/az104-04-vms-loop-parameters.json
-   ```
+1. Entre no **portal do Azure** - `https://portal.azure.com`.
    
-    >**Observação**: esse método de implantação de modelos ARM usa o Azure PowerShell. Você pode executar a mesma tarefa executando o comando equivalente da CLI do Azure **az deployment create** (para obter mais informações, consulte [Implantar recursos com modelos do Gerenciador de Recursos e CLI do Azure](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-cli).
+1. Pesquise e selecione `Virtual Networks`.
 
-    >**Observação**: aguarde a conclusão da implantação antes de prosseguir para a próxima tarefa. Isso deverá levar cerca de dois minutos.
+1. Na página Redes virtuais, selecione **Criar**.
 
-    >**Observação**: se você recebeu um erro informando que o tamanho da VM não está disponível, peça ajuda ao seu instrutor e tente realizar estas etapas:
-    > 1. Clique no botão `{}` no seu CloudShell, selecione o** az104-04-vms-loop-parameters.json** na barra lateral esquerda e anote o valor do parâmetro `vmSize`.
-    > 1. Verifique o local no qual o grupo de recursos 'az104-04-rg1' está implantado. Você pode executar `az group show -n az104-04-rg1 --query location` em seu CloudShell para obter o caminho.
-    > 1. Execute `az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name"` em seu CloudShell. Se não houver SKUs listados (ou seja, não houver resultados), você não poderá implantar nenhuma máquina virtual D2S nessa região. Você precisará encontrar uma região que permita implantar máquinas virtuais D2S. Depois de escolher um local adequado, exclua o grupo de recursos AZ104-04-rg1 e reinicie o laboratório.
-    > 1. Substitua o valor do parâmetro `vmSize` por um dos valores retornados pelo comando que você acabou de executar.
-    > 1. Agora reimplante seus modelos executando o comando `New-AzResourceGroupDeployment` novamente. Você pode pressionar o botão de seta para cima algumas vezes, o que deve exibir o último comando executado.
+1. Conclua a guia **Noções básicas** do CoreServicesVnet.  
 
-1. Feche o painel do Cloud Shell.
+    |  **Opção**         | **Valor**            |
+    | ------------------ | -------------------- |
+    | Grupo de recursos     | `az104-rg4` (se necessário, crie um novo) |
+    | Nome               | `CoreServicesVnet`     |
+    | Região             | (EUA) **Leste dos EUA**         |
 
-## Tarefa 3: configurar endereços IP públicos e privados de VMs do Azure
+1. Mova a guia **Endereços IP**.
 
-Nesta tarefa, você configurará a atribuição estática de endereços IP públicos e privados atribuídos às interfaces de rede de máquinas virtuais do Azure.
+    |  **Opção**         | **Valor**            |
+    | ------------------ | -------------------- |
 
-   >**Observação**: os endereços IP privados e públicos são realmente atribuídos às interfaces de rede, que, por sua vez, são anexadas às máquinas virtuais do Azure, no entanto, é bastante comum fazer referência a endereços IP atribuídos a VMs do Azure.
+    | Espaço de endereço IPv4 | `10.20.0.0/16` (separe as entradas)    |
 
-   >**Observação**: Você precisará de **dois** endereços IP públicos para concluir este laboratório. 
+1. Selecione **+Adicionar uma sub-rede**. Conclua as informações de nome e endereço de cada sub-rede. Certifique-se de selecionar **Adicionar** para cada nova sub-rede. 
 
-1. No portal do Azure, pesquise e selecione **Endereços IP públicos** e, em seguida, selecione **+ Criar**.
+    | **Sub-rede**             | **Opção**           | **Valor**              |
+    | ---------------------- | -------------------- | ---------------------- |
+    | SharedServicesSubnet   | Nome da sub-rede          | `SharedServicesSubnet`   |
+    |                        | Endereço inicial     | `10.20.10.0`          |
+    |                        | Tamanho                 | `/24` |
+    | DatabaseSubnet         | Nome da sub-rede          | `DatabaseSubnet`         |
+    |                        | Endereço inicial     | `10.20.20.0`        |
+    |                        | Tamanho                 | `/24` |
 
-1. Verifique se o **grupo de recursos** é **az104-04-rg1**,
+    >**Observação:** Cada rede virtual deve ter pelo menos uma sub-rede. Lembre-se de que cinco endereços IP sempre serão reservados, portanto, considere isso em seu planejamento. 
 
-1. Nos **Detalhes da Configuração**, verifique se o **nome** é **az104-04-pip0**.
+1. Para concluir a criação da CoreServicesVnet e das sub-redes associadas, escolha **Revisar + criar**.
 
-1. Selecione **Examinar e criar** e, em seguida, **Criar**.
+1. Verifique se a configuração foi aprovada na validação e, depois, escolha **Criar**.
 
-1. No portal do Azure, pesquise e selecione **Endereços IP públicos** e, em seguida, selecione **+ Criar**.
+1. Aguarde a implantação da rede virtual e selecione **Ir para o recurso**.
 
-1. Verifique se o **grupo de recursos** é **az104-04-rg1**,
+1. Reserve um minuto para verificar o **Espaço de endereço** e as **Sub-redes**. Observe suas outras opções na folha **Configurações**. 
 
-1. Nos **Detalhes da Configuração**, verifique se o **nome** é **az104-04-pip1**.
+1. Na seção **Automação**, selecione **Exportar modelo** e aguarde até que o modelo seja gerado.
 
-1. Selecione **Examinar e criar** e, em seguida, **Criar**.
+1. **Baixe** o modelo.
 
-1. No portal do Azure, procure e selecione **Grupos de recursos** e, na folha **Grupos de recursos**, clique em **az104-04-rg1**.
+1. Navegue no computador local até a pasta **Downloads** e **Extrair todos** os arquivos no arquivo zip baixado. 
 
-1. Na folha do grupo de recursos **az104-04-rg1**, na lista de seus recursos, clique em **az104-04-vnet1**.
+1. Antes de continuar, verifique se você tem o arquivo **template.json**. Você usará esse modelo para criar o ManufacturingVnet na próxima tarefa. 
+ 
+## Tarefa 2: Criar uma rede virtual e sub-redes usando um modelo
 
-1. Na folha da rede virtual **az104-04-vnet1**, revise a seção **Dispositivos conectados** e verifique se há dois adaptadores de rede **az104-04-nic0** e **az104-04-nic1** anexados à rede virtual.
+Nesta tarefa, você cria a rede virtual ManufacturingVnet e as sub-redes associadas. A organização prevê o crescimento dos escritórios de produção para que as sub-redes sejam dimensionadas para o crescimento esperado. Para essa tarefa, você usa um modelo para criar os recursos. 
 
-1. Clique em **az104-04-nic0**e, na folha **az104-04-nic0**, clique em **Configurações de IP**.
+1. Localize o arquivo **template.json** exportado na tarefa anterior. Deve estar na sua pasta **Downloads**.
 
-    >**Observação**: Verifique se **ipconfig1** está atualmente configurado com um endereço IP privado dinâmico.
+1. Edite o arquivo usando o editor de sua preferência. Muitos editores têm um recurso *alterar todas as ocorrências*. Se você estiver usando o Visual Studio Code, certifique-se de estar trabalhando em uma **janela confiável** e não no **modo restrito**. Consulte o diagrama de arquitetura para verificar os detalhes. 
 
-1. Na lista de configurações de IP, clique em **ipconfig1**.
+### Faça alterações na rede virtual ManufacturingVnet
 
-1. Verifique se a **Alocação** é **Estática**.
+1. Substitua todas as ocorrências de **CoreServicesVnet** por `ManufacturingVnet`. 
 
-1. Selecione **Associar endereço IP público** e, na lista suspensa **Endereço IP público**, selecione **az104-04-pip0**.
+1. Substitua todas as ocorrências de **10.20.0.0/16** por `10.30.0.0/16`. 
 
-    >**Observação:** Se você receber um erro, *o nome de domínio já está em uso*, esse é um problema conhecido. Você precisará localizar o endereço IP público e associá-lo à NIC separadamente.
-    >
-    > + Acesse **Endereços IP públicos**
-    > + Clique em **az104-04-pip0**
-    > + No painel **Visão geral**, clique em **Associar IP**
-    > + Defina o **Tipo de recurso** como **Interface de rede**
-    > + Defina a **Interface de rede** como **az104-04-nic0**
-    > + Repita para **az104-04-pip1** e **az104-04-nic1**
+### Faça alterações nas sub-redes ManufacturingVnet
 
-1. Selecione **Salvar**.
+1. Altere todas as ocorrências de **SharedServicesSubnet** para `SensorSubnet1`.
 
-1. Navegue de volta para a folha **folha az104-04-vnet1**.
+1. Altere todas as ocorrências de **10.20.10.0/24** para `10.30.20.0/24`.
 
-1. Clique em **az104-04-nic1**e , na folha **az104-04-nic1**, clique em **configurações de IP**.
+1. Altere todas as ocorrências de **DatabaseSubnet** para `SensorSubnet2`.
 
-    >**Observação**: Verifique se **ipconfig1** está atualmente configurado com um endereço IP privado dinâmico.
+1. Altere todas as ocorrências de **10.20.20.0/24** para `10.30.21.0/24`.
 
-1. Na lista de configurações de IP, clique em **ipconfig1**.
+1. Leia novamente o arquivo e certifique-se de que tudo esteja correto.
 
-1. Verifique se a **Alocação** é **Estática**.
+1. Não se esqueça de **Salvar** suas alterações.
 
-1. Selecione **Associar endereço IP público** e, na lista suspensa **Endereço IP público**, selecione **az104-04-pip1**.
+>**Observação:** Há arquivos de modelo concluídos no diretório de arquivos do laboratório. 
 
->**Observação:** Se você receber um erro, *o nome de domínio já está em uso*, esse é um problema conhecido. Você precisará localizar o endereço IP público e associá-lo à NIC separadamente. 
+### Faça alterações no arquivo de parâmetros
 
-1. Selecione **Salvar**.
+1. Localize o arquivo **template.json** exportado na tarefa anterior. Deve estar na sua pasta **Downloads**.
+
+1. Edite o arquivo usando o editor de sua preferência.
+
+1. Substitua a única ocorrência de **CoreServicesVnet** por `ManufacturingVnet`.
+
+1. **Salve** suas alterações.
    
-1. Navegue de volta para a folha do grupo de recursos **az104-04-rg1**, na lista de seus recursos, clique em **az104-04-vm0** e, na folha da máquina virtual **az104-04-vm0**, anote a entrada do endereço IP público.
+### Implantar o modelo personalizado
 
-1. Navegue de volta para a folha do grupo de recursos **az104-04-rg1**, na lista de seus recursos, clique em **az104-04-vm1** e, na folha da máquina virtual **az104-04-vm1**, anote a entrada do endereço IP público.
+1. No portal, pesquise e selecione **Implantar um modelo personalizado**.
 
-    >**Observação**: Você precisará de ambos os endereços IP na última tarefa deste laboratório.
+1. Selecione **Criar seu próprio modelo no editor** e, em seguida, **Carregar arquivo**.
 
-## Tarefa 4: configurar grupos de segurança de rede
+1. Selecione o arquivo **templates.json** com suas alterações de fabricação e selecione **Salvar**.
 
-Nesta tarefa, você configurará grupos de segurança de rede para permitir conectividade restrita com máquinas virtuais do Azure.
+1. Selecione **Examinar + criar** e depois **Criar**.
 
-1. No portal do Azure, navegue de volta para a folha do grupo de recursos **az104-04-rg1** e, na lista de seus recursos, clique em **az104-04-vm0**.
+1. Aguarde a implantação do modelo e confirme (no portal) se a rede virtual e as sub-redes de fabricação foram criadas.
 
-1. Na folha de visão geral **az104-04-vm0**, clique em **Conectar**, clique em **RDP** no menu suspenso, na folha **Conectar com RDP**, clique em **Fazer Download de Arquivo RDP**.
+>**Observação:** Se você precisar implantar mais de uma vez, poderá encontrar alguns recursos concluídos com sucesso e que a implantação está falhando. Você pode remover manualmente esses recursos e tentar novamente. 
+   
+## Tarefa 3: Criar e configurar a comunicação entre um Grupo de Segurança de Aplicativos e um Grupo de Segurança de Rede
 
-1. Verifique se há falha na tentativa de conexão.
+Nesta tarefa, criamos um Grupo de Segurança de Aplicativos e um Grupo de Segurança de Rede. O NSG terá uma regra de segurança de entrada que permite o tráfego do ASG. O NSG também terá uma regra de saída que nega acesso à internet. 
 
-    >**Observação**: Isso é esperado, porque os endereços IP públicos da SKU padrão, por padrão, exigem que as interfaces de rede às quais eles são atribuídos sejam protegidas por um grupo de segurança de rede. Para permitir conexões de Área de Trabalho Remota, você criará um grupo de segurança de rede permitindo explicitamente o tráfego RDP de entrada da Internet e o atribuirá às interfaces de rede de ambas as máquinas virtuais.
+### Crie o Grupo de Segurança de Aplicativos (ASG)
 
-1. Pare as máquinas virtuais **az104-04-vm0** e **az104-04-vm1**.
+1. No portal do Azure, pesquise e selecione `Application security groups`.
 
-    >**Observação**: Isso é feito por conveniência do laboratório. Se as máquinas virtuais estiverem em execução quando um grupo de segurança de rede estiver conectado à interface de rede, poderá levar mais de 30 minutos para que o anexo entre em vigor. Depois que o grupo de segurança de rede tiver sido criado e anexado, as máquinas virtuais serão reiniciadas e o anexo entrará em vigor imediatamente.
-
-1. No portal do Azure, procure e selecione **Grupos de segurança de rede** e, na folha **Grupos de segurança de rede**, clique em **+ Criar**.
-
-1. Crie um grupo de segurança de rede com as seguintes configurações (deixe outros com seus valores padrão):
+1. Clique em **Criar** e forneça as informações básicas.
 
     | Configuração | Valor |
-    | --- | --- |
-    | Assinatura | o nome da assinatura do Azure que você está usando neste laboratório |
-    | Grupo de recursos | **az104-04-rg1** |
-    | Nome | **az104-04-nsg01** |
-    | Region | o nome da região do Azure onde você implantou todos os outros recursos neste laboratório |
+    | -- | -- |
+    | Subscription | *sua assinatura* |
+    | Grupo de recursos | **az104-rg4** |
+    | Nome | `asg-web` |
+    | Region | **Leste dos EUA**  |
 
-1. Clique em **Revisar e criar**. Deixe a validação ocorrer e pressione **Criar** para enviar sua implantação.
+1. Clique em **Revisar + criar** e após a validação, clique em **Criar**.
 
-    >**Observação**: aguarde até que a implantação seja concluída. Isso deverá levar cerca de dois minutos.
+### Crie o Grupo de Segurança de Rede e associe-o à sub-rede ASG
 
-1. Na folha de implantação, clique em **Ir para recurso** para abrir a folha do grupo de segurança de rede **az104-04-nsg01**.
+1. No portal do Azure, pesquise e selecione `Network security groups`.
 
-1. Na folha do grupo de segurança de rede **az104-04-nsg01**, clique na seção **Configurações** e clique em **Regras de segurança de entrada**.
-
-1. Adicione uma regra de entrada com as seguintes configurações (deixe outras com seus valores padrão):
+1. Selecione **+ Criar** e forneça informações na guia **Noções básicas**. 
 
     | Configuração | Valor |
-    | --- | --- |
-    | Fonte | **Qualquer** |
-    | Intervalos de portas de origem | * |
+    | -- | -- |
+    | Subscription | *sua assinatura* |
+    | Grupo de recursos | **az104-rg4** |
+    | Nome | `myNSGSecure` |
+    | Region | **Leste dos EUA**  |
+
+1. Clique em **Revisar + criar** e após a validação, clique em **Criar**.
+
+1. Depois que o NSG for implantado, clique em **Ir para o recurso**.
+
+1. Em **Configurações**, clique em **Sub-redes** e em **Associar**.
+
+    | Configuração | Valor |
+    | -- | -- |
+    | Rede virtual | **CoreServicesVnet (az104-rg4)** |
+    | Sub-rede | **SharedServicesSubnet** |
+
+1. Clique em **OK** para salvar a associação.
+
+### Configure uma regra de segurança de entrada para permitir o tráfego ASG
+
+1. Continue trabalhando com o seu NSG. Na área **Configurações**, selecione **Regras de segurança de entrada**.
+
+1. Revise as regras de entrada padrão. Observe que somente outras redes virtuais e balanceadores de carga têm acesso permitido.
+
+1. Selecione **+ Adicionar**.
+
+1. Na folha **Adicionar regra de segurança de entrada**, use as informações a seguir para adicionar uma regra de porta de entrada. Essa regra permite o tráfego ASG. Quando terminar, selecione **Adicionar**.
+
+    | Configuração | Valor |
+    | -- | -- |
+    | Fonte | **Grupo de segurança do aplicativo** |
+    | Grupos de segurança de aplicativos de origem | **asg-web** |
+    | Intervalos de portas de origem |  * |
     | Destino | **Qualquer** |
-    | Serviço | **RDP** |
+    | Serviço | **Personalizado** (observe suas outras opções) |
+    | Intervalos de portas de destino | **80,443** |
+    | Protocolo | **TCP** |
     | Ação | **Permitir** |
-    | Prioridade | **300** |
-    | Nome | **AllowRDPInBound** |
+    | Prioridade | **100** |
+    | Nome | `AllowASG` |
 
-1. Na folha **az104-04-nsg01** do grupo de segurança de rede, na seção **Configurações**, clique em **Interfaces de rede** e, em seguida, clique em  **+ Associar**.
+### Configure uma regra do NSG de saída que negue o acesso à Internet
 
-1. Associe o grupo de segurança de rede **az104-04-nsg01** às interfaces de rede **az104-04-nic0** e **az104-04-nic1**.
+1. Depois de criar a sua regra do NSG de entrada, selecione **Regras de segurança de saída**. 
 
-    >**Observação**: pode levar até 5 minutos para que as regras do Grupo de Segurança de Rede recém-criado sejam aplicadas à Placa de Interface de Rede.
+1. Observe a regra **AllowInternetOutboundRule**. Observe também que a regra não pode ser excluída e a prioridade é 65001.
 
-1. Inicie as máquinas virtuais **az104-04-vm0** e **az104-04-vm1**.
-
-1. Navegue de volta para a folha da máquina virtual **az104-04-vm0**.
-
-    >**Observação**: nas etapas subsequentes, você verificará se pode se conectar com êxito à máquina virtual de destino.
-
-1. Na folha **az104-04-vm0**, clique em **Conectar** e clique em **RDP**. Na folha **Conectar com RDP**, clique em **Baixar arquivo RDP** usando o endereço IP público e siga as instruções para iniciar a sessão de área de trabalho remota.
-
-    >**Observação**: esta etapa refere-se à conexão via Área de Trabalho Remota a partir de um computador Windows. Em um Mac, você pode usar o Cliente de Área de Trabalho Remota na Mac App Store e, em computadores Linux, pode usar um software cliente RDP de código aberto.
-
-    >**Observação**: você pode ignorar quaisquer prompts de aviso ao se conectar às máquinas virtuais de destino.
-
-1. Quando solicitado, entre com um nome de usuário e senha.
-
-    >**Observação**: deixe a sessão de ambiente de trabalho remoto aberta. Isso será necessário na próxima tarefa.
-
-## Tarefa 5: configurar o DNS do Azure para resolução de nomes interna
-
-Nesta tarefa, você configurará a resolução de nomes DNS em uma rede virtual usando zonas DNS privadas do Azure.
-
-1. No portal do Azure, procure e selecione **Zonas de DNS Privadas** e, na folha **Zonas de DNS Privadas**, clique em **+ Criar**.
-
-1. Crie uma zona de DNS privada com as seguintes configurações (deixe os outros parâmetros com seus valores padrões):
+1. Selecione **+ Adicionar** e configure uma regra de saída que negue acesso à Internet. Quando terminar, selecione **Adicionar**.
 
     | Configuração | Valor |
-    | --- | --- |
-    | Assinatura | o nome da assinatura do Azure que você está usando neste laboratório |
-    | Grupo de recursos | **az104-04-rg1** |
-    | Nome | **contoso.org** |
+    | -- | -- |
+    | Fonte | **Qualquer** |
+    | Intervalos de portas de origem |  * |
+    | Destino | **Marca do serviço** |
+    | Marca de serviço de destino | **Internet** |
+    | Serviço | **Personalizado** |
+    | Intervalos de portas de destino | **8080** |
+    | Protocolo | **Qualquer** |
+    | Ação | **Deny** |
+    | Prioridade | **4096** |
+    | Nome | **DenyAnyCustom8080Outbound** |
 
-1. Clique em **Revisar e criar**. Deixe a validação ocorrer e clique em **Criar** novamente para enviar sua implantação.
 
-    >**Observação**: aguarde até que a zona de DNS privada seja criada. Isso deverá levar cerca de dois minutos.
+## Tarefa 4: Configurar zonas DNS públicas e privadas do Azure
 
-1. Clique em **Ir para o recurso** para abrir a folha de zona DNS privada**contoso.org**.
+Nesta tarefa, você criará e configurará zonas DNS públicas e privadas. 
 
-1. Na folha de zona DNS privada **contoso.org**, na seção **Configurações**, clique em **Links de rede virtual**
+### Configurar uma zona DNS pública
 
-1. Clique em **+ Adicionar** para criar um link de rede virtual com as seguintes configurações (deixe as outras com seus valores padrão):
+Você pode configurar o DNS do Azure para resolver nomes de host em seu domínio público. Por exemplo, se você comprou o nome de domínio contoso.xyz de um registrador de nomes de domínio, poderá configurar o DNS do Azure para hospedar o domínio `contoso.com` e resolver www.contoso.xyz para o endereço IP do seu servidor Web ou aplicativo Web.
 
-    | Configuração | Valor |
-    | --- | --- |
-    | Nome do link | **az104-04-vnet1-link** |
-    | Assinatura | nome da assinatura que você está usando neste laboratório |
-    | Rede virtual | **az104-04-vnet1** |
-    | Habilitar o registro automático | Habilitado |
+1. No portal, pesquise e selecione `DNS zones`.
 
-1. Clique em **OK.**
+1. Selecione **+ Criar**.
 
-    >**Observação:** aguarde até que o link de rede virtual seja criado. Isso deverá levar menos de 1 minuto.
+1. Configure a guia **Noções básicas**.
 
-1. Na folha de zona DNS privada **contoso.org**, na barra lateral, clique em **Visão geral**
+    | Propriedade | Valor    |
+    |:---------|:---------|
+    | Subscription | **Selecione sua assinatura** |
+    | Grupo de recursos | **az04-rg4** |
+    | Nome | `contoso.com` (se reservado ajuste o nome) |
+    | Region |**Leste dos EUA** (revise o ícone informativo) |
 
-1. Verifique se os registros DNS para **az104-04-vm0** e **az104-04-vm1** aparecem na lista de conjuntos de registros como **Registrado automaticamente**.
+1. Selecione **Revisar + criar** e, em seguida, **Criar**.
+   
+1. Aguarde a implantação da zona DNS e selecione **Ir para o recurso**.
 
-    >**Observação:** talvez seja necessário aguardar alguns minutos e atualizar a página se os conjuntos de registros não estiverem listados.
+1. Na folha **Visão geral** observe os nomes dos quatro servidores de nomes DNS do Azure atribuídos à zona. **Copie** um dos endereços do servidor de nomes. Você precisará dela em uma etapa posterior. 
+  
+1. Selecione **+ Conjunto de registros**. Você adiciona um registro de link de rede virtual para cada rede virtual que precisa de suporte à resolução de nomes privados.
 
-1. Alterne para a sessão da Área de Trabalho Remota para **az104-04-vm0**, clique com o botão direito do mouse no botão **Iniciar** e, no menu do botão direito do mouse, clique em **Windows PowerShell (Administrador)**.
-
-1. Na janela do console do Windows PowerShell, execute o seguinte para testar a resolução de nomes internos na zona DNS privada recém-criada:
-
-   ```powershell
-   nslookup az104-04-vm0.contoso.org
-   nslookup az104-04-vm1.contoso.org
-   ```
-
-1. Verifique se a saída do comando inclui o endereço IP privado de **az104-04-vm1** (**10.40.1.4**).
-
-## Tarefa 6: configurar o DNS do Azure para resolução de nomes externos
-
-Nesta tarefa, você configurará a resolução de nomes DNS externos usando zonas DNS públicas do Azure.
-
-1. Em um navegador da Web, abra uma nova guia e navegue até <https://www.godaddy.com/domains/domain-name-search>.
-
-1. Use a pesquisa de nome de domínio para identificar um nome de domínio que não está em uso.
-
-1. No portal do Azure, procure e selecione **zonas DNS** e, na folha **Zonas DNS**, clique em **+ Criar**.
-
-1. Crie uma zona DNS com as seguintes configurações (deixe as outras com seus valores padrão):
-
-    | Configuração | Valor |
-    | --- | --- |
-    | Assinatura | o nome da assinatura do Azure que você está usando neste laboratório |
-    | Grupo de recursos | **az104-04-rg1** |
-    | Nome | o nome de domínio DNS que você identificou anteriormente nesta tarefa |
-
-1. Clique em **Revisar e criar**. Deixe a validação ocorrer e clique em **Criar** novamente para enviar sua implantação.
-
-    >**Observação**: aguarde até que a zona DNS seja criada. Isso deverá levar cerca de dois minutos.
-
-1. Clique em **Ir para recurso** para abrir a folha da zona DNS recém-criada.
-
-1. Na folha zona DNS, clique em **+ Conjunto de registros**.
-
-1. Adicione um conjunto de registros com as seguintes configurações (deixe as outras com seus valores padrão):
-
-    | Configuração | Valor |
-    | --- | --- |
-    | Nome | **az104-04-vm0** |
+    | Propriedade | Valor    |
+    |:---------|:---------|
+    | Nome | **www** |
     | Tipo | **A** |
-    | Conjunto de registros de alias | **Não** |
     | TTL | **1** |
-    | Unidade de TTL | **Horas** |
-    | Endereço IP | o endereço IP público de **az104-04-vm0** que você identificou no terceiro exercício deste laboratório |
+    | Endereço IP | **10.1.1.4** |
 
-1. Clique em **OK**
+>**Observação:**  Em um cenário real, você inseriria o endereço IP público do seu servidor Web.
 
-1. Na folha zona DNS, clique em **+ Conjunto de registros**.
+1. Selecione **OK** e verifique se **contoso.com** tem um conjunto de registros A chamado **www**.
 
-1. Adicione um conjunto de registros com as seguintes configurações (deixe as outras com seus valores padrão):
+1. Abra um prompt de comando e execute o seguinte:
 
-    | Configuração | Valor |
-    | --- | --- |
-    | Nome | **az104-04-vm1** |
+   ```sh
+   nslookup www.contoso.com <name server name>
+   ```
+1. Verifique se o nome do host www.contoso.com é resolvido para o endereço IP fornecido. Isso confirma que a resolução de nomes está funcionando corretamente.
+
+### Configurar uma zona DNS privada
+
+Uma zona DNS privada fornece serviços de resolução de nomes em redes virtuais. Uma zona DNS privada só pode ser acessada pelas redes virtuais às quais está vinculada e não pode ser acessada pela Internet. 
+
+1. No portal, pesquise e selecione `Private dns zones`.
+
+1. Selecione **+ Criar**.
+
+1. Na guia **Noções básicas** em Criar zona de DNS privada, insira as informações conforme listadas na tabela abaixo:
+
+    | Propriedade | Valor    |
+    |:---------|:---------|
+    | Subscription | **Selecione sua assinatura** |
+    | Grupo de recursos | **az04-rg4** |
+    | Nome | `private.contoso.com` (ajuste se você tiver que renomear) |
+    | Region |**Leste dos EUA** |
+
+1. Selecione **Revisar + criar** e, em seguida, **Criar**.
+   
+1. Aguarde a implantação da zona DNS e selecione **Ir para o recurso**.
+
+1. Observe na folha **Visão geral** que não há registros de servidor de nomes. 
+
+1. Selecione **+ Links de rede virtual** e selecione **+ Adicionar**. 
+
+    | Propriedade | Valor    |
+    |:---------|:---------|
+    | Nome do link | `manufacturing-link` |
+    | Rede virtual | `ManufacturingVnet` |
+
+1. Selecione **OK** e aguarde até que o link seja criado. 
+
+1. Na folha **Visão geral**, selecione **+ Conjunto de registros**. Agora você adicionaria um registro para cada máquina virtual que precisa de suporte para resolução de nomes privados.
+
+    | Propriedade | Valor    |
+    |:---------|:---------|
+    | Nome | **sensorvm** |
     | Tipo | **A** |
-    | Conjunto de registros de alias | **Não** |
     | TTL | **1** |
-    | Unidade de TTL | **Horas** |
-    | Endereço IP | o endereço IP público de **az104-04-vm1** que você identificou no terceiro exercício deste laboratório |
+    | Endereço IP | **10.1.1.4** |
 
-1. Clique em **OK**
-
-1. Na folha zona DNS, anote o nome da entrada **Servidor de nomes 1**.
-
-1. No portal do Azure, abra a sessão do **PowerShell** no ** Cloud Shell** clicando no ícone no canto superior direito do portal do Azure.
-
-1. No painel do Cloud Shell, execute o seguinte para testar a resolução de nomes externa do conjunto de registros DNS **az104-04-vm0** na zona DNS recém-criada (substitua o espaço reservado `[Name server 1]` pelo nome do **Servidor de nomes 1** que você anotou anteriormente nesta tarefa e o espaço reservado `[domain name]` pelo nome do domínio DNS criado anteriormente nesta tarefa):
-
-   ```powershell
-   nslookup az104-04-vm0.[domain name] [Name server 1]
-   ```
-
-1. Verifique se a saída do comando inclui o endereço IP público de **az104-04-vm0**.
-
-1. No painel do Cloud Shell, execute o seguinte para testar a resolução de nomes externa do conjunto de registros DNS **az104-04-vm1** na zona DNS recém-criada (substitua o espaço reservado `[Name server 1]` pelo nome do **Servidor de nomes 1** que você anotou anteriormente nesta tarefa e o espaço reservado `[domain name]` pelo nome do domínio DNS criado anteriormente nesta tarefa):
-
-   ```powershell
-   nslookup az104-04-vm1.[domain name] [Name server 1]
-   ```
-
-1. Verifique se a saída do comando inclui o endereço IP público de **az104-04-vm1**.
+ >**Observação:**  Em um cenário real, você inseriria o endereço IP de uma máquina virtual de fabricação específica.
 
 ## Limpar os recursos
 
- > **Observação**: lembre-se de remover todos os recursos recém-criados do Azure que você não usa mais. Remover recursos não utilizados garante que você não veja encargos inesperados.
+Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto para excluir os recursos do laboratório. Isso garantirá que os recursos sejam liberados e que o custo seja minimizado. A maneira mais fácil de excluir os recursos do laboratório é excluir o grupo de recursos do laboratório. 
 
- > **Observação**: não se preocupe se os recursos do laboratório não puderem ser removidos imediatamente. Às vezes, os recursos têm dependências e levam mais tempo para serem excluídos. É uma tarefa comum do Administrador monitorar o uso de recursos. Portanto, basta revisar periodicamente seus recursos no Portal para ver como a limpeza está indo. 
++ No portal do Azure, selecione o grupo de recursos e, em seguida, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
++ Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Usar a CLI, `az group delete --name resourceGroupName`.
+ 
+## Principais aspectos a serem lembrados
 
-1. No portal do Azure, abra a sessão **PowerShell** no painel **Cloud Shell**.
+Parabéns por concluir o laboratório. Aqui estão as principais lições deste laboratório. 
 
-1. Liste todos os grupos de recursos criados em todos os laboratórios deste módulo executando o seguinte comando:
++ Uma rede virtual é uma representação da sua própria rede na nuvem. 
++ Ao projetar redes virtuais, é uma boa prática evitar a sobreposição de intervalos de endereços IP. Isso reduzirá os problemas e simplificará a solução de problemas.
++ Uma sub-rede é um intervalo de endereços IP na rede virtual. Você pode dividir a rede virtual em várias sub-redes para fins de organização e segurança.
++ Um grupo de segurança de rede contém regras de segurança que permitem ou negam o tráfego de rede. Há regras de entrada e saída padrão que você pode personalizar de acordo com suas necessidades.
++ Os grupos de segurança de aplicativos são usados para proteger grupos de servidores com uma função comum, como servidores Web ou servidores de banco de dados.
++ O DNS do Azure é um serviço de hospedagem para domínios DNS que fornece a resolução de nomes. Você pode configurar o DNS do Azure para resolver nomes de host em seu domínio público.  Você também pode usar zonas DNS privadas para atribuir nomes DNS a máquinas virtuais (VMs) em suas redes virtuais do Azure.
 
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-04*'
-   ```
+## Saiba mais com treinamento individual
 
-1. Exclua todos os grupos de recursos criados em todos os laboratórios deste módulo executando o seguinte comando:
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-04*' | Remove-AzResourceGroup -Force -AsJob
-   ```
-
-    >**Observação**: o comando é executado de maneira assíncrona (conforme determinado pelo parâmetro -AsJob), portanto, embora você possa executar outro comando do PowerShell imediatamente após na mesma sessão do PowerShell, levará alguns minutos antes dos grupos de recursos serem de fato removidos.
-
-## Revisão
-
-Neste laboratório, você vai:
-
-+ Criou e configurou uma rede virtual.
-+ Implantar máquinas virtuais na rede virtual
-+ Configurou endereços IP públicos e privados de VMs do Azure
-+ Configurou grupos de segurança de rede
-+ Configurou o DNS do Azure para resolução de nomes interna
-+ Configurou o DNS do Azure para resolução de nomes externa.
++ [Introdução às Redes Virtuais do Azure](https://learn.microsoft.com/training/modules/introduction-to-azure-virtual-networks/). Projete e implemente a infraestrutura principal da Rede do Azure, como redes virtuais, IPs públicos e privados, DNS, emparelhamento de rede virtual, roteamento e NAT Virtual do Azure.
++ [Criar um esquema de endereçamento IP](https://learn.microsoft.com/training/modules/design-ip-addressing-for-azure/). Identifique os recursos de endereçamento IP público e privado das redes virtuais locais e do Azure.
++ [Proteger e isolar o acesso aos recursos do Azure usando grupos de segurança de rede e pontos de extremidade de serviço](https://learn.microsoft.com/training/modules/secure-and-isolate-with-nsg-and-service-endpoints/). Os Grupos de Segurança de Rede e os pontos de extremidade de serviço ajudam você a assegurar que as máquinas virtuais e os serviços do Azure sejam protegidos contra o acesso não autorizado à rede.
++ [Hospede seu domínio no DNS do Azure](https://learn.microsoft.com/training/modules/host-domain-azure-dns/). Crie uma zona DNS para seu nome de domínio. Crie registros DNS para mapear o domínio para um endereço IP. Teste se o nome de domínio é resolvido para o seu servidor Web.
+  

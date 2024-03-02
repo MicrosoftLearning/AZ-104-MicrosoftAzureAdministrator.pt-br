@@ -1,133 +1,276 @@
 ---
 lab:
-  title: 'Laboratório: gerenciar recursos do Azure com os modelos do ARM'
+  title: 'Laboratório 03: Gerenciar recursos do Azure usando Modelos do Azure Resource Manager'
   module: Administer Azure Resources
 ---
 
-# Laboratório: gerenciar recursos do Azure com os modelos do ARM
-# Manual do aluno
+# Laboratório 03 – Gerenciar recursos do Azure usando Modelos do Azure Resource Manager
 
+## Introdução ao laboratório
+
+Neste laboratório, você aprenderá a automatizar implantações de recursos. Você aprenderá sobre modelos do Azure Resource Manager e modelos do Bicep. Você aprenderá sobre as diferentes maneiras de implantar os modelos. 
+
+Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode afetar a disponibilidade de recursos neste laboratório. Você pode alterar a região, mas as etapas são escritas usando o **Leste dos EUA**. 
+
+## Tempo estimado: 50 minutos
+
+## Simulações interativas do laboratório
+
+Há simulações interativas do laboratório que podem ser úteis para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Existem diferenças entre a simulação interativa e este laboratório, mas muitos dos conceitos centrais são os mesmos. Não é necessária uma assinatura do Azure. 
+
++ [Gerenciar recursos do Azure usando modelos do Azure Resource Manager](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205). Examine, crie e implante um disco gerenciado com um modelo.
+  
++ [Criar uma máquina virtual com um modelo](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%209). Implantar uma máquina virtual com um modelo de início rápido.
+  
 ## Cenário do laboratório
-Agora que você explorou os recursos básicos de administração do Azure associados ao provisionamento de recursos e organizou-os com base em grupos de recursos usando o portal do Azure, você precisa executar a tarefa equivalente usando modelos do Gerenciador de Recursos do Azure.
 
-**Nota:** Uma **[simulação](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205)** de laboratório interativa está disponível que permite que você clique neste laboratório no seu próprio ritmo. Você pode encontrar pequenas diferenças entre a simulação interativa e o laboratório hospedado, mas os principais conceitos e ideias que estão sendo demonstrados são os mesmos. 
-
-## Objetivos
-
-Neste laboratório, você vai:
-
-+ Tarefa 1: examinar um modelo do ARM para implantação de um disco gerenciado do Azure.
-+ Tarefa 2: criar um disco gerenciado do Azure usando um modelo do ARM.
-+ Tarefa 3: examinar a implantação baseada em modelo do ARM do disco gerenciado.
-
-## Tempo estimado: 20 minutos
+Sua equipe deseja procurar maneiras de automatizar e simplificar as implantações de recursos. Sua organização está procurando maneiras de reduzir a sobrecarga administrativa, reduzir o erro humano e aumentar a consistência.  
 
 ## Diagrama de arquitetura
 
-![imagem](../media/lab03b.png)
+![Diagrama das tarefas.](../media/az104-lab03-architecture.png)
 
-### Instruções
+## Habilidades de trabalho
 
-## Exercício 1
++ Tarefa 1: Crie um modelo do Azure Resource Manager.
++ Tarefa 2: Editar um modelo do Azure Resource Manager e reimplante o modelo.
++ Tarefa 3: Configurar o Cloud Shell e implantar um modelo com o Azure PowerShell.
++ Tarefa 4: Implantar um modelo com a CLI. 
++ Tarefa 5: Implantar um recurso usando o Azure Bicep.
 
-## Tarefa 1: examinar um modelo do ARM para implantação de um disco gerenciado do Azure.
+## Tarefa 1: Criar um modelo do Azure Resource Manager
 
-1. Entre no [**portal do Azure**](http://portal.azure.com).
+Nesta tarefa, criaremos um disco gerenciado no portal do Azure. Os discos gerenciados são armazenamento projetados para serem usados com as máquinas virtuais. Depois que o disco for implantado, você exportará um modelo que poderá ser usado em outras implantações.
 
-1. No portal do Azure, procure por **Grupos de recursos** e selecione essa opção. 
+1. Entre no **portal do Azure** - `https://portal.azure.com`.
 
-1. Na lista de grupos de recursos, clique em **SalesTeamRG**.
+1. Pesquise e selecione `Disks`.
 
-1. Na folha do **grupo de recursos az104-03a-rg1** , na **seção Configurações** , clique em **Implantações**.
+1. Na página Discos, selecione **Criar**.
 
-1. **Na folha az104-03a-rg1 - Implantações, clique na primeira entrada na lista de implantações**.
-
-1. **Na folha Microsoft.ManagedDisk-XXXXXXXXX** \| Overview**, clique em **Modelo**.
-
-    >**Observação**: revise o conteúdo do modelo e observe que você tem a opção de **baixá-lo** para o computador local, **Adicionar à biblioteca** ou **Implantá-lo** novamente.
-
-1. Clique em **Baixar** e salve o arquivo compactado que contém os arquivos de modelo e parâmetros na pasta Downloads** no computador do **laboratório.
-
-1. **Na folha Microsoft.ManagedDisk-XXXXXXXXX** \| Template**, clique em **Inputs**.
-
-1. Observe o valor do parâmetro de saída  . Isso será necessário na próxima etapa.
-
-1. Extraia o conteúdo do arquivo zip baixado para uma pasta local no computador.
-
-    >**Nota**: Esses arquivos também estão disponíveis como **\\Allfiles Labs 03 az104-03b-md-template.json e **\\Allfiles\\\\Labs\\\\03\\\\az104-03b-md-parameters.json****
+1. Na página **Criar um disco gerenciado**, configure o disco e selecione **Ok**. 
     
-1. Feche todas as **janelas do Explorador** de Arquivos.
+    | Configuração | Valor |
+    | --- | --- |
+    | Subscription | *sua assinatura* | 
+    | Grupo de recursos | `az104-rg3` (Se necessário, selecione **Criar novo**.)
+    | Nome do disco | `az104-disk1` | 
+    | Region | **Leste dos EUA** |
+    | Zona de disponibilidade | **Nenhuma redundância de infraestrutura necessária** | 
+    | Tipo de origem | **Nenhuma** |
+    | Desempenho | **HDD Standard** (alterar tamanho) |
+    | Tamanho | **32 Gib** | 
 
-## Tarefa 2: criar um disco gerenciado do Azure usando um modelo do ARM.
+    >**Observação:** Estamos criando um disco gerenciado simples para que você possa praticar com os modelos. Os discos gerenciados do Azure são volumes de armazenamento em nível de bloco gerenciados pelo Azure.
 
-1. No portal do Azure, pesquise e selecione **Implantar um modelo personalizado**.
+1. Clique em **Examinar + Criar** e selecione **Criar**.
 
-1. Na **página Implantação personalizada**, clique em **Criar seu modelo no editor**.
+1. Monitore as notificações (canto superior direito) e, após a implantação, selecione **Ir para o recurso**. 
 
-1. **Na folha Editar modelo**, clique em **Carregar arquivo e carregue o **arquivo** template.json** que você baixou na tarefa anterior.
+1. Na folha **Automação**, selecione **Exportar modelo**. 
 
-1. No painel do editor, remova as seguintes linhas:
+1. Reserve um minuto para examinar os arquivos **Modelo** e **Parâmetros**.
 
-   ```json
-   "sourceResourceId": {
-       "type": "String"
-   },
-   ```
+1. Clique em **Baixar** e salve os modelos na unidade local. Isso cria um arquivo zip compactado. 
 
-   ```json
-   "hyperVGeneration": {
-       "defaultValue": "V1",
-       "type": "String"
-   },      
-   ```
+1. Use o Explorador de Arquivos para extrair o conteúdo do arquivo baixado na pasta **Downloads** em seu computador. Observe que há dois arquivos JSON (modelo e parâmetros). 
 
-    >**Nota**: Esses parâmetros foram removidos, pois não são aplicáveis à implantação atual. Em particular, os parâmetros sourceResourceId, sourceUri, osType e hyperVGeneration são aplicáveis à criação de um disco do Azure a partir de um arquivo VHD existente.
+   >**Você sabia?**  Você pode exportar um grupo de recursos inteiro ou apenas recursos específicos dentro desse grupo de recursos.
 
-1. **Salve** as alterações.
+## Tarefa 2: Editar um modelo do Azure Resource Manager e, em seguida, reimplante o modelo
 
-1. De volta à **folha Implantação** personalizada, clique em **Editar parâmetros**. 
+Nesta tarefa, você usa o modelo baixado para implantar um novo disco gerenciado. Essa tarefa descreve como repetir implantações com rapidez e facilidade. 
 
-1. **Na folha Editar parâmetros**, clique em **Carregar arquivo e carregue o **arquivo** parameters.json** que você baixou na tarefa anterior e **Salve** as alterações.
+1. No portal do Azure, pesquise e selecione `Deploy a custom template`.
 
-1. De volta à **folha Implantação** personalizada, especifique as seguintes configurações:
+1. Na folha **Implantação personalizada**, observe que há a capacidade de usar um **Modelo de início rápido**. Há muitos modelos internos, conforme mostrado no menu suspenso. 
+
+1. Em vez de usar um início rápido, selecione **Criar seu próprio modelo no editor**.
+
+1. Na folha **Editar modelo**, clique em **Carregar arquivo** e carregue o arquivo **template.json** que você baixou no disco local.
+
+1. No painel do editor, faça estas alterações.
+
+    + Altere **disks_az104_disk1_name** para `disk_name` (dois lugares para alterar)
+    + Altere **az104_disk1** para `az102_disk2` (um lugar para alterar)
+
+1. Observe que este é um disco **Standard**. O local é **eastus**. O tamanho do disco é de **32 GB**.
+
+1. **Salve** suas alterações.
+
+1. Não se esqueça do arquivo de parâmetros. Selecione **Editar parâmetros**, clique em **Carregar arquivo** e carregue o **parameters.json**. 
+
+1. Faça esta alteração para que corresponda ao arquivo de modelo.
+
+    Altere **disks_az104_disk1_name** para **disk_name** (um lugar para alterar)
+
+1. **Salve** suas alterações. 
+
+1. Conclua as configurações de implantação personalizadas:
 
     | Configuração | Valor |
     | --- |--- |
-    | Subscription | Nome da assinatura que você está usando neste laboratório |
-    | Grupo de recursos | O nome de um novo grupo de recursos aks-01-RG |
-    | Region | o nome de qualquer região do Azure disponível na assinatura que você está usando neste laboratório |
-    | Nome do disco | az104-03b-disk1 |
-    | Location | O valor do parâmetro Location que você anotou na tarefa anterior |
-    | Sku | Standard_LRS |
-    | Tamanho do disco (GB) | **32** |
-    | Criar opção | **empty** |
-    | Tipo de criptografia de disco | **EncryptionAtRestWithPlatformKey** |
-    | Modo de acesso a dados | Nenhum |
-    | Política de acesso de rede pública | AllowAll |
-    | Acesso à rede pública | Desabilitadas |
+    | Subscription | *sua assinatura* |
+    | Grupo de recursos | `az104-rg3` |
+    | Região | **(EUA) Leste dos EUA** |
+    | Disk_name | `az104-disk2` |
 
 1. Selecione **Examinar + Criar** e **Criar**.
 
-1. Verifique se a implantação foi concluída com êxito.
+1. Selecione **Ir para o recurso**. Verifique se **o az104-disk2** foi criado.
 
-## Tarefa 3: examinar a implantação baseada em modelo do ARM do disco gerenciado.
+1. Na folha **Visão geral**, selecione o grupo de recursos, **az104-rg3**. Agora você deve ter dois discos.
+   
+1. Na seção **Configurações**, clique em **Implantações**.
 
-1. No portal do Azure, procure por **Grupos de recursos** e selecione essa opção. 
+    >**Observação:** Todos os detalhes das implantações estão documentados no grupo de recursos. É uma boa prática examinar as primeiras implantações baseadas em modelo para garantir o sucesso antes de usar os modelos para operações em grande escala.
 
-1. Na lista de grupos de recursos, clique em **SalesTeamRG**.
+1. Selecione uma implantação e examine o conteúdo das folhas **Entrada** e **Modelo**.
 
-1. Na folha do **grupo de recursos az104-03b-rg1** , na **seção Configurações** , clique em **Implantações**.
+## Tarefa 3: Configurar o Cloud Shell e implantar um modelo com o Azure PowerShell
 
-1. **Na folha az104-03b-rg1 - Implantações, clique na primeira entrada na lista de implantações** e revise o **conteúdo das folhas Entrada** e **Modelo**.
+Nesta tarefa, você trabalha com o Azure Cloud Shell e o Azure PowerShell. O Azure Cloud Shell é um terminal interativo, autenticado e acessível pelo navegador para o gerenciamento de recursos do Azure. Ele dá a você a flexibilidade de escolher a experiência de shell que melhor se adequa ao modo como você trabalha, seja com o Bash ou o PowerShell. Nesta tarefa, você usa o PowerShell para implantar um modelo. 
+
+1. Selecione o ícone **Cloud Shell** no canto superior direito do portal do Azure. Como alternativa, você pode navegar diretamente para `https://shell.azure.com`.
+
+   ![Captura de tela do ícone do Cloud Shell.](../media/az104-lab03-cloudshell-icon.png)
+
+1. Quando solicitado a selecionar **Bash** ou **PowerShell**, selecione **PowerShell**. 
+
+    >**Você sabia?**  Se você trabalha principalmente com sistemas Linux, o Bash (CLI) será mais familiar. Se você trabalha principalmente com sistemas Windows, o Azure PowerShell será mais familiar. 
+
+1. No tela **Você não tem armazenamento montado** selecione **Mostrar configurações avançadas** e fornecer as informações necessárias. 
+
+    >**Observação:** Como você trabalha com o Cloud Shell, uma conta de armazenamento e um compartilhamento de arquivo são necessários. 
+
+    | Configurações | Valores |
+    |  -- | -- |
+    | Grupo de recursos | **az104-rg3** |
+    | Conta de armazenamento (Criar nova) | `sacloudshell` (deve ser globalmente exclusivo, ter entre 3 e 24 caracteres e usar apenas números e letras minúsculas) |
+    | Compartilhamento de arquivo (Criar novo) | `fs-cloudshell` |
+
+1. Quando concluído, selecione **Criar armazenamento**. Você só precisa fazer isso na primeira vez que usar o Cloud Shell. Levará alguns minutos para provisionar o armazenamento.
+
+1. Use o ícone **Carregar/Baixar arquivos** para carregar o modelo e o arquivo de parâmetros do diretório de downloads. Você precisará carregar cada arquivo separadamente.
+
+1. Verifique se os arquivos estão disponíveis no armazenamento do Cloud Shell. 
+
+    ```powershell
+    dir
+    ```
+    >**Observação**: Se precisar, você poderá usar **cls** para limpar a janela de comando. Você pode usar as teclas de direção para mover o histórico de comandos.
+   
+1. Selecione o ícone do **Editor** (colchetes) e navegue até o arquivo JSON de parâmetros.
+
+1. Faça uma alteração. Por exemplo, altere o nome do disco para **az104-disk3**. Use **Ctrl +S** para salvar suas alterações. 
+
+    >**Observação**: Você pode direcionar sua implantação de modelo para um grupo de recursos, assinatura, grupo de gerenciamento ou locatário. Dependendo do escopo da implantação, você usará comandos diferentes.
+
+1. Para implantar em um grupo de recursos, use **New-AzResourceGroupDeployment**.
+
+    ```powershell
+    New-AzResourceGroupDeployment -ResourceGroupName az104-rg3 -TemplateFile template.json -TemplateParameterFile parameters.json
+    ```
+1. Verifique se o comando foi concluído e se o ProvisioningState foi **Bem-sucedido**.
+
+1. Confirme se o disco foi criado.
+
+   ```powershell
+   Get-AzDisk
+   ```
+   
+## Tarefa 4: Implantar um modelo com a CLI 
+
+1. Continue no **Cloud Shell**, selecione **Bash**. **Confirme** sua escolha.
+
+1. Verifique se os arquivos estão disponíveis no armazenamento do Cloud Shell. Se você concluiu a tarefa anterior, os arquivos de modelo devem estar disponíveis. 
+
+    ```sh
+    ls
+    ```
+
+1. Selecione o ícone do **Editor** (colchetes) e navegue até o arquivo JSON de parâmetros.
+
+1. Faça uma alteração. Por exemplo, altere o nome do disco para **az104-disk4**. Use **Ctrl +S** para salvar suas alterações. 
+
+    >**Observação**: Você pode direcionar sua implantação de modelo para um grupo de recursos, assinatura, grupo de gerenciamento ou locatário. Dependendo do escopo da implantação, você usará comandos diferentes.
+
+1. Para implantar em um grupo de recursos, use **az deployment group create**.
+
+    ```sh
+    az deployment group create --resource-group az104-rg3 --template-file template.json --parameters parameters.json
+    ```
+    
+1. Verifique se o comando foi concluído e se o ProvisioningState foi **Bem-sucedido**.
+
+1. Confirme se o disco foi criado.
+
+     ```sh
+     az disk list --output table
+     ```
+   
+## Tarefa 5: Implantar um recurso usando o Azure Bicep
+
+Nesta tarefa, você usará um arquivo do Bicep para implantar um disco gerenciado. O Bicep é uma ferramenta de automação declarativa criada em modelos do ARM.
+
+1. Continue trabalhando no **Cloud Shell** em uma sessão do **Bash**.
+
+1. Localize e baixe o arquivo **\Allfiles\Lab03\azuredeploydisk.bicep**.
+
+1. **Carregue** o arquivo bicep no Cloud Shell. 
+
+1. Selecione o ícone do **Editor** (colchetes) e navegue até o arquivo.
+
+1. Reserve um minuto para ler o arquivo de modelo do bicep. Observe como o recurso do disco é definido. 
+   
+1. Faça as seguintes alterações:
+
+    + Altere o valor **managedDiskName** para `Disk4`.
+    + Altere o valor **nome do sku** para `StandardSSD_LRS`.
+    + Altere o valor **diskSizeinGiB** para `32`.
+
+1. Use **Ctrl +S** para salvar suas alterações.
+
+1. Agora, implante o modelo.
+
+    ```
+    az deployment group create --resource-group az104-rg3 --template-file azuredeploydisk.bicep
+    ```
+
+1. Confirme se o disco foi criado.
+
+    ```sh
+    az disk list --output table
+    ```
+
+    >**Observação:** Você implantou com sucesso cinco discos gerenciados, cada um de uma maneira diferente. Bom trabalho!
 
 ## Limpar os recursos
 
-   >**Observação**: não exclua os recursos implantados neste laboratório. Você fará referência a eles no próximo laboratório deste módulo.
+Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto para excluir os recursos do laboratório. Isso garantirá que os recursos sejam liberados e que o custo seja minimizado. A maneira mais fácil de excluir os recursos do laboratório é excluir o grupo de recursos do laboratório. 
 
-## Revisão
++ No portal do Azure, selecione o grupo de recursos e, em seguida, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
++ Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Usar a CLI, `az group delete --name resourceGroupName`.
+  
+## Principais aspectos a serem lembrados
 
-Neste laboratório, você vai:
+Parabéns por concluir o laboratório. Aqui estão as principais lições deste laboratório. 
 
-- Tarefa 1: examinar um modelo do ARM para implantação de um disco gerenciado do Azure.
-- Tarefa 2: criar um disco gerenciado do Azure usando um modelo do ARM.
-- Tarefa 3: examinar a implantação baseada em modelo do ARM do disco gerenciado.
++ Os modelos do Azure Resource Manager permitem implantar, gerenciar e monitorar todos os recursos da solução como um grupo, em vez de lidar com esses recursos individualmente.
++ Um modelo do Azure Resource Manager é um arquivo JSON (JavaScript Object Notation) que permite gerenciar sua infraestrutura declarativamente e não com scripts.
++ Em vez de passar parâmetros como valores embutidos em seu modelo, você pode usar um arquivo JSON separado que contém os valores do parâmetro.
++ Os modelos do Azure Resource Manager podem ser implantados de várias maneiras, incluindo o portal do Azure, o Azure PowerShell e a CLI.
++ O Bicep é uma alternativa aos modelos do Azure Resource Manager. O Bicep usa uma sintaxe declarativa para implantar os recursos do Azure. 
+
+O Bicep fornece sintaxe concisa, segurança de tipos confiável e suporte para reutilização de código. O Bicep uma experiência de criação de alto nível para suas soluções de infraestrutura como código no Azure.
+
+## Saiba mais com treinamento individual
+
++ [Implantar a infraestrutura do Azure usando modelos do ARM JSON](https://learn.microsoft.com/training/modules/create-azure-resource-manager-template-vs-code/). Grave modelos JSON do ARM (modelos do Azure Resource Manager) usando o Visual Studio Code para implantar sua infraestrutura no Azure de modo consistente e confiável.
++ [Examinar os recursos e as ferramentas do Azure Cloud Shell](https://learn.microsoft.com/training/modules/review-features-tools-for-azure-cloud-shell/). Recursos e ferramentas do Cloud Shell. 
++ [Gerenciar recursos do Azure com o Windows PowerShell](https://learn.microsoft.com/training/modules/manage-azure-resources-windows-powershell/). Este módulo explica como instalar os módulos necessários para o gerenciamento de serviços de nuvem e usar os comandos do PowerShell para executar tarefas administrativas simples em recursos de nuvem, como máquinas virtuais do Azure, assinaturas do Azure e contas de armazenamento do Azure.
++ [Introdução a Bash](https://learn.microsoft.com/training/modules/bash-introduction/). Use o Bash para gerenciar a infraestrutura de TI.
++ [Crie seu primeiro modelo do Bicep](https://learn.microsoft.com/training/modules/build-first-bicep-template/). Defina os recursos do Azure em um modelo Bicep. Melhore a consistência e a confiabilidade de suas implantações, reduza o esforço manual necessário e dimensione suas implantações entre ambientes. Ao usar parâmetros, variáveis, expressões e módulos, seu modelo será flexível e reutilizável.
+
+
