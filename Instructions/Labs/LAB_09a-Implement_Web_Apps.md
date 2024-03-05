@@ -5,78 +5,88 @@ lab:
 ---
 
 # Laboratório 09a - Implementar Aplicativos Web
-# Manual do laboratório do aluno
+
+
+## Introdução ao laboratório
+
+Neste laboratório, você aprenderá sobre os aplicativos Web do Azure. Você aprenderá a configurar um aplicativo Web para exibir um aplicativo Olá, Mundo em um repositório externo do GitHub. Você aprenderá a criar um slot de preparo e trocar pelo slot de produção. Você também aprenderá sobre o dimensionamento automático para acomodar as alterações de demanda.
+
+Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode afetar a disponibilidade de recursos neste laboratório. Você pode alterar a região, mas as etapas são escritas usando o Leste dos EUA.
+
+## Tempo estimado: 20 minutos
 
 ## Cenário do laboratório
 
-Você precisa avaliar o uso dos aplicativos Web do Azure para hospedar os sites da Contoso, hospedados atualmente nos data centers locais da empresa. Os sites estão em execução em servidores Windows usando a pilha de runtime do PHP. Você também precisa determinar como implementar práticas de DevOps aproveitando os slots de implantação de aplicativos Web do Azure.
+Sua organização está interessada nos aplicativos Web do Azure para hospedar seus sites da empresa. Atualmente, os sites estão hospedados em um data center local. Os sites estão em execução em servidores Windows usando a pilha de runtime do PHP. O hardware está se aproximando do fim da vida útil e em breve precisará ser substituído. Sua organização deseja evitar novos custos de hardware usando o Azure para hospedar os sites. 
 
-**Observação:** Uma **[simulação interativa de laboratório](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013)** está disponível para você clicar neste laboratório no seu próprio ritmo. Você pode encontrar pequenas diferenças entre a simulação interativa e o laboratório hospedado, mas os principais conceitos e ideias que estão sendo demonstrados são os mesmos. 
+## Simulações interativas do laboratório
 
-## Objetivos
+Há simulações interativas do laboratório que podem ser úteis para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Há diferenças entre a simulação interativa e este laboratório, mas muitos dos principais conceitos são os mesmos. Não é necessária uma assinatura do Azure.
 
-Neste laboratório, você vai:
-
-+ Tarefa 1: criar um aplicativo Web do Azure
-+ Tarefa 2: criar um slot de implantação de preparo
-+ Tarefa 3: definir configurações de implantação do aplicativo Web
-+ Tarefa 4: implantar código no slot de implantação de preparo
-+ Tarefa 5: trocar os slots de preparo
-+ Tarefa 6: configurar e testar o dimensionamento automático do aplicativo Web do Azure
-
-## Tempo estimado: 30 minutos
++ [Criar um aplicativo Web](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%202). Crie um aplicativo Web que execute um contêiner do Docker.
+    
++ [Implementar aplicativos Web do Azure](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013). Crie um aplicativo Web do Azure, gerencie a implantação e dimensione o aplicativo. 
 
 ## Diagrama de arquitetura
 
-![imagem](../media/lab09a.png)
+![Faça um diagrama das tarefas.](../media/az104-lab09a-architecture.png)
 
-### Instruções
+## Habilidades de trabalho
 
-## Exercício 1
++ Tarefa 1: Criar e configurar um aplicativo Web do Azure.
++ Tarefa 2: Criar e configurar um slot de implantação.
++ Tarefa 3: definir configurações de implantação do aplicativo Web.
++ Tarefa 4: Trocar os slots de implantação.
++ Tarefa 5: Configurar e testar o dimensionamento automático do aplicativo Web do Azure.
 
-## Tarefa 1: criar um aplicativo Web do Azure
+## Tarefa 1: Criar e configurar um aplicativo Web do Azure
 
-Nesta tarefa, você criará um aplicativo Web do Azure.
+Nesta tarefa, você cria um aplicativo Web do Azure. Os Serviços de Aplicativo do Azure são uma solução de Plataforma como Serviço (PAAS) para aplicativos Web, móveis e outros aplicativos baseados na Web. Os aplicativos Web do Azure fazem parte dos Serviços de Aplicativo do Azure que hospedam a maioria dos ambientes de runtime, como PHP, Java e .NET. O plano de serviço do aplicativo selecionado determina a computação, o armazenamento e os recursos do aplicativo Web. 
 
-1. Entre no [**portal do Azure**](http://portal.azure.com).
+1. Entre no **portal do Azure** - `https://portal.azure.com`.
 
-1. No portal do Azure, pesquise e selecione **Serviços de aplicativo** e, no painel **Serviços de Aplicativo**, clique em **+ Criar**.
+1. Pesquise e selecione `App services`.
+
+1. Selecione **+ Criar**, no menu suspenso, **Aplicativo Web**. Observe as outras opções. 
 
 1. Na guia **Básico** da folha **Criar Aplicativo Web**, defina as seguintes configurações (deixe as outras com seus valores padrão):
 
     | Configuração | Valor |
     | --- | ---|
-    | Subscription | nome da assinatura que você está usando neste laboratório |
-    | Grupo de recursos | o nome de um novo grupo de recursos **az104-09a-rg1** |
+    | Subscription | sua assinatura do Azure |
+    | Resource group | `az104-rg9` (Se necessário, selecione **Criar novo**) |
     | Nome do aplicativo Web | qualquer nome globalmente exclusivo |
     | Publicação | **Código** |
     | Pilha de runtime | **PHP 8.2** |
     | Sistema operacional | **Linux** |
-    | Region | o nome de uma região do Azure onde você pode provisionar aplicativos web do Azure |
-    | Planos de preços | aceite a configuração padrão |
+    | Region | **Leste dos EUA** |
+    | Planos de preços | aceite os padrões |
+    | Redundância de zona | aceite os padrões |
 
-1. Clique em **Revisar + Criar**. Na guia **Revisar + criar** da folha **Criar Aplicativo Web**, verifique se a validação foi aprovada e clique em **Criar**.
+ 1. Clique em **Examinar + criar** e, em seguida, **Criar**.
 
-    >**Observação**: aguarde até que o aplicativo web seja criado para prosseguir para a próxima tarefa. Isso deverá levar cerca de um minuto.
+    >**Observação**: Aguarde até que o aplicativo Web seja criado para prosseguir para a próxima tarefa. Isso deverá levar cerca de um minuto.
 
-1. Na folha de implantação, clique em **Ir para o recurso**.
+1. Após a implantação, selecione **Acessar recurso**.
 
-## Tarefa 2: criar um slot de implantação de preparo
+## Tarefa 2: Criar e configurar um slot de implantação
 
-Nesta tarefa, você criará um slot de implantação de preparo.
+Nesta tarefa, você criará um slot de implantação de preparo. Os slots de implantação permitem que você execute testes antes de disponibilizar seu aplicativo para o público (ou seus usuários finais). Depois de executar o teste, você poderá trocar o slot de desenvolvimento ou de preparação pelo de produção. Muitas organizações usam slots para realizar testes de pré-produção. Além disso, muitas organizações executam vários slots para cada aplicativo (por exemplo, desenvolvimento, garantia de qualidade, teste e produção).
 
-1. No painel do aplicativo web recém-implantado, clique no link **Domínio padrão** para exibir a página da web padrão em uma nova guia do navegador.
+1. Na folha do aplicativo Web recém-implantado, clique no link **Domínio padrão** para exibir a página da Web padrão em uma nova guia do navegador.
 
-1. Feche a nova guia do navegador e, no portal do Azure, na seção **Implantação** da folha do aplicativo Web, clique em **Slots de implantação**.
+1. Feche a nova guia do navegador e, no portal do Azure, na seção **Implantação** da folha Aplicativo Web, clique em **Slots de implantação**.
 
-    >**Observação**: o aplicativo Web, neste momento, tem um único slot de implantação com o rótulo **PRODUÇÃO**.
+    >**Observação**: O aplicativo Web, neste momento, tem um único slot de implantação com o rótulo **PRODUCTION**.
 
 1. Clique em **+ Adicionar slot** e adicione um novo slot com as seguintes configurações:
 
     | Configuração | Valor |
     | --- | ---|
-    | Nome | **staging** |
+    | Nome | `staging` |
     | Clone as configurações de | **Não clonar as configurações**|
+
+1. Selecione **Adicionar**.
 
 1. De volta à folha **Slots de implantação** do aplicativo Web, clique na entrada que representa o slot de preparo recém-criado.
 
@@ -84,188 +94,102 @@ Nesta tarefa, você criará um slot de implantação de preparo.
 
 1. Examine a folha do slot de preparo e observe que sua URL é diferente daquela atribuída ao slot de produção.
 
-## Tarefa 3: definir configurações de implantação do aplicativo Web
+## Tarefa 3: Definir as configurações de implantação do Aplicativo Web
 
-Nesta tarefa, você definirá as configurações de implantação do aplicativo Web.
+Nesta tarefa, você definirá as configurações de implantação do aplicativo Web. As configurações de implantação permitem a implantação contínua. Isso garante que o serviço de aplicativo tenha a versão mais recente do aplicativo.
 
-1. Na folha do slot de implantação de preparo, na seção **Implantação**, clique no **Centro de Implantação** e selecione a guia **Configurações**.
+1. No slot de preparo, selecione **Centro de implantação** e selecione **Configurações**.
 
-    >**Observação:** confirme se você está na folha do slot de preparo (em vez do slot de produção).
+    >**Observação:** Verifique se você está na folha do slot de preparo (em vez do slot de produção).
     
-1. Na guia **Configurações**, na lista suspensa **Origem**, selecione **Git Local** e clique no botão **Salvar**
+1. Na lista suspensa **Fonte**, selecione **Git externo**. Observe as outras opções. 
 
-1. No painel **Centro de implantação**, copie a entrada **Uri do Git Clone** para o Bloco de notas.
+1. No campo repositório, insira `https://github.com/Azure-Samples/php-docs-hello-world`
 
-    >**Observação:** você precisará do valor do URI do Git Clone na próxima tarefa deste laboratório.
+1. No campo ramificação, insira `master`.
 
-1. Na folha **Centro de Implantação**, selecione a guia **Credenciais locais do Git/FTPS**, na seção **Escopo do Usuário**, especifique as configurações a seguir e clique em **Salvar**.
+1. Selecione **Salvar**.
 
-    | Configuração | Valor |
-    | --- | ---|
-    | Nome de usuário | qualquer nome globalmente exclusivo (veja a observação)  |
-    | Senha | qualquer senha que atenda aos requisitos de complexidade (veja a observação) |
+1. No slot de preparo, selecione **Visão geral**.
 
-    >**Observação:** copie essas credenciais para o Bloco de notas. Você precisará delas mais tarde.
-    
-    >**Observação:** essas credenciais serão passadas pelo URI. Não inclua caracteres especiais que afetem a interpretação do URI. Por exemplo, @, $, ou #. Um sinal de asterisco ou de mais (no meio da cadeia de caracteres) daria certo.
-    
-## Tarefa 4: implantar código no slot de implantação de preparo
+1. Selecione o link **Domínio padrão** e abra o URL em uma nova guia. 
 
-Nesta tarefa, você implantará o código no slot de implantação de preparo.
+1. Verifique se o slot de preparo exibe **Olá, Mundo**.
 
-1. No portal do Azure, abra o **Azure Cloud Shell** clicando no ícone no canto superior direito do portal do Azure.
+>**Observação:** A implantação pode levar um minuto. Certifique-se de **Atualizar** a página do aplicativo.
 
-1. Se for solicitado que você selecione **Bash** ou **PowerShell**, selecione **Bash**.
+## Tarefa 4: Trocar os slots de implantação
 
-    >**Observação**: se esta for a primeira vez que você está iniciando o **Cloud Shell** e você receber a mensagem **Você não tem nenhum armazenamento montado**, selecione a assinatura que você está usando no laboratório e selecione **Criar armazenamento**.
+Nesta tarefa, você trocará o slot de preparo pelo slot de produção. A troca de um slot permite que você use o código testado no slot de preparo e mova-o para a produção. O portal do Azure também solicitará se você precisar mover outras configurações de aplicativo que você personalizou para o slot. Trocar slots é uma tarefa comum para as equipes de aplicativos e equipes de suporte a aplicativos, especialmente aquelas que implantam atualizações de aplicativos de rotina e correções de bugs.
 
-1. No painel do Cloud Shell, execute o seguinte para clonar o repositório remoto que contém o código do aplicativo Web.
+1. Navegue de volta para a folha **Slots de implantação** e selecione **Trocar**.
 
-   ```powershell
-   git clone https://github.com/Azure-Samples/php-docs-hello-world
-   ```
+1. Examine as configurações padrão e clique em **Trocar**.
 
-1. No painel do Cloud Shell, execute o comando a seguir para definir o local atual para o clone recém-criado do repositório local que contém o código do aplicativo Web de exemplo.
+1. Na folha **Visão geral** do aplicativo Web, selecione o link do **Domínio padrão** para exibir a home page do site.
 
-   ```powershell
-   Set-Location -Path $HOME/php-docs-hello-world/
-   ```
+1. Verifique se a página da Web de produção exibe o **Olá, Mundo!** .
 
-1. No painel do Cloud Shell, execute o seguinte para adicionar o git remoto (substitua os espaços reservados `[deployment_user_name]` e `[git_clone_uri]` pelo valor do nome de usuário das **Credenciais de Implantação** e do **Uri do Git Clone**, respectivamente, que você identificou na tarefa anterior):
+    >**Observação:** Copie o **URL** do domínio padrão. Você precisará dele para o teste de carga da próxima tarefa. 
 
-   ```powershell
-   git remote add [deployment_user_name] [git_clone_uri]
-   ```
+## Tarefa 5: Configurar e testar o dimensionamento automático do aplicativo Web do Azure
 
-    >**Observação**: o valor após `git remote add` não precisa corresponder ao nome de usuário das **Credenciais de Implantação**, mas precisa ser exclusivo
+Nesta tarefa, você configurará o dimensionamento automático do aplicativo Web do Azure. O dimensionamento automático permite que você mantenha o desempenho ideal para seu aplicativo Web quando o tráfego para o aplicativo Web aumenta. Para determinar quando o aplicativo deve ser dimensionado, você poderá monitorar métricas como uso da CPU, memória ou largura de banda.
 
-1. No painel do Cloud Shell, execute o seguinte para efetuar push do código do aplicativo Web de exemplo do repositório local para o slot de implantação de preparo do aplicativo Web do Azure (substitua o espaço reservado pelo valor do nome de usuário das **Credenciais de Implantação**, além da senha e do nome do aplicativo que você identificou na tarefa anterior):
+1. Na seção **Configurações**, selecione **Escalar horizontalmente (Plano do Serviço de Aplicativo)**.
 
-   ```powershell
-    git push https://<deployment-username>:<deployment-password>@<app-name>-staging.scm.azurewebsites.net/<app-name>.git master
-   ```
+    >**Observação:** Certifique-se de que você está trabalhando no slot de produção e não no slot de preparo.  
 
-1. Feche o painel do Cloud Shell.
+1. Na seção **Dimensionamento**, selecione **Automático**. Observe a opção **Baseado em regras**. O dimensionamento baseado em regras pode ser configurado para diferentes métricas de aplicativos. 
 
-1. No painel do slot de preparo, clique em **Visão geral** e clique no link da **Domínio padrão** para exibir a página da web padrão em uma nova guia do navegador.
+1. No campo **Máximo de intermitência**, selecione **2**.
 
-1. Verifique se a página do navegador exibe a mensagem **Olá, Mundo!** e feche a nova guia.
+    ![Captura de tela da página de dimensionamento automático.](../media/az104-lab09a-autoscale.png)
 
-## Tarefa 5: trocar os slots de preparo
+1. Selecione **Salvar**.
 
-Nesta tarefa, você trocará o slot de preparo pelo slot de produção
+1. Selecione **Diagnosticar e solucionar problemas** (painel esquerdo).
 
-1. Navegue de volta para a folha que está exibindo o slot de produção do aplicativo Web.
+1. Na caixa **Executar teste de carga do aplicativo**, selecione **Criar teste de carga**.
 
-1. Na seção **Implantação**, clique em **Slots de implantação** e, em seguida, clique no ícone **Trocar** da barra de ferramentas.
+    + Selecione **+ Criar** e dê um **nome** ao seu teste de carga.  O nome deve ser exclusivo.
+    + Selecione **Examinar + criar** e depois **Criar**.
 
-1. Na folha **Trocar**, examine as configurações padrão e clique em **Trocar**.
+1. Aguarde até que o teste de carga seja criado e selecione **Ir para recurso**.
 
-1. Clique em **Visão geral** no painel do slot de produção do aplicativo Web e clique no link **Domínio padrão** para exibir a home page do site em uma nova guia do navegador.
+1. Em **Visão geral** | **Adicionar solicitações HTTP**, selecione **Criar**.
 
-1. Verifique se a página da web padrão foi substituída pela página **Hello World!** .
+1. Para o **URL de teste**, cole o URL de **Domínio padrão**. Certifique-se de que isso esteja formatado corretamente e comece com **https://**.
 
-## Tarefa 6: configurar e testar o dimensionamento automático do aplicativo Web do Azure
+1. Selecione **Examinar + criar** e **Criar**.
 
-Nesta tarefa, você configurará e testará o dimensionamento automático do aplicativo Web do Azure.
+    >**Observação:** A criação do teste pode levar alguns minutos. 
 
-1. No painel que exibe o slot de produção do aplicativo Web, na seção **Configurações**, clique em **Dimensionamento horizontal (plano do Serviço de Aplicativo)**.
+1. Analise os resultados do teste, incluindo **Usuários virtuais**, **Tempo de resposta** e **Solicitações/seg**.
 
-1. Na **Seção de dimensionamento**, selecione a opção **Baseado em regras** e clique no link **Gerenciar dimensionamento baseado em regras**.
-
-1. Clique em **Dimensionamento automático personalizado**.
-
-    >**Observação**: você também tem a opção de dimensionar o aplicativo Web manualmente.
-
-1. Selecione **Dimensionamento com base em uma métrica** e clique em **+ Adicionar uma regra**
-
-1. No painel **Regra de dimensionamento**, especifique as seguintes configurações (deixe as outras com seus valores padrão):
-
-    | Configuração | Valor |
-    | --- |--- |
-    | Origem da métrica | **Recurso atual** |
-    | Namespace da métrica | **métricas padrão** |
-    | Nome da métrica | **Porcentagem de CPU** |
-    | Operador | **Maior que** |
-    | Limite de métrica para disparar ação de escala | **10** |
-    | Duração (em minutos) | **1** |
-    | Estatística de intervalo de agregação | **Máximo** |
-    | Agregação de tempo | **Máximo** |
-    | Operação | **Aumentar a contagem em** |
-    | Contagem de instâncias | **1** |
-    | Tempo de resfriamento (minutos) | **5** |
-
-    >**Observação**: esses valores não representam uma configuração realista, uma vez que o objetivo é acionar o dimensionamento automático o mais rápido possível, sem período de espera prolongado.
-
-1. Clique em **Adicionar** e, novamente no painel de dimensionamento do plano do Serviço de Aplicativo, especifique as seguintes configurações (deixe as outras com seus valores padrão):
-
-    | Configuração | Valor |
-    | --- |--- |
-    | Limites mínimos de instância | **1** |
-    | Limites máximos de instância | **2** |
-    | Limites padrão de instância | **1** |
-
-1. Clique em **Save** (Salvar).
-
-    >**Observação**: se você recebeu um erro informando que o provedor de recursos "microsoft.insights" não está registrado, execute `az provider register --namespace 'Microsoft.Insights'` no cloudshell e tente salvar novamente suas regras de dimensionamento automático.
-
-1. No portal do Azure, abra o **Azure Cloud Shell** clicando no ícone no canto superior direito do portal do Azure.
-
-1. Se for solicitado que você selecione **Bash** ou **PowerShell**, selecione **Bash**.
-
-1. No painel do Cloud Shell, execute o seguinte para identificar a URL do aplicativo Web do Azure.
-
-   ```powershell
-   $rgName = 'az104-09a-rg1'
-
-   $webapp = Get-AzWebApp -ResourceGroupName $rgName
-   ```
-
-1. No painel do Cloud Shell, execute o seguinte para iniciar o loop infinito que envia as solicitações HTTP para o aplicativo Web:
-
-   ```powershell
-   while ($true) { Invoke-WebRequest -Uri $webapp.DefaultHostName }
-   ```
-
-1. Minimize o painel do Cloud Shell (mas não o feche) e, no painel do aplicativo Web, na seção Configurações, clique em **Dimensionamento horizontal (plano do Serviço de Aplicativo)**.
-
-1. Monitore a utilização e o número de instâncias por alguns minutos. 
-
-    >**Observação**: talvez seja necessário **Atualizar** a página.
-
-1. Depois de perceber que o número de instâncias aumentou para 2, reabra o painel do Cloud Shell e encerre o script pressionando **Ctrl+C**.
-
-1. Feche o painel do Cloud Shell.
+1. Selecione **Parar** para concluir a execução do teste.
 
 ## Limpar os recursos
 
->**Observação**: lembre-se de remover todos os recursos recém-criados do Azure que você não usa mais. Remover recursos não utilizados garante que você não veja encargos inesperados.
+Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto para excluir os recursos do laboratório. Isso garantirá que os recursos sejam liberados e que o custo seja minimizado. A maneira mais fácil de excluir os recursos do laboratório é excluir o grupo de recursos do laboratório. 
 
->**Observação**: não se preocupe se os recursos do laboratório não puderem ser removidos imediatamente. Às vezes, os recursos têm dependências e levam muito tempo para serem excluídos. É uma tarefa comum do Administrador monitorar o uso de recursos. Portanto, basta revisar periodicamente seus recursos no Portal para ver como a limpeza está indo. 
++ No portal do Azure, selecione o grupo de recursos e, em seguida, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
++ Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Usar a CLI, `az group delete --name resourceGroupName`.
 
-1. No portal do Azure, abra a sessão **PowerShell** no painel **Cloud Shell**.
 
-1. Liste todos os grupos de recursos criados em todos os laboratórios deste módulo executando o seguinte comando:
 
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-09a*'
-   ```
+## Principais aspectos a serem lembrados
 
-1. Exclua todos os grupos de recursos criados em todos os laboratórios deste módulo executando o seguinte comando:
+Parabéns por concluir o laboratório. Aqui estão as principais lições deste laboratório. 
 
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-09a*' | Remove-AzResourceGroup -Force -AsJob
-   ```
++ Os Serviços de Aplicativo do Azure permitem criar, implantar e dimensionar aplicativos Web rapidamente.
++ O Serviço de Aplicativo inclui suporte para muitos ambientes de desenvolvedor, incluindo ASP.NET, Java, PHP e Python.
++ Os slots de implantação permitem que você crie ambientes separados para implantar e testar seu aplicativo Web.
++ Você pode dimensionar manual ou automaticamente um aplicativo Web para lidar com a demanda adicional.
++ Uma grande variedade de ferramentas de diagnóstico e teste estão disponíveis. 
 
-    >**Observação**: o comando é executado de maneira assíncrona (conforme determinado pelo parâmetro -AsJob), portanto, embora você possa executar outro comando do PowerShell imediatamente após na mesma sessão do PowerShell, levará alguns minutos antes dos grupos de recursos serem de fato removidos.
+## Saiba mais com treinamento individual
 
-## Revisão
-
-Neste laboratório, você vai:
-
-+ Criou um aplicativo Web do Azure
-+ Criou um slot de implantação de preparo
-+ Definiu as configurações de implantação do aplicativo Web
-+ Implantou um código no slot de implantação de preparo
-+ Trocou os slots de preparo
-+ Configurou e testou o dimensionamento automático do aplicativo Web do Azure
++ [Prepare uma implantação de aplicativo Web para teste e reversão usando slots de implantação do Serviço de Aplicativo](https://learn.microsoft.com/training/modules/stage-deploy-app-service-deployment-slots/). Use slots de implantação para simplificar a implantação e reverter um aplicativo Web no Serviço de Aplicativo do Azure.
++ [Dimensione um aplicativo Web do Serviço de Aplicativo para atender à demanda de modo eficiente com escala vertical e escala horizontal do Serviço de Aplicativo](https://learn.microsoft.com/training/modules/app-service-scale-up-scale-out/). Responda a períodos de maior atividade, aumentando gradualmente os recursos disponíveis e, então, diminuindo esses recursos quando o nível atividades cai para reduzir os custos.
