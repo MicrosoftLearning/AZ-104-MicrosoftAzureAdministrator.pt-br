@@ -14,9 +14,9 @@ Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode af
 
 ## Tempo estimado: 50 minutos
 
-## Simulações interativas do laboratório
+## Simulações interativas de laboratório
 
-Há simulações interativas do laboratório que podem ser úteis para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Existem diferenças entre a simulação interativa e este laboratório, mas muitos dos conceitos centrais são os mesmos. Não é necessária uma assinatura do Azure. 
+Há simulações interativas do laboratório que podem ser úteis para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Há diferenças entre a simulação interativa e este laboratório, mas muitos dos principais conceitos são os mesmos. Uma assinatura do Azure não é necessária. 
 
 + [Gerenciar recursos do Azure usando modelos do Azure Resource Manager](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205). Examine, crie e implante um disco gerenciado com um modelo.
   
@@ -32,10 +32,10 @@ Sua equipe deseja procurar maneiras de automatizar e simplificar as implantaçõ
 
 ## Habilidades de trabalho
 
-+ Tarefa 1: Crie um modelo do Azure Resource Manager.
-+ Tarefa 2: Editar um modelo do Azure Resource Manager e reimplante o modelo.
-+ Tarefa 3: Configurar o Cloud Shell e implantar um modelo com o Azure PowerShell.
-+ Tarefa 4: Implantar um modelo com a CLI. 
++ Tarefa 1: criar um modelo do Azure Resource Manager.
++ Tarefa 2: editar um modelo do Azure Resource Manager e reimplantá-lo.
++ Tarefa 3: configurar o Cloud Shell e implantar um modelo com o Azure PowerShell.
++ Tarefa 4: implantar um modelo com o CLI. 
 + Tarefa 5: Implantar um recurso usando o Azure Bicep.
 
 ## Tarefa 1: Criar um modelo do Azure Resource Manager
@@ -160,7 +160,7 @@ Nesta tarefa, você trabalha com o Azure Cloud Shell e o Azure PowerShell. O Azu
     ```
     >**Observação**: Se precisar, você poderá usar **cls** para limpar a janela de comando. Você pode usar as teclas de direção para mover o histórico de comandos.
    
-1. Selecione o ícone do **Editor** (colchetes) e navegue até o arquivo JSON de parâmetros.
+1. Selecione o ícone do **Editor** (colchetes) e navegue até o arquivo JSON do modelo.
 
 1. Faça uma alteração. Por exemplo, altere o nome do disco para **az104-disk3**. Use **Ctrl +S** para salvar suas alterações. 
 
@@ -189,7 +189,7 @@ Nesta tarefa, você trabalha com o Azure Cloud Shell e o Azure PowerShell. O Azu
     ls
     ```
 
-1. Selecione o ícone do **Editor** (colchetes) e navegue até o arquivo JSON de parâmetros.
+1. Selecione o ícone do **Editor** (colchetes) e navegue até o arquivo JSON do modelo.
 
 1. Faça uma alteração. Por exemplo, altere o nome do disco para **az104-disk4**. Use **Ctrl +S** para salvar suas alterações. 
 
@@ -249,7 +249,7 @@ Nesta tarefa, você usará um arquivo do Bicep para implantar um disco gerenciad
 
 Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto para excluir os recursos do laboratório. Isso garantirá que os recursos sejam liberados e que o custo seja minimizado. A maneira mais fácil de excluir os recursos do laboratório é excluir o grupo de recursos do laboratório. 
 
-+ No portal do Azure, selecione o grupo de recursos e, em seguida, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
++ No portal do Azure, selecione o grupo de recursos, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
 + Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Usar a CLI, `az group delete --name resourceGroupName`.
   
