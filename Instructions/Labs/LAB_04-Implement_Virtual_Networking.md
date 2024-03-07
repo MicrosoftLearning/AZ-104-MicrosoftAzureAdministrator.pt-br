@@ -10,7 +10,7 @@ lab:
 
 Este laboratório é o primeiro de três laboratórios que se concentra na rede virtual. Nesse laboratório, você aprenderá os conceitos básicos de rede virtual e sub-rede. Você aprenderá a proteger sua rede com grupos de segurança de rede e grupos de segurança de aplicativos. Você também aprenderá sobre zonas e registros DNS. 
 
-Esse laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode afetar a disponibilidade de recursos nesse laboratório. Você pode alterar a região, mas as etapas são escritas usando o **Leste dos EUA**.
+Esse laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode afetar a disponibilidade de recursos neste laboratório. Você pode alterar a região, mas as etapas são escritas usando o **Leste dos EUA**.
 
 ## Tempo estimado: 50 minutos
 
@@ -135,7 +135,7 @@ Nesta tarefa, você cria a rede virtual ManufacturingVnet e as sub-redes associa
 
 ### Faça alterações no arquivo de parâmetros
 
-1. Localize o arquivo **template.json** exportado na tarefa anterior. Deve estar na sua pasta **Downloads**.
+1. Localize o arquivo **parameters.json** exportado na tarefa anterior. Deve estar na sua pasta **Downloads**.
 
 1. Edite o arquivo usando o editor de sua preferência.
 
@@ -341,7 +341,7 @@ Uma zona DNS privada fornece serviços de resolução de nomes em redes virtuais
 
 Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto para excluir os recursos do laboratório. Isso garantirá que os recursos sejam liberados e que o custo seja minimizado. A maneira mais fácil de excluir os recursos do laboratório é excluir o grupo de recursos do laboratório. 
 
-+ No portal do Azure, selecione o grupo de recursos e, em seguida, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
++ No portal do Azure, selecione o grupo de recursos, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
 + Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Usar a CLI, `az group delete --name resourceGroupName`.
  
