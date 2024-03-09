@@ -5,334 +5,257 @@ lab:
 ---
 
 # Laboratório 07: Gerenciar o Armazenamento do Microsoft Azure
-# Manual de laboratório do aluno
+
+## Introdução ao laboratório
+
+Neste laboratório, você aprenderá a criar contas de armazenamento para blobs e arquivos do Azure. Você aprenderá a configurar e proteger contêineres de blobs. Você também aprenderá a usar o Navegador de Armazenamento para configurar e proteger compartilhamentos de arquivos do Azure. 
+
+Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode afetar a disponibilidade de recursos neste laboratório. Você pode alterar a região, mas as etapas são escritas usando o **Leste dos EUA**.
+
+## Tempo estimado: 50 minutos
 
 ## Cenário do laboratório
 
-Você precisa avaliar o uso do Armazenamento do Microsoft Azure para armazenar arquivos que residem atualmente em armazenamentos de dados locais. Embora a maioria desses arquivos não seja acessada com frequência, há algumas exceções. Procure minimizar o custo do armazenamento colocando os arquivos menos acessados em camadas de armazenamento com preços mais baixos. Além disso, explore diferentes mecanismos de proteção que o armazenamento do Azure oferece, incluindo acesso à rede, autenticação, autorização e replicação. Por fim, você deseja determinar até que ponto o serviço Arquivos do Azure é adequado para hospedar os compartilhamentos de arquivo locais.
+No momento, sua organização está armazenando dados em armazenamentos de dados locais. A maioria desses arquivos não é acessada com frequência. Você gostaria de minimizar o custo do armazenamento colocando os arquivos menos acessados em camadas de armazenamento com preços mais baixos. Além disso, explore diferentes mecanismos de proteção que o armazenamento do Azure oferece, incluindo acesso à rede, autenticação, autorização e replicação. Por fim, você deseja determinar até que ponto os Arquivos do Azure são adequados para hospedar seus compartilhamentos de arquivos locais.
 
-**Observação:** uma **[simulação de laboratório interativo](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2011)** está disponível e permite que você clique neste laboratório em seu próprio ritmo. Você pode encontrar pequenas diferenças entre a simulação interativa e o laboratório hospedado, mas os principais conceitos e ideias que estão sendo demonstrados são os mesmos. 
+## Simulações interativas do laboratório
 
-## Objetivos
+Há simulações interativas do laboratório que podem ser úteis para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Existem diferenças entre a simulação interativa e este laboratório, mas muitos dos conceitos centrais são os mesmos. Uma assinatura do Azure não é necessária. 
 
-Neste laboratório, você vai:
-
-+ Tarefa 1: provisionar o ambiente de laboratório
-+ Tarefa 2: Criar e configurar contas do Armazenamento do Microsoft Azure
-+ Tarefa 3: gerenciar o armazenamento de blobs
-+ Tarefa 4: gerenciar a autenticação e a autorização no armazenamento do Azure
-+ Tarefa 5: criar e configurar um compartilhamento do Arquivos do Azure
-+ Tarefa 6: gerenciar o acesso de rede ao armazenamento do Azure
-
-## Tempo estimado: 40 minutos
++ [Criação do armazenamento de blobs](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%205). Crie uma conta de armazenamento, gerencie o armazenamento de blobs e monitore as atividades de armazenamento. 
+  
++ [Gerenciar o Armazenamento do Microsoft Azure](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2011). Crie uma conta de armazenamento e examine a configuração. Gerencia os contêineres do armazenamento de blobs. Configure a rede de armazenamento. 
 
 ## Diagrama de arquitetura
 
-![imagem](../media/lab07.png)
+![Diagrama das tarefas.](../media/az104-lab07-architecture.png)
 
+## Habilidades de trabalho
 
-### Instruções
++ Tarefa 1: Criar e configurar uma conta de armazenamento. 
++ Tarefa 2: Criar e configurar o armazenamento de blobs seguro.
++ Tarefa 3: Criar e configurar o armazenamento de arquivos seguro do Azure.
 
-## Exercício 1
+## Tarefa 1: Criar e configurar uma conta de armazenamento. 
 
-## Tarefa 1: provisionar o ambiente de laboratório
+Nesta tarefa, você criará e configurará uma conta de armazenamento. A conta de armazenamento usará o armazenamento com redundância geográfica e não terá acesso público. 
 
-Nesta tarefa, você implantará uma máquina virtual do Azure que usará posteriormente neste laboratório.
+1. Entre no **portal do Azure** - `https://portal.azure.com`.
 
-1. Entre no **[portal do Azure](https://portal.azure.com)**.
+1. Pesquise e selecione `Storage accounts`, e clique em **+ Criar**.
 
-1. No portal do Azure, abra o **Azure Cloud Shell** clicando no ícone no canto superior direito do portal do Azure.
+1. Na guia **Noções básicas** da folha **Criar uma conta de armazenamento**, especifique as seguintes configurações (deixe as outras com seus valores padrão):
 
-1. Se for solicitado que você selecione **Bash** ou **PowerShell**, selecione **Bash**.
+    | Configuração | Valor |
+    | --- | --- |
+    | Assinatura          | o nome da sua assinatura do Azure  |
+    | Grupo de recursos        | **az104-rg7** (criar novo) |
+    | Nome da conta de armazenamento  | qualquer nome globalmente exclusivo de 3 a 24 caracteres composto por letras e dígitos |
+    | Região                | **(EUA) Leste dos EUA**  |
+    | Desempenho           | **Standard** (observe a opção Premium) |
+    | Redundância            | **Armazenamento com redundância geográfica** (observe as outras opções)|
+    | Permitir o acesso de leitura aos dados em caso de disponibilidade regional | Marque a caixa |
 
-    >**Observação**: se esta for a primeira vez que você está iniciando o **Cloud Shell** e você receber a mensagem **Você não tem nenhum armazenamento montado**, selecione a assinatura que você está usando no laboratório e selecione **Criar armazenamento**.
+>**Você sabia?** Você deve usar o nível de desempenho Standard para a maioria dos aplicativos. Use o nível de desempenho Premium para aplicativos empresariais ou de alto desempenho. 
 
-1. Na barra de ferramentas do painel do Cloud Shell, clique no ícone **Carregar/Baixar arquivos**. No menu suspenso, clique em **Carregar** e carregue os arquivos **\\Allfiles\\Labs\\07\\az104-07-vm-template.json** e **\\Allfiles\\Labs\\07\\az104-07-vm-parameters.json** no diretório base do Cloud Shell.
+1. Na guia **Avançado**, use os ícones informativos para saber mais sobre as opções. Aceite os padrões. 
 
-1. No painel do Cloud Shell, execute o comando a seguir para criar o grupo de recursos que hospedará a máquina virtual (substitua o espaço reservado '[Azure_region]' pelo nome de uma região do Azure em que você pretende implantar a máquina virtual do Azure)
+1. Na guia **Rede**, examine as opções disponíveis, selecione **Desabilitar o acesso público e usar o acesso privado**.
 
-    >**Observação**: Para listar os nomes das regiões do Azure, execute `(Get-AzLocation).Location`
-    >**Observação**: Cada comando abaixo deve ser digitado separadamente
+1. Examine a guia **Proteção de dados**. Observe que 7 dias é a política de retenção de exclusão temporária padrão. Observe que você pode habilitar o controle de versão dos blobs. Aceite os padrões.
 
-    ```powershell
-    $location = '[Azure_region]'
-    ```
+1. Examine a guia **Criptografia**. Observe as opções de segurança adicionais. Aceite os padrões.
+
+1. Selecione **Examinar**, aguarde a conclusão do processo de validação e clique em **Criar**.
+
+1. Depois que a conta de armazenamento for implantada, selecione **Ir para o recurso**.
+
+1. Examine a folha **Visão geral** e as configurações adicionais que podem ser alteradas. Essas são as configurações globais da conta de armazenamento. Observe que a conta de armazenamento pode ser usada para contêineres de blobs, compartilhamentos de arquivos, filas e tabelas.
+
+1. Na seção **Segurança + Rede**, selecione **Rede**. Observe que o acesso à rede pública está desabilitado.
+
+    + Altere o **nível de acesso público** para **Habilitado de redes virtuais e endereços IP selecionados**.
+    + Na seção **Firewall**, marque a caixa para **Adicionar o endereço IP do cliente.**
+    + Não se esqueça de **Salvar** suas alterações. 
   
-    ```powershell
-     $rgName = 'az104-07-rg0'
-    ```
+1. Na seção **Gerenciamento de dados**, exiba a folha **Redundância**. Observe as informações sobre seus locais de data center primário e secundário.
 
-    ```powershell
-    New-AzResourceGroup -Name $rgName -Location $location
-    ```
+1. Na seção **Gerenciamento de dados**, selecione **Gerenciamento do ciclo de vida** e, em seguida, selecione **Adicionar uma regra**.
+
+    + **Nomeie** a regra `Movetocool`. Observe suas opções para limitar o escopo da regra.
     
-1. No painel do Cloud Shell, execute o seguinte para implantar a máquina virtual usando o modelo carregado e os arquivos de parâmetro:
+    + Na guia **Blobs de base**, *se* os blobs baseados tiverem sido modificados pela última vez há mais de `30 days`, *então*, **vá para o armazenamento esporádico**. Observe suas outras opções. 
+    
+    + Observe que você pode configurar outras condições. Selecione **Adicionar** quando terminar de explorar.
 
-    >**Observação**: você será solicitado a fornecer uma senha.
+    ![Captura de tela da opção Vá para as condições de regra esporádica.](../media/az104-lab07-movetocool.png)
 
-   ```powershell
-   New-AzResourceGroupDeployment `
-      -ResourceGroupName $rgName `
-      -TemplateFile $HOME/az104-07-vm-template.json `
-      -TemplateParameterFile $HOME/az104-07-vm-parameters.json `
-      -AsJob
-   ```
+## Tarefa 2: Criar e configurar o armazenamento de blobs seguro
 
-    >**Observação**: Não aguarde a conclusão das implantações, mas prossiga para a próxima tarefa.
+Nesta tarefa, você criará um contêiner de blob e carregará uma imagem. Os contêineres de blobs são estruturas semelhantes a diretórios que armazenam dados não estruturados.
 
-    >**Observação**: Se você receber um erro informando que o tamanho da VM não está disponível, peça ajuda ao instrutor e tente realizar estas etapas.
-    > 1. Clique no botão `{}` no CloudShell, selecione o **az104-07-vm-parameters.json** na barra lateral esquerda e anote o valor do parâmetro `vmSize`.
-    > 1. Verifique o local no qual o grupo de recursos 'az104-04-rg1' está implantado. Você pode executar `az group show -n az104-04-rg1 --query location` em seu CloudShell para obter o caminho.
-    > 1. Execute `az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name"` em seu CloudShell.
-    > 1. Substitua o valor do parâmetro `vmSize` por um dos valores retornados pelo comando que você acabou de executar.
-    > 1. Agora reimplante seus modelos executando o comando `New-AzResourceGroupDeployment` novamente. Você pode pressionar o botão de seta para cima algumas vezes, o que deve exibir o último comando executado.
+### Criar um contêiner de blobs e uma política de retenção baseada em tempo
 
-1. Feche o painel do Cloud Shell.
+1. Continue no portal do Azure, trabalhando com sua conta de armazenamento.
 
-## Tarefa 2: Criar e configurar contas do Armazenamento do Microsoft Azure
+1. Na seção **Armazenamento de dados**, clique em **Contêineres**. 
 
-Nesta tarefa, você criará e configurará uma conta do Armazenamento do Microsoft Azure.
-
-1. No portal do Azure, procure e selecione a opção **Contas de armazenamento** e clique em **+Criar**.
-
-1. Na guia **Noções básicas** da folha **Criar conta de armazenamento**, defina as seguintes configurações (deixe outras com seus valores padrão):
+1. Clique em **+ Contêiner** e **Criar** um contêiner com as seguintes configurações:
 
     | Configuração | Valor |
     | --- | --- |
-    | Assinatura | o nome da assinatura do Azure que você está usando neste laboratório |
-    | Grupo de recursos | o nome de um **novo** grupo de recursos **az104-07-rg1** |
-    | Nome da conta de armazenamento | qualquer nome globalmente exclusivo de 3 a 24 caracteres composto por letras e dígitos |
-    | Region | o nome de uma região do Azure onde você pode criar uma conta de Armazenamento do Microsoft Azure  |
-    | Desempenho | **Standard** |
-    | Redundância | **Armazenamento com redundância geográfica (GRS)** |
+    | Nome | `data`  |
+    | Nível de acesso público | Observe que o nível de acesso está definido como privado |
 
-1. Clique em **Avançar: Avançado >**, na guia **Avançado** da folha **Criar conta de armazenamento**, examine as opções disponíveis, aceite os padrões e clique em **Avançar: Rede >**.
+    ![Captura de tela da criação de um contêiner.](../media/az104-lab07-create-container.png)
 
-1. Na guia **Rede** da folha **Criar conta de armazenamento**, revise as opções disponíveis, aceite a opção padrão **Habilitar acesso público de todas as redes** e clique em **Avançar: Proteção de dados >**.
+1. No contêiner, role até as reticências (...) na extrema direita, selecione **Política de Acesso**.
 
-1. Na guia **Proteção de dados** da folha **Criar conta de armazenamento**, examine as opções disponíveis, aceite os padrões, clique em **Examinar + Criar**, aguarde a conclusão do processo de validação e clique em **Criar**.
-
-    >**Observação**: aguarde até a conta de armazenamento ser criada. Isso deverá levar cerca de dois minutos.
-
-1. Na folha de implantação, clique em **Ir para o recurso** para exibir a folha da conta do Armazenamento do Microsoft Azure.
-
-1. Na folha da conta de armazenamento, na seção **Gerenciamento de dados**, clique em **Redundância** e anote o local secundário. 
-
-1. Na lista suspensa **Redundância**, selecione **LRS (armazenamento com redundância local)** e salve a alteração. Observe que, neste ponto, a conta de armazenamento tem apenas o local principal.
-
-1. Na folha Conta de armazenamento, em **Configurações**, selecione **Configuração**. Defina **Camada de acesso de blob (padrão)** como **Esporádico** e salve a alteração.
-
-    > **Observação**: A camada de acesso esporádico é ideal para dados que não são acessados com frequência.
-
-## Tarefa 3: gerenciar o armazenamento de blobs
-
-Nesta tarefa, criaremos um contêiner de blob e carregaremos um blob nela.
-
-1. Na folha Conta de armazenamento, na seção **Armazenamento de dados**, clique em **Contêineres**.
-
-1. Clique em **+ Contêiner** e crie um contêiner com as seguintes configurações:
+1. Na área **Armazenamento de blobs imutável**, selecione **Adicionar política**.
 
     | Configuração | Valor |
     | --- | --- |
-    | Nome | **az104-07-container**  |
-    | Nível de acesso público | **Privado (sem acesso anônimo)**) |
+    | Tipo de política | **Retenção baseada em tempo**  |
+    | Definir o período de retenção para | `180` dias |
 
-1. Na lista de contêineres, clique em **az104-07-container** e, em seguida, clique em **Carregar**.
+1. Selecione **Salvar**.
 
-1. Navegue até **\\Allfiles\\Labs\\07\\LICENSE** no computador do seu laboratório e clique em **Abrir**.
+### Gerenciar uploads de blobs
 
-1. Na folha **Carregar blob**, expanda a seção **Avançado** e especifique as seguintes configurações (deixe as outras com os respectivos valores padrão):
+1. Retorne à página de contêineres, selecione o contêiner de **dados** e clique em **Carregar**.
+
+1. Na folha **Carregar blob**, expanda a seção **Avançado**.
+
+    >**Observação**: Localize um arquivo para carregar. Pode ser qualquer tipo de arquivo, mas é melhor um arquivo pequeno. Um arquivo de exemplo pode ser baixado do diretório AllFiles. 
 
     | Configuração | Valor |
     | --- | --- |
+    | Procurar arquivos | adicione o arquivo que você selecionou para carregar |
+    | Selecione **Avançado** | |
     | Tipo de blob | **Blob de blocos** |
-    | Tamanho do bloco | **4 MB** |
-    | Camada de acesso | **Frequente** |
-    | Carregar na pasta | **licenças** |
-
-    > **Observação**: A camada de acesso pode ser definida para blobs individuais.
+    | Tamanho do bloco | **4 MiB** |
+    | Camada de acesso | **Camada de armazenamento frequente**  (observe as outras opções) |
+    | Carregar na pasta | `securitytest` |
+    | Escopo de criptografia | Usar o escopo de contêiner padrão existente |
 
 1. Clique em **Carregar**.
 
-    > **Observação**: Observe que o upload criou automaticamente uma subpasta chamada **licenses**.
+1. Confirme se você tem uma nova pasta e se o arquivo foi carregado. 
 
-1. De volta à **folha az104-07-container**, clique em **licenses** e, em seguida, clique em **LICENSE.**
+1. Selecione o arquivo de upload e examine as opções, incluindo **Baixar**, **Excluir**, **Alterar nível** e **Adquirir concessão**.
 
-1. Na folha **licenses/LICENSE**, revise as opções disponíveis.
-
-    > **Observação**: Você tem a opção de baixar o blob, alterar sua camada de acesso (atualmente está definida como **Frequente**), adquirir uma concessão, o que alteraria seu status de concessão para **Bloqueado** (atualmente está definido como **Desbloqueado**) e proteger o blob de ser modificado ou excluído, bem como atribuir metadados personalizados (especificando uma chave arbitrária e pares de valores). Você também tem a capacidade de **Editar** o arquivo diretamente na interface do portal do Azure, sem baixá-lo primeiro. Você também pode criar instantâneos, bem como gerar um token SAS (você explorará essa opção na próxima tarefa).
-
-## Tarefa 4: gerenciar a autenticação e a autorização no armazenamento do Azure
-
-Nesta tarefa, você configurará a autenticação e a autorização para o Armazenamento do Microsoft Azure.
-
-1. Na folha **licenses/LICENSE**, na guia **Visão geral**, clique no botão **Copiar para a área de transferência** ao lado da entrada **URL**.
-
-1. Abra outra janela do navegador usando o modo InPrivate e navegue até a URL copiada na etapa anterior.
+1. Copie o **URL** do arquivo e cole em uma nova janela de navegação **Inprivate**.
 
 1. Você deve receber uma mensagem formatada em XML informando **ResourceNotFound** ou **PublicAccessNotPermitted**.
 
     > **Observação**: Isso é esperado, já que o contêiner criado tem o nível de acesso público definido como **Privado (sem acesso anônimo)**.
 
-1. Feche a janela do navegador do modo InPrivate, retorne à janela do navegador mostrando a folha **licenses/LICENSE** do contêiner de Armazenamento do Microsoft Azure e alterne para a guia **Gerar SAS**.
+### Configurar o acesso limitado ao armazenamento de blobs
 
-1. Na guia **Gerar SAS** da folha **licenses/LICENSE**, especifique as seguintes configurações (deixe as demais com os respectivos valores padrão):
+1. Selecione o arquivo carregado e a guia **Gerar SAS**. Você também pode usar as reticências (...) da extrema direita. Especifique as seguintes configurações (deixe as outras com seus valores padrão):
 
     | Configuração | Valor |
     | --- | --- |
     | Chave de assinatura | **Chave 1** |
-    | Permissões | **Leitura** |
-    | Data de Início | data de ontem |
+    | Permissões | **Leitura** (observe suas outras opções) |
+    | Data inicial | data de ontem |
     | Hora de início | hora atual |
     | Data de vencimento | data de amanhã |
     | Hora de expiração | hora atual |
     | Endereços IP permitidos | deixar em branco |
-    
 
 1. Clique em **Gerar token SAS e URL**.
 
-1. Clique no botão **Copiar para a área de transferência** ao lado da entrada **URL SAS do Blob**.
+1. Copie a entrada **URL de SAS do Blob** para a área de transferência.
 
-1. Abra outra janela do navegador usando o modo InPrivate e navegue até a URL copiada na etapa anterior.
+1. Abra outra janela do navegador InPrivate e navegue até a entrada URL de SAS do Blob copiada na etapa anterior.
 
-    > **Observação**: Você deve ser capaz de visualizar o conteúdo do arquivo baixando-o e abrindo-o com o Bloco de notas.
+    >**Observação**: Você deve poder exibir o conteúdo do arquivo. 
 
-    > **Observação**: Isso é esperado, já que agora seu acesso é autorizado com base no token SAS recém-gerado.
+## Tarefa 3: Criar e configurar um armazenamento de arquivos do Azure
 
-    > **Observação**: Salve a URL SAS do blob. Você precisará disso em uma etapa posterior deste laboratório.
+Nesta tarefa, você criará e configurará compartilhamentos de arquivos do Azure. Você usará o Navegador de Armazenamento para gerenciar o compartilhamento de arquivo. 
 
-1. Feche a janela do navegador do modo InPrivate, retorne à janela do navegador mostrando a folha **licenses/LICENSE** do contêiner de Armazenamento do Microsoft Azure e alterne para a folha **az104-07-container**.
+### Criar o compartilhamento de arquivo e carregar um arquivo
 
-1. Clique no link **Alternar para a conta de usuário do Microsoft Entra** ao lado do rótulo **Método de autenticação**.
+1. No portal do Azure, navegue de volta para sua conta de armazenamento, na seção **Armazenamento de dados**, clique em **Compartilhamentos de arquivos**.
 
-    > **Observação**: Você pode ver um erro ao alterar o método de autenticação (o erro é *"Você não tem permissões para listar os dados usando sua conta de usuário com o Microsoft Entra"*). Isso é esperado.  
+1. Clique em **+ Compartilhamento de arquivo** e, na guia **Noções básicas**, dê um nome ao compartilhamento de arquivo, `share1`. 
 
-    > **Observação**: Neste ponto, você não tem permissões para alterar o método de autenticação.
+1. Observe as opções de **Nível**. Mantenha a **Transação otimizada** padrão.
+   
+1. Vá para a guia **Backup** e certifique-se de que a opção **Habilitar Backup** **não** está marcada. Estamos desabilitando o backup para simplificar a configuração do laboratório.
 
-1. Na folha **az104-07-container**, clique em **Controle de Acesso (IAM)**.
+1. Clique em **Revisar + criar** e, em seguida, **Criar**. Aguarde a implantação do compartilhamento de arquivos.
 
-1. Na guia **Verificar acesso**, clique em **Adicionar atribuição de função**.
+    ![Captura de tela da página Criar compartilhamento de arquivo.](../media/az104-lab07-create-share.png)
 
-1. Na folha **Adicionar atribuição de função**, especifique as seguintes configurações:
+### Explorar o Navegador de Armazenamento e carregar um arquivo
 
-    | Configuração | Valor |
-    | --- | --- |
-    | Função | **Proprietário de Dados do Blob de Armazenamento** |
-    | Atribuir acesso a | **Usuário, grupo ou entidade de serviço** |
-    | Membros | o nome da sua conta de usuário |
+1. Retorne à sua conta de armazenamento e selecione **Navegador de Armazenamento**. O Navegador de Armazenamento do Azure é uma ferramenta de portal que permite exibir rapidamente todos os serviços de armazenamento em sua conta.
 
-1. Clique em **Revisar + Atribuir** e, em seguida, em **Revisar + atribuir** e retorne à folha **Visão geral** do contêiner **az104-07-container** e verifique se você pode alterar o método de autenticação para (Alternar para Conta de Usuário do Microsoft Entra).
+1. Selecione **Compartilhamentos de arquivos** e verifique se o diretório **share1** está presente.
 
-    > **Observação**: Pode levar cerca de cinco minutos para que a política entre em vigor.
+1. Selecione seu diretório **share1** e observe que você pode **+ Adicionar diretório**. Isso permite que você crie uma estrutura de pastas.
 
-## Tarefa 5: criar e configurar um compartilhamento do Arquivos do Azure
+1. Escolha **Carregar**. Navegue até um arquivo de sua escolha e clique em **Carregar**.
 
-Nesta tarefa, você criará e configurará compartilhamentos de Arquivos do Azure.
+    >**Observação**: Você pode exibir os compartilhamentos de arquivos e gerenciar esses compartilhamentos no Navegador de Armazenamento. No momento, não há restrições.
 
-> **Observação**: Antes de iniciar esta tarefa, verifique se a máquina virtual provisionada na primeira tarefa deste laboratório está em execução.
+### Restrinja o acesso da rede à conta de armazenamento
 
-1. No portal do Azure, navegue de volta para a folha da conta de armazenamento que você criou na primeira tarefa deste laboratório e, na seção **Armazenamento de dados**, clique em **Compartilhamentos de arquivos**.
+1. No portal do Azure, pesquise e selecione **Redes virtuais**.
 
-1. Clique em **+ Compartilhamento de arquivos** e, na guia **Noções básicas**, dê um nome ao compartilhamento de arquivos, **az104-07-share**. Revise as outras configurações nesta guia. 
+1. Selecione **+ Criar**. Selecione o grupo de recursos. e dê um **nome** à rede virtual, `vnet1`.
 
-1. Vá para a guia **Backup** e certifique-se de que a opção **Habilitar Backup** **não** está marcada.
+1. Assuma os padrões para outros parâmetros, selecione **Revisar + criar** e, em seguida, **Criar**.
 
-1. Clique em **Revisar e criar** e em **Criar**. Aguarde a implantação do compartilhamento de arquivos. 
+1. Aguarde a implantação da rede virtual e selecione **Ir para o recurso**.
 
-1. Clique no compartilhamento de arquivos recém-criado e observe as informações disponíveis na folha **az104-07-share**.
+1. Na seção **Configurações**, selecione a folha **Sub-redes**.
+    + Selecione a sub-rede **padrão**.
+    + Na seção **Pontos de extremidade de serviço**, escolha **Microsoft.Storage** na lista suspensa **Serviços**.
+    + Não faça nenhuma outra alteração.    
+    + Não se esqueça de **Salvar** suas alterações. 
 
-1. Clique em **Procurar** e observe que não há arquivos ou pastas no novo compartilhamento de arquivos. Clique em **Conectar**.
+1. Retorne à sua conta de armazenamento.
 
-1. Na folha **Conectar**, verifique se a guia **Windows** está selecionada. Abaixo você encontrará um botão com o rótulo **Mostrar Script**. Clique no botão e você encontrará uma caixa de texto cinza com um script, no canto inferior direito dessa caixa passe o mouse sobre o ícone de páginas e clique em **Copiar para a área de transferência**.
+1. Na seção **Segurança + rede**, selecione a folha **Rede**.
 
-1. No portal do Azure, pesquise e selecione **Máquinas virtuais** e, na lista de máquinas virtuais, selecione **az104-07-vm0**.
+1. Selecione **Adicionar rede virtual existente** e selecione **vnet1** e sub-rede **padrão** e, em seguida, selecione **Adicionar**.
 
-1. Na folha **az104-07-vm0**, na seção **Operações**, clique em **Executar comando**.
+1. Na seção **Firewall**, **Exclua** o endereço IP da sua máquina. O tráfego permitido só deve vir da rede virtual. 
 
-1. Na folha **az104-07-vm0 – Executar comando**, clique em **RunPowerShellScript**.
+1. Não se esqueça de **Salvar** suas alterações.
 
-1. Na folha **Executar Script de Comando**, cole o script copiado anteriormente nesta tarefa no painel **Script do PowerShell** e clique em **Executar**.
+    >**Observação:** A conta de armazenamento agora só deve ser acessada da rede virtual que você acabou de criar. 
 
-1. Verifique se o script foi concluído com êxito.
+1. Selecione o **Navegador de armazenamento** e **Atualize** a página. Navegue até o compartilhamento de arquivo ou o conteúdo do blob.  
 
-1. Substitua o conteúdo do painel **Script do PowerShell** pelo seguinte script e clique em **Executar**:
+    >**Observação:** Você deve receber uma mensagem *não autorizado a executar esta operação*. Você não está se conectando da rede virtual. Pode levar alguns minutos para que isso entre em vigor.
 
-   ```powershell
-   New-Item -Type Directory -Path 'Z:\az104-07-folder'
 
-   New-Item -Type File -Path 'Z:\az104-07-folder\az-104-07-file.txt'
-   ```
-
-1. Verifique se o script foi concluído com êxito.
-
-1. Navegue de volta para a folha **az104-07-share \| Procurar** do compartilhamento de arquivos, clique em **Atualizar** e verifique se a **az104-07-folder** aparece na lista de pastas.
-
-1. Clique em **az104-07-folder** e verifique se **az104-07-file.txt** aparece na lista de arquivos.
-
-## Tarefa 6: gerenciar o acesso de rede ao armazenamento do Azure
-
-Nesta tarefa, você configurará o acesso à rede para o Armazenamento do Microsoft Azure.
-
-1. No portal do Azure, navegue de volta para a folha da conta de armazenamento criada na primeira tarefa deste laboratório e, na seção **Segurança + Rede**, clique em **Rede** e em **Firewalls e redes virtuais**.
-
-1. Clique na opção **Habilitado a partir de redes virtuais e endereços IP selecionados** e revise as definições de configuração que ficam disponíveis quando essa opção é habilitada.
-
-    > **Observação**: Você pode usar essas configurações para configurar a conectividade direta entre máquinas virtuais do Azure em sub-redes designadas de redes virtuais e a conta de armazenamento usando pontos de extremidade de serviço.
-
-1. Clique na caixa de seleção **Adicionar o endereço IP do cliente** e salve a alteração.
-
-1. Abra outra janela do navegador usando o modo InPrivate e navegue até a URL SAS do blob que você gerou na tarefa anterior.
-
-    > **Observação**: Se você não gravou a URL SAS da tarefa 4, você deve gerar uma nova com a mesma configuração. Use a Tarefa 4 (etapas 4 a 6) como um guia para gerar uma nova URL SAS de blob. 
-
-1. Você deve ser capaz de fazer o download do arquivo LICENSE.txt.
-
-    > **Observação**: Isso é esperado, já que você está se conectando a partir do endereço IP do cliente.
-
-1. Feche a janela do navegador do modo InPrivate, retorne à janela do navegador mostrando a folha **Rede** da conta de Armazenamento do Microsoft Azure.
-
-1. No portal do Azure, pesquise e selecione **Máquinas virtuais** e, na lista de máquinas virtuais, selecione **az104-07-vm0**.
-
-1. Na folha **az104-07-vm0**, na seção **Operações**, clique em **Executar comando**.
-
-1. Na folha **Executar Script de Comando**, execute o seguinte no painel **Script do PowerShell** para tentar fazer o download do blob LICENSE do contêiner **az104-07-container** da conta de armazenamento (substitua o espaço reservado `[blob SAS URL]` pela URL do SAS do blob que você gerou na tarefa anterior):
-
-   ```powershell
-   Invoke-WebRequest -URI '[blob SAS URL]'
-   ```
-1. Verifique se a tentativa de download falhou.
-
-    > **Observação**: Você deve receber a mensagem informando **AuthorizationFailure: Esta solicitação não está autorizada a executar esta operação**. Isso é esperado, já que você está se conectando a partir do endereço IP atribuído a uma VM do Azure que hospeda a instância do Cloud Shell.
+![Captura de tela do acesso não autorizado.](../media/az104-lab07-notauthorized.png)
 
 ## Limpar os recursos
 
->**Observação**: lembre-se de remover todos os recursos recém-criados do Azure que você não usa mais. Remover recursos não utilizados garante que você não veja encargos inesperados.
+Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto para excluir os recursos do laboratório. Isso garantirá que os recursos sejam liberados e que o custo seja minimizado. A maneira mais fácil de excluir os recursos do laboratório é excluir o grupo de recursos do laboratório. 
 
->**Observação**: não se preocupe se os recursos do laboratório não puderem ser removidos imediatamente. Às vezes, os recursos têm dependências e levam muito tempo para serem excluídos. É uma tarefa comum do Administrador monitorar o uso de recursos. Portanto, basta revisar periodicamente seus recursos no Portal para ver como a limpeza está indo. Você também pode tentar excluir o grupo de recursos onde os recursos residem. Esse é um atalho rápido do administrador. Se você tiver dúvidas, fale com seu instrutor.
++ No portal do Azure, selecione o grupo de recursos, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
++ Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Usar a CLI, `az group delete --name resourceGroupName`.
 
-1. No portal do Azure, abra a sessão **PowerShell** no painel **Cloud Shell**.
+## Principais aspectos a serem lembrados
 
-1. Liste todos os grupos de recursos criados em todos os laboratórios deste módulo executando o seguinte comando:
+Parabéns por concluir o laboratório. Aqui estão as principais lições deste laboratório. 
 
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-07*'
-   ```
++ Uma conta de armazenamento do Azure contém todos os seus objetos de dados do Armazenamento do Azure: blobs, arquivos, filas e tabelas. Uma conta de armazenamento fornece um namespace exclusivo para os dados do Armazenamento do Microsoft Azure que podem ser acessados de qualquer lugar do mundo por HTTP ou HTTPS.
++ O armazenamento do Azure fornece vários modelos de redundância, incluindo LRS (Armazenamento com redundância local), ZRS (Armazenamento com redundância de zona) e GRS (Armazenamento com redundância geográfica). 
++ O armazenamento de blobs do Azure permite armazenar grandes quantidades de dados não estruturados na plataforma de armazenamento de dados da Microsoft. Blob significa objeto binário grande, que inclui objetos como arquivos de imagens e multimídia.
++ O armazenamento de arquivos do Azure fornece armazenamento compartilhado para dados estruturados. Os dados podem ser organizados em pastas.
++ O armazenamento imutável fornece a capacidade de armazenar dados em um estado WORM (gravação única, leitura múltipla). As políticas de armazenamento imutáveis podem ser baseadas em tempo ou em retenção legal.
 
-1. Exclua todos os grupos de recursos criados em todos os laboratórios deste módulo executando o seguinte comando:
+## Saiba mais com treinamento individual
 
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-07*' | Remove-AzResourceGroup -Force -AsJob
-   ```
-
-    >**Observação**: o comando é executado de maneira assíncrona (conforme determinado pelo parâmetro -AsJob), portanto, embora você possa executar outro comando do PowerShell imediatamente após na mesma sessão do PowerShell, levará alguns minutos antes dos grupos de recursos serem de fato removidos.
-
-## Revisão
-
-Neste laboratório, você vai:
-
-- Provisionou o ambiente de laboratório
-- Criou e configurou contas de Armazenamento do Microsoft Azure
-- Gerenciou o armazenamento de blobs
-- Gerenciou a autenticação e a autorização no Armazenamento do Microsoft Azure
-- Criou e configurou um compartilhamento de Arquivos do Azure
-- Gerenciou o acesso de rede ao Armazenamento do Microsoft Azure
++ [Otimize seus custos com o Armazenamento de Blobs do Azure](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/). Saiba como otimizar seu custo com o Armazenamento de Blobs do Azure.
++ [Controlar o acesso ao Armazenamento do Microsoft Azure com assinaturas de acesso compartilhado](https://learn.microsoft.com/training/modules/control-access-to-azure-storage-with-sas/). Permita acesso a dados armazenados em suas contas de armazenamento do Azure com segurança usando assinaturas de acesso compartilhado.
