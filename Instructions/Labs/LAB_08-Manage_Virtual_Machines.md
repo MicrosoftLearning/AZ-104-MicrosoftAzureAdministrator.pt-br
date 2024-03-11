@@ -152,7 +152,13 @@ Nesta tarefa, você dimensionará uma máquina virtual ajustando seu tamanho par
 
 1. Navegue de volta para a máquina virtual **az104-vm1** e selecione **Discos**.
 
+1. Na seção **Disco de Dados**, selecione **Anexar discos existentes**.
+
+1. No menu suspenso **Nome do disco**, selecione **VM1-DISK1**. 
+
 1. Verifique se o disco agora é **SSD Standard**.
+
+1. Selecione **Aplicar** para salvar as alterações. 
 
     >**Observação:** Agora, você criou uma máquina virtual, dimensionou a SKU e o tamanho do disco de dados. Na próxima tarefa, usamos Conjuntos de Dimensionamento de Máquinas Virtuais para automatizar o processo de dimensionamento.
 
@@ -408,7 +414,7 @@ Nesta tarefa, você dimensiona o conjunto de dimensionamento de máquinas virtua
 
 Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto para excluir os recursos do laboratório. Isso garantirá que os recursos sejam liberados e que o custo seja minimizado. A maneira mais fácil de excluir os recursos do laboratório é excluir o grupo de recursos do laboratório. 
 
-+ No portal do Azure, selecione o grupo de recursos e, em seguida, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
++ No portal do Azure, selecione o grupo de recursos, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
 + Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Usar a CLI, `az group delete --name resourceGroupName`.
 
