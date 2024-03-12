@@ -28,7 +28,7 @@ O volume de nuvem da sua organização cresceu consideravelmente no último ano.
 
 ## Simulações interativas de laboratório
 
-Há várias simulações interativas de laboratório que podem ser úteis para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Há diferenças entre a simulação interativa e este laboratório, mas muitos dos principais conceitos são os mesmos. Uma assinatura do Azure não é necessária. 
+Há várias simulações interativas do laboratório que podem ser úteis para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Há diferenças entre a simulação interativa e este laboratório, mas muitos dos principais conceitos são os mesmos. Uma assinatura do Azure não é necessária. 
 
 + [Gerenciar bloqueios de recursos](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2015). Adicione um bloqueio de recurso e teste para confirmar.
   
@@ -131,15 +131,13 @@ Nesta tarefa, você atribuirá a política interna *Exigir uma marca e seu valor
     | Grupo de recursos | **az104-rg2** |
     | Nome da conta de armazenamento | *qualquer combinação globalmente exclusiva entre 3 e 24 letras minúsculas e dígitos, começando com uma letra* |
 
-1. Selecione **Examinar** e clique em **Criar**:
+1. Selecione **Examinar** e clique em **Criar**.
 
-1. Depois de criar a implantação, você deverá ver a mensagem **Falha de implantação** na lista de **Notificações** do portal. Na lista de **Notificações**, navegue até a visão geral da implantação e clique na mensagem **Implantação com falha. Clique aqui para obter detalhes** para identificar o motivo da falha. 
+1. Você receberá uma mensagem de **Falha na validação**. Veja a mensagem para identificar o motivo da falha. Verifique se a mensagem de erro indica que a implantação do recurso não foi permitida pela política. 
 
     ![Captura de tela do erro de política não permitida.](../media/az104-lab02b-policyerror.png) 
 
-    >**Observação**: Verifique se a mensagem de erro indica que a implantação do recurso não foi permitida pela política. 
-
-    >**Observação**: Clicando na guia **Erro Bruto**, você poderá encontrar mais detalhes sobre o erro, incluindo o nome da definição de função **Exigir marca do Centro de Custo com o Valor padrão**. A implantação falhou porque a conta de armazenamento que você tentou criar não tinha uma marca chamada **Centro de Custo** com seu valor definido como **Padrão**.
+>**Observação**: Clicando na guia **Erro Bruto**, você poderá encontrar mais detalhes sobre o erro, incluindo o nome da definição de função **Exigir marca do Centro de Custo com o Valor padrão**. A implantação falhou porque a conta de armazenamento que você tentou criar não tinha uma marca chamada **Centro de Custo** com seu valor definido como **Padrão**.
 
 ## Tarefa 3: Aplicar marca por meio de uma política do Azure
 
