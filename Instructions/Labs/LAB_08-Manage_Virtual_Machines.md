@@ -354,8 +354,8 @@ Nesta tarefa, você dimensiona o conjunto de dimensionamento de máquinas virtua
     -Location 'East US' `
     -Image 'Win2019Datacenter' `
     -Zone '1' `
-    -Size 'Standard_D2s_v3' 
-    -Credential '(Get-Credential)' 
+    -Size 'Standard_D2s_v3' ` 
+    -Credential (Get-Credential)
     ```
 
 1. Quando o comando for concluído, use **Get-AzVM** para listar as máquinas virtuais no grupo de recursos.
@@ -373,7 +373,7 @@ Nesta tarefa, você dimensiona o conjunto de dimensionamento de máquinas virtua
     ```powershell
     Stop-AzVM `
     -ResourceGroupName 'az104-rg8' `
-    -Name 'myPSVM' `
+    -Name 'myPSVM' 
     ```
 
 1. Use **Get-AzVM** com o parâmetro **-Status** para verificar se a máquina está **desalocada**.
