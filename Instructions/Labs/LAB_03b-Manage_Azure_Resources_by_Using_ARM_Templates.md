@@ -92,7 +92,7 @@ Nesta tarefa, você usa o modelo baixado para implantar um novo disco gerenciado
 1. No painel do editor, faça estas alterações.
 
     + Altere **disks_az104_disk1_name** para `disk_name` (dois lugares para alterar)
-    + Altere **az104_disk1** para `az102_disk2` (um lugar para alterar)
+    + Altere **az104_disk1** para `az104-disk2` (um lugar para alteração)
 
 1. Observe que este é um disco **Standard**. O local é **eastus**. O tamanho do disco é de **32 GB**.
 
