@@ -20,7 +20,7 @@ Sua organização tem um site público. Você precisa balancear a carga de solic
 
 ## Simulações interativas do laboratório
 
-Há simulações interativas do laboratório que podem ser úteis para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Existem diferenças entre a simulação interativa e este laboratório, mas muitos dos conceitos centrais são os mesmos. Uma assinatura do Azure não é necessária.
+Há simulações interativas do laboratório que podem ser úteis para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Há diferenças entre a simulação interativa e este laboratório, mas muitos dos principais conceitos são os mesmos. Uma assinatura do Azure não é necessária.
 
 + [Criar e configurar um balanceador de carga do Azure](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer). Crie uma rede virtual, servidores back-end, balanceador de carga e, em seguida, teste o balanceador de carga.
 + [Implantar o Gateway de Aplicativo do Azure](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway). Crie um gateway de aplicativo, crie máquinas virtuais, crie o pool de back-end e teste o gateway.
@@ -271,7 +271,7 @@ Nesta tarefa, você implementa um Gateway de Aplicativo do Azure na frente de du
 
    >**Observação:** Reserve um minuto para ler as informações sobre **Afinidade baseada em cookie** e **Esvaziamento de conexões**.
 
-1. Na seção **Roteamento baseado em caminho**, selecione **Adicionar vários destinos para criar uma regra baseada em caminho**. Você criará duas regras. Clique em **Adicionar** após a primeira regra e, em seguida, adicione a segunda regra.
+1. Na seção **Roteamento baseado em caminho**, selecione **Adicionar vários destinos para criar uma regra baseada em caminho**. Você criará duas regras. Clique em **Adicionar** após a primeira regra e, em seguida, adicione a segunda regra. 
 
     **Regra – roteamento para o back-end de imagens**
 
@@ -291,7 +291,7 @@ Nesta tarefa, você implementa um Gateway de Aplicativo do Azure na frente de du
     | Configurações de back-end | **az104-http** |
     | Destino de back-end | `az104-videobe` |
 
-1. Selecione **Adicionar** duas vezes e, em seguida, selecione **Avançar: Marcas >**. Nenhuma alteração é necessária.
+1. Certifique-se de **Salvar** e verificar as alterações e selecione **Avançar: Marcas >**. Nenhuma alteração é necessária.
 
 1. Selecione **Avançar: Examinar + criar >** e clique em **Criar**.
 

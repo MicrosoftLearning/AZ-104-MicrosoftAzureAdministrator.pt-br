@@ -41,7 +41,7 @@ Há uma simulação interativa do laboratório que pode ser útil para este tóp
 
 Nesta tarefa, você implantará uma máquina virtual que será usada para testar cenários de monitoramento.
 
-1. Se necessário, baixe os arquivos do laboratório **\\Allfiles\\Lab11\\az104-11-vm-template.json** para o seu computador.
+1. Baixe os arquivos de laboratório **\\Allfiles\\Lab11\\az104-11-vm-template.json** em seu computador.
 
 1. Entre no **portal do Azure** - `https://portal.azure.com`.
 
@@ -245,7 +245,7 @@ Nesta tarefa, você usará o Azure Monitor para consultar os dados capturados da
 
 Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto para excluir os recursos do laboratório. Isso garantirá que os recursos sejam liberados e que o custo seja minimizado. A maneira mais fácil de excluir os recursos do laboratório é excluir o grupo de recursos do laboratório. 
 
-+ No portal do Azure, selecione o grupo de recursos e, em seguida, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
++ No portal do Azure, selecione o grupo de recursos, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
 + Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Usar a CLI, `az group delete --name resourceGroupName`.
 

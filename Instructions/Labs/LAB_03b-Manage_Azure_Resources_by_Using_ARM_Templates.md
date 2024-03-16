@@ -92,7 +92,7 @@ Nesta tarefa, você usa o modelo baixado para implantar um novo disco gerenciado
 1. No painel do editor, faça estas alterações.
 
     + Altere **disks_az104_disk1_name** para `disk_name` (dois lugares para alterar)
-    + Altere **az104_disk1** para `az102_disk2` (um lugar para alterar)
+    + Altere **az104_disk1** para `az104-disk2` (um lugar para alteração)
 
 1. Observe que este é um disco **Standard**. O local é **eastus**. O tamanho do disco é de **32 GB**.
 
@@ -146,7 +146,7 @@ Nesta tarefa, você trabalha com o Azure Cloud Shell e o Azure PowerShell. O Azu
     | Configurações | Valores |
     |  -- | -- |
     | Grupo de recursos | **az104-rg3** |
-    | Conta de armazenamento (Criar nova) | `sacloudshell` (deve ser globalmente exclusivo, ter entre 3 e 24 caracteres e usar apenas números e letras minúsculas) |
+    | Conta de armazenamento (Criar nova) | *deve ser globalmente exclusivo, ter entre 3 e 24 caracteres e usar apenas números e letras minúsculas* |
     | Compartilhamento de arquivo (Criar novo) | `fs-cloudshell` |
 
 1. Quando concluído, selecione **Criar armazenamento**. Você só precisa fazer isso na primeira vez que usar o Cloud Shell. Levará alguns minutos para provisionar o armazenamento.
