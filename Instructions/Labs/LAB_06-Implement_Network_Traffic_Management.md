@@ -179,9 +179,9 @@ Nesta tarefa, você implementa um Gateway de Aplicativo do Azure na frente de du
 
 1. No portal do Azure, pesquise e selecione `Virtual networks`.
 
-1. Na folha **Redes virtuais**, na lista de redes virtuais, clique em **az104-vnet1**.
+1. Na folha **Redes virtuais**, na lista de redes virtuais, clique em **az104-06-vnet1**.
 
-1. Na folha de rede virtual **az104-vnet1**, na seção **Configurações**, clique em **Sub-redes** e, em seguida, clique em + **Sub-rede**.
+1. Na folha de rede virtual **az104-06-vnet1**, na seção **Configurações**, clique em **Sub-redes** e clique em **+ Sub-rede**.
 
 1. Adicione uma sub-rede com as seguintes configurações (deixe as outras com seus valores padrão).
 
@@ -207,7 +207,7 @@ Nesta tarefa, você implementa um Gateway de Aplicativo do Azure na frente de du
     | Camada | **Padrão V2** |
     | Habilitar o dimensionamento automático | **Não** |
     | Contagem mínima de instâncias | `2` |
-    | Zona de disponibilidade | **Nenhuma** |
+    | Zona de disponibilidade | **Zona 1** |
     | HTTP2 | **Desabilitado** |
     | Rede virtual | **az104-06-vnet1** |
     | Sub-rede | **subnet-appgw (10.60.3.224/27)** |
@@ -271,7 +271,7 @@ Nesta tarefa, você implementa um Gateway de Aplicativo do Azure na frente de du
 
    >**Observação:** Reserve um minuto para ler as informações sobre **Afinidade baseada em cookie** e **Esvaziamento de conexões**.
 
-1. Na seção **Roteamento baseado em caminho**, selecione **Adicionar vários destinos para criar uma regra baseada em caminho**. Você criará duas regras. Clique em **Adicionar** após a primeira regra e, em seguida, adicione a segunda regra. 
+1. Na seção **Roteamento baseado em caminho**, selecione **Adicionar vários destinos para criar uma regra baseada em caminho**. Você criará duas regras. Clique em **Adicionar** após a primeira regra e, em seguida, **Adicionar** após a segunda regra. 
 
     **Regra – roteamento para o back-end de imagens**
 

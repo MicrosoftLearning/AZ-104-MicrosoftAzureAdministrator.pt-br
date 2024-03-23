@@ -150,7 +150,7 @@ Nesta tarefa, você implementará o backup no nível da máquina virtual do Azur
     | Frequência | **Diariamente** |
     | Hora | **12h00** |
     | Fuso horário | o nome do fuso horário local |
-    | Reter os instantâneos de recuperação instantânea por | **12** Dias |
+    | Reter os instantâneos de recuperação instantânea por | **2** Dia(s) |
 
     ![Captura de tela da página da política de backup.](../media/az104-lab10-backup-policy.png)
 
