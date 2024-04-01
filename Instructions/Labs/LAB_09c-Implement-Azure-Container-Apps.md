@@ -22,14 +22,14 @@ Sua organização tem um aplicativo Web que é executado em uma máquina virtual
 
 Não há simulações interativas do laboratório para este tópico. 
 
+## Diagrama de arquitetura
+
+![Diagrama das tarefas.](../media/az104-lab09b-aca-architecture.png)
+
 ## Habilidades de trabalho
 
 - Tarefa 1: Crie e configure um aplicativo de contêiner do Azure e um ambiente.
 - Tarefa 2: Teste e verifique a implantação do aplicativo de contêiner do Azure.
-
-## Diagrama de arquitetura
-
-![Faça um diagrama das tarefas.](../media/az104-lab09b-aca-architecture.png)
 
 ## Tarefa 1: Criar e configurar um Aplicativo de Contêiner do Azure e um ambiente
 
@@ -71,7 +71,7 @@ Por padrão, o aplicativo de contêiner do Azure que você criar aceitará o tr�
 
 Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto para excluir os recursos do laboratório. Isso garantirá que os recursos sejam liberados e que o custo seja minimizado. A maneira mais fácil de excluir os recursos do laboratório é excluir o grupo de recursos do laboratório. 
 
-+ No portal do Azure, selecione o grupo de recursos e, em seguida, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
++ No portal do Azure, selecione o grupo de recursos, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
 + Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Usar a CLI, `az group delete --name resourceGroupName`.
 

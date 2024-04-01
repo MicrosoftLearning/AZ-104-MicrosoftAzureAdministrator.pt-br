@@ -10,6 +10,9 @@ lab:
 
 Este é o primeiro de uma série de laboratórios para administradores do Azure. Neste laboratório, você aprenderá sobre usuários e grupos. Usuários e grupos são os blocos de construção básicos para uma solução de identidade. 
 
+Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode afetar a disponibilidade de recursos neste laboratório. Você pode alterar a região, mas as etapas são escritas usando o **Leste dos EUA**. 
+
+
 ## Tempo estimado: 30 minutos
 
 ## Cenário do laboratório
@@ -137,7 +140,7 @@ Nesta tarefa, você cria uma conta de grupo. As contas de grupo podem incluir co
 
 Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto para excluir os recursos do laboratório. Isso garantirá que os recursos sejam liberados e que o custo seja minimizado. A maneira mais fácil de excluir os recursos do laboratório é excluir o grupo de recursos do laboratório. 
 
-+ No portal do Azure, selecione o grupo de recursos e, em seguida, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
++ No portal do Azure, selecione o grupo de recursos, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
 + Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Usar a CLI, `az group delete --name resourceGroupName`.
   

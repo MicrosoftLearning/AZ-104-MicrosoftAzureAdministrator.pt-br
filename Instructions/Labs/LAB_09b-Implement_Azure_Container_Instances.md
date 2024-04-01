@@ -25,15 +25,14 @@ Há simulações interativas do laboratório que podem ser úteis para este tóp
   
 + [Implemente as Instâncias de Contêiner do Azure](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014).  Implante uma imagem do Docker usando as Instâncias de Contêiner do Azure. 
 
+## Diagrama de arquitetura
+
+![Diagrama das tarefas.](../media/az104-lab09b-aci-architecture.png)
+
 ## Habilidades de trabalho
 
 - Tarefa 1: Implante as Instâncias de Contêiner do Azure usando uma imagem do Docker.
 - Tarefa 2: Teste e verifique a implantação de uma Instância de Contêiner do Azure.
-
-
-## Diagrama de arquitetura
-
-![Faça um diagrama das tarefas.](../media/az104-lab09b-aci-architecture.png)
 
 ## Tarefa 1: implantar Instâncias de Contêiner do Azure usando uma imagem do Docker.
 
@@ -92,7 +91,7 @@ Nesta tarefa, você examinará a implantação da instância de contêiner. Por 
 
 Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto para excluir os recursos do laboratório. Isso garantirá que os recursos sejam liberados e que o custo seja minimizado. A maneira mais fácil de excluir os recursos do laboratório é excluir o grupo de recursos do laboratório. 
 
-+ No portal do Azure, selecione o grupo de recursos e, em seguida, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
++ No portal do Azure, selecione o grupo de recursos, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
 + Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Usar a CLI, `az group delete --name resourceGroupName`.
 
