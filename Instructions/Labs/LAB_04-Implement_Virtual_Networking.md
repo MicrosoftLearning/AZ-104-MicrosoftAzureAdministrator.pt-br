@@ -115,7 +115,7 @@ Nesta tarefa, você cria a rede virtual ManufacturingVnet e as sub-redes associa
 
 1. Substitua todas as ocorrências de **CoreServicesVnet** por `ManufacturingVnet`. 
 
-1. Substitua todas as ocorrências de **10.20.0.0/16** por `10.30.0.0/16`. 
+1. Substituir todas as ocorrências de **10.20.0.0** por `10.30.0.0`. 
 
 ### Faça alterações nas sub-redes ManufacturingVnet
 
