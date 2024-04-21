@@ -20,7 +20,7 @@ Sua organização segmenta os principais aplicativos e serviços de TI (como DNS
 
 ## Simulações interativas do laboratório
 
-Há várias simulações interativas do laboratório que podem ser úteis para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Existem diferenças entre a simulação interativa e este laboratório, mas muitos dos conceitos centrais são os mesmos. Não é necessária uma assinatura do Azure. 
+Há várias simulações interativas do laboratório que podem ser úteis para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Há diferenças entre a simulação interativa e este laboratório, mas muitos dos principais conceitos são os mesmos. Não é necessária uma assinatura do Azure. 
 
 + [Conectar duas redes virtuais do Azure usando o emparelhamento de rede virtual global](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering). Teste a conexão entre duas máquinas virtuais em redes virtuais diferentes. Crie um emparelhamento de rede virtual e retome.
 
@@ -194,7 +194,8 @@ Nesta tarefa, você cria um emparelhamento de rede virtual para habilitar a comu
 
 1. Examine suas configurações e selecione **Adicionar**.
 
-    ![Captura de tela da página de emparelhamento.](../media/az104-lab05-peering.png)
+![Captura de tela da página de emparelhamento.](../media/az104-lab05-peering.png)
+
  
 1. Em CoreServicesVnet | Emparelhamentos, verifique se o emparelhamento **CoreServicesVnet-to-ManufacturingVnet** está listado. Atualize a página para garantir que o **Status de emparelhamento** esteja **Conectado**.
 
@@ -282,7 +283,7 @@ Nesta tarefa, você deseja controlar o tráfego de rede entre a sub-rede de per�
 
 Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto para excluir os recursos do laboratório. Isso garantirá que os recursos sejam liberados e que o custo seja minimizado. A maneira mais fácil de excluir os recursos do laboratório é excluir o grupo de recursos do laboratório. 
 
-+ No portal do Azure, selecione o grupo de recursos e, em seguida, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
++ No portal do Azure, selecione o grupo de recursos, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
 + Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Usar a CLI, `az group delete --name resourceGroupName`.
 
