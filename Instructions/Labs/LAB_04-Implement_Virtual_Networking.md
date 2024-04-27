@@ -71,7 +71,6 @@ A organização planeja uma grande quantidade de crescimento para os principais 
 
     |  **Opção**         | **Valor**            |
     | ------------------ | -------------------- |
-
     | Espaço de endereço IPv4 | `10.20.0.0/16` (separe as entradas)    |
 
 1. Selecione **+Adicionar uma sub-rede**. Conclua as informações de nome e endereço de cada sub-rede. Certifique-se de selecionar **Adicionar** para cada nova sub-rede. 
