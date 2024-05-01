@@ -77,7 +77,7 @@ Nesta tarefa, você cria uma rede virtual de serviços principais com uma máqui
 
     | Configuração | Valor | 
     | --- | --- |
-    | Nome | `CoreServicesVNet` (Criar novo) |
+    | Nome | `CoreServicesVnet` (Criar novo) |
     | Intervalo de endereços | `10.0.0.0/16`  |
     | Nome da sub-rede | `Core` | 
     | Intervalo de endereços da sub-rede | `10.0.0.0/24` |
@@ -122,7 +122,7 @@ Nesta tarefa, você cria uma rede virtual de serviços de fabricação com uma m
 
     | Configuração | Valor | 
     | --- | --- |
-    | Nome | `ManufacturingVNet` |
+    | Nome | `ManufacturingVnet` |
     | Intervalo de endereços | `172.16.0.0/16`  |
     | Nome da sub-rede | `Manufacturing` |
     | Intervalo de endereços da sub-rede | `172.16.0.0/24` |
@@ -177,20 +177,20 @@ Nesta tarefa, você cria um emparelhamento de rede virtual para habilitar a comu
 | --------------------------------------------- | ------------------------------------- |
 | **Esta rede virtual**                                       |                                       |
 | Nome do link de emparelhamento                             | `CoreServicesVnet-to-ManufacturingVnet` |
-| Permita que o CoreServicesVNet acesse a rede virtual emparelhada            | selecionado (padrão)                       |
-| Permita que o CoreServicesVNet receba o tráfego encaminhado da rede virtual emparelhada | selecionado                       |
-| Permita que o gateway no CoreServicesVNet encaminhe o tráfego para a rede virtual emparelhada | Não selecionado (padrão) |
-| Habilitar o CoreServicesVNet para usar o gateway remoto das redes virtuais emparelhadas       | Não selecionado (padrão)                        |
+| Permitir que CoreServicesVnet acesse a rede virtual emparelhada            | selecionado (padrão)                       |
+| Permitir que CoreServicesVnet receba tráfego encaminhado da rede virtual emparelhada | selecionado                       |
+| Permitir que o gateway no CoreServicesVnet encaminhe o tráfego para a rede virtual emparelhada | Não selecionado (padrão) |
+| Habilitar CoreServicesVnt para usar o gateway remoto das redes virtuais emparelhadas       | Não selecionado (padrão)                        |
 | **Rede virtual remota**                                   |                                       |
 | Nome do link de emparelhamento                             | `ManufacturingVnet-to-CoreServicesVnet` |
 | Modelo de implantação de rede virtual              | **Gerenciador de recursos**                      |
 | Conheço minha ID do recurso                         | Não selecionado                          |
 | Assinatura                                  | *sua assinatura*    |
 | Rede virtual                               | **ManufacturingVnet**                     |
-| Permita que o ManufacturingVNet acesse o CoreServicesVNet  | selecionado (padrão)                       |
-| Permita que o ManufacturingVNet receba tráfego encaminhado do CoreServicesVNet | selecionado                        |
-| Permita que o gateway no CoreServicesVNet encaminhe o tráfego para a rede virtual emparelhada | Não selecionado (padrão) |
-| Habilite o ManufacturingVNet para usar o gateway remoto do CoreServicesVNet       | Não selecionado (padrão)                        |
+| Permitir que ManufacturingVnet acesse CoreServicesVnet  | selecionado (padrão)                       |
+| Permitir que ManufacturingVnet receba tráfego encaminhado do CoreServicesVnet | selecionado                        |
+| Permitir que o gateway no CoreServicesVnet encaminhe o tráfego para a rede virtual emparelhada | Não selecionado (padrão) |
+| Habilitar ManufacturingVnet para usar o gateway remoto do CoreServicesVnet       | Não selecionado (padrão)                        |
 
 1. Examine suas configurações e selecione **Adicionar**.
 
