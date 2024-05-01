@@ -42,7 +42,7 @@ Nesta tarefa, você usará um modelo para implantar uma rede virtual, um grupo d
 
 1. Pesquise e selecione `Deploy a custom template`.
 
-1. Na página de implantação personalizada, selecione **Criar seu próprio modelo no editor**.
+1. Na página de implantação personalizada, selecione **Criar seu modelo no editor**.
 
 1. Na página Editar modelo, selecione **Carregar arquivo**.
 
@@ -128,7 +128,7 @@ Nesta tarefa, você implementa um Azure Load Balancer na frente das duas máquin
     | az104-06-vm0 | **marque a caixa** |
     | az104-06-vm1 | **marque a caixa** |
 
-1. Como você tem tempo, examine as outras guias e clique em **Examinar e criar**. Verifique se não há erros de validação e clique em **Criar**.
+1. Como você tem tempo, examine as outras guias e clique em **Examinar + criar**. Verifique se não há erros de validação e clique em **Criar**.
 
 1. Aguarde até que o balanceador de carga seja implantado e clique em **Ir para o recurso**.
 
@@ -136,7 +136,7 @@ Nesta tarefa, você implementa um Azure Load Balancer na frente das duas máquin
 
 1. Na folha **Configurações**, selecione **Regras de balanceamento de carga**.
 
-1. Selecione **Adicionar uma regra de balanceamento de carga**. Adicione uma regra de balanceamento de carga com as seguintes configurações (deixe as outras com seus valores padrão).  Ao configurar a regra, use os ícones informativos para saber mais sobre cada configuração. Quando terminar, clique em **Salvar**.
+1. Selecione **+ Adicionar**. Adicione uma regra de balanceamento de carga com as seguintes configurações (deixe as outras com seus valores padrão).  Ao configurar a regra, use os ícones informativos para saber mais sobre cada configuração. Quando terminar, clique em **Salvar**.
 
     | Configuração | Valor |
     | --- | --- |
@@ -194,7 +194,7 @@ Nesta tarefa, você implementa um Gateway de Aplicativo do Azure na frente de du
 
     > **Observação**: Esta sub-rede será usada pelo Gateway de Aplicativo do Azure. O Gateway de Aplicativo requer uma sub-rede dedicada de /27 ou tamanho maior.
 
-1. No portal do Azure, pesquise e selecione `Application Gateways` e, na folha **Gateways de Aplicativo**, clique em **+ Criar**.
+1. No portal do Azure, pesquise e selecione `Application gateways` e, na folha **Gateways de Aplicativo**, clique em **+ Criar**.
 
 1. Na guia **Noções básicas**, especifique as seguintes configurações (deixe as outras com seus valores padrão):
 
@@ -250,14 +250,14 @@ Nesta tarefa, você implementa um Gateway de Aplicativo do Azure na frente de du
     | Adicionar pool de back-end sem destinos | **Não** |
     | Máquina virtual | **az104-rg6-nic2 (10.60.2.4)** |
 
-1. Selecione **Avançar: Configuração** e, em seguida, **Adicionar regras de roteamento**. Conclua as informações.
+1. Selecione **Avançar: Configuração >** e, em seguida, **Adicionar regras de roteamento**. Conclua as informações.
 
     | Configuração | Valor |
     | --- | --- |
     | Nome da regra | `az104-gwrule` |
     | Prioridade | `10` |
     | Nome do ouvinte | `az104-listener` |
-    | IP de front-end | **Pública** |
+    | IP de front-end | **IPv4 público** |
     | Protocolo | **HTTP** |
     | Porta | `80` |
     | Tipo de ouvinte | **Basic** |
