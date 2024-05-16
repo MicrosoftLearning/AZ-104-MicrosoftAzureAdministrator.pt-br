@@ -322,7 +322,21 @@ Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto 
 + No portal do Azure, selecione o grupo de recursos, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
 + Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Usar a CLI, `az group delete --name resourceGroupName`.
-  
+
+## Estender seu aprendizado com o Copilot
+
+O Copilot pode ajudar você a aprender a usar as ferramentas de script do Azure. O Copilot também pode ajudar em áreas não cobertas no laboratório ou onde você precisar de mais informações. Abra um navegador do Edge e escolha Copilot (canto superior direito) ou navegue até *copilot.microsoft.com*. Reserve alguns minutos para experimentar essas solicitações.
+
++ Compare e contraste o Azure Load Balancer com o Gateway de Aplicativo do Azure.
++ Como posso solucionar problemas de conectividade de entrada com um Azure Load Balancer?
++ Quais são as etapas básicas para configurar o Gateway de Aplicativo do Azure?
++ Crie uma tabela realçando soluções de balanceamento de carga do Azure. Inclua estas colunas: Protocolos com suporte, balanceamento de carga privado, balanceamento de carga global, políticas de roteamento, ambientes com suporte, drenagem de conexão, afinidade de sessão, balanceamento de carga baseado em host e caminho, descarregamento de TLS, aceleração de site, segurança, armazenamento em cache e compactação.
+
+## Saiba mais com treinamento individual
+
++ [Melhorar a escalabilidade e a resiliência do aplicativo usando o Azure Load Balancer](https://learn.microsoft.com/training/modules/improve-app-scalability-resiliency-with-load-balancer/). Discuta sobre os diferentes balanceadores de carga no Azure e como escolher a solução correta de balanceador de carga do Azure para atender aos seus requisitos.
++ [Balancear a carga do tráfego de seu serviço Web com o Gateway de Aplicativo](https://learn.microsoft.com/training/modules/load-balance-web-traffic-with-application-gateway/). Aumente a resiliência do aplicativo distribuindo a carga entre vários servidores e use o roteamento baseado em caminho para o direcionar o tráfego da Web.
+
 ## Principais aspectos a serem lembrados
 
 Parabéns por concluir o laboratório. Aqui estão as principais lições deste laboratório.
@@ -333,8 +347,3 @@ Parabéns por concluir o laboratório. Aqui estão as principais lições deste 
 + O Gateway de Aplicativo do Azure é um balanceador de carga de tráfego da Web (camada 7 OSI) que permite que você gerencie o tráfego para seus aplicativos Web.
 + A camada Standard do Gateway de Aplicativo oferece toda a funcionalidade L7, incluindo balanceamento de carga. A camada WAF adiciona um firewall para verificar se há tráfego mal-intencionado.
 + Um Gateway de Aplicativo pode tomar decisões de roteiros com base em outros atributos de uma solicitação HTTP, por exemplo, o caminho de URI ou os cabeçalhos de host.
-
-## Saiba mais com treinamento individual
-
-+ [Melhorar a escalabilidade e a resiliência do aplicativo usando o Azure Load Balancer](https://learn.microsoft.com/training/modules/improve-app-scalability-resiliency-with-load-balancer/). Discuta sobre os diferentes balanceadores de carga no Azure e como escolher a solução correta de balanceador de carga do Azure para atender aos seus requisitos.
-+ [Balancear a carga do tráfego de seu serviço Web com o Gateway de Aplicativo](https://learn.microsoft.com/training/modules/load-balance-web-traffic-with-application-gateway/). Aumente a resiliência do aplicativo distribuindo a carga entre vários servidores e use o roteamento baseado em caminho para o direcionar o tráfego da Web.

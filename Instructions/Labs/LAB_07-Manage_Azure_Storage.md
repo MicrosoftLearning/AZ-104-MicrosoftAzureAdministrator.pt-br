@@ -20,7 +20,7 @@ No momento, sua organização está armazenando dados em armazenamentos de dados
 
 ## Simulações interativas do laboratório
 
-Há simulações interativas do laboratório que podem ser úteis para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Existem diferenças entre a simulação interativa e este laboratório, mas muitos dos conceitos centrais são os mesmos. Uma assinatura do Azure não é necessária. 
+Há simulações interativas do laboratório que podem ser úteis para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Há diferenças entre a simulação interativa e este laboratório, mas muitos dos principais conceitos são os mesmos. Uma assinatura do Azure não é necessária. 
 
 + [Criação do armazenamento de blobs](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%205). Crie uma conta de armazenamento, gerencie o armazenamento de blobs e monitore as atividades de armazenamento. 
   
@@ -245,6 +245,18 @@ Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto 
 + Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Usar a CLI, `az group delete --name resourceGroupName`.
 
+## Estender seu aprendizado com o Copilot
+O Copilot pode ajudar você a aprender a usar as ferramentas de script do Azure. O Copilot também pode ajudar em áreas não cobertas no laboratório ou onde você precisar de mais informações. Abra um navegador do Edge e escolha Copilot (canto superior direito) ou navegue até *copilot.microsoft.com*. Reserve alguns minutos para experimentar essas solicitações.
+
++ Forneça um script do Azure PowerShell para criar uma conta de armazenamento com um contêiner de blob. 
++ Forneça uma lista de verificação que eu possa usar para garantir que minha conta de armazenamento do Azure esteja segura.
++ Crie uma tabela para comparar modelos de redundância de armazenamento do Azure.
+
+## Saiba mais com treinamento individual
+
++ [Otimize seus custos com o Armazenamento de Blobs do Azure](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/). Saiba como otimizar seu custo com o Armazenamento de Blobs do Azure.
++ [Controlar o acesso ao Armazenamento do Microsoft Azure com assinaturas de acesso compartilhado](https://learn.microsoft.com/training/modules/control-access-to-azure-storage-with-sas/). Permita acesso a dados armazenados em suas contas de armazenamento do Azure com segurança usando assinaturas de acesso compartilhado.
+
 ## Principais aspectos a serem lembrados
 
 Parabéns por concluir o laboratório. Aqui estão as principais lições deste laboratório. 
@@ -254,8 +266,3 @@ Parabéns por concluir o laboratório. Aqui estão as principais lições deste 
 + O armazenamento de blobs do Azure permite armazenar grandes quantidades de dados não estruturados na plataforma de armazenamento de dados da Microsoft. Blob significa objeto binário grande, que inclui objetos como arquivos de imagens e multimídia.
 + O armazenamento de arquivos do Azure fornece armazenamento compartilhado para dados estruturados. Os dados podem ser organizados em pastas.
 + O armazenamento imutável fornece a capacidade de armazenar dados em um estado WORM (gravação única, leitura múltipla). As políticas de armazenamento imutáveis podem ser baseadas em tempo ou em retenção legal.
-
-## Saiba mais com treinamento individual
-
-+ [Otimize seus custos com o Armazenamento de Blobs do Azure](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/). Saiba como otimizar seu custo com o Armazenamento de Blobs do Azure.
-+ [Controlar o acesso ao Armazenamento do Microsoft Azure com assinaturas de acesso compartilhado](https://learn.microsoft.com/training/modules/control-access-to-azure-storage-with-sas/). Permita acesso a dados armazenados em suas contas de armazenamento do Azure com segurança usando assinaturas de acesso compartilhado.

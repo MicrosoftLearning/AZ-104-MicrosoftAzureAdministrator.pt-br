@@ -249,6 +249,18 @@ Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto 
 + Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Usar a CLI, `az group delete --name resourceGroupName`.
 
+## Estender seu aprendizado com o Copilot
+O Copilot pode ajudar você a aprender a usar as ferramentas de script do Azure. O Copilot também pode ajudar em áreas não cobertas no laboratório ou onde você precisar de mais informações. Abra um navegador do Edge e escolha Copilot (canto superior direito) ou navegue até *copilot.microsoft.com*. Reserve alguns minutos para experimentar essas solicitações.
+
++ Quais são as etapas básicas de configuração para ser alertado no Azure quando uma máquina virtual estiver inoperante?
++ Como posso ser notificado quando um alerta do Azure for disparado?
++ Construa uma consulta do Azure Monitor para fornecer informações de desempenho da CPU da máquina virtual.
+
+## Saiba mais com treinamento individual
+
++ [Melhore a resposta a incidentes com alertas no Azure](https://learn.microsoft.com/en-us/training/modules/incident-response-with-alerting-on-azure/). Responda a incidentes e atividades em sua infraestrutura por meio de funcionalidades de alerta no Azure Monitor.
++ [Monitore suas máquinas virtuais do Azure com o Azure Monitor](https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/). Monitore suas VMs do Azure usando o Azure Monitor para coletar e analisar os logs e as métricas de cliente e do host da VM.
+
 ## Principais aspectos a serem lembrados
 
 Parabéns por concluir o laboratório. Aqui estão as principais lições deste laboratório. 
@@ -258,8 +270,3 @@ Parabéns por concluir o laboratório. Aqui estão as principais lições deste 
 + Uma regra de alerta monitora seus dados e captura um sinal que indica que algo está acontecendo no recurso especificado.
 + Um alerta será disparado se as condições da regra de alerta forem atendidas. Várias ações (email, SMS, push, voz) podem ser disparadas.
 + Os grupos de ações incluem indivíduos que devem ser notificados de um alerta.
-
-## Saiba mais com treinamento individual
-
-+ [Melhore a resposta a incidentes com alertas no Azure](https://learn.microsoft.com/en-us/training/modules/incident-response-with-alerting-on-azure/). Responda a incidentes e atividades em sua infraestrutura por meio de funcionalidades de alerta no Azure Monitor.
-+ [Monitore suas máquinas virtuais do Azure com o Azure Monitor](https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/). Monitore suas VMs do Azure usando o Azure Monitor para coletar e analisar os logs e as métricas de cliente e do host da VM.

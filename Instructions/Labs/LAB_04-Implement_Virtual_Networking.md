@@ -343,7 +343,23 @@ Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto 
 + No portal do Azure, selecione o grupo de recursos, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
 + Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Usar a CLI, `az group delete --name resourceGroupName`.
- 
+
+## Estender seu aprendizado com o Copilot
+
+O Copilot pode ajudar você a aprender a usar as ferramentas de script do Azure. O Copilot também pode ajudar em áreas não cobertas no laboratório ou onde você precisar de mais informações. Abra um navegador do Edge e escolha Copilot (canto superior direito) ou navegue até *copilot.microsoft.com*. Reserve alguns minutos para experimentar essas solicitações.
++ Compartilhe as 10 melhores práticas ao implantar e configurar uma rede virtual no Azure.
++ Como usar comandos do Azure PowerShell e da CLI do Azure para criar uma rede virtual com um endereço IP público e uma sub-rede. 
++ Explique as regras de entrada e de saída do Grupo de Segurança de Rede do Azure e como elas são usadas.
++ Qual é a diferença entre os Grupos de Segurança de Rede do Azure e os Grupos de Segurança de Aplicativo Azure? Compartilhe exemplos de quando usar cada um desses grupos. 
++ Forneça um guia passo a passo sobre como solucionar problemas de rede que enfrentamos ao implantar uma rede no Azure. Compartilhe também o processo de raciocínio usado em cada etapa para solucionar problemas.
+
+## Saiba mais com treinamento individual
+
++ [Introdução às Redes Virtuais do Azure](https://learn.microsoft.com/training/modules/introduction-to-azure-virtual-networks/). Projete e implemente a infraestrutura principal da Rede do Azure, como redes virtuais, IPs públicos e privados, DNS, emparelhamento de rede virtual, roteamento e NAT Virtual do Azure.
++ [Criar um esquema de endereçamento IP](https://learn.microsoft.com/training/modules/design-ip-addressing-for-azure/). Identifique os recursos de endereçamento IP público e privado das redes virtuais locais e do Azure.
++ [Proteger e isolar o acesso aos recursos do Azure usando grupos de segurança de rede e pontos de extremidade de serviço](https://learn.microsoft.com/training/modules/secure-and-isolate-with-nsg-and-service-endpoints/). Os Grupos de Segurança de Rede e os pontos de extremidade de serviço ajudam você a assegurar que as máquinas virtuais e os serviços do Azure sejam protegidos contra o acesso não autorizado à rede.
++ [Hospede seu domínio no DNS do Azure](https://learn.microsoft.com/training/modules/host-domain-azure-dns/). Crie uma zona DNS para seu nome de domínio. Crie registros DNS para mapear o domínio para um endereço IP. Teste se o nome de domínio é resolvido para o seu servidor Web.
+  
 ## Principais aspectos a serem lembrados
 
 Parabéns por concluir o laboratório. Aqui estão as principais lições deste laboratório. 
@@ -354,11 +370,3 @@ Parabéns por concluir o laboratório. Aqui estão as principais lições deste 
 + Um grupo de segurança de rede contém regras de segurança que permitem ou negam o tráfego de rede. Há regras de entrada e saída padrão que você pode personalizar de acordo com suas necessidades.
 + Os grupos de segurança de aplicativos são usados para proteger grupos de servidores com uma função comum, como servidores Web ou servidores de banco de dados.
 + O DNS do Azure é um serviço de hospedagem para domínios DNS que fornece a resolução de nomes. Você pode configurar o DNS do Azure para resolver nomes de host em seu domínio público.  Você também pode usar zonas DNS privadas para atribuir nomes DNS a máquinas virtuais (VMs) em suas redes virtuais do Azure.
-
-## Saiba mais com treinamento individual
-
-+ [Introdução às Redes Virtuais do Azure](https://learn.microsoft.com/training/modules/introduction-to-azure-virtual-networks/). Projete e implemente a infraestrutura principal da Rede do Azure, como redes virtuais, IPs públicos e privados, DNS, emparelhamento de rede virtual, roteamento e NAT Virtual do Azure.
-+ [Criar um esquema de endereçamento IP](https://learn.microsoft.com/training/modules/design-ip-addressing-for-azure/). Identifique os recursos de endereçamento IP público e privado das redes virtuais locais e do Azure.
-+ [Proteger e isolar o acesso aos recursos do Azure usando grupos de segurança de rede e pontos de extremidade de serviço](https://learn.microsoft.com/training/modules/secure-and-isolate-with-nsg-and-service-endpoints/). Os Grupos de Segurança de Rede e os pontos de extremidade de serviço ajudam você a assegurar que as máquinas virtuais e os serviços do Azure sejam protegidos contra o acesso não autorizado à rede.
-+ [Hospede seu domínio no DNS do Azure](https://learn.microsoft.com/training/modules/host-domain-azure-dns/). Crie uma zona DNS para seu nome de domínio. Crie registros DNS para mapear o domínio para um endereço IP. Teste se o nome de domínio é resolvido para o seu servidor Web.
-  

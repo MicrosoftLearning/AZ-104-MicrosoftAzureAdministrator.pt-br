@@ -418,6 +418,18 @@ Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto 
 + Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Usar a CLI, `az group delete --name resourceGroupName`.
 
+## Estender seu aprendizado com o Copilot
+O Copilot pode ajudar você a aprender a usar as ferramentas de script do Azure. O Copilot também pode ajudar em áreas não cobertas no laboratório ou onde você precisar de mais informações. Abra um navegador do Edge e escolha Copilot (canto superior direito) ou navegue até *copilot.microsoft.com*. Reserve alguns minutos para experimentar essas solicitações.
+
++ Forneça as etapas e os comandos da CLI do Azure para criar uma máquina virtual do Linux. 
++ Revise as maneiras pelas quais você pode escalar máquinas virtuais e melhorar o desempenho.
++ Descreva as políticas de gerenciamento do ciclo de vida do armazenamento do Azure e como elas podem otimizar os custos.
+
+## Saiba mais com treinamento individual
+
++ [Crie uma máquina virtual do Windows no Azure](https://learn.microsoft.com/training/modules/create-windows-virtual-machine-in-azure/). Criar uma máquina virtual do Windows usando o portal do Azure. Conectar-se a uma máquina virtual do Windows em execução usando a Área de Trabalho Remota
++ [Crie um aplicativo escalonável com os Conjuntos de Dimensionamento de Máquinas Virtuais](https://learn.microsoft.com/training/modules/build-app-with-scale-sets/). Permita que seu aplicativo se ajuste automaticamente às alterações de carga, minimizando os custos com os Conjuntos de Dimensionamento de Máquinas Virtuais.
++ [Conectar-se a máquinas virtuais através do portal do Microsoft Azure usando o Azure Bastion](https://learn.microsoft.com/en-us/training/modules/connect-vm-with-azure-bastion/). Implante o Azure Bastion para se conectar com segurança às máquinas virtuais do Azure diretamente no portal do Azure, para substituir de forma eficaz uma solução de Jumpbox existente, monitorar sessões remotas usando logs de diagnóstico e gerenciar sessões remotas ao desconectar uma sessão do usuário.
 
 ## Principais aspectos a serem lembrados
 
@@ -429,10 +441,3 @@ Parabéns por concluir o laboratório. Aqui estão as principais lições deste 
 + Os Conjuntos de Dimensionamento de Máquinas Virtuais permitem criar e gerenciar um grupo de VMs com balanceamento de carga.
 + As máquinas virtuais em um Conjunto de Dimensionamento de Máquinas Virtuais são criadas na mesma imagem e configuração.
 + Em um Conjunto de Dimensionamento de Máquinas Virtuais, o número de instâncias de VM pode aumentar ou diminuir automaticamente em resposta à demanda ou a um agendamento definido.
-
-## Saiba mais com treinamento individual
-
-+ [Crie uma máquina virtual do Windows no Azure](https://learn.microsoft.com/training/modules/create-windows-virtual-machine-in-azure/). Criar uma máquina virtual do Windows usando o portal do Azure. Conectar-se a uma máquina virtual do Windows em execução usando a Área de Trabalho Remota
-+ [Crie um aplicativo escalonável com os Conjuntos de Dimensionamento de Máquinas Virtuais](https://learn.microsoft.com/training/modules/build-app-with-scale-sets/). Permita que seu aplicativo se ajuste automaticamente às alterações de carga, minimizando os custos com os Conjuntos de Dimensionamento de Máquinas Virtuais.
-+ [Conectar-se a máquinas virtuais através do portal do Microsoft Azure usando o Azure Bastion](https://learn.microsoft.com/en-us/training/modules/connect-vm-with-azure-bastion/). Implante o Azure Bastion para se conectar com segurança às máquinas virtuais do Azure diretamente no portal do Azure, para substituir de forma eficaz uma solução de Jumpbox existente, monitorar sessões remotas usando logs de diagnóstico e gerenciar sessões remotas ao desconectar uma sessão do usuário.
-  

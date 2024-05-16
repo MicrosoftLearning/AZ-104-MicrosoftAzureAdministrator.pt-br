@@ -284,6 +284,18 @@ Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto 
 + Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Usar a CLI, `az group delete --name resourceGroupName`.
 
+## Estender seu aprendizado com o Copilot
+O Copilot pode ajudar você a aprender a usar as ferramentas de script do Azure. O Copilot também pode ajudar em áreas não cobertas no laboratório ou onde você precisar de mais informações. Abra um navegador do Edge e escolha Copilot (canto superior direito) ou navegue até *copilot.microsoft.com*. Reserve alguns minutos para experimentar essas solicitações.
+
++ Quais produtos são suportados pelo Backup do Azure?
++ Resuma as etapas de backup e restauração de uma máquina virtual do Azure com o Backup do Azure.
++ Como posso usar o Azure PowerShell ou a CLI para verificar o status de um trabalho de Backup do Azure.
++ Forneça pelo menos cinco melhores práticas para configurar backups de máquina virtual do Azure.  
+
+## Saiba mais com treinamento individual
+
++ [Proteja suas máquinas virtuais usando o Azure Backup](https://learn.microsoft.com/training/modules/protect-virtual-machines-with-azure-backup/). Use o Backup do Azure para ajudar a proteger servidores locais, máquinas virtuais, SQL Server, compartilhamentos de arquivos do Azure e outras cargas de trabalho.
++ [Proteja sua infraestrutura do Azure com o Azure Site Recovery](https://learn.microsoft.com/en-us/training/modules/protect-infrastructure-with-site-recovery/). Forneça a recuperação de desastre para sua infraestrutura do Azure personalizando a replicação, o failover e o failback de máquinas virtuais do Azure com o Azure Site Recovery.
 
 ## Principais aspectos a serem lembrados
 
@@ -295,8 +307,3 @@ Parabéns por concluir o laboratório. Aqui estão as principais lições desse 
 + O Azure Site Recovery é uma solução de recuperação de desastre que fornece proteção para suas máquinas virtuais e aplicativos.
 + O Azure Site Recovery replica suas cargas de trabalho para um site secundário e, no caso de uma interrupção ou desastre, você poderá fazer failover para o site secundário e retomar as operações com tempo de inatividade mínimo.
 + Um cofre dos Serviços de Recuperação armazena seus dados de backup e minimiza a sobrecarga de gerenciamento.
-
-## Saiba mais com treinamento individual
-
-+ [Proteja suas máquinas virtuais usando o Azure Backup](https://learn.microsoft.com/training/modules/protect-virtual-machines-with-azure-backup/). Use o Backup do Azure para ajudar a proteger servidores locais, máquinas virtuais, SQL Server, compartilhamentos de arquivos do Azure e outras cargas de trabalho.
-+ [Proteja sua infraestrutura do Azure com o Azure Site Recovery](https://learn.microsoft.com/en-us/training/modules/protect-infrastructure-with-site-recovery/). Forneça a recuperação de desastre para sua infraestrutura do Azure personalizando a replicação, o failover e o failback de máquinas virtuais do Azure com o Azure Site Recovery.

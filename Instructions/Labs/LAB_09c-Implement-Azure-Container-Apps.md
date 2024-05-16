@@ -75,6 +75,15 @@ Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto 
 + Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Usar a CLI, `az group delete --name resourceGroupName`.
 
+## Estender seu aprendizado com o Copilot
+O Copilot pode ajudar você a aprender a usar as ferramentas de script do Azure. O Copilot também pode ajudar em áreas não cobertas no laboratório ou onde você precisar de mais informações. Abra um navegador do Edge e escolha Copilot (canto superior direito) ou navegue até *copilot.microsoft.com*. Reserve alguns minutos para experimentar essas solicitações.
+
++ Resuma as etapas para criar e configurar um Aplicativo de Contêiner do Azure.
++ Compare e contraste os Aplicativos de Contêiner do Azure com o Serviço de Kubernetes do Azure.
+
+## Saiba mais com treinamento individual
+
++ [Configure um aplicativo de contêiner nos Aplicativos de Contêiner do Azure](https://learn.microsoft.com/training/modules/configure-container-app-azure-container-apps/). Examina os recursos e as capacidades dos Aplicativos de Contêiner do Azure e se concentra em como criar, configurar, dimensionar e gerenciar aplicativos de contêiner usando os Aplicativos de Contêiner do Azure.
 
 
 ## Principais aspectos a serem lembrados
@@ -85,7 +94,4 @@ Parabéns por concluir o laboratório. Aqui estão as principais lições deste 
 + Os Aplicativos de Contêiner fornecem a configuração do servidor, a orquestração de contêineres e os detalhes da implantação. 
 + As cargas de trabalho nos ACA geralmente são processos de execução prolongada, como um aplicativo Web.
 
-## Saiba mais com treinamento individual
-
-+ [Configure um aplicativo de contêiner nos Aplicativos de Contêiner do Azure](https://learn.microsoft.com/training/modules/configure-container-app-azure-container-apps/). Examina os recursos e as capacidades dos Aplicativos de Contêiner do Azure e se concentra em como criar, configurar, dimensionar e gerenciar aplicativos de contêiner usando os Aplicativos de Contêiner do Azure.
      
