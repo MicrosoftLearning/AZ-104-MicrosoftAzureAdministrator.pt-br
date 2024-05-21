@@ -60,7 +60,7 @@ Nesta tarefa, você criará e configurará uma conta de armazenamento. A conta d
 
 1. Na guia **Avançado**, use os ícones informativos para saber mais sobre as opções. Aceite os padrões. 
 
-1. Na guia **Rede**, examine as opções disponíveis, selecione **Desabilitar o acesso público e usar o acesso privado**.
+1. Na guia **Rede**, revise as opções disponíveis, selecione **Desabilitar acesso público e usar acesso privado**.
 
 1. Examine a guia **Proteção de dados**. Observe que 7 dias é a política de retenção de exclusão temporária padrão. Observe que você pode habilitar o controle de versão dos blobs. Aceite os padrões.
 
@@ -72,7 +72,7 @@ Nesta tarefa, você criará e configurará uma conta de armazenamento. A conta d
 
 1. Examine a folha **Visão geral** e as configurações adicionais que podem ser alteradas. Essas são as configurações globais da conta de armazenamento. Observe que a conta de armazenamento pode ser usada para contêineres de blobs, compartilhamentos de arquivos, filas e tabelas.
 
-1. Na seção **Segurança + Rede**, selecione **Rede**. Observe que o acesso à rede pública está desabilitado.
+1. Na seção **Segurança + rede**, selecione **Rede**. Observe que o acesso à rede pública está desabilitado.
 
     + Altere o **nível de acesso público** para **Habilitado de redes virtuais e endereços IP selecionados**.
     + Na seção **Firewall**, marque a caixa para **Adicionar o endereço IP do cliente.**
@@ -182,9 +182,9 @@ Nesta tarefa, você criará e configurará compartilhamentos de arquivos do Azur
 
 1. Clique em **+ Compartilhamento de arquivo** e, na guia **Noções básicas**, dê um nome ao compartilhamento de arquivo, `share1`. 
 
-1. Observe as opções de **Nível**. Mantenha a **Transação otimizada** padrão.
+1. Observe as opções de **Camada de acesso**. Mantenha a **Transação otimizada** padrão.
    
-1. Vá para a guia **Backup** e certifique-se de que a opção **Habilitar Backup** **não** está marcada. Estamos desabilitando o backup para simplificar a configuração do laboratório.
+1. Vá para a guia **Backup** e certifique-se de que **Habilitar backup** esteja **e não** marcado. Estamos desabilitando o backup para simplificar a configuração do laboratório.
 
 1. Clique em **Revisar + criar** e, em seguida, **Criar**. Aguarde a implantação do compartilhamento de arquivos.
 
@@ -192,7 +192,7 @@ Nesta tarefa, você criará e configurará compartilhamentos de arquivos do Azur
 
 ### Explorar o Navegador de Armazenamento e carregar um arquivo
 
-1. Retorne à sua conta de armazenamento e selecione **Navegador de Armazenamento**. O Navegador de Armazenamento do Azure é uma ferramenta de portal que permite exibir rapidamente todos os serviços de armazenamento em sua conta.
+1. Volte para sua conta de armazenamento e selecione **Navegador de armazenamento**. O Navegador de Armazenamento do Azure é uma ferramenta de portal que permite exibir rapidamente todos os serviços de armazenamento em sua conta.
 
 1. Selecione **Compartilhamentos de arquivos** e verifique se o diretório **share1** está presente.
 
