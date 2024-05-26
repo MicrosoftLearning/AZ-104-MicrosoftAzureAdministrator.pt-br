@@ -343,7 +343,7 @@ Nesta tarefa, você dimensiona o conjunto de dimensionamento de máquinas virtua
 
 1. Use o ícone (canto superior direito) para iniciar uma sessão do **Cloud Shell**. Como alternativa, navegue diretamente para `https://shell.azure.com`.
 
-1. Certifique-se de selecionar **PowerShell**. Se necessário, use **Mostrar configurações avançadas** e configure o armazenamento do shell.
+1. Certifique-se de selecionar **PowerShell**. Se necessário, configure o armazenamento do shell.
 
 1. Execute o comando a seguir para criar uma máquina virtual. Quando solicitado, forneça um nome de usuário e uma senha para a VM. Enquanto você espera, confira a referência de comando [New-AzVM](https://learn.microsoft.com/powershell/module/az.compute/new-azvm?view=azps-11.1.0) para todos os parâmetros associados à criação de uma máquina virtual.
 
@@ -384,7 +384,7 @@ Nesta tarefa, você dimensiona o conjunto de dimensionamento de máquinas virtua
 
 1. Use o ícone (canto superior direito) para iniciar uma sessão do **Cloud Shell**. Como alternativa, navegue diretamente para `https://shell.azure.com`.
 
-1. Selecione **Bash**. Se necessário, use **Mostrar configurações avançadas** e configure o armazenamento do shell.
+1. Selecione **Bash**. Se necessário, configure o armazenamento do shell.
 
 1. Execute o comando a seguir para criar uma máquina virtual. Quando solicitado, forneça um nome de usuário e uma senha para a VM. Enquanto você espera, confira a referência de comando [az vm create](https://learn.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-create) para todos os parâmetros associados à criação de uma máquina virtual.
 

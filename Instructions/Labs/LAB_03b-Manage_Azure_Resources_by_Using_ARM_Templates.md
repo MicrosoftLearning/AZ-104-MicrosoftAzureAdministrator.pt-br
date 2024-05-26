@@ -139,19 +139,23 @@ Nesta tarefa, você trabalha com o Azure Cloud Shell e o Azure PowerShell. O Azu
 
     >**Você sabia?**  Se você trabalha principalmente com sistemas Linux, o Bash (CLI) será mais familiar. Se você trabalha principalmente com sistemas Windows, o Azure PowerShell será mais familiar. 
 
-1. No tela **Você não tem armazenamento montado** selecione **Mostrar configurações avançadas** e fornecer as informações necessárias. 
+1. Na tela **Introdução**, selecione **Conta de armazenamento de montagem** e, em seguida, **Quero criar uma conta de armazenamento**.  
 
-    >**Observação:** Como você trabalha com o Cloud Shell, uma conta de armazenamento e um compartilhamento de arquivo são necessários. 
-
+    >**Observação:** Para este laboratório, uma conta de armazenamento é necessária. Insira as informações necessárias. 
+    
     | Configurações | Valores |
     |  -- | -- |
+    | Assinatura | *selecione sua assinatura* |
     | Grupo de recursos | **az104-rg3** |
+    | Region | *selecione sua região* | 
     | Conta de armazenamento (Criar nova) | *deve ser globalmente exclusivo, ter entre 3 e 24 caracteres e usar apenas números e letras minúsculas* |
     | Compartilhamento de arquivo (Criar novo) | `fs-cloudshell` |
 
-1. Quando concluído, selecione **Criar armazenamento**. Você só precisa fazer isso na primeira vez que usar o Cloud Shell. Levará alguns minutos para provisionar o armazenamento.
+1. Ao concluir, selecione **Avançar**. Você só precisa fazer isso na primeira vez que usar o Cloud Shell. Levará alguns minutos para provisionar o armazenamento.
 
 1. Use o ícone **Carregar/Baixar arquivos** para carregar o modelo e o arquivo de parâmetros do diretório de downloads. Você precisará carregar cada arquivo separadamente.
+
+   >**Observação:** Se, a qualquer momento, você for solicitado a **Alternar para o cloud shell clássico**, faça isso. 
 
 1. Verifique se os arquivos estão disponíveis no armazenamento do Cloud Shell. 
 
