@@ -230,6 +230,8 @@ Nesta tarefa, você configura e testa um bloqueio de recurso. Os bloqueios imped
 
     ![Captura de tela da falha ao excluir a mensagem.](../media/az104-lab02b-failuretodelete.png) 
 
+    >**Observação:** Você precisará remover o bloqueio se pretende excluir o grupo de recursos. 
+    
 ## Limpar os recursos
 
 Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto para excluir os recursos do laboratório. Isso garantirá que os recursos sejam liberados e que o custo seja minimizado. A maneira mais fácil de excluir os recursos do laboratório é excluir o grupo de recursos do laboratório. 
