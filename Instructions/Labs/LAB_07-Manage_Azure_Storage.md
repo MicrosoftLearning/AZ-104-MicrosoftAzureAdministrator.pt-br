@@ -212,11 +212,11 @@ Nesta tarefa, você criará e configurará compartilhamentos de arquivos do Azur
 
 1. Aguarde a implantação da rede virtual e selecione **Ir para o recurso**.
 
-1. Na seção **Configurações**, selecione a folha **Sub-redes**.
-    + Selecione a sub-rede **padrão**.
-    + Na seção **Pontos de extremidade de serviço**, escolha **Microsoft.Storage** na lista suspensa **Serviços**.
-    + Não faça nenhuma outra alteração.    
-    + Não se esqueça de **Salvar** suas alterações. 
+1. Na seção **Configurações**, selecione a folha **Pontos de extremidade de serviço**.
+    + Selecione **Adicionar**. 
+    + Na lista suspensa **Serviços**, selecione **Microsoft.Storage**.
+    + Na lista suspensa **Sub-redes**, marque a sub-rede **Padrão**.
+    + Clique em **Adicionar** para salvar suas alterações.  
 
 1. Retorne à sua conta de armazenamento.
 
