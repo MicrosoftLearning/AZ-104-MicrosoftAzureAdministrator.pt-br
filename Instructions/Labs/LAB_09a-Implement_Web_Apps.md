@@ -79,7 +79,7 @@ Nesta tarefa, você criará um slot de implantação de preparo. Os slots de imp
 
     >**Observação**: O aplicativo Web, neste momento, tem um único slot de implantação com o rótulo **PRODUCTION**.
 
-1. Clique em **+ Adicionar slot** e adicione um novo slot com as seguintes configurações:
+1. Clique em **Adicionar slot** e adicione um novo slot com as seguintes configurações:
 
     | Configuração | Valor |
     | --- | ---|

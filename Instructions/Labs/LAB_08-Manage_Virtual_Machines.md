@@ -49,7 +49,7 @@ Nesta tarefa, você implantará duas máquinas virtuais do Azure em zonas de dis
 
 1. Entre no portal do Azure – `https://portal.azure.com`.
 
-1. Pesquise e selecione `Virtual machines`, na folha **Máquinas virtuais**, clique em **+ Criar**e selecione no **+da máquina virtual do Azure** no menu suspenso. Observe suas outras opções.
+1. Pesquise e selecione `Virtual machines`, na folha **Máquinas virtuais**, clique em **+ Criar** e selecione **Máquina virtual do Azure** no menu suspenso. Observe suas outras opções.
 
 1. Na guia **Noções básicas**, no menu suspenso **Zona de disponibilidade**, coloque uma marca de verificação perto de**Zona 2**. Isso deve selecionar a **Zona 1** e a **Zona 2**.
 
@@ -194,7 +194,7 @@ Nesta tarefa, você implantará um conjunto de dimensionamento de máquinas virt
 
     ![Captura de tela da página Criar vmss. ](../media/az104-lab08-create-vmss.png)
 
-1. Na guia **Spot**, aceite o padrão e selecione **Avançar: Discos >**.
+1. Na guia **Spot**, aceite os padrões e selecione **Avançar: Discos >**.
 
 1. Na guia **Discos**, aceite os valores padrão e clique em **Avançar: Rede >**.
 
@@ -283,7 +283,7 @@ Nesta tarefa, você dimensiona o conjunto de dimensionamento de máquinas virtua
 
 ### Regra de escala horizontal
 
-1. Selecione **Dimensionamento automático personalizado**. em seguira altere o **Modo de dimensionamento** para **Dimensionamento com base em métrica**. E selecione **Adicionar regra**.
+1. Selecione **Dimensionamento automático personalizado**. Em seguida, altere o **Modo de dimensionamento** para **Dimensionamento com base em métrica**. Depois, selecione **Adicionar uma regra**.
 
 1. Vamos criar uma regra que aumenta automaticamente o número de instâncias de VM. Essa regra é dimensionada quando a carga média da CPU é maior que 70% em um período de 10 minutos. Quando a regra dispara, o número de instâncias de VM aumentará em 20%.
 
