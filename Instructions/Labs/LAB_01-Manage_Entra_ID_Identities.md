@@ -144,14 +144,14 @@ Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto 
 + Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Usar a CLI, `az group delete --name resourceGroupName`.
   
-## Principais aspectos a serem lembrados
 
-Parabéns por concluir o laboratório. Aqui estão algumas das principais etapas deste laboratório:
+## Estender seu aprendizado com o Copilot
 
-+ Um locatário representa sua organização e ajuda você a gerenciar uma instância específica dos serviços de nuvem da Microsoft para seus usuários internos e externos.
-+ O Microsoft Entra ID tem contas de usuário e de convidado. Cada conta tem um nível de acesso específico ao escopo do trabalho que deve ser feito.
-+ Os grupos combinam usuários ou dispositivos relacionados. Há dois tipos de grupos, incluindo Segurança e Microsoft 365.
-+ A associação de grupo pode ser atribuída estaticamente ou dinamicamente.
+O Copilot pode ajudar você a aprender a usar as ferramentas de script do Azure. O Copilot também pode ajudar em áreas não cobertas no laboratório ou onde você precisar de mais informações. Abra um navegador do Edge e escolha Copilot (canto superior direito) ou navegue até *copilot.microsoft.com*. Reserve alguns minutos para experimentar essas solicitações.
++ Quais são os comandos do Azure PowerShell e da CLI para criar um grupo de segurança chamado Administradores de TI? Forneça a página de referência de comando oficial.  
++ Forneça uma estratégia passo a passo para gerenciar usuários e grupos no Microsoft Entra ID.
++ Quais são as etapas no portal do Azure para criar usuários e grupos em massa?
++ Forneça uma tabela de comparação de contas de usuário internas e externas do Microsoft Entra ID. 
 
 
 ## Saiba mais com treinamento individual
@@ -161,4 +161,11 @@ Parabéns por concluir o laboratório. Aqui estão algumas das principais etapas
 + [Permita que os usuários redefinam a senha com a redefinição de senha self-service do Microsoft Entra](https://learn.microsoft.com/training/modules/allow-users-reset-their-password/). Avalie a redefinição de senha self-service para permitir que os usuários em sua organização redefinam suas senhas ou desbloqueiem suas contas. Configure, ajuste e teste a redefinição de senha self-service.
 
 
+## Principais aspectos a serem lembrados
 
+Parabéns por concluir o laboratório. Aqui estão algumas das principais etapas deste laboratório:
+
++ Um locatário representa sua organização e ajuda você a gerenciar uma instância específica dos serviços de nuvem da Microsoft para seus usuários internos e externos.
++ O Microsoft Entra ID tem contas de usuário e de convidado. Cada conta tem um nível de acesso específico ao escopo do trabalho que deve ser feito.
++ Os grupos combinam usuários ou dispositivos relacionados. Há dois tipos de grupos, incluindo Segurança e Microsoft 365.
++ A associação de grupo pode ser atribuída estaticamente ou dinamicamente.

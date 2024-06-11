@@ -28,7 +28,7 @@ Para simplificar o gerenciamento de recursos do Azure em sua organização, voc�
 
 ## Simulações interativas do laboratório
 
-Há algumas simulações interativas do laboratório que podem ser úteis para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Existem diferenças entre a simulação interativa e este laboratório, mas muitos dos conceitos centrais são os mesmos. Não é necessária uma assinatura do Azure. 
+Há algumas simulações interativas do laboratório que podem ser úteis para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Há diferenças entre a simulação interativa e este laboratório, mas muitos dos principais conceitos são os mesmos. Não é necessária uma assinatura do Azure. 
 
 + [Gerenciar acesso com o RBAC](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2014). Atribua uma função interna a um usuário e monitore os logs de atividades. 
 
@@ -153,10 +153,23 @@ Nesta tarefa, você exibirá o log de atividades para determinar se alguém crio
 
 Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto para excluir os recursos do laboratório. Isso garantirá que os recursos sejam liberados e que o custo seja minimizado. A maneira mais fácil de excluir os recursos do laboratório é excluir o grupo de recursos do laboratório. 
 
-+ No portal do Azure, selecione o grupo de recursos e, em seguida, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
++ No portal do Azure, selecione o grupo de recursos, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
 + Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Usar a CLI, `az group delete --name resourceGroupName`.
   
+## Estender seu aprendizado com o Copilot
+
+O Copilot pode ajudar você a aprender a usar as ferramentas de script do Azure. O Copilot também pode ajudar em áreas não cobertas no laboratório ou onde você precisar de mais informações. Abra um navegador do Edge e escolha Copilot (canto superior direito) ou navegue até *copilot.microsoft.com*. Reserve alguns minutos para experimentar essas solicitações.
++ Crie duas tabelas realçando comandos importantes do PowerShell e da CLI para obter informações sobre assinaturas da organização no Azure e explique cada comando na coluna “Explicação”. 
++ Qual é o formato do arquivo JSON do RBAC do Azure?
++ Quais são as etapas básicas para criar uma função RBAC personalizada do Azure?
++ Qual é a diferença entre as funções RBAC do Azure e as funções do Microsoft Entra ID?
+
+## Saiba mais com treinamento individual
+
++ [Proteger seus recursos do Azure com o controle de acesso baseado em função do Azure (Azure RBAC)](https://learn.microsoft.com/training/modules/secure-azure-resources-with-rbac/). Use o Azure RBAC para gerenciar o acesso aos recursos no Azure.
++ [Criar funções personalizadas para recursos do Azure com o controle de acesso baseado em função (RBAC)](https://learn.microsoft.com/training/modules/create-custom-azure-roles-with-rbac/). Entenda a estrutura das definições de função para controle de acesso. Identifique as propriedades da função a serem usadas que definem suas permissões de função personalizadas. Crie uma função personalizada do Azure e atribua a um usuário.
+
 ## Principais aspectos a serem lembrados
 
 Parabéns por concluir o laboratório. Aqui estão as principais lições deste laboratório. 
@@ -166,13 +179,7 @@ Parabéns por concluir o laboratório. Aqui estão as principais lições deste 
 + O Azure tem muitas funções internas. Você pode atribuir essas funções para controlar o acesso aos recursos.
 + Você pode criar novas funções ou personalizar as funções existentes.
 + As funções são definidas em um arquivo formatado JSON e incluem *Actions*, *NotActions* e *AssignableScopes*.
-+ Você pode usar o Log de Atividades para monitorar as atribuições de função. 
-
-## Saiba mais com treinamento individual
-
-+ [Proteger seus recursos do Azure com o controle de acesso baseado em função do Azure (Azure RBAC)](https://learn.microsoft.com/training/modules/secure-azure-resources-with-rbac/). Use o Azure RBAC para gerenciar o acesso aos recursos no Azure.
-+ [Criar funções personalizadas para recursos do Azure com o controle de acesso baseado em função (RBAC)](https://learn.microsoft.com/training/modules/create-custom-azure-roles-with-rbac/). Entenda a estrutura das definições de função para controle de acesso. Identifique as propriedades da função a serem usadas que definem suas permissões de função personalizadas. Crie uma função personalizada do Azure e atribua a um usuário.
-
++ Você pode usar o Log de Atividades para monitorar as atribuições de função.
 
 
 

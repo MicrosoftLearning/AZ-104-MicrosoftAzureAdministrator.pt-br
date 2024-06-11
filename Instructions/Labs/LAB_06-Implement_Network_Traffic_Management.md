@@ -42,7 +42,7 @@ Nesta tarefa, você usará um modelo para implantar uma rede virtual, um grupo d
 
 1. Pesquise e selecione `Deploy a custom template`.
 
-1. Na página de implantação personalizada, selecione **Criar seu próprio modelo no editor**.
+1. Na página de implantação personalizada, selecione **Criar seu modelo no editor**.
 
 1. Na página Editar modelo, selecione **Carregar arquivo**.
 
@@ -128,7 +128,7 @@ Nesta tarefa, você implementa um Azure Load Balancer na frente das duas máquin
     | az104-06-vm0 | **marque a caixa** |
     | az104-06-vm1 | **marque a caixa** |
 
-1. Como você tem tempo, examine as outras guias e clique em **Examinar e criar**. Verifique se não há erros de validação e clique em **Criar**.
+1. Como você tem tempo, examine as outras guias e clique em **Examinar + criar**. Verifique se não há erros de validação e clique em **Criar**.
 
 1. Aguarde até que o balanceador de carga seja implantado e clique em **Ir para o recurso**.
 
@@ -136,7 +136,7 @@ Nesta tarefa, você implementa um Azure Load Balancer na frente das duas máquin
 
 1. Na folha **Configurações**, selecione **Regras de balanceamento de carga**.
 
-1. Selecione **Adicionar uma regra de balanceamento de carga**. Adicione uma regra de balanceamento de carga com as seguintes configurações (deixe as outras com seus valores padrão).  Ao configurar a regra, use os ícones informativos para saber mais sobre cada configuração. Quando terminar, clique em **Salvar**.
+1. Selecione **+ Adicionar**. Adicione uma regra de balanceamento de carga com as seguintes configurações (deixe as outras com seus valores padrão).  Ao configurar a regra, use os ícones informativos para saber mais sobre cada configuração. Quando terminar, clique em **Salvar**.
 
     | Configuração | Valor |
     | --- | --- |
@@ -194,7 +194,7 @@ Nesta tarefa, você implementa um Gateway de Aplicativo do Azure na frente de du
 
     > **Observação**: Esta sub-rede será usada pelo Gateway de Aplicativo do Azure. O Gateway de Aplicativo requer uma sub-rede dedicada de /27 ou tamanho maior.
 
-1. No portal do Azure, pesquise e selecione `Application Gateways` e, na folha **Gateways de Aplicativo**, clique em **+ Criar**.
+1. No portal do Azure, pesquise e selecione `Application gateways` e, na folha **Gateways de Aplicativo**, clique em **+ Criar**.
 
 1. Na guia **Noções básicas**, especifique as seguintes configurações (deixe as outras com seus valores padrão):
 
@@ -250,14 +250,14 @@ Nesta tarefa, você implementa um Gateway de Aplicativo do Azure na frente de du
     | Adicionar pool de back-end sem destinos | **Não** |
     | Máquina virtual | **az104-rg6-nic2 (10.60.2.4)** |
 
-1. Selecione **Avançar: Configuração** e, em seguida, **Adicionar regras de roteamento**. Conclua as informações.
+1. Selecione **Avançar: Configuração >** e, em seguida, **Adicionar regras de roteamento**. Conclua as informações.
 
     | Configuração | Valor |
     | --- | --- |
     | Nome da regra | `az104-gwrule` |
     | Prioridade | `10` |
     | Nome do ouvinte | `az104-listener` |
-    | IP de front-end | **Pública** |
+    | IP de front-end | **IPv4 público** |
     | Protocolo | **HTTP** |
     | Porta | `80` |
     | Tipo de ouvinte | **Basic** |
@@ -322,7 +322,21 @@ Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto 
 + No portal do Azure, selecione o grupo de recursos, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
 + Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Usar a CLI, `az group delete --name resourceGroupName`.
-  
+
+## Estender seu aprendizado com o Copilot
+
+O Copilot pode ajudar você a aprender a usar as ferramentas de script do Azure. O Copilot também pode ajudar em áreas não cobertas no laboratório ou onde você precisar de mais informações. Abra um navegador do Edge e escolha Copilot (canto superior direito) ou navegue até *copilot.microsoft.com*. Reserve alguns minutos para experimentar essas solicitações.
+
++ Compare e contraste o Azure Load Balancer com o Gateway de Aplicativo do Azure.
++ Como posso solucionar problemas de conectividade de entrada com um Azure Load Balancer?
++ Quais são as etapas básicas para configurar o Gateway de Aplicativo do Azure?
++ Crie uma tabela realçando soluções de balanceamento de carga do Azure. Inclua estas colunas: Protocolos com suporte, balanceamento de carga privado, balanceamento de carga global, políticas de roteamento, ambientes com suporte, drenagem de conexão, afinidade de sessão, balanceamento de carga baseado em host e caminho, descarregamento de TLS, aceleração de site, segurança, armazenamento em cache e compactação.
+
+## Saiba mais com treinamento individual
+
++ [Melhorar a escalabilidade e a resiliência do aplicativo usando o Azure Load Balancer](https://learn.microsoft.com/training/modules/improve-app-scalability-resiliency-with-load-balancer/). Discuta sobre os diferentes balanceadores de carga no Azure e como escolher a solução correta de balanceador de carga do Azure para atender aos seus requisitos.
++ [Balancear a carga do tráfego de seu serviço Web com o Gateway de Aplicativo](https://learn.microsoft.com/training/modules/load-balance-web-traffic-with-application-gateway/). Aumente a resiliência do aplicativo distribuindo a carga entre vários servidores e use o roteamento baseado em caminho para o direcionar o tráfego da Web.
+
 ## Principais aspectos a serem lembrados
 
 Parabéns por concluir o laboratório. Aqui estão as principais lições deste laboratório.
@@ -333,8 +347,3 @@ Parabéns por concluir o laboratório. Aqui estão as principais lições deste 
 + O Gateway de Aplicativo do Azure é um balanceador de carga de tráfego da Web (camada 7 OSI) que permite que você gerencie o tráfego para seus aplicativos Web.
 + A camada Standard do Gateway de Aplicativo oferece toda a funcionalidade L7, incluindo balanceamento de carga. A camada WAF adiciona um firewall para verificar se há tráfego mal-intencionado.
 + Um Gateway de Aplicativo pode tomar decisões de roteiros com base em outros atributos de uma solicitação HTTP, por exemplo, o caminho de URI ou os cabeçalhos de host.
-
-## Saiba mais com treinamento individual
-
-+ [Melhorar a escalabilidade e a resiliência do aplicativo usando o Azure Load Balancer](https://learn.microsoft.com/training/modules/improve-app-scalability-resiliency-with-load-balancer/). Discuta sobre os diferentes balanceadores de carga no Azure e como escolher a solução correta de balanceador de carga do Azure para atender aos seus requisitos.
-+ [Balancear a carga do tráfego de seu serviço Web com o Gateway de Aplicativo](https://learn.microsoft.com/training/modules/load-balance-web-traffic-with-application-gateway/). Aumente a resiliência do aplicativo distribuindo a carga entre vários servidores e use o roteamento baseado em caminho para o direcionar o tráfego da Web.

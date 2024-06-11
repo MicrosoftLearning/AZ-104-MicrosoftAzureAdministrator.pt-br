@@ -49,7 +49,7 @@ Nesta tarefa, você implantará duas máquinas virtuais do Azure em zonas de dis
 
 1. Entre no portal do Azure – `https://portal.azure.com`.
 
-1. Pesquise e selecione `Virtual machines`, na folha **Máquinas virtuais**, clique em **+ Criar**e selecione no **+da máquina virtual do Azure** no menu suspenso. Observe suas outras opções.
+1. Pesquise e selecione `Virtual machines`, na folha **Máquinas virtuais**, clique em **+ Criar** e selecione **Máquina virtual do Azure** no menu suspenso. Observe suas outras opções.
 
 1. Na guia **Noções básicas**, no menu suspenso **Zona de disponibilidade**, coloque uma marca de verificação perto de**Zona 2**. Isso deve selecionar a **Zona 1** e a **Zona 2**.
 
@@ -194,7 +194,7 @@ Nesta tarefa, você implantará um conjunto de dimensionamento de máquinas virt
 
     ![Captura de tela da página Criar vmss. ](../media/az104-lab08-create-vmss.png)
 
-1. Na guia **Spot**, aceite o padrão e selecione **Avançar: Discos >**.
+1. Na guia **Spot**, aceite os padrões e selecione **Avançar: Discos >**.
 
 1. Na guia **Discos**, aceite os valores padrão e clique em **Avançar: Rede >**.
 
@@ -283,7 +283,7 @@ Nesta tarefa, você dimensiona o conjunto de dimensionamento de máquinas virtua
 
 ### Regra de escala horizontal
 
-1. Selecione **Dimensionamento automático personalizado**. em seguira altere o **Modo de dimensionamento** para **Dimensionamento com base em métrica**. E selecione **Adicionar regra**.
+1. Selecione **Dimensionamento automático personalizado**. Em seguida, altere o **Modo de dimensionamento** para **Dimensionamento com base em métrica**. Depois, selecione **Adicionar uma regra**.
 
 1. Vamos criar uma regra que aumenta automaticamente o número de instâncias de VM. Essa regra é dimensionada quando a carga média da CPU é maior que 70% em um período de 10 minutos. Quando a regra dispara, o número de instâncias de VM aumentará em 20%.
 
@@ -343,7 +343,7 @@ Nesta tarefa, você dimensiona o conjunto de dimensionamento de máquinas virtua
 
 1. Use o ícone (canto superior direito) para iniciar uma sessão do **Cloud Shell**. Como alternativa, navegue diretamente para `https://shell.azure.com`.
 
-1. Certifique-se de selecionar **PowerShell**. Se necessário, use **Mostrar configurações avançadas** e configure o armazenamento do shell.
+1. Certifique-se de selecionar **PowerShell**. Se necessário, configure o armazenamento do shell.
 
 1. Execute o comando a seguir para criar uma máquina virtual. Quando solicitado, forneça um nome de usuário e uma senha para a VM. Enquanto você espera, confira a referência de comando [New-AzVM](https://learn.microsoft.com/powershell/module/az.compute/new-azvm?view=azps-11.1.0) para todos os parâmetros associados à criação de uma máquina virtual.
 
@@ -384,7 +384,7 @@ Nesta tarefa, você dimensiona o conjunto de dimensionamento de máquinas virtua
 
 1. Use o ícone (canto superior direito) para iniciar uma sessão do **Cloud Shell**. Como alternativa, navegue diretamente para `https://shell.azure.com`.
 
-1. Selecione **Bash**. Se necessário, use **Mostrar configurações avançadas** e configure o armazenamento do shell.
+1. Selecione **Bash**. Se necessário, configure o armazenamento do shell.
 
 1. Execute o comando a seguir para criar uma máquina virtual. Quando solicitado, forneça um nome de usuário e uma senha para a VM. Enquanto você espera, confira a referência de comando [az vm create](https://learn.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-create) para todos os parâmetros associados à criação de uma máquina virtual.
 
@@ -418,6 +418,18 @@ Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto 
 + Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Usar a CLI, `az group delete --name resourceGroupName`.
 
+## Estender seu aprendizado com o Copilot
+O Copilot pode ajudar você a aprender a usar as ferramentas de script do Azure. O Copilot também pode ajudar em áreas não cobertas no laboratório ou onde você precisar de mais informações. Abra um navegador do Edge e escolha Copilot (canto superior direito) ou navegue até *copilot.microsoft.com*. Reserve alguns minutos para experimentar essas solicitações.
+
++ Forneça as etapas e os comandos da CLI do Azure para criar uma máquina virtual do Linux. 
++ Revise as maneiras pelas quais você pode escalar máquinas virtuais e melhorar o desempenho.
++ Descreva as políticas de gerenciamento do ciclo de vida do armazenamento do Azure e como elas podem otimizar os custos.
+
+## Saiba mais com treinamento individual
+
++ [Crie uma máquina virtual do Windows no Azure](https://learn.microsoft.com/training/modules/create-windows-virtual-machine-in-azure/). Criar uma máquina virtual do Windows usando o portal do Azure. Conectar-se a uma máquina virtual do Windows em execução usando a Área de Trabalho Remota
++ [Crie um aplicativo escalonável com os Conjuntos de Dimensionamento de Máquinas Virtuais](https://learn.microsoft.com/training/modules/build-app-with-scale-sets/). Permita que seu aplicativo se ajuste automaticamente às alterações de carga, minimizando os custos com os Conjuntos de Dimensionamento de Máquinas Virtuais.
++ [Conectar-se a máquinas virtuais através do portal do Microsoft Azure usando o Azure Bastion](https://learn.microsoft.com/en-us/training/modules/connect-vm-with-azure-bastion/). Implante o Azure Bastion para se conectar com segurança às máquinas virtuais do Azure diretamente no portal do Azure, para substituir de forma eficaz uma solução de Jumpbox existente, monitorar sessões remotas usando logs de diagnóstico e gerenciar sessões remotas ao desconectar uma sessão do usuário.
 
 ## Principais aspectos a serem lembrados
 
@@ -429,10 +441,3 @@ Parabéns por concluir o laboratório. Aqui estão as principais lições deste 
 + Os Conjuntos de Dimensionamento de Máquinas Virtuais permitem criar e gerenciar um grupo de VMs com balanceamento de carga.
 + As máquinas virtuais em um Conjunto de Dimensionamento de Máquinas Virtuais são criadas na mesma imagem e configuração.
 + Em um Conjunto de Dimensionamento de Máquinas Virtuais, o número de instâncias de VM pode aumentar ou diminuir automaticamente em resposta à demanda ou a um agendamento definido.
-
-## Saiba mais com treinamento individual
-
-+ [Crie uma máquina virtual do Windows no Azure](https://learn.microsoft.com/training/modules/create-windows-virtual-machine-in-azure/). Criar uma máquina virtual do Windows usando o portal do Azure. Conectar-se a uma máquina virtual do Windows em execução usando a Área de Trabalho Remota
-+ [Crie um aplicativo escalonável com os Conjuntos de Dimensionamento de Máquinas Virtuais](https://learn.microsoft.com/training/modules/build-app-with-scale-sets/). Permita que seu aplicativo se ajuste automaticamente às alterações de carga, minimizando os custos com os Conjuntos de Dimensionamento de Máquinas Virtuais.
-+ [Conectar-se a máquinas virtuais através do portal do Microsoft Azure usando o Azure Bastion](https://learn.microsoft.com/en-us/training/modules/connect-vm-with-azure-bastion/). Implante o Azure Bastion para se conectar com segurança às máquinas virtuais do Azure diretamente no portal do Azure, para substituir de forma eficaz uma solução de Jumpbox existente, monitorar sessões remotas usando logs de diagnóstico e gerenciar sessões remotas ao desconectar uma sessão do usuário.
-  

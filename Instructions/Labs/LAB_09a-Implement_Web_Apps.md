@@ -29,7 +29,7 @@ Há simulações interativas do laboratório que podem ser úteis para este tóp
 
 ## Diagrama de arquitetura
 
-![Faça um diagrama das tarefas.](../media/az104-lab09a-architecture.png)
+![Diagrama das tarefas.](../media/az104-lab09a-architecture.png)
 
 ## Habilidades de trabalho
 
@@ -79,7 +79,7 @@ Nesta tarefa, você criará um slot de implantação de preparo. Os slots de imp
 
     >**Observação**: O aplicativo Web, neste momento, tem um único slot de implantação com o rótulo **PRODUCTION**.
 
-1. Clique em **+ Adicionar slot** e adicione um novo slot com as seguintes configurações:
+1. Clique em **Adicionar slot** e adicione um novo slot com as seguintes configurações:
 
     | Configuração | Valor |
     | --- | ---|
@@ -173,11 +173,20 @@ Nesta tarefa, você configurará o dimensionamento automático do aplicativo Web
 
 Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto para excluir os recursos do laboratório. Isso garantirá que os recursos sejam liberados e que o custo seja minimizado. A maneira mais fácil de excluir os recursos do laboratório é excluir o grupo de recursos do laboratório. 
 
-+ No portal do Azure, selecione o grupo de recursos e, em seguida, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
++ No portal do Azure, selecione o grupo de recursos, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
 + Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Usar a CLI, `az group delete --name resourceGroupName`.
 
+## Estender seu aprendizado com o Copilot
+O Copilot pode ajudar você a aprender a usar as ferramentas de script do Azure. O Copilot também pode ajudar em áreas não cobertas no laboratório ou onde você precisar de mais informações. Abra um navegador do Edge e escolha Copilot (canto superior direito) ou navegue até *copilot.microsoft.com*. Reserve alguns minutos para experimentar essas solicitações.
 
++ Resuma as etapas para criar e configurar um aplicativo Web do Azure.
++ Quais são as maneiras de escalar um Aplicativo Web do Azure?
+
+## Saiba mais com treinamento individual
+
++ [Prepare uma implantação de aplicativo Web para teste e reversão usando slots de implantação do Serviço de Aplicativo](https://learn.microsoft.com/training/modules/stage-deploy-app-service-deployment-slots/). Use slots de implantação para simplificar a implantação e reverter um aplicativo Web no Serviço de Aplicativo do Azure.
++ [Dimensione um aplicativo Web do Serviço de Aplicativo para atender à demanda de modo eficiente com escala vertical e escala horizontal do Serviço de Aplicativo](https://learn.microsoft.com/training/modules/app-service-scale-up-scale-out/). Responda a períodos de maior atividade, aumentando gradualmente os recursos disponíveis e, então, diminuindo esses recursos quando o nível atividades cai para reduzir os custos.
 
 ## Principais aspectos a serem lembrados
 
@@ -188,8 +197,3 @@ Parabéns por concluir o laboratório. Aqui estão as principais lições deste 
 + Os slots de implantação permitem que você crie ambientes separados para implantar e testar seu aplicativo Web.
 + Você pode dimensionar manual ou automaticamente um aplicativo Web para lidar com a demanda adicional.
 + Uma grande variedade de ferramentas de diagnóstico e teste estão disponíveis. 
-
-## Saiba mais com treinamento individual
-
-+ [Prepare uma implantação de aplicativo Web para teste e reversão usando slots de implantação do Serviço de Aplicativo](https://learn.microsoft.com/training/modules/stage-deploy-app-service-deployment-slots/). Use slots de implantação para simplificar a implantação e reverter um aplicativo Web no Serviço de Aplicativo do Azure.
-+ [Dimensione um aplicativo Web do Serviço de Aplicativo para atender à demanda de modo eficiente com escala vertical e escala horizontal do Serviço de Aplicativo](https://learn.microsoft.com/training/modules/app-service-scale-up-scale-out/). Responda a períodos de maior atividade, aumentando gradualmente os recursos disponíveis e, então, diminuindo esses recursos quando o nível atividades cai para reduzir os custos.

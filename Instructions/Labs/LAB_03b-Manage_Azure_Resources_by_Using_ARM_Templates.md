@@ -139,19 +139,23 @@ Nesta tarefa, você trabalha com o Azure Cloud Shell e o Azure PowerShell. O Azu
 
     >**Você sabia?**  Se você trabalha principalmente com sistemas Linux, o Bash (CLI) será mais familiar. Se você trabalha principalmente com sistemas Windows, o Azure PowerShell será mais familiar. 
 
-1. No tela **Você não tem armazenamento montado** selecione **Mostrar configurações avançadas** e fornecer as informações necessárias. 
+1. Na tela **Introdução**, selecione **Conta de armazenamento de montagem** e, em seguida, **Quero criar uma conta de armazenamento**.  
 
-    >**Observação:** Como você trabalha com o Cloud Shell, uma conta de armazenamento e um compartilhamento de arquivo são necessários. 
-
+    >**Observação:** Para este laboratório, uma conta de armazenamento é necessária. Insira as informações necessárias. 
+    
     | Configurações | Valores |
     |  -- | -- |
+    | Assinatura | *selecione sua assinatura* |
     | Grupo de recursos | **az104-rg3** |
+    | Region | *selecione sua região* | 
     | Conta de armazenamento (Criar nova) | *deve ser globalmente exclusivo, ter entre 3 e 24 caracteres e usar apenas números e letras minúsculas* |
     | Compartilhamento de arquivo (Criar novo) | `fs-cloudshell` |
 
-1. Quando concluído, selecione **Criar armazenamento**. Você só precisa fazer isso na primeira vez que usar o Cloud Shell. Levará alguns minutos para provisionar o armazenamento.
+1. Ao concluir, selecione **Avançar**. Você só precisa fazer isso na primeira vez que usar o Cloud Shell. Levará alguns minutos para provisionar o armazenamento.
 
 1. Use o ícone **Carregar/Baixar arquivos** para carregar o modelo e o arquivo de parâmetros do diretório de downloads. Você precisará carregar cada arquivo separadamente.
+
+   >**Observação:** Se, a qualquer momento, você for solicitado a **Alternar para o cloud shell clássico**, faça isso. 
 
 1. Verifique se os arquivos estão disponíveis no armazenamento do Cloud Shell. 
 
@@ -252,18 +256,15 @@ Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto 
 + No portal do Azure, selecione o grupo de recursos, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
 + Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Usar a CLI, `az group delete --name resourceGroupName`.
-  
-## Principais aspectos a serem lembrados
 
-Parabéns por concluir o laboratório. Aqui estão as principais lições deste laboratório. 
+## Estender seu aprendizado com o Copilot
 
-+ Os modelos do Azure Resource Manager permitem implantar, gerenciar e monitorar todos os recursos da solução como um grupo, em vez de lidar com esses recursos individualmente.
-+ Um modelo do Azure Resource Manager é um arquivo JSON (JavaScript Object Notation) que permite gerenciar sua infraestrutura declarativamente e não com scripts.
-+ Em vez de passar parâmetros como valores embutidos em seu modelo, você pode usar um arquivo JSON separado que contém os valores do parâmetro.
-+ Os modelos do Azure Resource Manager podem ser implantados de várias maneiras, incluindo o portal do Azure, o Azure PowerShell e a CLI.
-+ O Bicep é uma alternativa aos modelos do Azure Resource Manager. O Bicep usa uma sintaxe declarativa para implantar os recursos do Azure. 
+O Copilot pode ajudar você a aprender a usar as ferramentas de script do Azure. O Copilot também pode ajudar em áreas não cobertas no laboratório ou onde você precisar de mais informações. Abra um navegador do Edge e escolha Copilot (canto superior direito) ou navegue até *copilot.microsoft.com*. Reserve alguns minutos para experimentar essas solicitações.
 
-O Bicep fornece sintaxe concisa, segurança de tipos confiável e suporte para reutilização de código. O Bicep uma experiência de criação de alto nível para suas soluções de infraestrutura como código no Azure.
++ Qual é o formato do arquivo de modelo do Azure Resource Manager? Explicar cada componente com exemplos. 
++ Como posso usar um modelo existente do Azure Resource Manager?
++ Compare e contraste modelos do Azure Resource Manager e modelos do Azure Bicep. 
+
 
 ## Saiba mais com treinamento individual
 
@@ -272,5 +273,16 @@ O Bicep fornece sintaxe concisa, segurança de tipos confiável e suporte para r
 + [Gerenciar recursos do Azure com o Windows PowerShell](https://learn.microsoft.com/training/modules/manage-azure-resources-windows-powershell/). Este módulo explica como instalar os módulos necessários para o gerenciamento de serviços de nuvem e usar os comandos do PowerShell para executar tarefas administrativas simples em recursos de nuvem, como máquinas virtuais do Azure, assinaturas do Azure e contas de armazenamento do Azure.
 + [Introdução a Bash](https://learn.microsoft.com/training/modules/bash-introduction/). Use o Bash para gerenciar a infraestrutura de TI.
 + [Crie seu primeiro modelo do Bicep](https://learn.microsoft.com/training/modules/build-first-bicep-template/). Defina os recursos do Azure em um modelo Bicep. Melhore a consistência e a confiabilidade de suas implantações, reduza o esforço manual necessário e dimensione suas implantações entre ambientes. Ao usar parâmetros, variáveis, expressões e módulos, seu modelo será flexível e reutilizável.
+
+## Principais aspectos a serem lembrados
+
+Parabéns por concluir o laboratório. Aqui estão as principais lições deste laboratório. 
+
++ Os modelos do Azure Resource Manager permitem implantar, gerenciar e monitorar todos os recursos da solução como um grupo, em vez de lidar com esses recursos individualmente.
++ Um modelo do Azure Resource Manager é um arquivo JSON (JavaScript Object Notation) que permite gerenciar sua infraestrutura declarativamente e não com scripts.
++ Em vez de passar parâmetros como valores embutidos em seu modelo, você pode usar um arquivo JSON separado que contém os valores do parâmetro.
++ Os modelos do Azure Resource Manager podem ser implantados de várias maneiras, incluindo o portal do Azure, o Azure PowerShell e a CLI.
++ O Bicep é uma alternativa aos modelos do Azure Resource Manager. O Bicep usa uma sintaxe declarativa para implantar os recursos do Azure.
++ O Bicep fornece sintaxe concisa, segurança de tipos confiável e suporte para reutilização de código. O Bicep uma experiência de criação de alto nível para suas soluções de infraestrutura como código no Azure.
 
 

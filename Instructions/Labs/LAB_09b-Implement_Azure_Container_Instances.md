@@ -95,6 +95,15 @@ Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto 
 + Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Usar a CLI, `az group delete --name resourceGroupName`.
 
+## Estender seu aprendizado com o Copilot
+O Copilot pode ajudar você a aprender a usar as ferramentas de script do Azure. O Copilot também pode ajudar em áreas não cobertas no laboratório ou onde você precisar de mais informações. Abra um navegador do Edge e escolha Copilot (canto superior direito) ou navegue até *copilot.microsoft.com*. Reserve alguns minutos para experimentar essas solicitações.
+
++ Resuma as etapas para criar e configurar uma Instância de Contêiner do Azure.
++ Quais são as maneiras de executar um contêiner sem servidor no Azure?
+
+## Saiba mais com treinamento individual
+
++ [Executar imagens de contêiner em Instâncias de Contêiner do Azure](https://learn.microsoft.com/training/modules/create-run-container-images-azure-container-instances/). Saiba como as Instâncias de Contêiner do Azure podem ajudar você a implantar rapidamente contêineres, definir variáveis de ambiente e especificar políticas de reinicialização de contêiner.
 
 ## Principais aspectos a serem lembrados
 
@@ -104,9 +113,5 @@ Parabéns por concluir o laboratório. Aqui estão as principais lições deste 
 + As ACI não exigem que você provisione ou gerencie qualquer infraestrutura subjacente.
 + As ACI dão suporte a contêineres do Linux e do Windows.
 + As cargas de trabalho nas ACI geralmente são iniciadas e interrompidas por algum tipo de processo ou gatilho e costumam ter curta duração. 
-
-## Saiba mais com treinamento individual
-
-+ [Executar imagens de contêiner em Instâncias de Contêiner do Azure](https://learn.microsoft.com/training/modules/create-run-container-images-azure-container-instances/). Saiba como as Instâncias de Contêiner do Azure podem ajudar você a implantar rapidamente contêineres, definir variáveis de ambiente e especificar políticas de reinicialização de contêiner.
 
     

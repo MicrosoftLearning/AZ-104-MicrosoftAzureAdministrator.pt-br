@@ -20,7 +20,7 @@ No momento, sua organização está armazenando dados em armazenamentos de dados
 
 ## Simulações interativas do laboratório
 
-Há simulações interativas do laboratório que podem ser úteis para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Existem diferenças entre a simulação interativa e este laboratório, mas muitos dos conceitos centrais são os mesmos. Uma assinatura do Azure não é necessária. 
+Há simulações interativas do laboratório que podem ser úteis para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Há diferenças entre a simulação interativa e este laboratório, mas muitos dos principais conceitos são os mesmos. Uma assinatura do Azure não é necessária. 
 
 + [Criação do armazenamento de blobs](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%205). Crie uma conta de armazenamento, gerencie o armazenamento de blobs e monitore as atividades de armazenamento. 
   
@@ -60,7 +60,7 @@ Nesta tarefa, você criará e configurará uma conta de armazenamento. A conta d
 
 1. Na guia **Avançado**, use os ícones informativos para saber mais sobre as opções. Aceite os padrões. 
 
-1. Na guia **Rede**, examine as opções disponíveis, selecione **Desabilitar o acesso público e usar o acesso privado**.
+1. Na guia **Rede**, revise as opções disponíveis, selecione **Desabilitar acesso público e usar acesso privado**.
 
 1. Examine a guia **Proteção de dados**. Observe que 7 dias é a política de retenção de exclusão temporária padrão. Observe que você pode habilitar o controle de versão dos blobs. Aceite os padrões.
 
@@ -72,7 +72,7 @@ Nesta tarefa, você criará e configurará uma conta de armazenamento. A conta d
 
 1. Examine a folha **Visão geral** e as configurações adicionais que podem ser alteradas. Essas são as configurações globais da conta de armazenamento. Observe que a conta de armazenamento pode ser usada para contêineres de blobs, compartilhamentos de arquivos, filas e tabelas.
 
-1. Na seção **Segurança + Rede**, selecione **Rede**. Observe que o acesso à rede pública está desabilitado.
+1. Na seção **Segurança + rede**, selecione **Rede**. Observe que o acesso à rede pública está desabilitado.
 
     + Altere o **nível de acesso público** para **Habilitado de redes virtuais e endereços IP selecionados**.
     + Na seção **Firewall**, marque a caixa para **Adicionar o endereço IP do cliente.**
@@ -182,9 +182,9 @@ Nesta tarefa, você criará e configurará compartilhamentos de arquivos do Azur
 
 1. Clique em **+ Compartilhamento de arquivo** e, na guia **Noções básicas**, dê um nome ao compartilhamento de arquivo, `share1`. 
 
-1. Observe as opções de **Nível**. Mantenha a **Transação otimizada** padrão.
+1. Observe as opções de **Camada de acesso**. Mantenha a **Transação otimizada** padrão.
    
-1. Vá para a guia **Backup** e certifique-se de que a opção **Habilitar Backup** **não** está marcada. Estamos desabilitando o backup para simplificar a configuração do laboratório.
+1. Vá para a guia **Backup** e certifique-se de que **Habilitar backup** esteja **e não** marcado. Estamos desabilitando o backup para simplificar a configuração do laboratório.
 
 1. Clique em **Revisar + criar** e, em seguida, **Criar**. Aguarde a implantação do compartilhamento de arquivos.
 
@@ -192,7 +192,7 @@ Nesta tarefa, você criará e configurará compartilhamentos de arquivos do Azur
 
 ### Explorar o Navegador de Armazenamento e carregar um arquivo
 
-1. Retorne à sua conta de armazenamento e selecione **Navegador de Armazenamento**. O Navegador de Armazenamento do Azure é uma ferramenta de portal que permite exibir rapidamente todos os serviços de armazenamento em sua conta.
+1. Volte para sua conta de armazenamento e selecione **Navegador de armazenamento**. O Navegador de Armazenamento do Azure é uma ferramenta de portal que permite exibir rapidamente todos os serviços de armazenamento em sua conta.
 
 1. Selecione **Compartilhamentos de arquivos** e verifique se o diretório **share1** está presente.
 
@@ -212,11 +212,11 @@ Nesta tarefa, você criará e configurará compartilhamentos de arquivos do Azur
 
 1. Aguarde a implantação da rede virtual e selecione **Ir para o recurso**.
 
-1. Na seção **Configurações**, selecione a folha **Sub-redes**.
-    + Selecione a sub-rede **padrão**.
-    + Na seção **Pontos de extremidade de serviço**, escolha **Microsoft.Storage** na lista suspensa **Serviços**.
-    + Não faça nenhuma outra alteração.    
-    + Não se esqueça de **Salvar** suas alterações. 
+1. Na seção **Configurações**, selecione a folha **Pontos de extremidade de serviço**.
+    + Selecione **Adicionar**. 
+    + Na lista suspensa **Serviços**, selecione **Microsoft.Storage**.
+    + Na lista suspensa **Sub-redes**, marque a sub-rede **Padrão**.
+    + Clique em **Adicionar** para salvar suas alterações.  
 
 1. Retorne à sua conta de armazenamento.
 
@@ -245,6 +245,18 @@ Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto 
 + Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Usar a CLI, `az group delete --name resourceGroupName`.
 
+## Estender seu aprendizado com o Copilot
+O Copilot pode ajudar você a aprender a usar as ferramentas de script do Azure. O Copilot também pode ajudar em áreas não cobertas no laboratório ou onde você precisar de mais informações. Abra um navegador do Edge e escolha Copilot (canto superior direito) ou navegue até *copilot.microsoft.com*. Reserve alguns minutos para experimentar essas solicitações.
+
++ Forneça um script do Azure PowerShell para criar uma conta de armazenamento com um contêiner de blob. 
++ Forneça uma lista de verificação que eu possa usar para garantir que minha conta de armazenamento do Azure esteja segura.
++ Crie uma tabela para comparar modelos de redundância de armazenamento do Azure.
+
+## Saiba mais com treinamento individual
+
++ [Otimize seus custos com o Armazenamento de Blobs do Azure](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/). Saiba como otimizar seu custo com o Armazenamento de Blobs do Azure.
++ [Controlar o acesso ao Armazenamento do Microsoft Azure com assinaturas de acesso compartilhado](https://learn.microsoft.com/training/modules/control-access-to-azure-storage-with-sas/). Permita acesso a dados armazenados em suas contas de armazenamento do Azure com segurança usando assinaturas de acesso compartilhado.
+
 ## Principais aspectos a serem lembrados
 
 Parabéns por concluir o laboratório. Aqui estão as principais lições deste laboratório. 
@@ -254,8 +266,3 @@ Parabéns por concluir o laboratório. Aqui estão as principais lições deste 
 + O armazenamento de blobs do Azure permite armazenar grandes quantidades de dados não estruturados na plataforma de armazenamento de dados da Microsoft. Blob significa objeto binário grande, que inclui objetos como arquivos de imagens e multimídia.
 + O armazenamento de arquivos do Azure fornece armazenamento compartilhado para dados estruturados. Os dados podem ser organizados em pastas.
 + O armazenamento imutável fornece a capacidade de armazenar dados em um estado WORM (gravação única, leitura múltipla). As políticas de armazenamento imutáveis podem ser baseadas em tempo ou em retenção legal.
-
-## Saiba mais com treinamento individual
-
-+ [Otimize seus custos com o Armazenamento de Blobs do Azure](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/). Saiba como otimizar seu custo com o Armazenamento de Blobs do Azure.
-+ [Controlar o acesso ao Armazenamento do Microsoft Azure com assinaturas de acesso compartilhado](https://learn.microsoft.com/training/modules/control-access-to-azure-storage-with-sas/). Permita acesso a dados armazenados em suas contas de armazenamento do Azure com segurança usando assinaturas de acesso compartilhado.

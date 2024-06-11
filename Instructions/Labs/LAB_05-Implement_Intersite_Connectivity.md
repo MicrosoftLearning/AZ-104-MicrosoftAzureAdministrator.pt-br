@@ -77,7 +77,7 @@ Nesta tarefa, você cria uma rede virtual de serviços principais com uma máqui
 
     | Configuração | Valor | 
     | --- | --- |
-    | Nome | `CoreServicesVNet` (Criar novo) |
+    | Nome | `CoreServicesVnet` (Criar novo) |
     | Intervalo de endereços | `10.0.0.0/16`  |
     | Nome da sub-rede | `Core` | 
     | Intervalo de endereços da sub-rede | `10.0.0.0/24` |
@@ -122,7 +122,7 @@ Nesta tarefa, você cria uma rede virtual de serviços de fabricação com uma m
 
     | Configuração | Valor | 
     | --- | --- |
-    | Nome | `ManufacturingVNet` |
+    | Nome | `ManufacturingVnet` |
     | Intervalo de endereços | `172.16.0.0/16`  |
     | Nome da sub-rede | `Manufacturing` |
     | Intervalo de endereços da sub-rede | `172.16.0.0/24` |
@@ -177,20 +177,20 @@ Nesta tarefa, você cria um emparelhamento de rede virtual para habilitar a comu
 | --------------------------------------------- | ------------------------------------- |
 | **Esta rede virtual**                                       |                                       |
 | Nome do link de emparelhamento                             | `CoreServicesVnet-to-ManufacturingVnet` |
-| Permita que o CoreServicesVNet acesse a rede virtual emparelhada            | selecionado (padrão)                       |
-| Permita que o CoreServicesVNet receba o tráfego encaminhado da rede virtual emparelhada | selecionado                       |
-| Permita que o gateway no CoreServicesVNet encaminhe o tráfego para a rede virtual emparelhada | Não selecionado (padrão) |
-| Habilitar o CoreServicesVNet para usar o gateway remoto das redes virtuais emparelhadas       | Não selecionado (padrão)                        |
+| Permitir que CoreServicesVnet acesse a rede virtual emparelhada            | selecionado (padrão)                       |
+| Permitir que CoreServicesVnet receba tráfego encaminhado da rede virtual emparelhada | selecionado                       |
+| Permitir que o gateway no CoreServicesVnet encaminhe o tráfego para a rede virtual emparelhada | Não selecionado (padrão) |
+| Habilitar CoreServicesVnt para usar o gateway remoto das redes virtuais emparelhadas       | Não selecionado (padrão)                        |
 | **Rede virtual remota**                                   |                                       |
 | Nome do link de emparelhamento                             | `ManufacturingVnet-to-CoreServicesVnet` |
 | Modelo de implantação de rede virtual              | **Gerenciador de recursos**                      |
 | Conheço minha ID do recurso                         | Não selecionado                          |
 | Assinatura                                  | *sua assinatura*    |
 | Rede virtual                               | **ManufacturingVnet**                     |
-| Permita que o ManufacturingVNet acesse o CoreServicesVNet  | selecionado (padrão)                       |
-| Permita que o ManufacturingVNet receba tráfego encaminhado do CoreServicesVNet | selecionado                        |
-| Permita que o gateway no CoreServicesVNet encaminhe o tráfego para a rede virtual emparelhada | Não selecionado (padrão) |
-| Habilite o ManufacturingVNet para usar o gateway remoto do CoreServicesVNet       | Não selecionado (padrão)                        |
+| Permitir que ManufacturingVnet acesse CoreServicesVnet  | selecionado (padrão)                       |
+| Permitir que ManufacturingVnet receba tráfego encaminhado do CoreServicesVnet | selecionado                        |
+| Permitir que o gateway no CoreServicesVnet encaminhe o tráfego para a rede virtual emparelhada | Não selecionado (padrão) |
+| Habilitar ManufacturingVnet para usar o gateway remoto do CoreServicesVnet       | Não selecionado (padrão)                        |
 
 1. Examine suas configurações e selecione **Adicionar**.
 
@@ -287,6 +287,18 @@ Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto 
 + Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Usar a CLI, `az group delete --name resourceGroupName`.
 
+## Estender seu aprendizado com o Copilot
+O Copilot pode ajudar você a aprender a usar as ferramentas de script do Azure. O Copilot também pode ajudar em áreas não cobertas no laboratório ou onde você precisar de mais informações. Abra um navegador do Edge e escolha Copilot (canto superior direito) ou navegue até *copilot.microsoft.com*. Reserve alguns minutos para experimentar essas solicitações.
+
++ Como posso usar comandos do Azure PowerShell ou da CLI do Azure para adicionar um emparelhamento de rede virtual entre vnet1 e vnet2?
++ Crie uma tabela realçando várias ferramentas de monitoramento do Azure e de terceiros com suporte no Azure. Realce quando usar cada ferramenta. 
++ Quando devo criar uma rota de rede personalizada no Azure?
+
+## Saiba mais com treinamento individual
+
++ [Distribuir seus serviços em redes virtuais do Azure e integre-os usando o emparelhamento de rede virtual](https://learn.microsoft.com/en-us/training/modules/integrate-vnets-with-vnet-peering/). Use o emparelhamento de rede virtual para permitir a comunicação entre redes virtuais de maneira segura e minimamente complexa.
++ [Gerenciar e controlar o fluxo de tráfego em sua implantação do Azure com rotas](https://learn.microsoft.com/training/modules/control-network-traffic-flow-with-routes/). Saiba como controlar o tráfego de rede virtual do Azure implementando rotas personalizadas.
+
 
 ## Principais aspectos a serem lembrados
 
@@ -298,8 +310,3 @@ Parabéns por concluir o laboratório. Aqui estão as principais lições deste 
 + O tráfego entre máquinas virtuais em uma rede virtual emparelhada usa infraestrutura de backbone da Microsoft.
 + As rotas definidas pelo sistema são criadas automaticamente para cada sub-rede em uma rede virtual. As rotas definidas pelo usuário substituem ou são adicionadas às rotas padrão do sistema. 
 + O Observador de Rede do Azure fornece um conjunto de ferramentas para monitorar, diagnosticar e exibir métricas e logs para recursos de IaaS do Azure.
-
-## Saiba mais com treinamento individual
-
-+ [Distribuir seus serviços em redes virtuais do Azure e integre-os usando o emparelhamento de rede virtual](https://learn.microsoft.com/en-us/training/modules/integrate-vnets-with-vnet-peering/). Use o emparelhamento de rede virtual para permitir a comunicação entre redes virtuais de maneira segura e minimamente complexa.
-+ [Gerenciar e controlar o fluxo de tráfego em sua implantação do Azure com rotas](https://learn.microsoft.com/training/modules/control-network-traffic-flow-with-routes/). Saiba como controlar o tráfego de rede virtual do Azure implementando rotas personalizadas.
