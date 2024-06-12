@@ -1,100 +1,95 @@
 ---
 demo:
-  title: 'Demonstração 07: administrar o Armazenamento do Azure'
-  module: Administer Azure Storage
+    title: 'Demonstration 07: Administer Azure Storage'
+    module: 'Administer Azure Storage'
 ---
 
 
-# 07 - Administrar o Armazenamento do Azure
+# 07 - Administer Azure Storage
 
-## Configurar contas de armazenamento
+## Configure Storage Accounts
 
-Nesta demonstração, criaremos uma conta de armazenamento.
+In this demonstration, we will create a storage account.
 
-**Referência**: [criar uma conta de armazenamento](https://docs.microsoft.com/azure/storage/common/storage-account-create?tabs=azure-portal)
+**Reference**: [Create a storage account](https://docs.microsoft.com/azure/storage/common/storage-account-create?tabs=azure-portal)
 
-1. Use o portal do Azure.
+1. Use the Azure portal.
 
-1. Revisar a finalidade das contas de armazenamento. 
+1. Review the purpose of storage accounts. 
    
-1. Pesquisar e selecionar **Contas de armazenamento**. 
+1. Search for and select **Storage Accounts**. 
  
-1. Criar uma conta de armazenamento básica. 
+1. Create a basic storage account. 
 
-    - Discutir os requisitos relacionados à nomeação de uma conta de armazenamento e a necessidade de o nome ser exclusivo no Azure. 
+	- Discuss the requirements around naming a storage account and the need for the name to be unique in Azure. 
 
-    - Analisar os diferentes tipos de armazenamento. Por exemplo, v2 de uso geral. 
+	- Review the different storage kinds. For example, general-purpose v2. 
 
-    - Examinar as seleções da camada de acesso. Por exemplo, as camadas frias e quentes. 
+	- Review the access tier selections. For example, the cool and hot tiers. 
 
-    - Outras guias e configurações serão abordadas em outras demonstrações. 
+	- Other tabs and settings will be covered in other demonstrations. 
 
-1. Criar a conta de armazenamento e esperar que o recurso seja implantado. 
-
-
-## Configurar Armazenamento de Blobs
-
-Nesta demonstração, exploraremos o armazenamento de blobs.
-
-**Observação:** estas etapas exigem uma conta de armazenamento.
-
-**Referência**: [Início rápido: carregar, baixar e listar blobs](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal)
-
-1. Navegar até uma conta de armazenamento no portal do Azure.
-
-1. Revisar a finalidade do armazenamento de blobs. 
-
-1. Criar um contêiner de blob. Definir o nível de acesso do contêiner. Por exemplo, privado (sem acesso anônimo). 
-
-1. Carregue um blob no contêiner. À medida que tiver tempo, reveja as configurações avançadas. Por exemplo, tipo de blob e tamanho de blob. 
-
-## Configurar a segurança de armazenamento
-
-Nesta demonstração, criaremos uma assinatura de acesso compartilhado.
-
-**Observação:** esta demonstração requer uma conta de armazenamento com um contêiner de blob e um arquivo carregado.
-
-**Referência**: [criar tokens SAS para contêineres de armazenamento](https://learn.microsoft.com/azure/applied-ai-services/form-recognizer/create-sas-tokens?source=recommendations&view=form-recog-3.0.0)
-
-1. Selecionar um blob ou arquivo que você deseja proteger. 
-
-1. Gerar uma SAS (Assinatura de Acesso Compartilhado). Revisar as permissões, os horários de início e expiração e os protocolos permitidos.
-
-1. Usar a URL SAS para garantir que o recurso seja exibido. 
+1. Create the storage account and wait for the resource to deploy. 
 
 
-## Configurar Arquivos do Azure 
+## Configure Blob Storage
 
-Nesta demonstração, trabalharemos com compartilhamentos de arquivos e instantâneos.
+In this demonstration, we will explore blob storage.
 
-**Observação:** estas etapas exigem uma conta de armazenamento.
+**Note:** These steps require a storage account.
 
-**Referência**: [início rápido para gerenciar compartilhamentos de arquivo do Azure](https://docs.microsoft.com/azure/storage/files/storage-how-to-use-files-portal?tabs=azure-portal)
+**Reference**: [Quickstart: Upload, download, and list blobs](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal)
 
-1. Revisar a finalidade dos compartilhamentos de arquivos. 
+1. Navigate to a storage account in the Azure portal.
 
-1. Acesse uma conta de armazenamento e clique em  **Arquivos**.
+1. Review the purpose of blob storage. 
 
-1. Crie um compartilhamento de arquivos. Revisar cotas, upload de arquivos e adição de diretórios para organizar as informações. 
+1. Create a blob container. Review the level of access for the container. For example, private (no anonymous access). 
 
-1. Criar instantâneos de compartilhamento de arquivo. Revisar quando usar snapshots e como eles são diferentes dos backups. À medida que tiver tempo, carregue um arquivo, tire um instantâneo, exclua o arquivo e restaure-o.
+1. Upload a blob to the container. As you have time review the advanced settings. For example, blob type and blob size. 
+
+## Configure Storage Security
+
+In this demonstration, we will create a shared access signature.
+
+**Note:** This demonstration requires a storage account, with a blob container, and an uploaded file.
+
+**Reference**: [Create SAS tokens for storage containers](https://learn.microsoft.com/azure/applied-ai-services/form-recognizer/create-sas-tokens?source=recommendations&view=form-recog-3.0.0)
+
+1. Select a blob or file that you want to secure. 
+
+1. Generate a shared access signature (SAS). Review the permissions, start and expiry times, and allowed protocols.
+
+1. Use the SAS URL to ensure the resource displays. 
 
 
-## Ferramentas de armazenamento (opcional)
+## Configure Azure Files 
 
-Nesta demonstração, analisaremos várias ferramentas comuns de armazenamento do Azure. 
+In this demonstration, we will work with files shares and snapshots.
 
-**Referência**: [Introdução ao Gerenciador de Armazenamento](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=windows)
+**Note:** These steps require a storage account.
 
-1. Instale o Gerenciador de Armazenamento ou use o Navegador de Armazenamento.
+**Reference**: [Quickstart for managing Azure file shares](https://docs.microsoft.com/azure/storage/files/storage-how-to-use-files-portal?tabs=azure-portal)
 
-1. Analise como navegar e criar recursos de armazenamento. Por exemplo, adicione um contêiner de blob. 
+1. Review the purpose of file shares. 
 
-**Referência**: [Copiar ou mover dados para o Armazenamento do Azure com o AzCopy v10](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10?toc=/azure/storage/files/toc.json)
+1. Access a storage account and click **Files**.
 
-1. Discuta quando usar o AzCopy. Veja a ajuda, **azcopy /?**.
+1. Create a file share. Review quotas, uploading files, and adding directories to organize the information. 
 
-1. Role para baixo a seção **Exemplos** . Como você tem tempo, tente qualquer um dos exemplos. 
+1. Create a file share snapshot. Review when to use snapshots and how they are different from backups. As you have time, upload a file, take a snapshot, delete the file, and restore the snapshot.
+
+**Reference**: [Get started with Storage Explorer](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=windows)
+
+1. Install the Storage Explorer or use the Storage Browser.
+
+1. Review how to browse and create storage resources. For example, add a blob container. 
+
+**Reference**: [Copy or move data to Azure Storage by using AzCopy v10](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10?toc=/azure/storage/files/toc.json)
+
+1. Discuss when to use AzCopy. View  the help, **azcopy /?**.
+
+1. Scroll down the **Samples** section. As you have time, try any of the examples. 
     
 
 

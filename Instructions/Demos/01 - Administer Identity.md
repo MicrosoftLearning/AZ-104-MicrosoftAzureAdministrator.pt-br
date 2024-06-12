@@ -1,55 +1,58 @@
 ---
 demo:
-  title: 'Demonstração 01: Administrar identidade'
-  module: Administer Identity
+    title: 'Demonstration 01: Administer Identity'
+    module: 'Administer Identity'
 ---
 
-# 01 - Administrar Identidade
+# 01 - Administer Identity
 
-## Configurar identidades de ID do Entra
+## Configure Entra ID Identities
 
-Esta área não tem uma manifestação formal. Considere percorrer a simulação de laboratório interativo para o aluno Laboratório 01. 
+This area does not have a formal demonstration. Consider walking through the interactive lab simulation for student Lab 01. 
 
-Simulação interativa de laboratório
+[Interactive Lab Simulation Lab 01](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)
 
-Como alternativa, você pode usar um desses QuickStarts. 
+Alternatively, you could use one of these QuickStarts. 
 
-Início Rápido: Como criar um novo locatário no Microsoft Entra ID
+**Reference**: [Quickstart - Create a group with members and view all groups and members](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-view-azure-portal)
 
-Início Rápido: criar um grupo com membros e exibir todos os grupos e membros
+## Configure User and Group Accounts
 
-## Configurar contas de usuário e de grupo
+In this demonstration, we will explore Entra ID identities.
 
-Nesta demonstração, exploraremos as identidades do Entra ID.
+**Reference**: [Add or delete users](https://docs.microsoft.com/azure/active-directory/fundamentals/add-users-azure-active-directory)
 
-**Referência**: [Adicionar ou excluir usuários](https://docs.microsoft.com/azure/active-directory/fundamentals/add-users-azure-active-directory)
+**Reference**: [Create a basic group and add members](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal#create-a-basic-group-and-add-members)
 
-Criar um grupo básico e adicionar membros
+**Note:** Depending on your subscription not all areas of the Microsoft Entra ID blade will be available. 
 
-**Observação: dependendo da sua assinatura,**  nem todas as áreas da folha Microsoft Entra ID estarão disponíveis. 
+**Review license and domain information**
 
-**Revisar informações de licença e domínio**
+1.  Access the Azure portal and navigate to the **Microsoft Entra ID** blade.
 
-1.  Acesse o portal do Azure e navegue até a folha ID do **Microsoft Entra** .
+2.  On the Overview blade, review the **Tenant information** including license and primary domain.
 
-2.  Na folha Visão geral, revise as informações ** do**locatário, incluindo licença e domínio principal.
+**Explore user accounts**
 
-**Explorar contas de usuário**
+1.  Select the **Users** blade.
 
-1.  Selecione a **folha Usuários** .
+2.  Explain the choices for **New user** and **New guest user**.
 
-2.  Explique as opções para **Novo usuário e **Novo usuário** convidado**.
+3.  Select **New user** and discuss the differences between **Create
+    user** and **Invite user**.
 
-3.  Selecione **Novo usuário e discuta as diferenças entre **Criar usuário e **Convidar usuário**** ** .
+4.  Create a **New user** reviewing the **Identity**, **Groups and
+    roles**, **Settings**, and **Job Info** parameters.
 
-4.  Crie um **Novo usuário** revisando os parâmetros Identidade **, Grupos e funções **, **** Configurações** e **Informações do**Trabalho** .
+5.  After the user is created, review **Reset password**, **Delete
+    user**, and **Sign-ins**.
 
-5.  Depois que o usuário for criado, revise **Redefinir senha**, ** Excluir usuário** e **Entrar.**
+**Explore group accounts**
 
-**Explorar contas de grupo**
+1.  Return to the **Microsoft Entra ID** page and select
+    the **Groups** blade.
 
-1.  Retorne à página ID do **Microsoft Entra** e selecione a **folha Grupos** .
+2.  Create a **New group** or select an existing group to review.
 
-2.  Crie um Novo grupo ou selecione um **grupo** existente para revisar.
-
-3.  Revise as informações sobre um grupo, incluindo **Tipo** de associação e **Tipo**.
+3.  Review information about a group including **Membership
+    type** and **Type**.

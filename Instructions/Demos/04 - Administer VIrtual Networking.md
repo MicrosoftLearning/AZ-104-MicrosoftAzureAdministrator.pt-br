@@ -1,77 +1,78 @@
 ---
+
 demo:
-  title: 'Demonstração 04: Administrar redes virtuais'
-  module: Administer Virtual Networking
+    title: 'Demonstration 04: Administer Virtual Networking'
+    module: 'Administer Virtual Networking'
 ---
 
-# 04 - Administrar Redes Virtuais
+# 04 - Administer Virtual Networking
 
-## Configurar Redes Virtuais
+## Configure Virtual Networks
 
-Nesta demonstração, você criará redes virtuais.
+In this demonstration, you will create virtual networks.
 
-Guia de início rápido: Criar uma rede virtual – portal do Azure
+**Reference**: [Quickstart: Create a virtual network - Azure portal](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
 
-## Crie uma rede virtual no portal do Azure.
+## Create a virtual network in the portal
 
-1.  Entre no portal do Azure e pesquise por  **Cofres de chaves**.
+1.  Sign in the to the Azure portal and search for **Virtual Networks**.
 
-1.  Crie uma rede virtual, explicando as configurações básicas à medida que avança. Verifique se pelo menos uma sub-rede foi criada. 
+1.  Create a virtual network, explaining the basic settings as you go. Ensure at least one subnet is created. 
 
-1.  Verifique se sua rede virtual foi criada.
+1.  Verify your virtual network was created.
 
-## Configurar Grupos de Segurança de Rede
+## Configure Network Security Groups
 
-Nesta demonstração, você explorará NSGs e pontos de extremidade de serviço.
+In this demonstration, you will explore NSGs and service endpoints.
 
-Restringir o acesso de recursos de PaaS – tutorial – portal do Azure
+**Reference**: [Restrict access to PaaS resources - tutorial - Azure portal](https://docs.microsoft.com/azure/virtual-network/tutorial-restrict-network-access-to-resources)
 
-Criar um grupo de segurança de rede
+**Create a network security group**
 
-1. Acessar o portal do Azure.
+1. Access the Azure Portal.
 
-1. Procure e selecione  **Grupos de segurança de rede**.
+1. Search for and select the **Network Security Groups**.
 
-1. Crie um NSG explicando as configurações à medida que avança. 
+1. Create a NSG explaining the settings as you go. 
  
-1. Aguarde até que o ASG seja implantado.
+1. Wait for the new NSG to deploy.
 
-**Explore as regras de entrada e saída**
+**Explore inbound and outbound rules**
 
-1. Selecione seu novo NSG.
+1. Select your new NSG.
 
-1. Discuta como o NSG pode ser associado a sub-redes ou interfaces de rede.
+1. Discuss how the NSG can be associated with subnets or network interfaces.
 
-1. Discuta as regras de entrada e saída padrão.  
+1. Discuss the purpose inbound and outbound rules.  
 
-1. Discuta as regras de entrada e saída padrão. 
+1. Review the default inbound and outbound rules. 
 
-1. Crie uma nova regra, explicando as configurações à medida que avança. Discuta especificamente a seleção de serviço (como HTTPS) e as configurações de prioridade. 
+1. Create a new rule, explaining the settings as you go. Specifically discuss the service selection (like HTTPS) and the priority settings. 
 
-## Configurar o DNS do Azure
+## Configure Azure DNS
 
-Nesta demonstração, exploraremos o Azure Key Vault.
+In this demonstration, you will explore Azure DNS.
 
-Tutorial: hospedar seu domínio e subdomínio no DNS do Azure
+**Reference**: [Tutorial: Host your domain and subdomain - Azure DNS](https://docs.microsoft.com/azure/dns/dns-delegate-domain-azure-dns)
 
 
-**Criar uma zona DNS**
+**Create a DNS zone**
 
-1. Acessar o portal do Azure.
+1. Access the Azure Portal.
 
-1. Procure o **serviço de zonas** DNS.
+1. Search for the **DNS zones** service.
 
-1. Crie uma **zona DNS e explique a finalidade da zona** . Para um nome, você pode usar contoso.internal.com.
+1. Create a **DNS zone** and explain the purpose of the zone. For a name you can use contoso.internal.com.
 
-1.  Aguarde a VM a ser criada. Talvez seja necessário  **Atualizar**  a página.
+1.  Wait for the DNS zone to be created. You may need to **Refresh** the page.
 
-Adicionar conjuntos de registros DNS
+**Add a DNS record set**
 
-Tutorial: Criar um registro de alias para se referir a um registro de recurso de zona
+**Reference**: [Tutorial: Create an alias record to refer to a zone resource record](https://learn.microsoft.com/azure/dns/tutorial-alias-rr)
 
-1. Depois que sua zona for criada, selecione **+Conjunto** de registros.
+1. Once your zone is created, select **+Record Set**.
 
-1. Use a **lista suspensa Tipo** para exibir os diferentes tipos de registros. Revise como os diferentes tipos de registro são usados. Observe como as informações do registro mudam à medida que você seleciona diferentes tipos de registro.
+1. Use the **Type** drop-down to view the different types of records. Review how the different record types are used. Notice how the record information changes as you select different record types.
 
-1. Crie um **registro A** como exemplo. 
+1. Create an **A** record as an example. 
 

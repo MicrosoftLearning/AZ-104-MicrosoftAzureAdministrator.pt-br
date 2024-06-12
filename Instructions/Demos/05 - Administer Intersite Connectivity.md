@@ -1,70 +1,71 @@
 ---
 demo:
-  title: 'Demonstração 05: Administrar conectividade entre sites'
-  module: Administer Intersite Connectivity
+    title: 'Demonstration 05: Administer Intersite Connectivity'
+    module: 'Administer Intersite Connectivity'
 ---
 
-# 05 - Administrar a conectividade entre sites
+# 05 - Administer Intersite Connectivity
 
-## Configurar o emparelhamento de VNet
+## Configure VNet Peering
 
-**Nota:**  Para esta demonstração você precisará de duas redes virtuais.
+**Note:** For this demonstration you will need two virtual networks.
 
-Tutorial: conectar redes virtuais com o Emparelhamento VNET – portal do Azure
+**Reference**: [Connect virtual networks with VNet peering - tutorial](https://docs.microsoft.com/azure/virtual-network/tutorial-connect-virtual-networks-portal)
 
-Configurar o emparelhamento de rede virtual hub
+**Configure VNet peering on the first virtual network**
 
-1. No portal do Azure, selecione a rede virtual. Analise o valor do emparelhamento. 
+1. In the **Azure portal**, select the first virtual network. Review the value of peering. 
 
-1. Em **Configurações, selecione **Emparelhamentos e **+ Adicionar** um novo emparelhamento****.
+1. Under **Settings**, select **Peerings** and **+ Add** a new peering.
 
-1. Configurar o emparelhamento de rede virtual hub Use os ícones de informações para revisar as diferentes configurações. 
+1. Configure the peering the second virtual network. Use the information icons to review the different settings. 
 
-1. Quando o emparelhamento estiver concluído, revise o **status** Emparelhamento. 
+1. When the peering is complete, review the **Peering status**. 
 
-Confirmar a segunda rede virtual
+**Confirm VNet peering on the second virtual network**
 
-1. No portal do Azure, selecione a rede virtual.
+1. In the **Azure portal**, select the second virtual network
 
-1. Em **Configurações, selecione **Emparelhamentos****.
+1. Under **Settings**, select **Peerings**.
 
-1. Observe que um emparelhamento foi criado automaticamente. Observe que o Status ** de**emparelhamento está **conectado**.
+1. Notice that a peering has automatically been created. Notice that the **Peering Status** is **Connected**.
 
-1. No laboratório, os alunos criarão emparelhamento e testarão a conexão entre máquinas virtuais. 
+1. In the lab, students will create peering and test the connection between virtual machines. 
 
-## Configurar pontos de extremidade e roteamento de rede
+## Configure Network Routing and Endpoints
 
-Nesta demonstração, aprenderemos como criar uma tabela de rotas, definir uma rota personalizada e associar a rota a uma sub-rede.
+In this demonstration, we will learn how to create a route table, define
+a custom route, and associate the route with a subnet.
 
-**Nota:** Esta demonstração requer uma rede virtual com pelo menos uma sub-rede.
+**Note:** This demonstration requires a virtual network with at least one subnet.
 
-Rotear o tráfego de rede – tutorial – portal do Azure
+**Reference**: [Route network traffic - tutorial - Azure portal](https://learn.microsoft.com/azure/virtual-network/tutorial-create-route-table-portal#create-a-route-table)
 
-Criar uma tabela de roteamento
+**Create a routing table**
 
-1. À medida que tiver tempo, reveja o diagrama tutorial. Explique por que você precisa criar uma rota definida pelo usuário. 
+1. As you have time review the tutorial diagram. Explain why you need to create a user-defined route. 
 
-1. Acessar o portal do Azure
+1. Access the Azure portal.
 
-1. Pesquise por **Tabela de rotas** e selecione essa opção. Discuta quando **as rotas** de gateway de propagação devem ser usadas. 
+1. Search for and select **Route tables**. Discuss when **propagate gateway routes** should be used. 
 
-1. Crie uma tabela de roteamento, explique as configurações incomuns. 
+1. Create a routing table, explain any uncommon settings. 
 
-1. Aguarde até que a nova tabela de roteamento seja implantada.
+1. Wait for the new routing table to be deployed.
 
-Adicionar uma rota
+**Add a route**
 
-1.  Selecione sua nova tabela de roteamento e, em seguida, selecione **Rotas**.
+1.  Select your new routing table, and then select **Routes**.
 
-1.  Criar um novo roteiro Discuta os diferentes **tipos** de salto disponíveis. 
+1.  Create a new **route**. Discuss the different **hop types** that are available. 
 
-1.  Selecione Criar e aguarde até que o recurso seja implantado.
+1.  Create the new route and wait for the resource to be deployed.
  
-Associar uma tabela de rotas a uma sub-rede
+**Associate a route table to a subnet**
 
-1.  Selecione a sub-rede à qual você deseja associar a tabela de rotas.
+1.  Navigate to the subnet you want to associate with the routing table.
 
-1.  Selecione **Tabela de rotas e escolha sua nova tabela de** roteamento. 
+1.  Select **Route table** and choose your new routing table. 
 
-1.  **Salve** suas alterações.
+1.  **Save** your changes.
 
