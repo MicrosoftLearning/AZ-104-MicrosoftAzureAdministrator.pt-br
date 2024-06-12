@@ -1,106 +1,106 @@
 ---
 demo:
-  title: 'Demonstração 09: Administrar opções de computação PaaS'
-  module: Administer PaaS Compute Options
+    title: 'Demonstration 09: Administer PaaS Compute Options'
+    module: 'Administer PaaS Compute Options'
 ---
 
-# 09 - Administrar opções de computação PaaS
+# 09 - Administer PaaS Compute Options
 
-## Configurar planos do Serviço de Aplicativo do Azure
+## Configure Azure App Service Plans
 
-Nesta demonstração, criaremos e trabalharemos com planos do Serviço de Aplicativo do Azure.
+In this demonstration, we will create and work with Azure App Service plans.
 
-**Referência**: [Gerenciar plano do Serviço de Aplicativo - Serviço de Aplicativo do Azure](https://docs.microsoft.com/azure/app-service/app-service-plan-manage)
+**Reference**: [Manage App Service plan - Azure App Service](https://docs.microsoft.com/azure/app-service/app-service-plan-manage)
 
-Escalar verticalmente um aplicativo no Serviço de Aplicativo do Azure
+**Reference**: [Scale up an app in Azure App Service](https://learn.microsoft.com/azure/app-service/manage-scale-up)
 
-Dimensionamento automático no Serviço de Aplicativo do Azure
+**Reference**: [Automatic scaling in Azure App Service](https://learn.microsoft.com/azure/app-service/manage-automatic-scaling?tabs=azure-portal)
 
-1. Use o portal do Azure. 
+1. Use the Azure portal. 
 
-1. Pesquise e selecione  **Planos de Serviços de Aplicativos**.
+1. Search for and select **App Service plans**.
 
-1. Criar um serviço de aplicativo simples Discuta a necessidade de selecionar Windows ou Linux. Discuta os planos de preços agora ou nas próximas etapas. 
+1. Create a simple App Service plan. Discuss the need to select Windows or Linux. Discuss pricing plans now or in the next steps. 
 
-1. Implante seu novo plano de serviço de aplicativo. 
+1. Deploy your new app service plan. 
 
-1. Escalar verticalmente o Plano do Serviço de Aplicativo. Discuta a diferença entre **os planos de Desenvolvimento/Teste** e **Produção** . Revise a lista de recursos. 
+1. Review the **Scale up (App Service Plan)** blade. Discuss the difference between **Dev/Test** and **Production** plans. Review the feature list. 
 
-1. Escalar horizontalmente o Plano do Serviço de Aplicativo. Analise a diferença entre **Manual** e **Baseado em** Regras. 
+1. Review the **Scale out (App Service Plan)** blade. Review the difference between **Manual** and **Rule-based**. 
 
-## Configurar os Serviços de Aplicativos do Azure
+## Configure Azure App Services
 
-Nesta demonstração, criaremos um novo aplicativo Web que executa um contêiner do Docker. O contêiner exibe uma mensagem de boas-vindas.
+In this demonstration, we will create a new web app that runs a Docker container. The container displays a Welcome message.
 
-**Referência**: [Criar um aplicativo Web](https://learn.microsoft.com/training/modules/host-a-web-app-with-azure-app-service/3-exercise-create-a-web-app-in-the-azure-portal?pivots=csharp)
+**Reference**: [Create a Web App](https://learn.microsoft.com/training/modules/host-a-web-app-with-azure-app-service/3-exercise-create-a-web-app-in-the-azure-portal?pivots=csharp)
 
-Nesta tarefa, criaremos um Aplicativo Web do Serviço de Aplicativo do Azure.
+In this task, we will create an Azure App Service Web App.
 
-1. Use o portal do Azure. 
+1. Use the Azure portal. 
 
-1. Pesquise pelos Serviços de Aplicativos e selecione essa opção.
+1. Search for and select **App Services**.
 
-1. Crie um aplicativo Web.
+1. **Create** a **Web App**.
 
-    - Publicar: **código** Analise outras opções.
-    - Pilha de tempo de execução: **.Net**. Analise outras opções.
-    - Sistema Operacional: Linux
+    - Publish: **Code**. Review other choices.
+    - Runtime stack: **.Net**. Review other choices.
+    - Operating system: **Linux**
 
-1. Selecione o **plano de serviço F1** gratuito.
+1. Select the **Free F1** service plan.
 
-1. **Revisar + criar** o aplicativo Web. Aguarde até o recurso ser implantado.
+1. **Review + create** the web app. Wait for the resource to deploy.
 
-1. **Na página Visão geral**, verifique se o **Status** está **em execução**.
+1. On the **Overview** page, ensure the **Status** is **Running**.
 
-1. Selecione a URL** e verifique se a **página de espaço reservado padrão é carregada.
+1. Select the **URL** and ensure the default placeholder page loads.
 
-1. À medida que tiver tempo, explore as opções de slots** de **implantação.
+1. As you have time, explore the **Deployment slots** options.
    
-## Configurar Instâncias de Contêiner do Azure
+## Configure Azure Container Instances
 
-Nesta demonstração, criamos, configuramos e implantamos um contêiner usando as Instâncias de Contêiner do Azure (ACI) do Portal do Azure. O aplicativo ACI exibe uma página HTML estática com a imagem pública do Microsoft Hello World. 
+In this demonstration we create, configure, and deploy a container by using Azure Container Instances (ACI) from the Azure Portal. The ACI application displays a static HTML page with the public Microsoft Hello World image. 
 
-Início Rápido – Implantar um contêiner do Docker na instância de contêiner – Portal
+**Reference**: [Quickstart - Deploy Docker container to container instance](https://learn.microsoft.com/en-us/azure/container-instances/container-instances-quickstart-portal)
 
-1. Use o portal do Azure.
+1. Use the Azure portal.
 
-1. Pesquise e selecione **Instâncias** de contêiner.
+1. Search for and select **Container instances**.
 
-1. Criar uma instância de contêiner 
+1. **Create** a new container instance. 
 
-1. Preencha o grupo** de recursos e **o nome** do **contêiner. 
+1. Fill in the **Resource group** and **Container name**. 
 
-1. Discuta as opções de origem** da **imagem. Usar imagem de início rápido
+1. Discuss the **Image source** options. Use **Quickstart images**.
 
-1. Para **imagem** de contêiner use **mcr.microsoft.com/azuredocs/aci-helloworld:latest (Linux)**. Esta imagem de exemplo do Linux empacota um pequeno aplicativo Web escrito no Node.js que veicula a uma página HTML estática.
+1. For **Container image** use **mcr.microsoft.com/azuredocs/aci-helloworld:latest (Linux)**. This sample Linux image packages a small web app written in Node.js that serves a static HTML page.
 
-1. Na página **Rede**, especifique um **Rótulo de nome DNS** para seu contêiner. 
+1. On the **Networking** page, specify a **DNS name label** for your container. 
 
-1. Deixe todas as outras configurações com seus padrões e selecione **Examinar + criar**.
+1. Leave all other settings as their defaults, then select **Review + create**.
 
-1. Aguarde até o recurso ser implantado.
+1. Wait for the resource to deploy.
 
-1. **Na página Visão geral** do recurso, verifique se o **Status** está **em execução**.
+1. On the **Overview** page for the resource, ensure the **Status** is **Running**.
 
-1. Navegue até o **FQDN** da instância do contêiner e verifique se a página de boas-vindas é exibida. 
+1. Navigate to the **FQDN** for the container instance and ensure the welcome page displays. 
 
-**Nota**: Para evitar custos adicionais, exclua o recurso. 
+**Note**: To avoid additional costs, delete the resource. 
 
-## Criar e configurar Aplicativos de Contêiner do Azure
+## Configure Azure Container Apps
 
-Nesta demonstração, criaremos e trabalharemos com os Aplicativos de Contêiner do Azure. 
+In this demonstration, we will create and work with Azure Container Apps. 
 
-Guia de Início Rápido: Implantar seu primeiro aplicativo de contêiner usando o portal do Azure
+**Reference**: [Quickstart: Deploy your first container app using the Azure portal](https://learn.microsoft.com/azure/container-apps/quickstart-portal)
 
-1. Pesquise e selecione **Condição**.
+1. Search for and select **Container Apps**.
 
-1. Conclua os detalhes** do **projeto e crie o ambiente** de aplicativos **de contêiner.
+1. Complete the **Project details** and create the container apps **environment**.
 
-1. **Revise e crie** o aplicativo de contêiner.
+1. **Review and create** the container app.
 
-1. Selecione o link ao lado de **URL do Aplicativo** para exibir o aplicativo.
+1. Use the **Application URL** link to view your application.
 
-1. Verifique se o navegador exibe a **mensagem Bem-vindo aos Aplicativos** de Contêiner do Azure. 
+1. Verify the browser displays the **Welcome to Azure Container Apps** message. 
 
 
 

@@ -1,111 +1,112 @@
 ---
+
 demo:
-  title: 'Demonstração 02: Administrar Governança e Compliance'
-  module: Administer Governance and Compliance
+    title: 'Demonstration 02: Administer Governance and Compliance'
+    module: 'Administer Governance and Compliance'
 ---
 
-# 02 - Administrar Governança e Compliance
+# 02 - Administer Governance and Compliance
 
-## Configurar assinaturas
+## Configure Subscriptions
 
-Esta área não tem uma manifestação formal. 
+This area does not have a formal demonstration. 
 
-Criar uma assinatura adicional do Azure
+**Reference**: [Create an additional Azure subscription](https://docs.microsoft.com/azure/cost-management-billing/manage/create-subscription)
 
-## Configurar o Azure Policy
+## Configure Azure Policy
 
-Nesta demonstração, trabalharemos com políticas do Azure.
+In this demonstration, we will work with Azure policies.
 
-Tutorial: Criar políticas para impor conformidade
+**Reference**: [Tutorial: Build policies to enforce compliance - Azure Policy](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
 
-**Atribuir uma política**
+**Assign a policy**
 
-1.  Acessar o portal do Azure
+1.  Access the Azure portal.
 
-2.  Pesquise por  **Política** e selecione essa opção.
+2.  Search for and select **Policy**.
 
-3.  Selecione **Atribuições** e, em seguida, **Atribuir política**.
+3.  Select **Assignments** and then **Assign Policy**.
 
-5.  O escopo determina em quais recursos ou grupo de recursos a atribuição de política é imposta.
+5.  Discuss the **Scope** which determines what resources or grouping of resources the policy assignment is enforced on.
 
-6.  Selecione a reticências  **Definição de política** para abrir a lista de definições. Reserve algum tempo para revisar as definições de política internas.
+6.  Select the **Policy definition** ellipsis to open the list of available definitions. Take some time to review the built-in policy definitions.
 
-7.  Pesquise e selecione a **política Locais permitidos** . Esta política permite que você restrinja os locais que sua organização pode especificar ao implantar recursos.
+7.  Search for and select the **Allowed locations** policy. This policy enables you to restrict the locations your organization can specify when deploying resources.
 
-8.  Mova a guia Parâmetros ** e, usando a lista suspensa,** selecione um ou mais locais permitidos.
+8.  Move the **Parameters** tab and using the drop-down select one or more allowed locations.
 
-9.  Clique em Revisar + criar e, em seguida, em ** **Criar** para criar** a política.
+9.  Click **Review + create** and then **Create** to create the policy.
 
-Criar e atribuir uma definição de iniciativa
+**Create and assign an initiative definition**
 
-1.  Retorne à página Política do Azure e selecione **Definições** em Criação.
+1.  Return to the Azure Policy page and select **Definitions** under Authoring.
 
-2.  Selecione **Definição** de iniciativa na parte superior da página.
+2.  Select **Initiative Definition** at the top of the page.
 
-3.  Forneça um nome ** e **uma**descrição**.
+3.  Provide a **Name** and **Description**.
 
-4.  **Crie uma nova** categoria.
+4.  **Create new** Category.
 
-5.  No painel **direito, adicione** a **política Locais permitidos** .
+5.  From the right panel **Add** the **Allowed locations** policy.
 
-6.  Adicione uma política adicional de sua escolha.
+6.  Add one additional policy of your choosing.
 
-7.  **Salve** suas alterações e, em seguida, **Atribua** sua definição de iniciativa à sua assinatura.
+7.  **Save** your changes and then **Assign** your initiative definition to your subscription.
 
-Verificar conformidade
+**Check for compliance**
 
-1.  Volte para a página Policy no portal do Azure.
+1.  Return to the Azure Policy service page.
 
-2.  Selecione **Conformidade**.
+2.  Select **Compliance**.
 
-3.  Revise o status de sua política e sua definição.
+3.  Review the status of your policy and your definition.
 
-Acompanhar tarefas de correção
+**Check for remediation tasks**
 
-1.  Volte para a página Policy no portal do Azure.
+1.  Return to the Azure Policy service page.
 
-2.  Selecione **Remediação**.
+2.  Select **Remediation**.
 
-3.  Revise todas as tarefas de correção listadas.
+3.  Review any remediation tasks that are listed.
 
-4. Como você tem tempo, remova a política e a iniciativa. 
+4. As you have time, remove the policy and the initiative. 
 
-## Configurar o controle de acesso baseado em função
+## Configure Role-Based Access Control
 
-Nesta tarefa, vamos aprender sobre as atribuições de função.
+In this demonstration, we will learn about role assignments.
 
-Tutorial: Conceder acesso aos recursos do Azure para um usuário usando o portal do Azure – RBAC do Azure
+**Reference**: [Tutorial: Grant a user access to Azure resources using the Azure portal - Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/quickstart-assign-role-user-portal)
 
-Início rápido – Verificar o acesso que um usuário tem aos recursos do Azure – RBAC do Azure
+**Reference**: [Quickstart - Check access for a user to Azure resources - Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/check-access)
 
-**Localizar o painel de Controle de Acesso**
+**Locate Access Control blade**
 
-1.  Acesse o portal do Azure e selecione um grupo de recursos. Anote o grupo de recursos que você usa.
+1.  Access the Azure portal and select a resource group. Make a note of what resource group you use.
 
-2.  Selecione o painel  **IAM (Controle de Acesso)** .
+2.  Select the **Access Control (IAM)** blade.
 
-3.  Esse painel estará disponível para muitos recursos diferentes, para que você possa controlar o acesso.
+3.  This blade will be available for many different resources so you can control permissions.
 
-**Examinar permissões de função**
+**Review role permissions**
 
-1.  Selecione a guia  **Funções**  (superior).
+1.  Select the **Roles** tab (top).
 
-1.  Examine o grande número de funções internas que estão disponíveis.
+1.  Review the large number of built-in roles that are available.
 
-1.  Clique duas vezes em uma função e selecione  **Permissões**  (superior).
+1.  Double-click a role, and then select **Permissions** (top).
 
-1.  Continue detalhando a função até que você possa exibir as ações de  **Leitura, Gravação e Exclusão**  para essa função.
+1.  Continue drilling into the role until you can view the **Read, Write, and Delete** actions for that role.
 
-1.  Retorne para o painel  **IAM (Controle de Acesso)** .
+1.  Return to the **Access Control (IAM)** blade.
 
-**Adicionar uma atribuição de função**
+**Add a role assignment**
 
-1.  Crie um usuário ou encontre um usuário existente.
+1.  Create a user or select an existing user.
 
-1.  Selecione Adicionar e escolha Adicionar atribuição de função. Por exemplo, *proprietário*.
+1.  Select **Add role assignment** and select a role. For example, *owner*.
 
-1.  Selecione **Verificar acesso**.
+1.  Select **Check access**.
 
-1.  Analise as permissões do usuário.
+1.  Review the user permissions.
 
-1.  Observe que você pode **Negar atribuições**.
+1.  Note that you can **Deny assignments**.
