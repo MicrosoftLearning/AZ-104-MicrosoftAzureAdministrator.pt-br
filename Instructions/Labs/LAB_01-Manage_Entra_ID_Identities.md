@@ -122,7 +122,7 @@ Nesta tarefa, você cria uma conta de grupo. As contas de grupo podem incluir co
 
 1. Selecione **Nenhum proprietário selecionado**.
 
-1. Na página **Adicionar proprietários**, pesquise e **selecione** você mesmo como o proprietário. Observe que você pode ter mais de um proprietário. 
+1. Na página **Adicionar proprietários**, pesquise e **selecione** você mesmo (mostrado no canto superior direito) como proprietário. Observe que você pode ter mais de um proprietário. 
 
 1. Escolha **Nenhum membro selecionado**.
 
