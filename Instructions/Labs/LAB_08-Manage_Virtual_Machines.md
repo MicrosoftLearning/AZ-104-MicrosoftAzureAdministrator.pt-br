@@ -354,7 +354,7 @@ Nesta tarefa, você dimensiona o conjunto de dimensionamento de máquinas virtua
     -Location 'East US' `
     -Image 'Win2019Datacenter' `
     -Zone '1' `
-    -Size 'Standard_D2s_v3' ` 
+    -Size 'Standard_D2s_v3' `
     -Credential (Get-Credential)
     ```
 
