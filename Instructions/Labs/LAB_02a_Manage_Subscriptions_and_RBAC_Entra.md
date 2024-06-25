@@ -49,7 +49,7 @@ Há algumas simulações interativas do laboratório que podem ser úteis para e
 
 ## Tarefa 1: Implementar Grupos de Gerenciamento
 
-Nesta tarefa, você criará e configurará grupos de gerenciamento. Os grupos de gerenciamento são usados para organizar logicamente as assinaturas. As assinaturas devem ser segmentadas e permitir que o RBAC e o Azure Policy sejam atribuídos e herdados a outros grupos de gerenciamento e assinaturas. Por exemplo, se sua organização tiver uma equipe de suporte dedicada para a Europa, você poderá organizar assinaturas europeias em um grupo de gerenciamento para fornecer à equipe de suporte acesso a essas assinaturas (sem fornecer acesso individual a todas as assinaturas). Em nosso cenário, todos no suporte técnico precisarão criar uma solicitação de suporte em todas as assinaturas. 
+Nesta tarefa, você criará e configurará grupos de gerenciamento. Os grupos de gerenciamento são usados ​​para organizar e segmentar assinaturas de forma lógica. Permitem que o RBAC e o Azure Policy sejam atribuídos e herdados a outros grupos de gestão e subscrições. Por exemplo, se sua organização tiver uma equipe de suporte dedicada para a Europa, você poderá organizar assinaturas europeias em um grupo de gerenciamento para fornecer à equipe de suporte acesso a essas assinaturas (sem fornecer acesso individual a todas as assinaturas). Em nosso cenário, todos no suporte técnico precisarão criar uma solicitação de suporte em todas as assinaturas. 
 
 1. Entre no **portal do Azure** - `https://portal.azure.com`.
 
