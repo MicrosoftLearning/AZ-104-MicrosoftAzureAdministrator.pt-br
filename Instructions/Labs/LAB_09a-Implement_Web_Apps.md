@@ -106,7 +106,7 @@ Nesta tarefa, você definirá as configurações de implantação do aplicativo 
 
 1. No campo repositório, insira `https://github.com/Azure-Samples/php-docs-hello-world`
 
-1. No campo ramificação, insira `master`.
+1. No campo ramificação, insira `main`.
 
 1. Selecione **Salvar**.
 
@@ -159,7 +159,7 @@ Nesta tarefa, você configurará o dimensionamento automático do aplicativo Web
 
 1. Em **Visão geral** | **Adicionar solicitações HTTP**, selecione **Criar**.
 
-1. Para o **URL de teste**, cole o URL de **Domínio padrão**. Certifique-se de que isso esteja formatado corretamente e comece com **https://**.
+1. Na guia **Plano de teste**, clique em **Adicionar solicitação**. No campo **URL**, cole o **Domínio padrão** URL. Certifique-se de que isso esteja formatado corretamente e comece com **https://**.
 
 1. Selecione **Examinar + criar** e **Criar**.
 
