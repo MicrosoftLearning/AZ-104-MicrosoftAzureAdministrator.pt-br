@@ -113,11 +113,9 @@ Nesta tarefa, você criará um cofre dos Serviços de Recuperação. Um cofre do
     
     >**Você sabia?** A opção Restauração Entre Regiões permite que você restaure dados em uma [região emparelhada do Azure](https://learn.microsoft.com/azure/backup/backup-create-recovery-services-vault#set-cross-region-restore) secundária. 
 
-1. Retorne à folha do cofre dos Serviços de Recuperação, clique no link **Atualizar** no rótulo **Configurações de segurança > Exclusão temporária e configurações de segurança**.
+1. Selecione o link **Atualizar** no rótulo **Configurações de segurança > Configurações de exclusão reversível e segurança**.
 
 1. Na folha **Configurações de segurança**, observe que **Exclusão temporária (para carga de trabalho em execução no Azure)** está **Habilitada**. Observe que o **período de retenção de exclusão temporária** é de **14** dias. 
-
-1. Retorne à folha do cofre dos Serviços de Recuperação e selecione a folha **Visão Geral**.
 
 >**Você sabia?** O Azure tem dois tipos de cofres: Cofres dos Serviços de Recuperação e cofres de Backup. A principal diferença são as fontes de dados das quais é possível fazer backup. Saiba mais sobre [as diferenças](https://learn.microsoft.com/answers/questions/405915/what-is-difference-between-recovery-services-vault).
 

@@ -138,7 +138,7 @@ Nesta tarefa, você cria uma conta de grupo. As contas de grupo podem incluir co
    
 ## Limpar os recursos
 
-Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto para excluir os recursos do laboratório. Isso garantirá que os recursos sejam liberados e que o custo seja minimizado. A maneira mais fácil de excluir os recursos do laboratório é excluir o grupo de recursos do laboratório. 
+Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto para excluir os recursos do laboratório. Isso garantirá que os recursos sejam liberados e que o custo seja minimizado. A maneira mais fácil de excluir os recursos do laboratório é excluir o grupo de recursos do laboratório. Observe que isso não removerá nenhum usuário ou grupo do Entra ID que você tenha criado. 
 
 + No portal do Azure, selecione o grupo de recursos, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
 + Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.

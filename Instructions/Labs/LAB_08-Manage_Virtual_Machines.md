@@ -240,20 +240,13 @@ Nesta tarefa, você implantará um conjunto de dimensionamento de máquinas virt
     | Opções de balanceamento de carga | **Balanceador de carga do Azure** |
     | Selecionar um balanceador de carga | **Criar um balanceador de carga** |
 
-1. Na página **Criar um balanceador de carga**, especifique o nome do balanceador de carga e use os padrões. Clique em **Criar** quando terminar e, em seguida, em **Avançar : Dimensionamento >**.
+1. Na página **Criar um balanceador de carga**, especifique o nome do balanceador de carga e use os padrões. Clique em **Criar** quando terminar e depois em **Avançar : Gerenciamento >**.
 
     | Configuração | Valor |
     | --- | --- |
     | Nome do balanceador de carga | `vmss-lb` |
 
     >**Observação:** Pause por um minuto e examine o que você fez. Neste ponto, você configurou o conjunto de dimensionamento de máquina virtual com discos e rede. Na configuração de rede, você criou um grupo de segurança de rede e permitiu HTTP. Você também criou um balanceador de carga com um endereço IP público.
-
-1. Na guia **Dimensionamento**, especifique as seguintes configurações (deixe as outras com seus valores padrão) e clique em **Avançar: Gerenciamento >**:
-
-    | Configuração | Valor |
-    | --- | --- |
-    | Contagem de instâncias inicial | `2` |
-    | Política de dimensionamento | **Manual** |
 
 1. Na guia **Gerenciamento**, especifique as seguintes configurações (deixe as outras com seus valores padrão):
 
@@ -277,7 +270,7 @@ Nesta tarefa, você dimensiona o conjunto de dimensionamento de máquinas virtua
 
 1. Selecione **Ir para o recurso** ou procure e selecione o conjunto de dimensionamento **vmss1**.
 
-1. Escolha **Colocação em escala** no menu à esquerda da janela do conjunto de dimensionamento.
+1. Escolha **Disponibilidade + Escala** no menu do lado esquerdo e, em seguida, **Escala**.
 
 >**Você sabia?** Você pode fazer o **Dimensionamento manual** ou o **Dimensionamento automático personalizado**. Em conjuntos de dimensionamento com um pequeno número de instâncias de VM, aumentar ou diminuir a contagem de instâncias (dimensionamento manual) pode ser melhor. Em conjuntos de dimensionamento com um grande número de instâncias de VM, o dimensionamento com base em métricas (dimensionamento automático personalizado) pode ser mais apropriado.
 
