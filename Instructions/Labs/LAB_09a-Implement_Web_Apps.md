@@ -106,7 +106,7 @@ Nesta tarefa, você definirá as configurações de implantação do aplicativo 
 
 1. No campo repositório, insira `https://github.com/Azure-Samples/php-docs-hello-world`
 
-1. No campo ramificação, insira `main`.
+1. No campo ramificação, insira `master`.
 
 1. Selecione **Salvar**.
 
