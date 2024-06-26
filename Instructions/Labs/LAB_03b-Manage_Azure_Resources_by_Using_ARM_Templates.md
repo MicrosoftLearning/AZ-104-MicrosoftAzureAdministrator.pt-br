@@ -127,7 +127,7 @@ Nesta tarefa, você usa o modelo baixado para implantar um novo disco gerenciado
 
 1. Selecione uma implantação e examine o conteúdo das folhas **Entrada** e **Modelo**.
 
-## Tarefa 3: Configurar o Cloud Shell e implantar um modelo com o Azure PowerShell
+## Tarefa 3: Configurar o Cloud Shell e implantar um modelo com o PowerShell 
 
 Nesta tarefa, você trabalha com o Azure Cloud Shell e o Azure PowerShell. O Azure Cloud Shell é um terminal interativo, autenticado e acessível pelo navegador para o gerenciamento de recursos do Azure. Ele dá a você a flexibilidade de escolher a experiência de shell que melhor se adequa ao modo como você trabalha, seja com o Bash ou o PowerShell. Nesta tarefa, você usa o PowerShell para implantar um modelo. 
 
@@ -139,32 +139,28 @@ Nesta tarefa, você trabalha com o Azure Cloud Shell e o Azure PowerShell. O Azu
 
     >**Você sabia?**  Se você trabalha principalmente com sistemas Linux, o Bash (CLI) será mais familiar. Se você trabalha principalmente com sistemas Windows, o Azure PowerShell será mais familiar. 
 
-1. Na tela **Introdução**, selecione **Conta de armazenamento de montagem** e, em seguida, **Quero criar uma conta de armazenamento**.  
+1. Na tela **Introdução**, selecione **Montar conta de armazenamento**, selecione a sua **Assinatura de conta de armazenamento** e selecione **Aplicar**.
 
-    >**Observação:** Para este laboratório, uma conta de armazenamento é necessária. Insira as informações necessárias. 
+1. Selecione **Quero criar uma conta de armazenamento** e, em seguida, **Avançar**. Complete as informações em **Criar conta de armazenamento**. 
     
     | Configurações | Valores |
     |  -- | -- |
-    | Assinatura | *selecione sua assinatura* |
     | Grupo de recursos | **az104-rg3** |
     | Region | *selecione sua região* | 
     | Conta de armazenamento (Criar nova) | *deve ser globalmente exclusivo, ter entre 3 e 24 caracteres e usar apenas números e letras minúsculas* |
     | Compartilhamento de arquivo (Criar novo) | `fs-cloudshell` |
 
-1. Ao concluir, selecione **Avançar**. Você só precisa fazer isso na primeira vez que usar o Cloud Shell. Levará alguns minutos para provisionar o armazenamento.
+1. Quando concluído, selecione **Criar**.
 
-1. Use o ícone **Carregar/Baixar arquivos** para carregar o modelo e o arquivo de parâmetros do diretório de downloads. Você precisará carregar cada arquivo separadamente.
+    >Levará alguns minutos para provisionar o armazenamento.
 
-   >**Observação:** Se, a qualquer momento, você for solicitado a **Alternar para o cloud shell clássico**, faça isso. 
+1. Selecione **Configurações** (barra superior) e **Ir para a versão clássica**.
 
-1. Verifique se os arquivos estão disponíveis no armazenamento do Cloud Shell. 
+1. Selecione o ícone **Carregar/Baixar arquivos** (barra superior) e selecione **Carregar**.
 
-    ```powershell
-    dir
-    ```
-    >**Observação**: Se precisar, você poderá usar **cls** para limpar a janela de comando. Você pode usar as teclas de direção para mover o histórico de comandos.
-   
-1. Selecione o ícone do **Editor** (colchetes) e navegue até o arquivo JSON do modelo.
+1. Carregue os arquivos de modelo e parâmetros do diretório **Downloads**. 
+
+1. Selecione o ícone **Editor (chaves)** e navegue até o arquivo JSON de modelo à esquerda no painel de navegação.
 
 1. Faça uma alteração. Por exemplo, altere o nome do disco para **az104-disk3**. Use **Ctrl +S** para salvar suas alterações. 
 

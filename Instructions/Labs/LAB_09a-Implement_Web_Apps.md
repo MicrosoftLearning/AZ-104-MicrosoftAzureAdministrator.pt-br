@@ -124,7 +124,7 @@ Nesta tarefa, você trocará o slot de preparo pelo slot de produção. A troca 
 
 1. Navegue de volta para a folha **Slots de implantação** e selecione **Trocar**.
 
-1. Examine as configurações padrão e clique em **Trocar**.
+1. Examine as configurações padrão e clique em **Iniciar a Troca**.
 
 1. Na folha **Visão geral** do aplicativo Web, selecione o link do **Domínio padrão** para exibir a home page do site.
 

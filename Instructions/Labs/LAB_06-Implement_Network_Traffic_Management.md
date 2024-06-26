@@ -188,7 +188,8 @@ Nesta tarefa, você implementa um Gateway de Aplicativo do Azure na frente de du
     | Configuração | Valor |
     | --- | --- |
     | Nome | `subnet-appgw` |
-    | Intervalo de endereços da sub-rede | `10.60.3.224/27` |
+    | Endereço inicial| `10.60.3.224` |
+    | Tamanho | `/27` |
 
 1. Clique em **Salvar**
 
@@ -207,7 +208,7 @@ Nesta tarefa, você implementa um Gateway de Aplicativo do Azure na frente de du
     | Camada | **Padrão V2** |
     | Habilitar o dimensionamento automático | **Não** |
     | Contagem mínima de instâncias | `2` |
-    | Zona de disponibilidade | **Zona 1** |
+    | Zona de disponibilidade | **1** (padrão) |
     | HTTP2 | **Desabilitado** |
     | Rede virtual | **az104-06-vnet1** |
     | Sub-rede | **subnet-appgw (10.60.3.224/27)** |
@@ -231,8 +232,8 @@ Nesta tarefa, você implementa um Gateway de Aplicativo do Azure na frente de du
     | --- | --- |
     | Nome | `az104-appgwbe` |
     | Adicionar pool de back-end sem destinos | **Não** |
-    | Máquina virtual | **az104-rg6-nic1 (10.60.1.4)** |
-    | Máquina virtual | **az104-rg6-nic2 (10.60.2.4)** |
+    | Máquina virtual | **az104-06-nic1 (10.60.1.4)** |
+    | Máquina virtual | **az104-06-nic2 (10.60.2.4)** |
 
 1. Clique em **Adicionar um pool de back-end**. Este é o pool de back-end para **imagens**. Especifique as seguintes configurações (deixe as outras com seus valores padrão). Quando concluído, clique em **Adicionar**.
 
@@ -240,7 +241,7 @@ Nesta tarefa, você implementa um Gateway de Aplicativo do Azure na frente de du
     | --- | --- |
     | Nome | `az104-imagebe` |
     | Adicionar pool de back-end sem destinos | **Não** |
-    | Máquina virtual | **az104-rg6-nic1 (10.60.1.4)** |
+    | Máquina virtual | **az104-06-nic1 (10.60.1.4)** |
 
 1. Clique em **Adicionar um pool de back-end**. Este é o pool de back-end para **vídeo**. Especifique as seguintes configurações (deixe as outras com seus valores padrão). Quando concluído, clique em **Adicionar**.
 
@@ -248,7 +249,7 @@ Nesta tarefa, você implementa um Gateway de Aplicativo do Azure na frente de du
     | --- | --- |
     | Nome | `az104-videobe` |
     | Adicionar pool de back-end sem destinos | **Não** |
-    | Máquina virtual | **az104-rg6-nic2 (10.60.2.4)** |
+    | Máquina virtual | **az104-06-nic2 (10.60.2.4)** |
 
 1. Selecione **Avançar: Configuração >** e, em seguida, **Adicionar regras de roteamento**. Conclua as informações.
 
