@@ -103,7 +103,7 @@ Nesta tarefa, você criará um cofre dos Serviços de Recuperação. Um cofre do
 
 1. Quando a implantação for concluída, clique em **Ir para o recurso**.
 
-1. Na folha do cofre dos Serviços de Recuperação, na seção **Configurações**, clique em **Propriedades**.
+1. Na seção **Configurações**, clique em **Propriedades**.
 
 1. Selecione o link **Atualizar** no rótulo **Configuração de Backup**.
 

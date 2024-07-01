@@ -169,38 +169,21 @@ Nesta tarefa, você cria um emparelhamento de rede virtual para habilitar a comu
 
 1. Em CoreServicesVnet, em **Configurações**, escolha **Emparelhamentos**.
 
-1. Em CoreServicesVnet | Emparelhamentos, escolha **+ Adicionar**.
-
-1. Use as informações da tabela abaixo para criar o emparelhamento.
+1. Em CoreServicesVnet | Emparelhamentos, escolha **+ Adicionar**. Se não for especificado, use o padrão. 
 
 | **Parâmetro**                                    | **Valor**                             |
-| --------------------------------------------- | ------------------------------------- |
-| **Esta rede virtual**                                       |                                       |
+| --------------------------------------------- | ------------------------------------- |                                
 | Nome do link de emparelhamento                             | `CoreServicesVnet-to-ManufacturingVnet` |
-| Permitir que CoreServicesVnet acesse a rede virtual emparelhada            | selecionado (padrão)                       |
-| Permitir que CoreServicesVnet receba tráfego encaminhado da rede virtual emparelhada | selecionado                       |
-| Permitir que o gateway no CoreServicesVnet encaminhe o tráfego para a rede virtual emparelhada | Não selecionado (padrão) |
-| Habilitar CoreServicesVnt para usar o gateway remoto das redes virtuais emparelhadas       | Não selecionado (padrão)                        |
-| **Rede virtual remota**                                   |                                       |
-| Nome do link de emparelhamento                             | `ManufacturingVnet-to-CoreServicesVnet` |
-| Modelo de implantação de rede virtual              | **Gerenciador de recursos**                      |
-| Conheço minha ID do recurso                         | Não selecionado                          |
-| Assinatura                                  | *sua assinatura*    |
-| Rede virtual                               | **ManufacturingVnet**                     |
+| Rede virtual    | **ManufacturingVM-net (az104-rg5)**  |
 | Permitir que ManufacturingVnet acesse CoreServicesVnet  | selecionado (padrão)                       |
-| Permitir que ManufacturingVnet receba tráfego encaminhado do CoreServicesVnet | selecionado                        |
-| Permitir que o gateway no CoreServicesVnet encaminhe o tráfego para a rede virtual emparelhada | Não selecionado (padrão) |
-| Habilitar ManufacturingVnet para usar o gateway remoto do CoreServicesVnet       | Não selecionado (padrão)                        |
+| Permitir que ManufacturingVnet receba tráfego encaminhado do CoreServicesVnet | selecionadas                        |
+| Nome do link de emparelhamento                             | `ManufacturingVnet-to-CoreServicesVnet` |
+| Permitir que CoreServicesVnet acesse a rede virtual emparelhada            | selecionado (padrão)                       |
+| Permitir que CoreServicesVnet receba tráfego encaminhado da rede virtual emparelhada | selecionadas                       |
 
-1. Examine suas configurações e selecione **Adicionar**.
-
-![Captura de tela da página de emparelhamento.](../media/az104-lab05-peering.png)
-
- 
 1. Em CoreServicesVnet | Emparelhamentos, verifique se o emparelhamento **CoreServicesVnet-to-ManufacturingVnet** está listado. Atualize a página para garantir que o **Status de emparelhamento** esteja **Conectado**.
 
 1. Alterne para o **ManufacturingVnet** e verifique se o emparelhamento **ManufacturingVnet-to-CoreServicesVnet** está listado. Verifique se o de **Status de emparelhamento** esteja **Conectado**. Talvez seja necessário **Atualizar** a página. 
-
 
 ## Tarefa 5: Usar o Azure PowerShell para testar a conexão entre as máquinas virtuais
 

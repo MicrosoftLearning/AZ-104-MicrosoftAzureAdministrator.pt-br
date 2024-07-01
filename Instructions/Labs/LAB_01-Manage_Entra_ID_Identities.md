@@ -41,6 +41,8 @@ Nesta tarefa, você criará e configurará as contas de usuário. As contas de u
 
 1. Entre no **portal do Azure** - `https://portal.azure.com`.
 
+1. Para prosseguir para o portal, selecione **Cancelar** na tela inicial **Bem-vindo(a) ao Azure**. 
+
     >**Observação:** O portal do Azure é usado em todos os laboratórios. Se você for novo no Azure, pesquise e selecione `Quickstart Center`. Reserve alguns minutos para assistir ao vídeo **Introdução ao portal do Azure**. Mesmo que você já tenha usado o portal antes, encontrará algumas dicas e truques para navegar e personalizar a interface.
     
 1. Pesquise e selecione `Microsoft Entra ID`. O Microsoft Entra ID é a solução de gerenciamento de identidade e acesso baseada em nuvem do Azure. Reserve alguns minutos para se familiarizar com alguns dos recursos listados no painel esquerdo. 
@@ -49,7 +51,9 @@ Nesta tarefa, você criará e configurará as contas de usuário. As contas de u
 
     >**Você sabia?** Um locatário é uma instância específica do Microsoft Entra ID que contém contas e grupos. Dependendo da sua situação, você pode criar mais locatários e **Alternar** entre eles. 
 
-1. Retorne à página **Entra ID** e selecione **Licenças**. A partir daqui, você poderá comprar uma licença, gerenciar as licenças que tem e atribuir licenças a usuários e grupos. Selecione **Recursos licenciados** para ver o que está disponível.
+1. Retorne à página **Entra ID** pressionando voltar no navegador ou selecionando a opção no menu de navegação.
+
+1. Selecione **Licenças**. A partir daqui, você poderá comprar uma licença, gerenciar as licenças que tem e atribuir licenças a usuários e grupos. Selecione **Recursos licenciados** para ver o que está disponível.
    
 ### Criar um novo usuário
 
