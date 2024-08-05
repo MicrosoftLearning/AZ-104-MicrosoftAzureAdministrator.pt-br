@@ -76,7 +76,7 @@ Nesta tarefa, você criará e configurará grupos de gerenciamento. Os grupos de
 
 ## Tarefa 2: Examinar e atribuir uma função interna do Azure
 
-Nesta tarefa, você examinará as funções internas e atribuirá a função Colaborador de VM a um membro do Suporte Técnico. O Azure fornece um grande número de [funções internas](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles). 
+, você examinará as funções internas e atribuirá a função Colaborador de VM a um membro do Suporte Técnico. O Azure fornece um grande número de [funções internas](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles). 
 
 1. Selecione o grupo de gerenciamento **az104-mg1**.
 
@@ -129,7 +129,7 @@ Nesta tarefa, você criará uma função RBAC personalizada. As funções person
 
 1. Na lista de permissões, coloque uma caixa de seleção ao lado de **Outros: Registra o Provedor de Recursos de Suporte** e, em seguida, selecione **Adicionar**. A função deve ser atualizada para incluir essa permissão como um *NotAction*.
 
-    >**Observação:** Um provedor de recursos do Azure é um conjunto de operações REST que habilitam a funcionalidade para um serviço específico do Azure. Não queremos que o Suporte Técnico tenha essa funcionalidade, portanto, ele está sendo removido da função clonada. Você também pode selecionar e adicionar outros recursos à nova função. 
+    >**Observação:** Um provedor de recursos do Azure é um conjunto de operações REST que habilitam a funcionalidade para um serviço específico do Azure. Não queremos que o Suporte Técnico tenha essa funcionalidade, portanto, ele está sendo removido da função clonada. 
 
 1. Na guia **Escopos atribuíveis**, certifique-se de que o grupo de gerenciamento está listado e clique em **Avançar**.
 
