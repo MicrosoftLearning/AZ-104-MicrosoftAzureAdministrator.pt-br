@@ -19,15 +19,8 @@ Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode af
 
 Sua organização está criando um novo ambiente de laboratório para testes de pré-produção de aplicativos e serviços.  Alguns engenheiros estão sendo contratados para gerenciar o ambiente de laboratório, incluindo as máquinas virtuais. Para permitir que os engenheiros se autentiquem usando o Microsoft Entra ID, você foi encarregado de provisionar usuários e grupos. Para minimizar a sobrecarga administrativa, a associação dos grupos deve ser atualizada automaticamente com base nos cargos. 
 
-## Simulação interativa de laboratório
-
-Este laboratório usa uma simulação de laboratório interativa. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Há diferenças entre a simulação interativa e este laboratório, mas muitos dos principais conceitos são os mesmos. Não é necessária uma assinatura do Azure.
-
->**Observação:** Esta simulação está sendo atualizada. O Microsoft Entra ID é o novo nome do Azure Active Directory (Azure AD). 
-
-+ [Gerenciar as identidades do Entra ID](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201). Crie e configure usuários e atribua a grupos. Crie um locatário do Azure e gerencie as contas de convidado. 
-
 ## Diagrama de arquitetura
+
 ![Faça um diagrama da arquitetura do laboratório 01.](../media/az104-lab01-architecture.png)
 
 ## Habilidades de trabalho
