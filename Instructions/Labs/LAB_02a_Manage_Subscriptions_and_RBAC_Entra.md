@@ -76,7 +76,7 @@ Nesta tarefa, você criará e configurará grupos de gerenciamento. Os grupos de
 
 ## Tarefa 2: Examinar e atribuir uma função interna do Azure
 
-, você examinará as funções internas e atribuirá a função Colaborador de VM a um membro do Suporte Técnico. O Azure fornece um grande número de [funções internas](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles). 
+Nesta tarefa, você examinará as funções internas e atribuirá a função Colaborador de VM a um membro do Suporte Técnico. O Azure fornece um grande número de [funções internas](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles). 
 
 1. Selecione o grupo de gerenciamento **az104-mg1**.
 
@@ -106,7 +106,7 @@ Nesta tarefa, você criará e configurará grupos de gerenciamento. Os grupos de
     
 ## Tarefa 3: Criar uma função RBAC personalizada
 
-Nesta tarefa, você criará uma função RBAC personalizada. As funções personalizadas são uma parte central da implementação do princípio de privilégio mínimo de um ambiente. As funções internas podem ter muitas permissões para seu cenário. Nesta tarefa, criaremos uma nova função e removeremos as permissões que não são necessárias. Você tem um plano para gerenciar as permissões sobrepostas?
+Nesta tarefa, você criará uma função RBAC personalizada. As funções personalizadas são uma parte central da implementação do princípio de privilégio mínimo de um ambiente. As funções internas podem ter muitas permissões para seu cenário. Também criaremos uma nova função e removeremos as permissões que não são necessárias. Você tem um plano para gerenciar as permissões sobrepostas?
 
 1. Continue trabalhando em seu grupo de gerenciamento. Na folha **Controle de acesso (IAM)**, selecione a guia **Verificar acesso**.
 
@@ -117,7 +117,7 @@ Nesta tarefa, você criará uma função RBAC personalizada. As funções person
     | Configuração | Valor |
     | --- | --- |
     | Nome da função personalizada | `Custom Support Request` |
-    | Descrição | ``Uma função de colaborador personalizada para solicitações de suporte.` |
+    | Descrição | `A custom contributor role for support requests.` |
 
 1. Para **Permissões de linha de base**, selecione **Clonar uma função**. No menu suspenso **Função para clonar**, selecione **Colaborador da solicitação de suporte**.
 
