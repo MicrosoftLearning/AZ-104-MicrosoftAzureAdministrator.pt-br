@@ -107,7 +107,7 @@ Nesta tarefa, você atribuirá a política interna *Exigir uma marca e seu valor
 
     >**Observação**: O **Nome da atribuição** é preenchido automaticamente com o nome da política selecionada, mas você pode alterá-lo. A **Descrição** é opcional. Observe que você pode desabilitar a política a qualquer momento. 
 
-1. Clique em **Avançar** duas vezes e defina os **Parâmetros** como os valores a seguir:
+1. Clique em **Avançar** e defina os **Parâmetros** como os valores a seguir:
 
     | Configuração | Valor |
     | --- | --- |

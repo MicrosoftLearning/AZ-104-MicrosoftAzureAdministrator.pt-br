@@ -108,9 +108,9 @@ Nesta tarefa, você examinará as funções internas e atribuirá a função Col
 
 Nesta tarefa, você criará uma função RBAC personalizada. As funções personalizadas são uma parte central da implementação do princípio de privilégio mínimo de um ambiente. As funções internas podem ter muitas permissões para seu cenário. Também criaremos uma nova função e removeremos as permissões que não são necessárias. Você tem um plano para gerenciar as permissões sobrepostas?
 
-1. Continue trabalhando em seu grupo de gerenciamento. Na folha **Controle de acesso (IAM)**, selecione a guia **Verificar acesso**.
+1. Continue trabalhando em seu grupo de gerenciamento. Navague até a folha **Controle de Acesso (IAM)**.
 
-1. Na caixa **Criar uma função personalizada**, selecione **Adicionar**.
+1. No menu suspenso, selecione **+ Adicionar** e, em seguida, selecione **Adicionar função personalizada**.
 
 1. Na guia Noções básicas, conclua a configuração.
 
