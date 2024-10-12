@@ -97,7 +97,7 @@ Nesta tarefa, você criará e configurará as contas de usuário. As contas de u
 
 Nesta tarefa, você cria uma conta de grupo. As contas de grupo podem incluir contas de usuário ou dispositivos. Estas são duas maneiras básicas de atribuir membros aos grupos: Estaticamente e dinamicamente. Os grupos estáticos exigem que os administradores adicionem e removam membros manualmente.  Os grupos dinâmicos são atualizados automaticamente com base nas propriedades de uma conta de usuário ou dispositivo. Por exemplo, cargo. 
 
-1. No portal do Azure, pesquise e selecione `Groups`.
+1. No portal do Azure, pesquise e selecione `Microsoft Entra ID`. Na folha **Gerenciar**, clique em **Grupos**. 
 
 1. Reserve um minuto para se familiarizar com as configurações de grupo no painel esquerdo.
 
@@ -133,15 +133,6 @@ Nesta tarefa, você cria uma conta de grupo. As contas de grupo podem incluir co
 
 >**Observação:** Você pode estar gerenciando um grande número de grupos. Sua organização tem um plano para criar grupos e adicionar membros?
    
-## Limpar os recursos
-
-Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto para excluir os recursos do laboratório. Isso garantirá que os recursos sejam liberados e que o custo seja minimizado. A maneira mais fácil de excluir os recursos do laboratório é excluir o grupo de recursos do laboratório. Observe que isso não removerá nenhum usuário ou grupo do Entra ID que você tenha criado. 
-
-+ No portal do Azure, selecione o grupo de recursos, selecione **Excluir o grupo de recursos**, **Inserir o nome do grupo de recursos** e clique em **Excluir**.
-+ Usar o Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
-+ Usar a CLI, `az group delete --name resourceGroupName`.
-  
-
 ## Estender seu aprendizado com o Copilot
 
 O Copilot pode ajudar você a aprender a usar as ferramentas de script do Azure. O Copilot também pode ajudar em áreas não cobertas no laboratório ou onde você precisar de mais informações. Abra um navegador do Edge e escolha Copilot (canto superior direito) ou navegue até *copilot.microsoft.com*. Reserve alguns minutos para experimentar essas solicitações.
