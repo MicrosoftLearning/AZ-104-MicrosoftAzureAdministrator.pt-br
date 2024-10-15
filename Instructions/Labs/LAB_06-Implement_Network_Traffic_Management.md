@@ -213,8 +213,6 @@ Nesta tarefa, você implementa um Gateway de Aplicativo do Azure na frente de du
     | Rede virtual | **az104-06-vnet1** |
     | Sub-rede | **subnet-appgw (10.60.3.224/27)** |
 
-    ![Captura de tela da página Criar gateway de aplicativo.](../media/az104-lab06-create-appgw.png)
-
 1. Clique em **Avançar: Front-ends >** e especifique as seguintes configurações (deixe as outras com seus valores padrão). Ao concluir, clique em **OK**.
 
     | Configuração | Valor |
@@ -222,7 +220,7 @@ Nesta tarefa, você implementa um Gateway de Aplicativo do Azure na frente de du
     | Tipo de endereço IP de front-end | **Pública** |
     | Endereço IP público| **Adicionar nova** |
     | Nome | `az104-gwpip` |
-    | Zona de disponibilidade | **Nenhuma** |
+    | Zona de disponibilidade | **1** |
 
     >**Observação:** O Gateway de Aplicativo pode ter um endereço IP público e privado.
  

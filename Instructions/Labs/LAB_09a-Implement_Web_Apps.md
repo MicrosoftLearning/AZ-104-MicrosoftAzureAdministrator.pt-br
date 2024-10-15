@@ -60,12 +60,14 @@ Nesta tarefa, você cria um aplicativo Web do Azure. Os Serviços de Aplicativo 
     | Pilha de runtime | **PHP 8.2** |
     | Sistema operacional | **Linux** |
     | Region | **Leste dos EUA** |
-    | Planos de preços | aceite os padrões |
+    | Planos de preços | **Premium V3 P1V3** |
     | Redundância de zona | aceite os padrões |
 
  1. Clique em **Examinar + criar** e, em seguida, **Criar**.
 
     >**Observação**: Aguarde até que o aplicativo Web seja criado para prosseguir para a próxima tarefa. Isso deverá levar cerca de um minuto.
+    
+    >**Observação**: se a implantação falhar, mude para outra região e tente novamente. Por exemplo, mude para **Leste dos EUA 2**. 
 
 1. Após a implantação, selecione **Acessar recurso**.
 
