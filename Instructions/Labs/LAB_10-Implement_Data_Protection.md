@@ -176,7 +176,7 @@ Nesta tarefa, você implantará uma conta de armazenamento do Azure. Em seguida,
 
 1. Na página Contas de armazenamento, selecione **Criar**.
 
-1. Use as informações a seguir para definir a conta de armazenamento e selecione **Examinar**.
+1. Use as informações a seguir para definir a conta de armazenamento e clique em **Revisar + criar**.
 
     | Configurações | Valor |
     | --- | --- | 
@@ -185,13 +185,13 @@ Nesta tarefa, você implantará uma conta de armazenamento do Azure. Em seguida,
     | Nome da conta de armazenamento  | Forneça um nome global exclusivo   |
     | Region                | **Leste dos EUA**   |
 
-1. Na guia Examinar, selecione **Criar**.
+1. Selecione **Criar**.
 
     >**Observação**: aguarde até que a implantação seja concluída. Deve levar cerca de um minuto.
 
 1. Pesquise e selecione o cofre dos Serviços de Recuperação.
 
-1. Selecione **Configurações de diagnóstico** e, em seguida, selecione **Adicionar configuração de diagnóstico**.
+1. Na folha **Monitoramento**, clique em **Configurações de diagnóstico** e clique em **Adicionar configuração de diagnóstico**.
 
 1. Nomeie a configuração `Logs and Metrics to storage`.
 
