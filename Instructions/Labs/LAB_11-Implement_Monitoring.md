@@ -157,7 +157,7 @@ Nesta tarefa, você dispara o alerta e confirma se uma notificação é enviada.
 
 1. Selecione **Excluir** na barra de menus.
 
-1. Marque a caixa para **Aplicar exclusão forçada**. Digite `delete` para confirmar e selecione **Excluir**. 
+1. Marque a caixa para **Aplicar exclusão forçada**. Marque a caixa na parte inferior confirmando que quer que os recursos sejam excluídos e selecione **Excluir**. 
 
 1. Na barra de título, selecione o ícone **Notificações** e aguarde até que a **vm0** seja excluída com êxito.
 
