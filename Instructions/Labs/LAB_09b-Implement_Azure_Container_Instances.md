@@ -61,6 +61,8 @@ Nesta tarefa, você criará um aplicativo Web simples usando uma imagem do Docke
 
     >**Observação**: seu contêiner será acessível publicamente em dns-name-label.region.azurecontainer.io. Se você receber uma mensagem de erro **Rótulo de nome do DNS não disponível**, tente usar um rótulo de nome do DNS diferente.
 
+1. Clique em **Próximo: Monitoramento >** e desmarque **Habilitar logs de instância de contêiner**. 
+
 1. Clique em **Avançar: Avançado >**, examine as configurações sem fazer nenhuma alteração.
 
  1. Clique em **Examinar + Criar**, verifique se a validação foi aprovada e selecione **Criar**.
