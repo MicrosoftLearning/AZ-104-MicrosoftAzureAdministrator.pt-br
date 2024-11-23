@@ -326,11 +326,11 @@ Se você estiver trabalhando com **sua própria assinatura**, reserve um minuto 
 
 O Copilot pode ajudar você a aprender a usar as ferramentas de script do Azure. O Copilot também pode ajudar em áreas não cobertas no laboratório ou onde você precisar de mais informações. Abra um navegador do Edge e escolha Copilot (canto superior direito) ou navegue até *copilot.microsoft.com*. Reserve alguns minutos para experimentar essas solicitações.
 
-+ Compare e contraste o Azure Load Balancer com o Gateway de Aplicativo do Azure.
-+ Como posso solucionar problemas de conectividade de entrada com um Azure Load Balancer?
-+ Quais são as etapas básicas para configurar o Gateway de Aplicativo do Azure?
-+ Crie uma tabela realçando soluções de balanceamento de carga do Azure. Inclua estas colunas: Protocolos com suporte, balanceamento de carga privado, balanceamento de carga global, políticas de roteamento, ambientes com suporte, drenagem de conexão, afinidade de sessão, balanceamento de carga baseado em host e caminho, descarregamento de TLS, aceleração de site, segurança, armazenamento em cache e compactação.
-
++ Compare e contraste o Azure Load Balancer com o Gateway de Aplicativo do Azure. Ajude-me a decidir em quais cenários devo usar cada produto.
++ Quais ferramentas estão disponíveis para solucionar problemas de conexões com um Azure Load Balancer? 
++ Quais são as etapas básicas para configurar o Gateway de Aplicativo do Azure? Forneça uma lista de verificação de alto nível. 
++ Crie uma tabela destacando três soluções de balanceamento de carga do Azure. Para cada solução, mostre os protocolos aceitos, políticas de roteamento, afinidade de sessão e descarregamento de TLS.
+  
 ## Saiba mais com treinamento individual
 
 + [Melhorar a escalabilidade e a resiliência do aplicativo usando o Azure Load Balancer](https://learn.microsoft.com/training/modules/improve-app-scalability-resiliency-with-load-balancer/). Discuta sobre os diferentes balanceadores de carga no Azure e como escolher a solução correta de balanceador de carga do Azure para atender aos seus requisitos.
@@ -338,7 +338,7 @@ O Copilot pode ajudar você a aprender a usar as ferramentas de script do Azure.
 
 ## Principais aspectos a serem lembrados
 
-Parabéns por concluir o laboratório. Aqui estão as principais lições deste laboratório.
+Parabéns por concluir o laboratório. Confira os pontos principais deste laboratório.
 
 + O Azure Load Balancer é uma excelente opção para distribuir o tráfego de rede em várias máquinas virtuais na camada de transporte (camada OSI 4 – TCP e UDP).
 + Os balanceadores de carga públicos são usados para balancear a carga do tráfego de Internet para suas VMs. Um balanceador de carga interno (ou privado) é usado quando IPs privados são necessários apenas no front-end.
