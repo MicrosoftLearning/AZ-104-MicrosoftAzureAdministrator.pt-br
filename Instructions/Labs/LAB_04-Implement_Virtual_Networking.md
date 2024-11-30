@@ -316,9 +316,7 @@ Uma zona DNS privada fornece serviços de resolução de nomes em redes virtuais
 
 1. Observe na folha **Visão geral** que não há registros de servidor de nomes. 
 
-1. Selecione **Configurações** e, em seguida, **Gerenciamento de DNS**.
-
-1. Selecione **Links de rede virtual** e configure o link. 
+1. Selecione **Gerenciamento de DNS** e, em seguida, selecione **Links de rede virtual**. Configure o link. 
 
     | Propriedade | Valor    |
     |:---------|:---------|
@@ -327,7 +325,7 @@ Uma zona DNS privada fornece serviços de resolução de nomes em redes virtuais
 
 1. Selecione **Criar** e aguarde a criação do link. 
 
-1. Na folha **Visão geral**, selecione **+ Conjunto de registros**. Agora você adicionaria um registro para cada máquina virtual que precisa de suporte para resolução de nomes privados.
+1. Na folha **Gerenciamento de DNS**, selecione **+ Conjuntos de registros**. Agora você adicionaria um registro para cada máquina virtual que precisa de suporte para resolução de nomes privados.
 
     | Propriedade | Valor    |
     |:---------|:---------|
