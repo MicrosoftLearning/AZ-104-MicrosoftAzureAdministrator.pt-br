@@ -169,7 +169,7 @@ Nesta tarefa, você configurará o dimensionamento automático do aplicativo Web
 
 1. Analise os resultados do teste, incluindo **Usuários virtuais**, **Tempo de resposta** e **Solicitações/seg**.
 
-1. Selecione **Parar** para concluir a execução do teste.
+1. Selecione **Parar** para concluir a execução do teste. Você não precisa aguardar a conclusão do teste. 
 
 ## Limpar os recursos
 
