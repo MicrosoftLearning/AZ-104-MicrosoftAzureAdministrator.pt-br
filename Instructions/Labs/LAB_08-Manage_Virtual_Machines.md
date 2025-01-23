@@ -183,6 +183,7 @@ Nesta tarefa, você implantará um conjunto de dimensionamento de máquinas virt
     | Zona de disponibilidade | **Zonas 1, 2, 3** |
     | Modo de orquestração | **Uniforme** |
     | Tipo de segurança | **Standard** |
+    | Opções de dimensionamento | **Revise e aceite os padrões**. Vamos mudar isso na próxima tarefa. |
     | Imagem | **Datacenter do Windows Server 2019 – x64 Gen2** |
     | Executar com desconto do Spot do Azure | **Desmarcado** |
     | Tamanho | **Standard D2s_v3** |
@@ -203,7 +204,7 @@ Nesta tarefa, você implantará um conjunto de dimensionamento de máquinas virt
     | Configuração | Valor |
     | --- | --- |
     | Nome | `vmss-vnet` |
-    | Intervalo de endereços | `10.82.0.0/20` (alterar o que está lá) |
+    | Intervalo de endereços | `10.82.0.0/20` (exclua o intervalo de endereços existente) |
     | Nome da sub-rede | `subnet0` |
     | Intervalo de sub-rede | `10.82.0.0/24` |
 
@@ -272,9 +273,9 @@ Nesta tarefa, você dimensiona o conjunto de dimensionamento de máquinas virtua
 
 1. Escolha **Disponibilidade + Escala** no menu do lado esquerdo e, em seguida, **Escala**.
 
->**Você sabia?** Você pode fazer o **Dimensionamento manual** ou o **Dimensionamento automático personalizado**. Em conjuntos de dimensionamento com um pequeno número de instâncias de VM, aumentar ou diminuir a contagem de instâncias (dimensionamento manual) pode ser melhor. Em conjuntos de dimensionamento com um grande número de instâncias de VM, o dimensionamento com base em métricas (dimensionamento automático personalizado) pode ser mais apropriado.
+    >**Você sabia?** Você pode fazer o **Dimensionamento manual** ou o **Dimensionamento automático personalizado**. Em conjuntos de dimensionamento com um pequeno número de instâncias de VM, aumentar ou diminuir a contagem de instâncias (dimensionamento manual) pode ser melhor. Em conjuntos de dimensionamento com um grande número de instâncias de VM, o dimensionamento com base em métricas (dimensionamento automático personalizado) pode ser mais apropriado.
 
-### Regra de escala horizontal
+**Regra de escala horizontal**
 
 1. Selecione **Dimensionamento automático personalizado**. Em seguida, altere o **Modo de dimensionamento** para **Dimensionamento com base em métrica**. Depois, selecione **Adicionar uma regra**.
 
@@ -291,13 +292,13 @@ Nesta tarefa, você dimensiona o conjunto de dimensionamento de máquinas virtua
     | Estatística de intervalo de agregação | **Média** |
     | Operação | **Aumentar percentual em** (Examine as outras opções) |
     | Tempo de resfriamento (minutos) | **5** |
-    | Percentual | **20** |
+    | Percentual | **50** |
 
     ![Captura de tela da página regra de adição de dimensionamento.](../media/az104-lab08-scale-rule.png)
 
 1. Não se esqueça de **Salvar** suas alterações.
 
-### Regra de reduzir horizontalmente
+**Regra de reduzir horizontalmente**
 
 1. Durante as noites ou fins de semana, a demanda pode diminuir, por isso é importante criar uma regra de reduzir horizontalmente.
 
@@ -310,11 +311,11 @@ Nesta tarefa, você dimensiona o conjunto de dimensionamento de máquinas virtua
     | Operador | **Menor que** |
     | Limite | **30** |
     | Operação | **diminuir a porcentagem por** (examine suas outras opções) |
-    | Percentual | **20** |
+    | Percentual | **50** |
 
 1. Não se esqueça de **Salvar** suas alterações.
 
-### Definir os limites de instância
+**Definir os limites de instância**
 
 1. Quando suas regras de dimensionamento automático são aplicadas, os limites de instância garantem que você não expanda além do número máximo de instâncias ou dimensione além do número mínimo de instâncias.
 
