@@ -32,8 +32,8 @@ Há simulações interativas do laboratório que podem ser úteis para este tóp
 
 ## Habilidades de trabalho
 
-+ Tarefa 1: implantar máquinas virtuais do Azure resilientes usando o portal do Azure.
-+ Tarefa 2: gerenciar o dimensionamento de computação e armazenamento para máquinas virtuais.
++ Tarefa 1: implantar máquinas virtuais do Azure resilientes por zona usando o portal do Azure.
++ Tarefa 2: gerenciar a escala de computação e armazenamento para máquinas virtuais.
 + Tarefa 3: criar e configurar conjuntos de dimensionamento de máquinas virtuais do Azure.
 + Tarefa 4: dimensionar os conjuntos de dimensionamento de máquinas virtuais do Azure.
 + Tarefa 5: Crie uma máquina virtual usando o Azure PowerShell (opcional 1).
