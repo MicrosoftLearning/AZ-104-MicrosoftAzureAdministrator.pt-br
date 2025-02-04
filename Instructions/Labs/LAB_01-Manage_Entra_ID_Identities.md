@@ -46,7 +46,7 @@ Nesta tarefa, você criará e configurará as contas de usuário. As contas de u
 
 1. Retorne à página **Entra ID** pressionando voltar no navegador ou selecionando a opção no menu de navegação.
 
-1. Selecione **Licenças**. A partir daqui, você poderá comprar uma licença, gerenciar as licenças que tem e atribuir licenças a usuários e grupos. Selecione **Recursos licenciados** para ver o que está disponível.
+1. Como você tem tempo, explore outras opções, como **licenças** e **redefinição de senha**.
    
 ### Criar um novo usuário
 
