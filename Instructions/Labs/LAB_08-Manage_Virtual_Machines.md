@@ -279,7 +279,7 @@ Nesta tarefa, você dimensiona o conjunto de dimensionamento de máquinas virtua
 
 1. Selecione **Dimensionamento automático personalizado**. Em seguida, altere o **Modo de dimensionamento** para **Dimensionamento com base em métrica**. Depois, selecione **Adicionar uma regra**.
 
-1. Vamos criar uma regra que aumenta automaticamente o número de instâncias de VM. Essa regra é dimensionada quando a carga média da CPU é maior que 70% em um período de 10 minutos. Quando a regra dispara, o número de instâncias de VM aumentará em 20%.
+1. Vamos criar uma regra que aumenta automaticamente o número de instâncias de VM. Essa regra é dimensionada quando a carga média da CPU é maior que 70% em um período de 10 minutos. Quando a regra disparar, o número de instâncias de VM aumentará em 50%.
 
     | Configuração | Valor |
     | --- | --- |
