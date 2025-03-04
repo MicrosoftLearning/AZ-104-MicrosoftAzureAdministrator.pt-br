@@ -241,7 +241,7 @@ Nesta tarefa, você deseja controlar o tráfego de rede entre a sub-rede de per�
 
 1. Depois que a tabela de rotas for implantada, selecione **Ir para o recurso**.
 
-1. Selecione **Rotas** e, em seguida, **+ Adicionar**. Crie uma rota do futuro NVA para a rede virtual CoreServices. 
+1. Selecione **Rotas** e, em seguida, **+ Adicionar**. Crie uma rota em uma NVA (Solução de Virtualização de Rede) futura para a rede virtual CoreServices. 
 
     | Configuração | Valor | 
     | --- | --- |
