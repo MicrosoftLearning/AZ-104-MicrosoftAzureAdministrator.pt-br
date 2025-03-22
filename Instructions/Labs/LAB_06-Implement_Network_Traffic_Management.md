@@ -1,10 +1,10 @@
 ---
 lab:
-  title: "Laboratório\_06: Implementar o Gerenciamento de Tráfego"
+  title: 'Laboratório 06: Implementar o Gerenciamento de Tráfego de Rede'
   module: Administer Network Traffic Management
 ---
 
-# Laboratório 06 – Implementar o Gerenciamento de Tráfego
+# Laboratório 06 — Implementar o Gerenciamento de Tráfego de Rede
 
 ## Introdução ao laboratório
 
