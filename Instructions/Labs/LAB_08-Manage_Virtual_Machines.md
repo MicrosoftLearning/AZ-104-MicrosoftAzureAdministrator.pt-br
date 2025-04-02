@@ -199,7 +199,7 @@ Nesta tarefa, você implantará um conjunto de dimensionamento de máquinas virt
 
 1. Na guia **Discos**, aceite os valores padrão e clique em **Avançar: Rede >**.
 
-1. Na página **Rede**, clique no link **Criar rede virtual** abaixo da caixa de texto **Rede virtual** e crie uma nova rede virtual com as seguintes configurações (deixe outras pessoas com seus valores padrão).  Ao terminar, selecione **OK**.
+1. Na página **Rede**, clique no link **Editar rede virtual**. Faça algumas alterações. Ao terminar, selecione **OK**.
 
     | Configuração | Valor |
     | --- | --- |
