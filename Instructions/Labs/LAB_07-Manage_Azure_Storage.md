@@ -56,31 +56,33 @@ Nesta tarefa, você criará e configurará uma conta de armazenamento. A conta d
     | Redundância            | **Armazenamento com redundância geográfica** (observe as outras opções)|
     | Permitir o acesso de leitura aos dados em caso de disponibilidade regional | Marque a caixa |
 
->**Você sabia?** Você deve usar o nível de desempenho Standard para a maioria dos aplicativos. Use o nível de desempenho Premium para aplicativos empresariais ou de alto desempenho. 
+    >**Você sabia?** Você deve usar o nível de desempenho Standard para a maioria dos aplicativos. Use o nível de desempenho Premium para aplicativos empresariais ou de alto desempenho. 
 
 1. Na guia **Avançado**, use os ícones informativos para saber mais sobre as opções. Aceite os padrões. 
 
-1. Na guia **Rede**, revise as opções disponíveis, selecione **Desabilitar acesso público e usar acesso privado**.
+1. Na guia **Rede**, na seção **Acesso à rede pública**, selecione **Desabilitar**. Isso restringirá o acesso de entrada ao permitir o acesso de saída. 
 
-1. Examine a guia **Proteção de dados**. Observe que 7 dias é a política de retenção de exclusão temporária padrão. Observe que você pode habilitar o controle de versão dos blobs. Aceite os padrões.
+1. Examine a guia **Proteção de dados**. Observe que 7 dias é a política de retenção de exclusão temporária padrão. Você pode habilitar o controle de versão dos blobs. Aceite os padrões.
 
 1. Examine a guia **Criptografia**. Observe as opções de segurança adicionais. Aceite os padrões.
 
-1. Selecione **Examinar**, aguarde a conclusão do processo de validação e clique em **Criar**.
+1. Selecione **Revisar + Criar**, aguarde a conclusão do processo de validação e clique em **Criar**.
 
 1. Depois que a conta de armazenamento for implantada, selecione **Ir para o recurso**.
 
 1. Examine a folha **Visão geral** e as configurações adicionais que podem ser alteradas. Essas são as configurações globais da conta de armazenamento. Observe que a conta de armazenamento pode ser usada para contêineres de blobs, compartilhamentos de arquivos, filas e tabelas.
 
-1. Na seção **Segurança + rede**, selecione **Rede**. Observe que o acesso à rede pública está desabilitado.
+1. No painel **Segurança +rede**, selecione **Rede**. Observe que o **Acesso à rede pública** está desabilitado.
 
-    + Altere o **nível de acesso público** para **Habilitado de redes virtuais e endereços IP selecionados**.
-    + Na seção **Firewall**, marque a caixa para **Adicionar o endereço IP do cliente.**
-    + Não se esqueça de **Salvar** suas alterações. 
+    + Em **Acesso à rede pública**, selecione **Gerenciar**.
+    + Mude o **Acesso à rede pública** para **Habilitado**.
+    + Altere a **Ação padrão** para **Habilitar nas redes selecionadas**.
+    + Na seção **Endereços IP**, selecione **Adicionar o endereço IP do cliente**.
+    + **Salve** suas alterações.
   
-1. Na seção **Gerenciamento de dados**, exiba a folha **Redundância**. Observe as informações sobre seus locais de data center primário e secundário.
+1. Na folha **Gerenciamento de dados**, selecione **Redundância**. Observe as informações sobre seus locais de data center primário e secundário.
 
-1. Na seção **Gerenciamento de dados**, selecione **Gerenciamento do ciclo de vida** e, em seguida, selecione **Adicionar uma regra**.
+1. Na folha **Gerenciamento de dados**, selecione **Gerenciamento do ciclo de vida** e, em seguida, selecione **Adicionar uma regra**.
 
     + **Nomeie** a regra `Movetocool`. Observe suas opções para limitar o escopo da regra.
     
@@ -98,7 +100,7 @@ Nesta tarefa, você criará um contêiner de blob e carregará uma imagem. Os co
 
 1. Continue no portal do Azure, trabalhando com sua conta de armazenamento.
 
-1. Na seção **Armazenamento de dados**, clique em **Contêineres**. 
+1. Na folha **Armazenamento de dados**, selecione **Contêineres**. 
 
 1. Clique em **+ Contêiner** e **Criar** um contêiner com as seguintes configurações:
 
@@ -178,7 +180,7 @@ Nesta tarefa, você criará e configurará compartilhamentos de arquivos do Azur
 
 ### Criar o compartilhamento de arquivo e carregar um arquivo
 
-1. No portal do Azure, navegue de volta para sua conta de armazenamento, na seção **Armazenamento de dados**, clique em **Compartilhamentos de arquivos**.
+1. No portal do Azure, navegue de volta para sua conta de armazenamento e, na folha **Armazenamento de dados**, clique em **Compartilhamentos de arquivos**.
 
 1. Clique em **+ Compartilhamento de arquivo** e, na guia **Noções básicas**, dê um nome ao compartilhamento de arquivo, `share1`. 
 
@@ -220,9 +222,9 @@ Nesta tarefa, você criará e configurará compartilhamentos de arquivos do Azur
 
 1. Retorne à sua conta de armazenamento.
 
-1. Na seção **Segurança + rede**, selecione a folha **Rede**.
+1. No painel **Segurança +rede**, selecione **Rede**.
 
-1. Selecione **Adicionar rede virtual existente** e selecione **vnet1** e sub-rede **padrão** e, em seguida, selecione **Adicionar**.
+1. Selecione **Adicionar rede virtual existente** e selecione **vnet1** e a sub-rede **padrão** e, em seguida, selecione **Adicionar**.
 
 1. Na seção **Firewall**, **Exclua** o endereço IP da sua máquina. O tráfego permitido só deve vir da rede virtual. 
 
