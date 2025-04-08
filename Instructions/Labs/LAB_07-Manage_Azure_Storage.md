@@ -146,7 +146,7 @@ Nesta tarefa, você criará um contêiner de blob e carregará uma imagem. Os co
 
 1. Selecione o arquivo de upload e examine as opções, incluindo **Baixar**, **Excluir**, **Alterar nível** e **Adquirir concessão**.
 
-1. Copie o **URL** do arquivo e cole em uma nova janela de navegação **Inprivate**.
+1. Copie o **URL** do arquivo (folha Propriedades) e cole em uma nova janela de navegação **InPrivate**.
 
 1. Você deve receber uma mensagem formatada em XML informando **ResourceNotFound** ou **PublicAccessNotPermitted**.
 
