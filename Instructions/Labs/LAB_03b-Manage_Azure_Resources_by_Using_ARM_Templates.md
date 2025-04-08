@@ -44,8 +44,8 @@ Nesta tarefa, criaremos um disco gerenciado no portal do Azure. Os discos gerenc
 
 1. Entre no **portal do Azure** - `https://portal.azure.com`.
 
-1. Pesquise e selecione `Disks`.
-
+1. Pesquise e selecione `Disks`. 
+   
 1. Na página Discos, selecione **Criar**.
 
 1. Na página **Criar um disco gerenciado**, configure o disco e selecione **Ok**. 
@@ -213,22 +213,26 @@ Nesta tarefa, você trabalha com o Azure Cloud Shell e o Azure PowerShell. O Azu
 
 Nesta tarefa, você usará um arquivo do Bicep para implantar um disco gerenciado. O Bicep é uma ferramenta de automação declarativa criada em modelos do ARM.
 
+1. Localize o arquivo **\Allfiles\Lab03\azuredeploydisk.bicep** file.
+
 1. Continue trabalhando no **Cloud Shell** em uma sessão do **Bash**.
 
-1. Localize e baixe o arquivo **\Allfiles\Lab03\azuredeploydisk.bicep**.
+1. Selecione **Gerenciar arquivos** e, em seguida, **Carregue** o arquivo Bicep no Cloud Shell. 
 
-1. **Carregue** o arquivo bicep no Cloud Shell. 
+1. Clique em **Editor** e, quando solicitado, em **Confirmar** a mudança para o Cloud Shell Clássico.
 
-1. Selecione o ícone do **Editor** (colchetes) e navegue até o arquivo.
+1. Selecione o arquivo **azuredeploydisk.bicep** 
 
-1. Reserve um minuto para ler o arquivo de modelo do bicep. Observe como o recurso do disco é definido. 
+1. Reserve um minuto para ler o arquivo de modelo do Bicep. Observe como o recurso do disco é definido. 
    
 1. Faça as seguintes alterações:
 
-    + Altere o valor **managedDiskName** para `Disk4`.
-    + Altere o valor **nome do sku** para `StandardSSD_LRS`.
-    + Altere o valor **diskSizeinGiB** para `32`.
+    + Altere o valor **managedDiskName**, linha 4, para Disk4.
+    + Altere o valor do **nome da SKU**, linha 26, para StandardSSD_LRS.
+    + Altere o valor **diskSizeinGiB**, linha 7, para 32.
 
+    >**Observação:** um modelo Bicep completo está disponível nos arquivos de laboratório.
+    
 1. Use **Ctrl +S** para salvar suas alterações.
 
 1. Agora, implante o modelo.
