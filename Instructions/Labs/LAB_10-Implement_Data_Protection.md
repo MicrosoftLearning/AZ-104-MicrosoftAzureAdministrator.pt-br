@@ -152,12 +152,14 @@ Nesta tarefa, você implementará o backup no nível da máquina virtual do Azur
 
     ![Captura de tela da página da política de backup.](../media/az104-lab10-backup-policy.png)
 
-1. Clique em **OK** para criar a política e, em seguida, na seção **Máquinas Virtuais**, selecione **Adicionar**.
+1. Clique em **OK** para criar a política e, em seguida, na seção **Máquinas Virtuais**, selecione **Adicionar** (role para baixo).
 
 1. Na folha **Selecionar máquinas virtuais**, selecione **az-104-10-vm0**, clique em **OK** e, em seguida, na folha **Backup**, clique em **Habilitar backup**.
 
     >**Observação**: Aguarde até que o backup seja habilitado. Isso deve levar aproximadamente 2 minutos.
 
+1. Após a implantação, selecione **Acessar recurso**.
+   
 1. Na seção **Itens protegidos**, clique em **Itens de backup** e, em seguida, clique na entrada **Máquina virtual do Azure**.
 
 1. Selecione o link **Exibir detalhes** para **az104-10-vm0** e examine os valores das entradas **Pré-verificação de backup** e **Status do último backup**.
@@ -214,7 +216,7 @@ Nesta tarefa, você implantará uma conta de armazenamento do Azure. Em seguida,
 
 1. Localize a operação de backup da máquina virtual **az104-10-vm0**. 
 
-1. Examine os detalhes do trabalho de backup.
+1. **Visualize os detalhes** (role para a direita para ver o link) da tarefa de backup.
 
 ## Tarefa 5: Habilitar a replicação da máquina virtual
 
@@ -243,20 +245,11 @@ Nesta tarefa, você implantará uma conta de armazenamento do Azure. Em seguida,
 
 1. Na guia **Noções básicas**, observe a **Região de destino**.
 
-1. Mover para a guia **Configurações avançadas**. As seleções dos recursos foram feitas para você. É importante examiná-los. 
+1. Selecione **Avançar: Configurações avançadas**. Seleções de recursos foram feitas para você. 
 
-1. Verifique as configurações de assinatura, grupo de recursos da VM, rede virtual e disponibilidade (use o padrão).
+1. Role para baixo e **Crie** a conta de automação. 
 
-1. Nas **Configurações de armazenamento**, selecione **Mostrar detalhes**.
-
-    | Configuração | Valor |
-    | ---- | ---- |
-    | Rotatividade da VM | **Rotatividade normal**  |
-    | Conta de armazenamento em cache | **(novo) xxx**  |
-
-   >**Observação:** É importante que ambas as configurações sejam preenchidas ou a validação falhará. Se os valores não estiverem presentes, tente atualizar a página. Se isso não funcionar, crie uma conta de armazenamento vazia e retorne para esta página.
-
-1. Nas **Configurações de replicação**, selecione **Mostrar detalhes**. Observe que o cofre de recursos de recuperação na região 2 foi selecionado automaticamente.
+   >**Observação:** É importante que as configurações sejam preenchidas ou a validação falhará. 
 
 1. Selecione **Examinar + Iniciar replicação** e, em seguida, **Habilitar replicação**.
 

@@ -37,7 +37,7 @@ Os Aplicativos de Contêiner do Azure levam o conceito de um cluster Kubernetes 
 
 1. No portal do Azure, pesquise e selecione `Container Apps`.
 
-1. Em **Aplicativos de Contêiner**, selecione **Criar**.
+1. Selecione **+ Criar** no menu suspenso **Aplicativo de contêiner**. Observe as outras opções. 
 
 1. Use as informações a seguir para preencher os detalhes na guia **Básico**.*.
 
@@ -46,10 +46,12 @@ Os Aplicativos de Contêiner do Azure levam o conceito de um cluster Kubernetes 
     | Assinatura | Selecione sua Assinatura do Azure. |
     | Grupo de recursos | `az104-rg9` |
     | Nome do aplicativo de contêiner |  `my-app` |
-    | Region    | **Leste dos EUA** (ou uma região disponível perto de você) |
-    | Ambiente de Aplicativos de Contêiner | Clique em **Criar novo** > Definir Nome do ambiente como **my-environment** > **Criar** |
+    | Region    | **Leste dos EUA** (|
+    | Ambiente de Aplicativos de Contêiner | Selecione **Criar novo** > Definir nome do ambiente como `my-environment` > **Criar** |
 
-1. Na guia **Contêiner**, verifique se **Uso da imagem de início rápido** está habilitado e se a imagem de início rápido está definida como **Simples contêiner olá mundo**.
+1. Clique na guia **Avançar: Contêiner** e verifique se a opção **Usar imagem de início rápido** está marcada. Talvez seja necessário rolar para cima para visualizar essa configuração. 
+
+1. Confirme se a **imagem de Início Rápido** está definida como **Contêiner simples do Olá, Mundo**. Observe as outras opções. 
 
 1. Selecione **Examinar e criar** e, em seguida, **Criar**.
 
@@ -83,7 +85,7 @@ O Copilot pode ajudar você a aprender a usar as ferramentas de script do Azure.
 
 ## Saiba mais com treinamento individual
 
-+ [Configure um aplicativo de contêiner nos Aplicativos de Contêiner do Azure](https://learn.microsoft.com/training/modules/configure-container-app-azure-container-apps/). Examina os recursos e as capacidades dos Aplicativos de Contêiner do Azure e se concentra em como criar, configurar, dimensionar e gerenciar aplicativos de contêiner usando os Aplicativos de Contêiner do Azure.
++ [Configure um aplicativo de contêiner nos Aplicativos de Contêiner do Azure](https://learn.microsoft.com/training/modules/configure-container-app-azure-container-apps/). Examina os recursos e as capacidades dos Aplicativos de Contêiner do Azure e se concentra em como criar, configurar, dimensionar e gerenciar aplicativos de contêiner usando os Aplicativos de Contêiner do Azure.
 
 
 ## Principais aspectos a serem lembrados

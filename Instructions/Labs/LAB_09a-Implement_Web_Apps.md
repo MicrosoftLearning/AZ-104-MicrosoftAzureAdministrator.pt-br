@@ -67,7 +67,7 @@ Nesta tarefa, você cria um aplicativo Web do Azure. Os Serviços de Aplicativo 
 
     >**Observação**: Aguarde até que o aplicativo Web seja criado para prosseguir para a próxima tarefa. Isso deverá levar cerca de um minuto.
     
-    >**Observação**: se a implantação falhar, mude para outra região e tente novamente. Por exemplo, mude para **Leste dos EUA 2**. 
+    >**Observação**: se a implantação falhar, mude para outra região e tente novamente. Isso se deve às cotas em diferentes regiões.  
 
 1. Após a implantação, selecione **Acessar recurso**.
 
@@ -79,8 +79,6 @@ Nesta tarefa, você criará um slot de implantação de preparo. Os slots de imp
 
 1. Feche a nova guia do navegador e, no portal do Azure, na seção **Implantação** da folha Aplicativo Web, clique em **Slots de implantação**.
 
-    >**Observação**: O aplicativo Web, neste momento, tem um único slot de implantação com o rótulo **PRODUCTION**.
-
 1. Clique em **Adicionar slot** e adicione um novo slot com as seguintes configurações:
 
     | Configuração | Valor |
@@ -88,9 +86,11 @@ Nesta tarefa, você criará um slot de implantação de preparo. Os slots de imp
     | Nome | `staging` |
     | Clone as configurações de | **Não clonar as configurações**|
 
-1. Selecione **Adicionar**.
+1. Selecione **Adicionar** para criar o slot.
 
-1. De volta à folha **Slots de implantação** do aplicativo Web, clique na entrada que representa o slot de preparo recém-criado.
+1. Atualize a página para exibir os slots de produção e preparo. 
+
+1. Selecione a entrada que representa o slot de preparo recém-criado.
 
     >**Observação**: isso abrirá o painel exibindo as propriedades do slot de preparo.
 
@@ -116,7 +116,7 @@ Nesta tarefa, você definirá as configurações de implantação do aplicativo 
 
 1. Selecione o link **Domínio padrão** e abra o URL em uma nova guia. 
 
-1. Verifique se o slot de preparo exibe **Olá, Mundo**.
+1. Verifique se o slot de preparo exibe **Olá, Mundo**. 
 
 >**Observação:** A implantação pode levar um minuto. Certifique-se de **Atualizar** a página do aplicativo.
 
@@ -126,9 +126,11 @@ Nesta tarefa, você trocará o slot de preparo pelo slot de produção. A troca 
 
 1. Navegue de volta para a folha **Slots de implantação** e selecione **Trocar**.
 
-1. Examine as configurações padrão e clique em **Iniciar a Troca**.
+1. Examine as configurações padrão e clique em **Iniciar a Troca**. Aguarde a notificação de que a troca foi concluída.
 
-1. Na folha **Visão geral** do aplicativo Web, selecione o link do **Domínio padrão** para exibir a home page do site.
+1. Retorne à home page do portal. Você terá um aplicativo Web de produção e o slot de preparo.
+
+1. Na folha **Visão geral** do aplicativo Web do Serviço de Aplicativo, selecione o link do **Domínio padrão** para exibir a home page do site.
 
 1. Verifique se a página da Web de produção exibe o **Olá, Mundo!** .
 
@@ -159,15 +161,17 @@ Nesta tarefa, você configurará o dimensionamento automático do aplicativo Web
 
 1. Aguarde até que o teste de carga seja criado e selecione **Ir para recurso**.
 
-1. Em **Visão geral** | **Adicionar solicitações HTTP**, selecione **Criar**.
+1. Em **Visão geral** | **Criar adicionando solicitações HTTP**, selecione **Criar**.
 
-1. Na guia **Plano de teste**, clique em **Adicionar solicitação**. No campo **URL**, cole o **Domínio padrão** URL. Certifique-se de que isso esteja formatado corretamente e comece com **https://**.
+1. Na guia **Plano de teste**, clique em **Adicionar solicitação**. No campo **URL**, cole o **Domínio padrão** URL. Certifique-se de que isso esteja formatado corretamente e comece com **https://**. Selecione **Adicionar** para salvar as alterações. 
 
 1. Selecione **Examinar + criar** e **Criar**.
 
-    >**Observação:** A criação do teste pode levar alguns minutos. 
+    >**Observação:** A criação do teste pode levar alguns minutos. Observe as notificações.
 
-1. Analise os resultados do teste, incluindo **Usuários virtuais**, **Tempo de resposta** e **Solicitações/seg**.
+1. Navegue até o teste (ele está listado na home page). 
+
+1. Atualize e revise as métricas dinâmicas, incluindo **Usuários virtuais**, **Tempo de resposta** e **Solicitações/seg**.
 
 1. Selecione **Parar** para concluir a execução do teste. Você não precisa aguardar a conclusão do teste. 
 
