@@ -65,12 +65,12 @@ Nesta tarefa, você criará e atribuirá uma marca a um grupo de recursos do Azu
 
     >**Observação:** Para cada laboratório neste curso, você criará um novo grupo de recursos. Isso permite que você localize e gerencie rapidamente os recursos do laboratório. 
 
-1. Selecione **Avançar: Marcas** e crie uma nova marca.
+1. Selecione **Avançar** e vá para a guia **Rótulos**. Forneça informações para um novo rótulo.
 
     | Configuração | Valor |
     | --- | --- |
-    | Nome | `Cost Center` |
-    | Valor | `000` |
+    | Nome | Centro de Custo |
+    | Valor | 000 |
 
 1. Clique em **Examinar + Criar**, depois em **Criar**.
 
@@ -84,9 +84,9 @@ Nesta tarefa, você atribuirá a política interna *Exigir uma marca e seu valor
 
     ![Captura de tela da definição da política.](../media/az104-lab02b-policytags.png)
 
-1. Clique na entrada que representa a política interna **Exigir uma marca e seu valor nos recursos**. Reserve um minuto para examinar a definição. 
+1. Pesquise a política integrada `Require a tag and its value on resources`. Selecione a política e reserve um minuto para examinar a definição. 
 
-1. Na folha de definição da política interna **Exigir uma marca e seu valor nos recursos**, clique em **Atribuir**.
+1. Selecione **Atribuir política**.
 
 1. Especifique o **Escopo** clicando no botão de reticências e selecionando os valores a seguir. Clique em **Selecionar** quando terminar. 
 
@@ -101,8 +101,8 @@ Nesta tarefa, você atribuirá a política interna *Exigir uma marca e seu valor
 
     | Configuração | Valor |
     | --- | --- |
-    | Nome da atribuição | `Require Cost Center tag with Default value`|
-    | Descrição | `Require Cost Center tag with default value for all resources in the resource group`|
+    | Nome da atribuição | Exigir rótulo do Centro de custo e seu valor em recursos |
+    | Descrição | `Require Cost Center tag and its value on all resources in the resource group`|
     | Aplicação de políticas | Enabled |
 
     >**Observação**: O **Nome da atribuição** é preenchido automaticamente com o nome da política selecionada, mas você pode alterá-lo. A **Descrição** é opcional. Observe que você pode desabilitar a política a qualquer momento. 
@@ -122,7 +122,7 @@ Nesta tarefa, você atribuirá a política interna *Exigir uma marca e seu valor
     
     >**Observação**: Pode levar entre 5 e 10 minutos para que a política entre em vigor.
 
-1. No portal, pesquise e selecione `Storage Account`, e selecione **+ Criar**. 
+1. No portal, pesquise e selecione `Storage Accounts`, e selecione **+ Criar**. 
 
 1. Na guia **Noções básicas** da folha **Criar conta de armazenamento**, conclua a configuração.
 
@@ -137,7 +137,7 @@ Nesta tarefa, você atribuirá a política interna *Exigir uma marca e seu valor
 
     ![Captura de tela do erro de política não permitida.](../media/az104-lab02b-policyerror.png) 
 
->**Observação**: Clicando na guia **Erro Bruto**, você poderá encontrar mais detalhes sobre o erro, incluindo o nome da definição de função **Exigir marca do Centro de Custo com o Valor padrão**. A implantação falhou porque a conta de armazenamento que você tentou criar não tinha uma marca chamada **Centro de Custo** com seu valor definido como **Padrão**.
+>**Observação**: clicando na guia **Erro Bruto**, você poderá encontrar mais detalhes sobre o erro, incluindo o nome da definição de função **Exigir um rótulo e seu valor em recursos**. A implantação falhou porque a conta de armazenamento que você tentou criar não tinha uma marca chamada **Centro de Custo** com seu valor definido como **Padrão**.
 
 ## Tarefa 3: Aplicar marca por meio de uma política do Azure
 
@@ -147,7 +147,7 @@ Nesta tarefa, usaremos a nova definição da política para corrigir os recursos
 
 1. Na seção **Criação**, clique em **Atribuições**. 
 
-1. Na lista de atribuições, clique no ícone de reticências na linha que representa a atribuição da política **Exigir a marca Centro de Custo com o valor Padrão** e use o item de menu **Excluir atribuição** para excluir a atribuição.
+1. Na lista de atribuições, clique no ícone de reticências na linha que representa a atribuição da política **Exigir rótulo do Centro de Custo e o valor Padrão em recursos** e use o item de menu **Excluir atribuição** para excluir a atribuição.
 
 1. Clique em **Atribuir política** e especifique o **Escopo** clicando no botão de reticências e selecionando os seguintes valores:
 
@@ -189,7 +189,7 @@ Nesta tarefa, usaremos a nova definição da política para corrigir os recursos
     
     >**Observação**: Pode levar entre 5 e 10 minutos para que a política entre em vigor.
 
-1. Pesquise e selecione `Storage Account`e clique em **+ Criar**. 
+1. Pesquise e selecione `Storage Account` e clique em **+ Criar**. 
 
 1. Na guia **Noções básicas** da folha **Criar conta de armazenamento**, verifique se você está usando o Grupo de Recursos ao qual a Política foi aplicada e especifique as seguintes configurações (deixe as outras com os seus padrões) e clique em **Examinar**:
 
