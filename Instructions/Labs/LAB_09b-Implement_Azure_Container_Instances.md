@@ -65,7 +65,7 @@ Nesta tarefa, você criará um aplicativo Web simples usando uma imagem do Docke
 
 1. Clique em **Avançar: Avançado >**, examine as configurações sem fazer nenhuma alteração.
 
- 1. Clique em **Examinar + Criar**, verifique se a validação foi aprovada e selecione **Criar**.
+1. Clique em **Examinar + Criar**, verifique se a validação foi aprovada e selecione **Criar**.
 
     >**Observação**: aguarde até que a implantação seja concluída. Isso deve levar de 2 a 3 minutos.
 
@@ -75,7 +75,7 @@ Nesta tarefa, você criará um aplicativo Web simples usando uma imagem do Docke
 
 Nesta tarefa, você examinará a implantação da instância de contêiner. Por padrão, a Instância de Contêiner do Azure é acessível pela porta 80. Depois que a instância tiver sido implantada, você poderá navegar até o contêiner usando o nome DNS fornecido na tarefa anterior.
 
-1. Na folha de implantação, clique no link **Ir para o recurso**.
+1. Quando a implantação for concluída, clique no link **Ir para recurso**.
 
 1. Na folha **Visão geral** da instância do contêiner, verifique se o **Status** é relatado como **Em execução**.
 
