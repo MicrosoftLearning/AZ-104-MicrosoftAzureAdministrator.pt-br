@@ -120,9 +120,9 @@ Nesta tarefa, você dimensionará uma máquina virtual ajustando seu tamanho par
 
 1. Na máquina virtual **az104-vm1**, na folha **Disponibilidade + dimensionamento**, selecione **Tamanho**.
 
-1. Defina o tamanho da máquina virtual como **DS1_v2** e clique em **Redimensionar**. Ao ser solicitado, confirme a alteração.
+1. Defina o tamanho da máquina virtual como **D2ds_v4** e clique em **Redimensionar**. Ao ser solicitado, confirme a alteração.
 
-    >**Observação**: escolha outro tamanho se o **DS1_v2 Standard** não estiver disponível. O redimensionamento também é conhecido como dimensionamento vertical, para cima ou para baixo.
+    >**Observação**: escolha outro tamanho se **D2ds_v4** não estiver disponível. O redimensionamento também é conhecido como dimensionamento vertical, para cima ou para baixo.
 
     ![Captura de tela de redimensionamento da máquina virtual.](../media/az104-lab08-resize-vm.png)
 
