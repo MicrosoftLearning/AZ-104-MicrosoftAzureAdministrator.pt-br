@@ -227,7 +227,7 @@ Nesta tarefa, você usará um arquivo do Bicep para implantar um disco gerenciad
    
 1. Faça as seguintes alterações:
 
-    + Altere o valor **managedDiskName**, linha 4, para Disk4.
+    + Altere o valor **managedDiskName**, linha 2, para Disk4.
     + Altere o valor do **nome da SKU**, linha 26, para StandardSSD_LRS.
     + Altere o valor **diskSizeinGiB**, linha 7, para 32.
 
