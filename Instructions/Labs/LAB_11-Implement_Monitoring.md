@@ -93,7 +93,7 @@ Nesta tarefa, você criará um alerta para quando uma máquina virtual for exclu
 
 1. Selecione **Criar +** e selecione **Regra de alerta**. 
 
-1. Selecione a caixa do grupo de recursos e, então, selecione **Aplicar**. Esse alerta será aplicado a todas as máquinas virtuais no grupo de recursos. Como alternativa, você pode simplesmente especificar um computador específico. 
+1. Marque a caixa da assinatura e selecione **Aplicar**. Esse alerta será aplicado a todas as máquinas virtuais da assinatura. Como alternativa, você pode simplesmente especificar um computador específico. 
 
 1. Selecione a guia **Condição** e, em seguida, selecione o link **Ver todos os sinais**.
 
@@ -136,6 +136,8 @@ Nesta tarefa, se o alerta for disparado, envie uma notificação por email para 
 
     >**Observação:** Você deve receber uma notificação por email informando que foi adicionado a um grupo de ações. Pode haver alguns minutos de atraso, mas isso é um sinal certo de que a regra foi implantada.
 
+1. Selecione **Examinar + Criar** e **Criar**.
+   
 1. Depois que o grupo de ações for criado, vá para a guia **Próximo: Detalhes** e insira os valores a seguir para cada configuração.
 
     | Configuração | Valor |
@@ -179,7 +181,7 @@ Nesta tarefa, você criará uma regra de alerta para suprimir notificações dur
 
 1. Continue na folha **Alertas**, selecione **Regras de processamento de alerta** e, em seguida, **+ Criar**. 
    
-1. Selecione o **grupo de recursos** e, em seguida, selecione **Aplicar**.
+1. Selecione a sua **Subscription** e, em seguida, **Aplicar**.
    
 1. Selecione **Avançar: configurações de regras** e, em seguida, selecione **Suprimir notificações**.
    
@@ -211,13 +213,15 @@ Insira estas configurações para o agendamento da regra de processamento de ale
 
 Nesta tarefa, você usará o Azure Monitor para consultar os dados capturados da máquina virtual.
 
-1. No portal do Azure, pesquise e selecione a folha `Monitor` e clique em **Logs**.
+1. No portal do Azure, pesquise e selecione `Monitor` e clique em **Logs**.
 
 1. Se necessário, feche a tela inicial. 
 
-1. Selecione um escopo, seu **grupo de recursos**. Escolha **Aplicar**. 
+1. Se necessário, selecione um escopo, a sua **Assinatura**. Escolha **Aplicar**. 
 
-1. Na guia **Consultas**, selecione **Máquinas virtuais** (painel esquerdo). 
+1. Na guia **Consultas**, selecione **Máquinas virtuais** (painel esquerdo). Pode ser necessário reabrir a folha.
+
+    ![Captura de tela da guia de consultas.](../media/az104-lab11-queries.png)
 
 1. Examine as consultas disponíveis. **Execute** (passe o mouse sobre a consulta) a consulta **Contagem de pulsações**.
 
