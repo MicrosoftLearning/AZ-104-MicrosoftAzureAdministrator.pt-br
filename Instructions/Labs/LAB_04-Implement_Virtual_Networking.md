@@ -281,7 +281,7 @@ Você pode configurar o DNS do Azure para resolver nomes de host em seu domínio
 
 1. Na folha **Visão geral** observe os nomes dos quatro servidores de nomes DNS do Azure atribuídos à zona. **Copie** um dos endereços do servidor de nomes. Você precisará dela em uma etapa posterior. 
   
-1. Expanda a folha **Gerenciamento de DNS** e selecione **+ Conjunto de registros**. **Adicione** um registro de link de rede virtual para cada rede virtual que precisa de suporte à resolução de nomes privados.
+1. Expanda a folha **Gerenciamento de DNS** e selecione **+ Conjunto de registros**.
 
     | Propriedade | Valor    |
     |:---------|:---------|
