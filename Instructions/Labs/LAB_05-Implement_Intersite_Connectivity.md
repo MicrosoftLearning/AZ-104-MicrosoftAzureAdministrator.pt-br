@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "Laboratório\_05: Implementar a conectividade entre sites"
+  title: 'Laboratório 05: Implementar a conectividade entre sites'
   module: Administer Intersite Connectivity
 ---
 
@@ -108,7 +108,7 @@ Nesta tarefa, você cria uma rede virtual de serviços de fabricação com uma m
     | Região | **(EUA) Leste dos EUA** |
     | Tipo de segurança | **Standard** |
     | Opções de disponibilidade | Nenhuma redundância de infraestrutura necessária |
-    | Imagem | **Windows Server 2019 Datacenter: x64 Gen2** |
+    | Imagem | **Windows Server 2019 Datacenter: x64 Gen2** |
     | Tamanho | **Standard_DS2_v3** | 
     | Nome de usuário | `localadmin` | 
     | Senha | **Fornecer uma senha complexa** |
@@ -181,6 +181,8 @@ Nesta tarefa, você cria um emparelhamento de rede virtual para habilitar a comu
 | Permitir que CoreServicesVnet acesse a rede virtual emparelhada            | selecionado (padrão)                       |
 | Permitir que CoreServicesVnet receba tráfego encaminhado da rede virtual emparelhada | selecionadas                       |
 
+1. Clique em **Adicionar**.
+
 1. Em CoreServicesVnet | Emparelhamentos, verifique se o emparelhamento **CoreServicesVnet-to-ManufacturingVnet** está listado. Atualize a página para garantir que o **Status de emparelhamento** esteja **Conectado**.
 
 1. Alterne para o **ManufacturingVnet** e verifique se o emparelhamento **ManufacturingVnet-to-CoreServicesVnet** está listado. Verifique se o de **Status de emparelhamento** esteja **Conectado**. Talvez seja necessário **Atualizar** a página. 
@@ -221,7 +223,7 @@ Nesta tarefa, você deseja controlar o tráfego de rede entre a sub-rede de per�
 
 1. Pesquise e selecione o `CoreServicesVnet`.
 
-1. Selecione **Sub-redes** e, em seguida, **+ Criar**. Não se esqueça de **Salvar** suas alterações. 
+1. Selecione **Sub-redes** e clique em **+ Sub-rede**. Clique em **Adicionar** para salvar as alterações. 
 
     | Configuração | Valor | 
     | --- | --- |
@@ -239,9 +241,11 @@ Nesta tarefa, você deseja controlar o tráfego de rede entre a sub-rede de per�
     | Nome | `rt-CoreServices` |
     | Propagar rotas de gateway | **Não** |
 
-1. Depois que a tabela de rotas for implantada, selecione **Ir para o recurso**.
+1. Depois que a tabela de rotas for implantada, pesquise e selecione as **Tabelas de Rotas**.
+   
+1. Selecione o recurso (não a caixa de seleção) **rt-CoreServices**
 
-1. Selecione **Rotas** e, em seguida, **+ Adicionar**. Crie uma rota em uma NVA (Solução de Virtualização de Rede) futura para a rede virtual CoreServices. 
+1. Expanda **Configurações**, clique em **Rotas** e depois em **+ Adicionar**. Crie uma rota em uma NVA (Solução de Virtualização de Rede) futura para a rede virtual CoreServices. 
 
     | Configuração | Valor | 
     | --- | --- |
@@ -251,9 +255,9 @@ Nesta tarefa, você deseja controlar o tráfego de rede entre a sub-rede de per�
     | Tipo do próximo salto | **Solução de virtualização** (observe suas outras opções) |
     | Endereço do próximo salto | `10.0.1.7` (NVA futura) |
 
-1. Selecione **+ Adicionar** quando a rota for concluída. A última coisa a fazer é associar a rota à sub-rede.
+1. Selecione **+ Adicionar**. A última coisa a fazer é associar a rota à sub-rede.
 
-1. Selecione **Sub-redes** e, em seguida, **Associar**. Conclua a configuração.
+1. Clique em **Sub-redes** e, em seguida, **+ Associar**. Conclua a configuração.
 
     | Configuração | Valor | 
     | --- | --- |

@@ -49,7 +49,7 @@ Há várias simulações interativas do laboratório que podem ser úteis para e
 
 ## Tarefa 1: Atribuir marcas por meio do portal do Azure
 
-Nesta tarefa, você criará e atribuirá uma marca a um grupo de recursos do Azure por meio do portal do Azure. As marcas são um componente crítico de uma estratégia de governança, conforme descrito pelo Microsoft Well-Architected Framework e pelo Cloud Adoption Framework. As marcas podem permitir que você identifique rapidamente proprietários de recursos, datas do pôr do sol, contatos do grupo e outros pares de nome/valor que sua organização considera importantes. Para essa tarefa, você atribui uma marca que identifica a função de recurso (''Infra'' para ''Infraestrutura'').
+Nesta tarefa, você criará e atribuirá uma marca a um grupo de recursos do Azure por meio do portal do Azure. As marcas são um componente crítico de uma estratégia de governança, conforme descrito pelo Microsoft Well-Architected Framework e pelo Cloud Adoption Framework. As marcas podem permitir que você identifique rapidamente proprietários de recursos, datas do pôr do sol, contatos do grupo e outros pares de nome/valor que sua organização considera importantes. Nesta tarefa, você atribuirá uma marcação que identifica o Centro de custo do recurso. 
 
 1. Entre no **portal do Azure** - `https://portal.azure.com`.
       
