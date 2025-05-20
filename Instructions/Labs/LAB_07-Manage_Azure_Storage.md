@@ -102,7 +102,7 @@ Nesta tarefa, você criará um contêiner de blob e carregará uma imagem. Os co
 
 1. Na folha **Armazenamento de dados**, selecione **Contêineres**. 
 
-1. Clique em **+ Contêiner** e **Criar** um contêiner com as seguintes configurações:
+1. Clique em **+ Adicionar contêiner** e **Criar** um contêiner com as seguintes configurações:
 
     | Configuração | Valor |
     | --- | --- |
