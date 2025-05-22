@@ -60,7 +60,7 @@ Nesta tarefa, você criará e configurará uma conta de armazenamento. A conta d
 
 1. Na guia **Avançado**, use os ícones informativos para saber mais sobre as opções. Aceite os padrões. 
 
-1. Na guia **Rede**, na seção **Acesso à rede pública**, selecione **Desabilitar**. Isso restringirá o acesso de entrada ao permitir o acesso de saída. 
+1. Na guia **Rede**, na seção **Acesso à rede**, selecione **Desabilitar acesso público e usar acesso privado**. Isso restringirá o acesso de entrada ao permitir o acesso de saída. 
 
 1. Examine a guia **Proteção de dados**. Observe que 7 dias é a política de retenção de exclusão temporária padrão. Você pode habilitar o controle de versão dos blobs. Aceite os padrões.
 
@@ -74,19 +74,17 @@ Nesta tarefa, você criará e configurará uma conta de armazenamento. A conta d
 
 1. No painel **Segurança +rede**, selecione **Rede**. Observe que o **Acesso à rede pública** está desabilitado.
 
-    + Em **Acesso à rede pública**, selecione **Gerenciar**.
-    + Mude o **Acesso à rede pública** para **Habilitado**.
-    + Altere a **Ação padrão** para **Habilitar nas redes selecionadas**.
-    + Na seção **Endereços IP**, selecione **Adicionar o endereço IP do cliente**.
-    + **Salve** suas alterações.
+    + Altere o **Acesso à rede pública** para **Habilitar em redes e endereços IP selecionados**.
+    + Na seção **Firewall**, marque a caixa de seleção para **Adicionar o endereço IP do cliente**.
+    + Salve suas alterações.
   
 1. Na folha **Gerenciamento de dados**, selecione **Redundância**. Observe as informações sobre seus locais de data center primário e secundário.
 
 1. Na folha **Gerenciamento de dados**, selecione **Gerenciamento do ciclo de vida** e, em seguida, selecione **Adicionar uma regra**.
 
-    + **Nomeie** a regra `Movetocool`. Observe suas opções para limitar o escopo da regra.
+    + **Nomeie** a regra `Movetocool`. Observe suas opções para limitar o escopo da regra. Clique em **Avançar**. 
     
-    + Na guia **Blobs de base**, *se* os blobs baseados tiverem sido modificados pela última vez há mais de `30 days`, *então*, **vá para o armazenamento esporádico**. Observe suas outras opções. 
+    + Na guia **Blobs de base**, *se* os blobs baseados tiverem sido modificados pela última vez há mais de `30 days`, *então*, escolha **Mover para armazenamento esporádico**. Observe suas outras opções. 
     
     + Observe que você pode configurar outras condições. Selecione **Adicionar** quando terminar de explorar.
 
@@ -154,7 +152,7 @@ Nesta tarefa, você criará um contêiner de blob e carregará uma imagem. Os co
 
 ### Configurar o acesso limitado ao armazenamento de blobs
 
-1. Selecione o arquivo carregado e a guia **Gerar SAS**. Você também pode usar as reticências (...) da extrema direita. Especifique as seguintes configurações (deixe as outras com seus valores padrão):
+1. Navegue de volta para o arquivo que você carregou e clique nas reticências (...) à direita, selecione **Gerar SAS** e especifique as seguintes configurações (deixe as outras com os valores padrão):
 
     | Configuração | Valor |
     | --- | --- |

@@ -227,11 +227,9 @@ Nesta tarefa, você usará um arquivo do Bicep para implantar um disco gerenciad
    
 1. Faça as seguintes alterações:
 
-    + Altere o valor **managedDiskName**, linha 2, para Disk4.
-    + Altere o valor do **nome da SKU**, linha 26, para StandardSSD_LRS.
-    + Altere o valor **diskSizeinGiB**, linha 7, para 32.
-
-    >**Observação:** um modelo Bicep completo está disponível nos arquivos de laboratório.
+    + Altere o valor **managedDiskName**, linha 2, para **az104-disk5**.
+    + Altere o valor **sku name**, linha 26, para **StandardSSD_LRS**.
+    + Altere o valor **diskSizeinGiB**, linha 7, para **32**.
     
 1. Use **Ctrl +S** para salvar suas alterações.
 

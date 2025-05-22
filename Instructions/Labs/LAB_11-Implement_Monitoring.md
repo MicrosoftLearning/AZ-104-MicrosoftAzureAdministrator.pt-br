@@ -79,7 +79,7 @@ Nesta tarefa, você implantará uma máquina virtual que será usada para testar
 
 1. Selecione **Exibir** na caixa **Insights da VM** e selecione **Configurar Insights**.
 
-1. Selecione sua máquina virtual e, em seguida, **Habilitar** (duas vezes).
+1. Clique em **Habilitar** ao lado da máquina virtual e, em seguida, na folha **Habilitar no Azure Monitor — Integração de Insights**.
 
 1. Use os padrões para regras de assinatura e coleta de dados e selecione **Configurar**. 
 
@@ -109,7 +109,7 @@ Nesta tarefa, você criará um alerta para quando uma máquina virtual for exclu
 
 Nesta tarefa, se o alerta for disparado, envie uma notificação por email para a equipe de operações. 
 
-1. Continue trabalhando em seu alerta. Selecione **Avançar: Ações** e, em seguida, selecione **Criar grupo de ações**.
+1. Continue trabalhando em seu alerta. Clique em **Usar grupos de ações** e, em seguida, em **Criar grupo de ações** na folha **Selecionar grupo de ações**.
 
     >**Você sabia?** Você pode adicionar até cinco grupos de ações a uma regra de alerta. Os grupos de ações são executados simultaneamente, sem ordem específica. Várias regras de alerta podem usar o mesmo grupo de ações. 
 
@@ -136,7 +136,7 @@ Nesta tarefa, se o alerta for disparado, envie uma notificação por email para 
 
     >**Observação:** Você deve receber uma notificação por email informando que foi adicionado a um grupo de ações. Pode haver alguns minutos de atraso, mas isso é um sinal certo de que a regra foi implantada.
 
-1. Selecione **Examinar + Criar** e **Criar**.
+1. Selecione **Examinar + criar** e depois **Criar**.
    
 1. Depois que o grupo de ações for criado, vá para a guia **Próximo: Detalhes** e insira os valores a seguir para cada configuração.
 
@@ -227,7 +227,7 @@ Nesta tarefa, você usará o Azure Monitor para consultar os dados capturados da
 
 1. Você deve receber uma contagem de pulsação de quando a máquina virtual estava em execução.
 
-1. Examine a consulta. Essa consulta usa a tabela de *pulsação*. 
+1. No lado direito da tela, clique no menu suspenso ao lado de **Modo simples**, escolha o **modo KQL**. Examine a consulta. Essa consulta usa a tabela de *pulsação*.
 
 1. Substitua a consulta por esta e clique em **Executar**. Examine o gráfico resultante. 
 
@@ -238,6 +238,8 @@ Nesta tarefa, você usará o Azure Monitor para consultar os dados capturados da
     | summarize avg(Val) by bin(TimeGenerated, 5m), Computer //split up by computer
     | render timechart
    ```
+
+    >**Observação:** se a consulta não colar corretamente, tente colar no Bloco de Notas e, em seguida, copiar e colar novamente no campo de consulta.
 
 1. Como você tem tempo, examine e execute outras consultas. 
 
