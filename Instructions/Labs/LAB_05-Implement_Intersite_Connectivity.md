@@ -73,7 +73,7 @@ Nesta tarefa, você cria uma rede virtual de serviços principais com uma máqui
 
 1. Na guia **Rede**, para rede virtual, selecione **Criar nova**.
 
-1. Use as informações a seguir para configurar a rede virtual e selecione **Ok**. Se necessário, remova ou substitua as informações existentes.
+1. Use as informações a seguir para configurar a rede virtual e clique em **Ok**. Se necessário, remova ou substitua as informações existentes.
 
     | Configuração | Valor | 
     | --- | --- |
@@ -118,7 +118,7 @@ Nesta tarefa, você cria uma rede virtual de serviços de fabricação com uma m
 
 1. Na guia Rede, para rede virtual, selecione **Criar nova**.
 
-1. Use as informações a seguir para configurar a rede virtual e selecione **Ok**.  Se necessário, remova ou substitua o intervalo de endereços existente.
+1. Use as informações a seguir para configurar a rede virtual e clique em **Ok**.  Se necessário, remova ou substitua o intervalo de endereços existente.
 
     | Configuração | Valor | 
     | --- | --- |
@@ -169,23 +169,23 @@ Nesta tarefa, você cria um emparelhamento de rede virtual para habilitar a comu
 
 1. Em CoreServicesVnet, em **Configurações**, escolha **Emparelhamentos**.
 
-1. Em CoreServicesVnet | Emparelhamentos, escolha **+ Adicionar**. Se não for especificado, use o padrão. 
+1. Em CoreServicesVnet, em Emparelhamentos, clique em **+ Adicionar**. Se não for especificado, use o padrão. 
 
-| **Parâmetro**                                    | **Valor**                             |
-| --------------------------------------------- | ------------------------------------- |                                
-| Nome do link de emparelhamento                             | `CoreServicesVnet-to-ManufacturingVnet` |
-| Rede virtual    | **ManufacturingVM-net (az104-rg5)**  |
-| Permitir que ManufacturingVnet acesse CoreServicesVnet  | selecionado (padrão)                       |
-| Permitir que ManufacturingVnet receba tráfego encaminhado do CoreServicesVnet | selecionadas                        |
-| Nome do link de emparelhamento                             | `ManufacturingVnet-to-CoreServicesVnet` |
-| Permitir que CoreServicesVnet acesse a rede virtual emparelhada            | selecionado (padrão)                       |
-| Permitir que CoreServicesVnet receba tráfego encaminhado da rede virtual emparelhada | selecionadas                       |
+    | **Parâmetro**                                    | **Valor**                             |
+    | --------------------------------------------- | ------------------------------------- |                                
+    | Nome do link de emparelhamento                             | `CoreServicesVnet-to-ManufacturingVnet` |
+    | Rede virtual    | **ManufacturingVM-net (az104-rg5)**  |
+    | Permitir que ManufacturingVnet acesse CoreServicesVnet  | selecionado (padrão) |
+    | Permitir que ManufacturingVnet receba tráfego encaminhado do CoreServicesVnet | selecionadas  |
+    | Nome do link de emparelhamento                             | `ManufacturingVnet-to-CoreServicesVnet` |
+    | Permitir que CoreServicesVnet acesse a rede virtual emparelhada            | selecionado (padrão) |
+    | Permitir que CoreServicesVnet receba tráfego encaminhado da rede virtual emparelhada | selecionadas |
 
-1. Clique em **Adicionar**.
+4. Clique em **Adicionar**.
 
-1. Em CoreServicesVnet | Emparelhamentos, verifique se o emparelhamento **CoreServicesVnet-to-ManufacturingVnet** está listado. Atualize a página para garantir que o **Status de emparelhamento** esteja **Conectado**.
+5. Em CoreServicesVnet, em Emparelhamentos, verifique se o emparelhamento **CoreServicesVnet-to-ManufacturingVnet** está listado. Atualize a página para garantir que o **Status de emparelhamento** esteja **Conectado**.
 
-1. Alterne para o **ManufacturingVnet** e verifique se o emparelhamento **ManufacturingVnet-to-CoreServicesVnet** está listado. Verifique se o de **Status de emparelhamento** esteja **Conectado**. Talvez seja necessário **Atualizar** a página. 
+6. Alterne para o **ManufacturingVnet** e verifique se o emparelhamento **ManufacturingVnet-to-CoreServicesVnet** está listado. Verifique se o de **Status de emparelhamento** esteja **Conectado**. Talvez seja necessário **Atualizar** a página. 
 
 ## Tarefa 5: Usar o Azure PowerShell para testar a conexão entre as máquinas virtuais
 
@@ -231,7 +231,7 @@ Nesta tarefa, você deseja controlar o tráfego de rede entre a sub-rede de per�
     | Intervalo de endereços da sub-rede | `10.0.1.0/24`  |
 
    
-1. No portal do Azure, pesquise e selecione `Route tables` e, em seguida, selecione **Criar**. 
+1. No portal do Azure, pesquise e selecione `Route tables`, clique em **Revisar + Criar** e, em seguida, **Criar**. 
 
     | Configuração | Valor | 
     | --- | --- |
@@ -245,7 +245,7 @@ Nesta tarefa, você deseja controlar o tráfego de rede entre a sub-rede de per�
    
 1. Selecione o recurso (não a caixa de seleção) **rt-CoreServices**
 
-1. Expanda **Configurações**, clique em **Rotas** e depois em **+ Adicionar**. Crie uma rota em uma NVA (Solução de Virtualização de Rede) futura para a rede virtual CoreServices. 
+1. Expanda **Configurações**, clique em **Rotas** e depois em **Adicionar**. Crie uma rota em uma NVA (Solução de Virtualização de Rede) futura para a rede virtual CoreServices. 
 
     | Configuração | Valor | 
     | --- | --- |

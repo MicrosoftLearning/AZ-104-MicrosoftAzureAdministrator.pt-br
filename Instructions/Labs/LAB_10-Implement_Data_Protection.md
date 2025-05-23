@@ -241,8 +241,6 @@ Nesta tarefa, você implantará uma conta de armazenamento do Azure. Em seguida,
 
 1. Na folha **Backup + Recuperação de desastre**, selecione **Recuperação de desastre**. 
 
-1. Selecione **Habilitar replicação**.
-
 1. Na guia **Noções básicas**, observe a **Região de destino**.
 
 1. Selecione **Avançar: Configurações avançadas**. Seleções de recursos foram feitas para você. 

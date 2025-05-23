@@ -34,7 +34,7 @@ Há simulações interativas do laboratório que podem ser úteis para este tóp
 
 ## Tarefa 1: Usar um modelo para provisionar uma infraestrutura
 
-Nesta tarefa, você usará um modelo para implantar uma rede virtual, um grupo de segurança de rede e duas máquinas virtuais.
+Nesta tarefa, você usará um modelo para implantar uma rede virtual, um grupo de segurança de rede e três máquinas virtuais.
 
 1. Baixe os arquivos do laboratório **\\Allfiles\\Lab06** (modelo e parâmetros).
 
@@ -105,7 +105,7 @@ Nesta tarefa, você implementa um Azure Load Balancer na frente das duas máquin
     | Balanceador de Carga para Gateway | Nenhum |
     | Endereço IP público | Selecione **Criar novo** (use as instruções na próxima etapa) |
 
-1. No pop-up **Adicionar um endereço IP público**, use as seguintes configurações antes de clicar em **OK** e, em seguida, **Adicionar**. Quando concluído, clique em **Avançar: Pools de back-end**.
+1. No pop-up **Adicionar um endereço IP público**, use as seguintes configurações antes de clicar em **Salvar** duas vezes. Quando concluído, clique em **Avançar: Pools de back-end**.
 
     | Configuração | Valor |
     | --- | --- |
@@ -117,7 +117,7 @@ Nesta tarefa, você implementa um Azure Load Balancer na frente das duas máquin
 
     >**Observação:** O SKU Standard fornece um endereço IP estático. Os endereços IP estáticos são atribuídos com o recurso, são criados e liberados quando o recurso é excluído.  
 
-1. Na guia **Pools de back-end**, clique em **Adicionar um pool de back-end** com as seguintes configurações (deixe as outras com seus valores padrão). Clique em **+ Adicionar** (duas vezes) e clique em **Avançar: Regras de entrada**.
+1. Na guia **Pools de back-end**, clique em **Adicionar um pool de back-end** com as seguintes configurações (deixe as outras com seus valores padrão). Clique em **Adicionar** e **Salvar**. Clique em **Avançar: Regras de entrada**.
 
     | Configuração | Valor |
     | --- | --- |
@@ -189,9 +189,9 @@ Nesta tarefa, você implementa um Gateway de Aplicativo do Azure na frente de du
     | --- | --- |
     | Nome | `subnet-appgw` |
     | Endereço inicial| `10.60.3.224` |
-    | Tamanho | `/27` |
+    | Tamanho | `/27` — Confirme se o **endereço inicial** ainda é **10.63.3.224**|
 
-1. Clique em **Salvar**
+1. Clique em **Adicionar**
 
     > **Observação**: Esta sub-rede será usada pelo Gateway de Aplicativo do Azure. O Gateway de Aplicativo requer uma sub-rede dedicada de /27 ou tamanho maior.
 
@@ -207,8 +207,7 @@ Nesta tarefa, você implementa um Gateway de Aplicativo do Azure na frente de du
     | Region | A **mesma** região do Azure que você usou na Tarefa 1 |
     | Camada | **Padrão V2** |
     | Habilitar o dimensionamento automático | **Não** |
-    | Contagem mínima de instâncias | `2` |
-    | Zona de disponibilidade | **1** (padrão) |
+    | Contagem de instâncias | `2` |
     | HTTP2 | **Desabilitado** |
     | Rede virtual | **az104-06-vnet1** |
     | Sub-rede | **subnet-appgw (10.60.3.224/27)** |
@@ -290,7 +289,7 @@ Nesta tarefa, você implementa um Gateway de Aplicativo do Azure na frente de du
     | Configurações de back-end | **az104-http** |
     | Destino de back-end | `az104-videobe` |
 
-1. Certifique-se de **Salvar** e verificar as alterações e selecione **Avançar: Marcas >**. Nenhuma alteração é necessária.
+1. Verifique as alterações e clique em **Avançar: Tags>**. Nenhuma alteração é necessária.
 
 1. Selecione **Avançar: Examinar + criar >** e clique em **Criar**.
 
