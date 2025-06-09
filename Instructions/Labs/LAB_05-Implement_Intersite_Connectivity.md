@@ -228,10 +228,12 @@ Nesta tarefa, você deseja controlar o tráfego de rede entre a sub-rede de per�
     | Configuração | Valor | 
     | --- | --- |
     | Nome | `perimeter` |
-    | Intervalo de endereços da sub-rede | `10.0.1.0/24`  |
+    | Endereço inicial | `10.0.1.0/24`  |
 
    
-1. No portal do Azure, pesquise e selecione `Route tables`, clique em **Revisar + Criar** e, em seguida, **Criar**. 
+1. No portal do Azure, pesquise por e selecione `Route tables` e, em seguida, clique em **+ Criar**.
+
+1. Insira os seguintes detalhes, clique em **Revisar + Criar** e, em seguida, em **Criar**. 
 
     | Configuração | Valor | 
     | --- | --- |

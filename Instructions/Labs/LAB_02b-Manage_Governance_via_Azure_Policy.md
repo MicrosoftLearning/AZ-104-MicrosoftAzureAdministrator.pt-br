@@ -166,7 +166,7 @@ Nesta tarefa, usaremos a nova definição da política para corrigir os recursos
     | Descrição | `Inherit the Cost Center tag and its value 000 from the resource group if missing` |
     | Aplicação de políticas | Enabled |
 
-1. Clique em **Avançar** duas vezes e defina os **Parâmetros** como os valores a seguir:
+1. Clique em **Avançar** e defina os **Parâmetros** como os valores a seguir:
 
     | Configuração | Valor |
     | --- | --- |
