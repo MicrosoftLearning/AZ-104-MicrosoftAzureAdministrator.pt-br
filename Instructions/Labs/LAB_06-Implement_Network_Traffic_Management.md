@@ -189,7 +189,7 @@ Nesta tarefa, você implementa um Gateway de Aplicativo do Azure na frente de du
     | --- | --- |
     | Nome | `subnet-appgw` |
     | Endereço inicial| `10.60.3.224` |
-    | Tamanho | `/27` — Confirme se o **endereço inicial** ainda é **10.63.3.224**|
+    | Tamanho | `/27` — Confirme se o **endereço inicial** ainda é **10.60.3.224**|
 
 1. Clique em **Adicionar**
 

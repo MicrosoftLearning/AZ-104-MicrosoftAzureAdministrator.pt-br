@@ -204,7 +204,6 @@ Nesta tarefa, você implantará uma conta de armazenamento do Azure. Em seguida,
     - **Dados do Alerta de Backup do Azure de Complementos**
     - **Trabalhos do Azure Site Recovery**
     - **Eventos do Azure Site Recovery**
-    - **Integridade**
 
 1. Nos detalhes do Destino, coloque uma marca de seleção ao lado de **Arquivar em uma conta de armazenamento**.
 
