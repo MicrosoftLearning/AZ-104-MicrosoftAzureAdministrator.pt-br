@@ -21,11 +21,7 @@ Sua organização está interessada nos aplicativos Web do Azure para hospedar s
 
 ## Simulações interativas do laboratório
 
-Há simulações interativas do laboratório que podem ser úteis para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Há diferenças entre a simulação interativa e este laboratório, mas muitos dos principais conceitos são os mesmos. Não é necessária uma assinatura do Azure.
-
-+ [Criar um aplicativo Web](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%202). Crie um aplicativo Web que execute um contêiner do Docker.
-    
-+ [Implementar aplicativos Web do Azure](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013). Crie um aplicativo Web do Azure, gerencie a implantação e dimensione o aplicativo. 
+>**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
 
 ## Diagrama de arquitetura
 

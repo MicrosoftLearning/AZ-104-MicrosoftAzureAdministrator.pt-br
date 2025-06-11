@@ -16,11 +16,7 @@ Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode af
 
 ## Simulações interativas de laboratório
 
-Há simulações interativas do laboratório que podem ser úteis para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Há diferenças entre a simulação interativa e este laboratório, mas muitos dos principais conceitos são os mesmos. Uma assinatura do Azure não é necessária. 
-
-+ [Gerenciar recursos do Azure usando modelos do Azure Resource Manager](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205). Examine, crie e implante um disco gerenciado com um modelo.
-  
-+ [Criar uma máquina virtual com um modelo](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%209). Implantar uma máquina virtual com um modelo de início rápido.
+>**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
   
 ## Cenário do laboratório
 

@@ -18,10 +18,6 @@ Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode af
 
 Sua organização tem um aplicativo Web que é executado em uma máquina virtual em seu data center local. A organização deseja mover todos os aplicativos para a nuvem, mas não quer ter um grande número de servidores para gerenciar. Você decide avaliar os Aplicativos de Contêiner do Azure.
 
-## Simulações interativas do laboratório
-
-Não há simulações interativas do laboratório para este tópico. 
-
 ## Diagrama de arquitetura
 
 ![Diagrama das tarefas.](../media/az104-lab09b-aca-architecture.png)
@@ -43,7 +39,7 @@ Os Aplicativos de Contêiner do Azure levam o conceito de um cluster Kubernetes 
 
     | Configuração | Ação |
     |---|---|
-    | Assinatura | Selecione sua Assinatura do Azure. |
+    | Assinatura | Selecionar sua assinatura do Azure |
     | Grupo de recursos | `az104-rg9` |
     | Nome do aplicativo de contêiner |  `my-app` |
     | Region    | **Leste dos EUA** (|

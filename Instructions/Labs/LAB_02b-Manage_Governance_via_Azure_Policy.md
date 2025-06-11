@@ -28,13 +28,7 @@ O volume de nuvem da sua organização cresceu consideravelmente no último ano.
 
 ## Simulações interativas de laboratório
 
-Há várias simulações interativas do laboratório que podem ser úteis para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Há diferenças entre a simulação interativa e este laboratório, mas muitos dos principais conceitos são os mesmos. Uma assinatura do Azure não é necessária. 
-
-+ [Gerenciar bloqueios de recursos](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2015). Adicione um bloqueio de recurso e teste para confirmar.
-  
-+ [Criar uma política do Azure](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2017). Crie uma política do Azure que restrinja a localização dos recursos. Crie um novo recurso e verifique se a política está imposta. 
-
-+ [Gerenciar governança por meio da política do Azure](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%203). Crie e atribua marcas por meio do portal do Azure. Crie uma política do Azure que exija marcação. Corrija os recursos sem conformidade.
+>**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
 
 ## Diagrama de arquitetura
 
