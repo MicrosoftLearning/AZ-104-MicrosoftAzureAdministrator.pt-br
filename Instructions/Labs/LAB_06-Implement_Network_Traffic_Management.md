@@ -20,11 +20,7 @@ Sua organização tem um site público. Você precisa balancear a carga de solic
 
 ## Simulações interativas do laboratório
 
-Há simulações interativas do laboratório que podem ser úteis para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Há diferenças entre a simulação interativa e este laboratório, mas muitos dos principais conceitos são os mesmos. Uma assinatura do Azure não é necessária.
-
-+ [Criar e configurar um balanceador de carga do Azure](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer). Crie uma rede virtual, servidores back-end, balanceador de carga e, em seguida, teste o balanceador de carga.
-+ [Implantar o Gateway de Aplicativo do Azure](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway). Crie um gateway de aplicativo, crie máquinas virtuais, crie o pool de back-end e teste o gateway.
-+ [Implementar o gerenciamento de tráfego](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2010). Implemente a rede hub e spoke completa, incluindo máquinas virtuais, redes virtuais, emparelhamento, balanceador de carga e gateway de aplicativo.
+>**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
 
 ## Habilidades de trabalho
 

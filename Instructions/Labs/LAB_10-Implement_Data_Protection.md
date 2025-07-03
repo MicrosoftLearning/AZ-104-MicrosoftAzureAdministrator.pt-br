@@ -18,11 +18,9 @@ Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode af
 
 Sua organização está avaliando como fazer backup e restaurar as máquinas virtuais do Azure contra perda de dados acidental ou mal-intencionada. Além disso, a organização deseja explorar o uso do Azure Site Recovery para cenários de recuperação de desastre. 
 
-## Simulação interativa de laboratório
+## Simulações interativas de laboratório
 
-Há uma simulação interativa do laboratório que pode ser útil para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Há diferenças entre a simulação interativa e este laboratório, mas muitos dos principais conceitos são os mesmos. Uma assinatura do Azure não é necessária.
-
-+ **[Backup de máquinas virtuais e arquivos locais.](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)**. Crie um cofre de serviços de recuperação e implemente um backup da máquina virtual do Azure. Implemente o backup de arquivos e pastas locais usando o agente dos Serviços de Recuperação do Microsoft Azure. Os backups locais estão fora do escopo deste laboratório, mas pode ser útil exibir essas etapas. 
+>**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
 
 ## Habilidades de trabalho
 

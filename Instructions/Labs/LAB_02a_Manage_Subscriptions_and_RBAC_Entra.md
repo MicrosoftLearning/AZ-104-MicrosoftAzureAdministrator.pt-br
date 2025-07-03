@@ -28,13 +28,7 @@ Para simplificar o gerenciamento de recursos do Azure em sua organização, voc�
 
 ## Simulações interativas do laboratório
 
-Há algumas simulações interativas do laboratório que podem ser úteis para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Há diferenças entre a simulação interativa e este laboratório, mas muitos dos principais conceitos são os mesmos. Não é necessária uma assinatura do Azure. 
-
-+ [Gerenciar acesso com o RBAC](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2014). Atribua uma função interna a um usuário e monitore os logs de atividades. 
-
-+ [Gerenciar assinaturas e RBAC](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%202). Implemente um grupo de gerenciamento e crie e atribua uma função RBAC personalizada.
-
-+ [Abrir uma solicitação de suporte](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2022). Examine as opções do plano de suporte e, em seguida, crie e monitore uma solicitação de suporte, técnica ou de cobrança.
+>**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
 
 ## Diagrama de arquitetura
 

@@ -17,13 +17,10 @@ Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode af
 ## Cenário do laboratório
 
 Sua organização tem um aplicativo Web que é executado em uma máquina virtual em seu data center local. A organização deseja mover todos os aplicativos para a nuvem, mas não quer ter um grande número de servidores para gerenciar. Você decide avaliar as Instâncias de Contêiner do Azure e o Docker. 
+
 ## Simulações interativas do laboratório
 
-Há simulações interativas do laboratório que podem ser úteis para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Há diferenças entre a simulação interativa e este laboratório, mas muitos dos principais conceitos são os mesmos. Não é necessária uma assinatura do Azure.
-
-+ [Implante as Instâncias de Contêiner do Azure](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%203). Crie, configure e implante um contêiner do Docker com as Instâncias de Contêiner do Azure.
-  
-+ [Implemente as Instâncias de Contêiner do Azure](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014).  Implante uma imagem do Docker usando as Instâncias de Contêiner do Azure. 
+>**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
 
 ## Diagrama de arquitetura
 
@@ -46,7 +43,7 @@ Nesta tarefa, você criará um aplicativo Web simples usando uma imagem do Docke
 
     | Configuração | Valor |
     | ---- | ---- |
-    | Subscription | Selecione sua Assinatura do Azure. |
+    | Subscription | Selecionar sua assinatura do Azure |
     | Grupo de recursos | `az104-rg9` (Se necessário, selecione **Criar novo**) |
     | Nome do contêiner | `az104-c1` |
     | Region | **Leste dos EUA** (ou uma região disponível perto de você)|

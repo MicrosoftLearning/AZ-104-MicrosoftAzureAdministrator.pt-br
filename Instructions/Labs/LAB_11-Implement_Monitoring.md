@@ -18,13 +18,12 @@ Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode af
 
 Sua organização migrou sua infraestrutura para o Azure. É importante que os administradores sejam notificados sobre quaisquer alterações significativas na infraestrutura. Você planeja examinar os recursos do Azure Monitor, incluindo o Log Analytics.
 
-## Simulação interativa de laboratório
+## Simulações interativas de laboratório
 
-Há uma simulação interativa do laboratório que pode ser útil para este tópico. A simulação permite que você clique em um cenário semelhante em seu próprio ritmo. Há diferenças entre a simulação interativa e este laboratório, mas muitos dos principais conceitos são os mesmos. Não é necessária uma assinatura do Azure.
-
-+ [Implementar o monitoramento.](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2017) Crie um workspace do Log Analytics e soluções de automação do Azure. Examine as configurações de monitoramento e diagnóstico das máquinas virtuais. Examine a funcionalidade do Azure Monitor e do Log Analytics. 
+>**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
 
 ## Diagrama de arquitetura
+
 
 ![Diagrama das tarefas de arquitetura](../media/az104-lab11-architecture.png)
 
