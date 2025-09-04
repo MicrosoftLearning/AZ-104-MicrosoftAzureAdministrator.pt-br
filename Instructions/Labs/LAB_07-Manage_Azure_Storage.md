@@ -18,7 +18,7 @@ Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode af
 
 No momento, sua organização está armazenando dados em armazenamentos de dados locais. A maioria desses arquivos não é acessada com frequência. Você gostaria de minimizar o custo do armazenamento colocando os arquivos menos acessados em camadas de armazenamento com preços mais baixos. Além disso, explore diferentes mecanismos de proteção que o armazenamento do Azure oferece, incluindo acesso à rede, autenticação, autorização e replicação. Por fim, você deseja determinar até que ponto os Arquivos do Azure são adequados para hospedar seus compartilhamentos de arquivos locais.
 
-## Simulações interativas do laboratório
+## Simulações interativas de laboratório
 
 >**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
 
@@ -56,7 +56,7 @@ Nesta tarefa, você criará e configurará uma conta de armazenamento. A conta d
 
 1. Na guia **Avançado**, use os ícones informativos para saber mais sobre as opções. Aceite os padrões. 
 
-1. Na guia **Rede**, na seção **Acesso à rede**, selecione **Desabilitar acesso público e usar acesso privado**. Isso restringirá o acesso de entrada ao permitir o acesso de saída. 
+1. Na guia **Rede**, na seção **Acesso à rede pública**, selecione **Desabilitar**. Isso restringirá o acesso de entrada ao permitir o acesso de saída. 
 
 1. Examine a guia **Proteção de dados**. Observe que 7 dias é a política de retenção de exclusão temporária padrão. Você pode habilitar o controle de versão dos blobs. Aceite os padrões.
 
@@ -70,8 +70,9 @@ Nesta tarefa, você criará e configurará uma conta de armazenamento. A conta d
 
 1. No painel **Segurança +rede**, selecione **Rede**. Observe que o **Acesso à rede pública** está desabilitado.
 
-    + Altere o **Acesso à rede pública** para **Habilitar em redes e endereços IP selecionados**.
-    + Na seção **Firewall**, marque a caixa de seleção para **Adicionar o endereço IP do cliente**.
+    + Selecione **Gerenciar** e altere a configuração **Acesso à rede pública** para **Habilitado**. 
+    + Altere o **Escopo de acesso à rede pública** para **Habilitar em redes selecionadas**.
+    + Na seção **Endereços IPv4**, selecione **Adicionar seu endereço IPv4**.
     + Salve suas alterações.
   
 1. Na folha **Gerenciamento de dados**, selecione **Redundância**. Observe as informações sobre seus locais de data center primário e secundário.
@@ -80,7 +81,7 @@ Nesta tarefa, você criará e configurará uma conta de armazenamento. A conta d
 
     + **Nomeie** a regra `Movetocool`. Observe suas opções para limitar o escopo da regra. Clique em **Avançar**. 
     
-    + Na guia **Blobs de base**, *se* os blobs baseados tiverem sido modificados pela última vez há mais de `30 days`, *então*, escolha **Mover para armazenamento esporádico**. Observe suas outras opções. 
+    + Na página **Adicionar regra**, *se* os blobs baseados tiverem sido modificados pela última vez há mais de `30` dias, *então*, **vá para o armazenamento esporádico**. Observe suas outras opções. 
     
     + Observe que você pode configurar outras condições. Selecione **Adicionar** quando terminar de explorar.
 
@@ -138,9 +139,9 @@ Nesta tarefa, você criará um contêiner de blob e carregará uma imagem. Os co
 
 1. Confirme se você tem uma nova pasta e se o arquivo foi carregado. 
 
-1. Selecione o arquivo de upload e examine as opções, incluindo **Baixar**, **Excluir**, **Alterar nível** e **Adquirir concessão**.
+1. Selecione o arquivo de upload e examine as opções com reticências (...), incluindo **Baixar**, **Excluir**, **Alterar nível** e **Adquirir concessão**.
 
-1. Copie o **URL** do arquivo (folha Propriedades) e cole em uma nova janela de navegação **InPrivate**.
+1. Copie a **URL** do arquivo (folha Configurações --> Propriedades) e cole em uma nova janela de navegação **InPrivate**.
 
 1. Você deve receber uma mensagem formatada em XML informando **ResourceNotFound** ou **PublicAccessNotPermitted**.
 
@@ -200,7 +201,7 @@ Nesta tarefa, você criará e configurará compartilhamentos de arquivos do Azur
 
 ### Restrinja o acesso da rede à conta de armazenamento
 
-1. No portal do Azure, pesquise e selecione **Redes virtuais**.
+1. No portal, pesquise e selecione `Virtual networks`.
 
 1. Selecione **+ Criar**. Selecione o grupo de recursos. e dê um **nome** à rede virtual, `vnet1`.
 
@@ -218,9 +219,13 @@ Nesta tarefa, você criará e configurará compartilhamentos de arquivos do Azur
 
 1. No painel **Segurança +rede**, selecione **Rede**.
 
-1. Selecione **Adicionar rede virtual existente** e selecione **vnet1** e a sub-rede **padrão** e, em seguida, selecione **Adicionar**.
+1. Em **Acesso à rede pública**, selecione **Gerenciar**. 
 
-1. Na seção **Firewall**, **Exclua** o endereço IP da sua máquina. O tráfego permitido só deve vir da rede virtual. 
+1. Selecione **Adicionar rede virtual** e, em seguida, **Adicionar rede existente**.
+
+1. Selecione **vnet1** e sub-rede **padrão**, selecione **Adicionar**.
+
+1. Na seção **Endereços IPv4**, **Exclua** o endereço IP do seu computador. O tráfego permitido só deve vir da rede virtual. 
 
 1. Não se esqueça de **Salvar** suas alterações.
 
@@ -228,7 +233,7 @@ Nesta tarefa, você criará e configurará compartilhamentos de arquivos do Azur
 
 1. Selecione o **Navegador de armazenamento** e **Atualize** a página. Navegue até o compartilhamento de arquivo ou o conteúdo do blob.  
 
-    >**Observação:** Você deve receber uma mensagem *não autorizado a executar esta operação*. Você não está se conectando da rede virtual. Pode levar alguns minutos para que isso entre em vigor.
+    >**Observação:** Você deve receber uma mensagem *não autorizado a executar esta operação*. Você não está se conectando da rede virtual. Pode levar alguns minutos para que isso entre em vigor. Você ainda pode exibir o compartilhamento de arquivos, mas não os arquivos ou blobs na conta de armazenamento. 
 
 
 ![Captura de tela do acesso não autorizado.](../media/az104-lab07-notauthorized.png)
@@ -250,8 +255,9 @@ O Copilot pode ajudar você a aprender a usar as ferramentas de script do Azure.
 
 ## Saiba mais com treinamento individual
 
++ [Criar uma conta de Armazenamento do Microsoft Azure](https://learn.microsoft.com/training/modules/create-azure-storage-account/). Crie uma conta de Armazenamento do Azure com as opções corretas para suas necessidades de negócios.
++ [Gerencie o ciclo de vida do Armazenamento de Blobs do Azure](https://learn.microsoft.com/training/modules/manage-azure-blob-storage-lifecycle). Saiba como gerenciar a disponibilidade de dados em todo o ciclo de vida do armazenamento de Blobs do Azure.
 + [Otimize seus custos com o Armazenamento de Blobs do Azure](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/). Saiba como otimizar seu custo com o Armazenamento de Blobs do Azure.
-+ [Controlar o acesso ao Armazenamento do Microsoft Azure com assinaturas de acesso compartilhado](https://learn.microsoft.com/training/modules/control-access-to-azure-storage-with-sas/). Permita acesso a dados armazenados em suas contas de armazenamento do Azure com segurança usando assinaturas de acesso compartilhado.
 
 ## Principais aspectos a serem lembrados
 
