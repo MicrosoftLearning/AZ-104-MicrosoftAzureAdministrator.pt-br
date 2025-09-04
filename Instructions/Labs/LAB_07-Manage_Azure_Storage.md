@@ -257,7 +257,6 @@ O Copilot pode ajudar você a aprender a usar as ferramentas de script do Azure.
 
 + [Criar uma conta de Armazenamento do Microsoft Azure](https://learn.microsoft.com/training/modules/create-azure-storage-account/). Crie uma conta de Armazenamento do Azure com as opções corretas para suas necessidades de negócios.
 + [Gerencie o ciclo de vida do Armazenamento de Blobs do Azure](https://learn.microsoft.com/training/modules/manage-azure-blob-storage-lifecycle). Saiba como gerenciar a disponibilidade de dados em todo o ciclo de vida do armazenamento de Blobs do Azure.
-+ [Otimize seus custos com o Armazenamento de Blobs do Azure](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/). Saiba como otimizar seu custo com o Armazenamento de Blobs do Azure.
 
 ## Principais aspectos a serem lembrados
 

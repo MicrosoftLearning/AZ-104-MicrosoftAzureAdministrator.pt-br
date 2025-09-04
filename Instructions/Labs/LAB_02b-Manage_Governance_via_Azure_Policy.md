@@ -37,8 +37,8 @@ O volume de nuvem da sua organização cresceu consideravelmente no último ano.
 ## Habilidades de trabalho
 
 + Tarefa 1: criar e atribuir marcas por meio do portal do Azure.
-+ Tarefa 2: Impor marcação por meio de um Azure Policy.
-+ Tarefa 3: Aplicar marcação por meio de um Azure Policy.
++ Tarefa 2: impor a marcação usando um Azure Policy.
++ Tarefa 3: aplicar marcação com um Azure Policy.
 + Tarefa 4: Configurar e testar bloqueios de recursos. 
 
 ## Tarefa 1: Atribuir marcas por meio do portal do Azure
@@ -63,7 +63,7 @@ Nesta tarefa, você criará e atribuirá uma marca a um grupo de recursos do Azu
 
     | Configuração | Valor |
     | --- | --- |
-    | Nome | Centro de Custo |
+    | Nome | Auxiliar |
     | Valor | 000 |
 
 1. Clique em **Examinar + Criar**, depois em **Criar**.
@@ -240,10 +240,6 @@ O Copilot pode ajudar você a aprender a usar as ferramentas de script do Azure.
 + Tabule as diferenças entre a política do Azure e o RBAC do Azure, incluindo exemplos.
 + Quais são as etapas para impor a política do Azure e corrigir recursos que não estão em conformidade?
 + Como posso obter um relatório de recursos do Azure com marcas específicas?
-
-## Saiba mais com treinamento individual
-
-+ [Criar uma estratégia de governança corporativa](https://learn.microsoft.com/training/modules/enterprise-governance/). Use o RBAC e o Azure Policy para limitar o acesso às soluções do Azure e determinar qual é o método certo para suas metas de segurança.
 
 ## Principais aspectos a serem lembrados
 
