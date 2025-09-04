@@ -26,7 +26,7 @@ Para simplificar o gerenciamento de recursos do Azure em sua organização, voc�
     - Criar tíquetes de solicitação de suporte (não inclua a adição de provedores do Azure)
 
 
-## Simulações interativas do laboratório
+## Simulações interativas de laboratório
 
 >**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
 
@@ -37,8 +37,8 @@ Para simplificar o gerenciamento de recursos do Azure em sua organização, voc�
 ## Habilidades de trabalho
 
 + Tarefa 1: Implementar grupos de gerenciamento.
-+ Tarefa 2: Examinar e atribuir uma função interna do Azure.
-+ Tarefa 3: Criar uma função RBAC personalizada.
++ Tarefa 2: revisar e atribuir uma função integrada do Azure.
++ Tarefa 3: criar uma função RBAC personalizada.
 + Tarefa 4: Monitorar as atribuições de função com o Log de Atividades.
 
 ## Tarefa 1: Implementar Grupos de Gerenciamento
@@ -162,7 +162,6 @@ O Copilot pode ajudar você a aprender a usar as ferramentas de script do Azure.
 ## Saiba mais com treinamento individual
 
 + [Proteger seus recursos do Azure com o controle de acesso baseado em função do Azure (Azure RBAC)](https://learn.microsoft.com/training/modules/secure-azure-resources-with-rbac/). Use o Azure RBAC para gerenciar o acesso aos recursos no Azure.
-+ [Criar funções personalizadas para recursos do Azure com o controle de acesso baseado em função (RBAC)](https://learn.microsoft.com/training/modules/create-custom-azure-roles-with-rbac/). Entenda a estrutura das definições de função para controle de acesso. Identifique as propriedades da função a serem usadas que definem suas permissões de função personalizadas. Crie uma função personalizada do Azure e atribua a um usuário.
 
 ## Principais aspectos a serem lembrados
 
@@ -174,6 +173,7 @@ Parabéns por concluir o laboratório. Aqui estão as principais lições deste 
 + Você pode criar novas funções ou personalizar as funções existentes.
 + As funções são definidas em um arquivo formatado JSON e incluem *Actions*, *NotActions* e *AssignableScopes*.
 + Você pode usar o Log de Atividades para monitorar as atribuições de função.
+
 
 
 
