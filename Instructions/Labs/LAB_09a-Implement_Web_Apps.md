@@ -19,7 +19,7 @@ Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode af
 
 Sua organização está interessada nos aplicativos Web do Azure para hospedar seus sites da empresa. Atualmente, os sites estão hospedados em um data center local. Os sites estão em execução em servidores Windows usando a pilha de runtime do PHP. O hardware está se aproximando do fim da vida útil e em breve precisará ser substituído. Sua organização deseja evitar novos custos de hardware usando o Azure para hospedar os sites. 
 
-## Simulações interativas do laboratório
+## Simulações interativas de laboratório
 
 >**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
 
@@ -138,9 +138,9 @@ Nesta tarefa, você trocará o slot de preparo pelo slot de produção. A troca 
 
 Nesta tarefa, você configurará o dimensionamento automático do aplicativo Web do Azure. O dimensionamento automático permite que você mantenha o desempenho ideal para seu aplicativo Web quando o tráfego para o aplicativo Web aumenta. Para determinar quando o aplicativo deve ser dimensionado, você poderá monitorar métricas como uso da CPU, memória ou largura de banda.
 
-1. Na seção **Configurações**, selecione **Escalar horizontalmente (Plano do Serviço de Aplicativo)**.
+1. No painel esquerdo, na seção **Plano do Serviço de Aplicativo**, selecione **Escalar horizontalmente**.
 
-    >**Observação:** Certifique-se de que você está trabalhando no slot de produção e não no slot de preparo.  
+    >**Observação:** certifique-se de que você está trabalhando no slot de produção, e não no slot de preparo.  
 
 1. Na seção **Dimensionamento**, selecione **Automático**. Observe a opção **Baseado em regras**. O dimensionamento baseado em regras pode ser configurado para diferentes métricas de aplicativos. 
 
