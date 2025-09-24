@@ -172,7 +172,7 @@ Nesta tarefa, você trabalha com o Azure Cloud Shell e o Azure PowerShell. O Azu
 1. Confirme se o disco foi criado.
 
    ```powershell
-   Get-AzDisk
+   Get-AzDisk | ft
    ```
    
 ## Tarefa 4: Implantar um modelo com a CLI 

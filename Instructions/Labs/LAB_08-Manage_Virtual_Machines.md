@@ -18,7 +18,7 @@ Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode af
 
 Sua organização deseja explorar a implantação e a configuração de máquinas virtuais do Azure. Primeiro, você implementa uma máquina virtual do Azure com dimensionamento manual. Em seguida, implemente um Conjunto de Dimensionamento de Máquinas Virtuais e explore o dimensionamento automático.
 
-## Simulações interativas do laboratório
+## Simulações interativas de laboratório
 
 >**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
 
@@ -381,7 +381,7 @@ Nesta tarefa, você dimensiona o conjunto de dimensionamento de máquinas virtua
 1. Quando o comando for concluído, use **az vm show** para verificar se sua máquina foi criada.
 
     ```sh
-    az vm show --name  myCLIVM --resource-group az104-rg8 --show-details
+    az vm show --name  myCLIVM --resource-group az104-rg8 --show-details --output table
     ```
 
 1. Verifique se o **powerState** está **Em execução na VM**.
