@@ -18,7 +18,7 @@ Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode af
 
 Sua organização segmenta os principais aplicativos e serviços de TI (como DNS e serviços de segurança) de outras partes do negócio, incluindo seu departamento de fabricação. No entanto, em alguns cenários, os aplicativos e serviços na área principal precisam se comunicar com os aplicativos e serviços na área de fabricação. Neste laboratório, você configura a conectividade entre as áreas segmentadas. Este é um cenário comum para separar a produção do desenvolvimento ou separar uma subsidiária da outra.  
 
-## Simulações interativas do laboratório
+## Simulações interativas de laboratório
 
 >**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
 
@@ -213,7 +213,7 @@ Nesta tarefa, você testará novamente a conexão entre as máquinas virtuais em
 
 ## Tarefa 6: Criar uma rota personalizada 
 
-Nesta tarefa, você deseja controlar o tráfego de rede entre a sub-rede de perímetro e a sub-rede de serviços principais internas. Um dispositivo de rede virtual será instalado na sub-rede de serviços principais e todo o tráfego deverá ser roteado para lá. 
+Nesta tarefa, você deseja controlar o tráfego de rede entre a sub-rede de perímetro e a sub-rede de serviços principais internas. Um dispositivo de rede virtual será instalado na sub-rede do perímetro e todo o tráfego deverá ser roteado para lá. 
 
 1. Pesquise e selecione o `CoreServicesVnet`.
 
