@@ -50,7 +50,7 @@ Nesta tarefa, você criará e configurará as contas de usuário. As contas de u
    
 ### Criar um novo usuário
 
-1. Selecione **Usuários** e, na lista suspensa **Novo usuário**, selecione **Criar novo usuário**. 
+1. Na folha **Gerenciar**, selecione **Usuários**; em seguida, no menu suspenso **Novo usuário**, selecione **Criar novo usuário**. 
 
 1. Crie um novo usuário com as seguintes configurações (deixe as outras com seus padrões). Na guia **Propriedades**, observe todos os diferentes tipos de informações que podem ser incluídas na conta de usuário. 
 
@@ -157,3 +157,4 @@ Parabéns por concluir o laboratório. Aqui estão algumas das principais etapas
 + O Microsoft Entra ID tem contas de usuário e de convidado. Cada conta tem um nível de acesso específico ao escopo do trabalho que deve ser feito.
 + Os grupos combinam usuários ou dispositivos relacionados. Há dois tipos de grupos, incluindo Segurança e Microsoft 365.
 + A associação de grupo pode ser atribuída estaticamente ou dinamicamente.
+
