@@ -18,10 +18,6 @@ Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode af
 
 Sua organização segmenta os principais aplicativos e serviços de TI (como DNS e serviços de segurança) de outras partes do negócio, incluindo seu departamento de fabricação. No entanto, em alguns cenários, os aplicativos e serviços na área principal precisam se comunicar com os aplicativos e serviços na área de fabricação. Neste laboratório, você configura a conectividade entre as áreas segmentadas. Este é um cenário comum para separar a produção do desenvolvimento ou separar uma subsidiária da outra.  
 
-## Simulações interativas de laboratório
-
->**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
-
 ## Diagrama de arquitetura
 
 ![Diagrama de arquitetura do Laboratório 05](../media/az104-lab05-architecture.png)

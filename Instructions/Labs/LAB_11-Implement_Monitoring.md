@@ -18,12 +18,7 @@ Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode af
 
 Sua organização migrou sua infraestrutura para o Azure. É importante que os administradores sejam notificados sobre quaisquer alterações significativas na infraestrutura. Você planeja examinar os recursos do Azure Monitor, incluindo o Log Analytics.
 
-## Simulações interativas de laboratório
-
->**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
-
 ## Diagrama de arquitetura
-
 
 ![Diagrama das tarefas de arquitetura](../media/az104-lab11-architecture.png)
 
@@ -110,7 +105,7 @@ Nesta tarefa, se o alerta for disparado, envie uma notificação por email para 
 
 1. Continue trabalhando em seu alerta. Clique em **Usar grupos de ações** e, em seguida, em **Criar grupo de ações** na folha **Selecionar grupo de ações**.
 
-    >**Você sabia?** Você pode adicionar até cinco grupos de ações a uma regra de alerta. Os grupos de ações são executados simultaneamente, sem ordem específica. Várias regras de alerta podem usar o mesmo grupo de ações. 
+    >**Você sabia?** Você pode adicionar até cinco grupos de ações a uma regra de alerta. Os grupos de ações são executados simultaneamente, sem nenhuma ordem específica. Várias regras de alerta podem usar o mesmo grupo de ações. 
 
 1. Na guia **Básico**, insira os valores a seguir para cada configuração.
 

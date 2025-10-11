@@ -18,10 +18,6 @@ Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode af
 
 No momento, sua organização está armazenando dados em armazenamentos de dados locais. A maioria desses arquivos não é acessada com frequência. Você gostaria de minimizar o custo do armazenamento colocando os arquivos menos acessados em camadas de armazenamento com preços mais baixos. Além disso, explore diferentes mecanismos de proteção que o armazenamento do Azure oferece, incluindo acesso à rede, autenticação, autorização e replicação. Por fim, você deseja determinar até que ponto os Arquivos do Azure são adequados para hospedar seus compartilhamentos de arquivos locais.
 
-## Simulações interativas de laboratório
-
->**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
-
 ## Diagrama de arquitetura
 
 ![Diagrama das tarefas.](../media/az104-lab07-architecture.png)

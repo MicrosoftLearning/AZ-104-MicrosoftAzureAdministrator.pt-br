@@ -25,11 +25,6 @@ Para simplificar o gerenciamento de recursos do Azure em sua organização, voc�
     - Criar e gerenciar máquinas virtuais
     - Criar tíquetes de solicitação de suporte (não inclua a adição de provedores do Azure)
 
-
-## Simulações interativas de laboratório
-
->**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
-
 ## Diagrama de arquitetura
 
 ![Diagrama de tarefas do laboratório.](../media/az104-lab02a-architecture.png)
@@ -173,6 +168,7 @@ Parabéns por concluir o laboratório. Aqui estão as principais lições deste 
 + Você pode criar novas funções ou personalizar as funções existentes.
 + As funções são definidas em um arquivo formatado JSON e incluem *Actions*, *NotActions* e *AssignableScopes*.
 + Você pode usar o Log de Atividades para monitorar as atribuições de função.
+
 
 
 

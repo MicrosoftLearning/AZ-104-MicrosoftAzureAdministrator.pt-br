@@ -19,10 +19,6 @@ Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode af
 
 Sua organização está interessada nos aplicativos Web do Azure para hospedar seus sites da empresa. Atualmente, os sites estão hospedados em um data center local. Os sites estão em execução em servidores Windows usando a pilha de runtime do PHP. O hardware está se aproximando do fim da vida útil e em breve precisará ser substituído. Sua organização deseja evitar novos custos de hardware usando o Azure para hospedar os sites. 
 
-## Simulações interativas de laboratório
-
->**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
-
 ## Diagrama de arquitetura
 
 ![Diagrama das tarefas.](../media/az104-lab09a-architecture.png)

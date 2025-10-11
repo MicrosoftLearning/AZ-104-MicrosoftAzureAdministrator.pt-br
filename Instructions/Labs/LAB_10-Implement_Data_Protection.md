@@ -18,10 +18,6 @@ Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode af
 
 Sua organização está avaliando como fazer backup e restaurar as máquinas virtuais do Azure contra perda de dados acidental ou mal-intencionada. Além disso, a organização deseja explorar o uso do Azure Site Recovery para cenários de recuperação de desastre. 
 
-## Simulações interativas de laboratório
-
->**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
-
 ## Habilidades de trabalho
 
 + Tarefa 1: Usar um modelo para provisionar uma infraestrutura.

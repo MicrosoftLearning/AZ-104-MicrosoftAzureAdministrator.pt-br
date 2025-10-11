@@ -26,10 +26,6 @@ O volume de nuvem da sua organização cresceu consideravelmente no último ano.
 
 - usar bloqueios de recursos para proteger os recursos configurados
 
-## Simulações interativas de laboratório
-
->**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
-
 ## Diagrama de arquitetura
 
 ![Faça um diagrama da arquitetura da tarefa.](../media/az104-lab02b-architecture.png)
