@@ -91,7 +91,7 @@ Nesta tarefa, você atribuirá a política interna *Exigir uma marca e seu valor
 
     | Configuração | Valor |
     | --- | --- |
-    | Nome da atribuição | Exigir rótulo do Centro de custo e seu valor em recursos |
+    | Nome da atribuição | `Require Cost Center tag and its value on resources` |
     | Descrição | `Require Cost Center tag and its value on all resources in the resource group`|
     | Aplicação de políticas | Enabled |
 

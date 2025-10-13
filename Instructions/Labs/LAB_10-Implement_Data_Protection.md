@@ -42,7 +42,7 @@ Nesta tarefa, você usará um modelo para implantar uma máquina virtual. A máq
 
 1. Pesquise e selecione `Deploy a custom template`.
 
-1. Na página de implantação personalizada, selecione **Criar seu próprio modelo no editor**.
+1. Na página de implantação personalizada, selecione **Criar seu modelo no editor**.
 
 1. Na página Editar modelo, selecione **Carregar arquivo**.
 

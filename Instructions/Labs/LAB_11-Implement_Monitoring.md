@@ -41,7 +41,7 @@ Nesta tarefa, você implantará uma máquina virtual que será usada para testar
 
 1. No portal do Azure, pesquise e selecione `Deploy a custom template`.
 
-1. Na página de implantação personalizada, selecione **Criar seu próprio modelo no editor**.
+1. Na página de implantação personalizada, selecione **Criar seu modelo no editor**.
 
 1. Na página Editar modelo, selecione **Carregar arquivo**.
 
