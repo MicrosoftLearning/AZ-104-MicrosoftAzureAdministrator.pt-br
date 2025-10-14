@@ -35,14 +35,14 @@ Os Aplicativos de Contêiner do Azure levam o conceito de um cluster Kubernetes 
 
 1. Selecione **+ Criar** no menu suspenso **Aplicativo de contêiner**. Observe as outras opções. 
 
-1. Use as informações a seguir para preencher os detalhes na guia **Básico**.*.
+1. Use as informações a seguir para preencher os detalhes na guia **Básico**.
 
     | Configuração | Ação |
     |---|---|
     | Assinatura | Selecionar sua assinatura do Azure |
     | Grupo de recursos | `az104-rg9` |
     | Nome do aplicativo de contêiner |  `my-app` |
-    | Region    | **Leste dos EUA** (|
+    | Region    | **Leste dos EUA** |
     | Ambiente de Aplicativos de Contêiner | Selecione **Criar novo** > Definir nome do ambiente como `my-environment` > **Criar** |
 
 1. Clique na guia **Avançar: Contêiner** e verifique se a opção **Usar imagem de início rápido** está marcada. Talvez seja necessário rolar para cima para visualizar essa configuração. 

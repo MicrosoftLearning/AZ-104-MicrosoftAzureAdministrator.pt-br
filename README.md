@@ -1,24 +1,16 @@
-#README
-
-We've turned off the ability to report issues directly on this repo and do not monitor PRs.
-
-Provide feedback here: https://aka.ms/provide-feedback
-
-Or, if you are a trainer with a microsoft.com email address, please create a ticket in AzDO.
-
-# AZ-104: Microsoft Azure Administrator
+# AZ-104: Administrador do Microsoft Azure
 
 ## Bem-Vindo
 
-Este repositório destina-se a instrutores que ministram cursos da Microsoft. Se você estiver em sala de aula, peça ajuda ao seu instrutor. 
+Esse repositório é para instrutores que ensinam cursos da Microsoft. Se você estiver na aula, peça ajuda ao instrutor. 
 
 - **[Link para laboratórios (formato HTML)](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/)**
 - **Você é um MCT?** Dê uma olhada no nosso [Guia de usuário do GitHub para MCTs](https://microsoftlearning.github.io/MCT-User-Guide/)
-- Para visualizar este curso em um formato individualizado, consulte nossas **[simulações](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator)** de laboratório interativas. Você pode encontrar pequenas diferenças entre a simulação interativa e o laboratório hospedado, mas os principais conceitos e ideias que estão sendo demonstrados são os mesmos.
+- Para visualizar este curso em um formato individualizado, consulte nossas **[simulações interativas de laboratório](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator)**. Você pode encontrar pequenas diferenças entre as simulações interativas e os laboratórios hospedados, mas os principais conceitos e ideias que estão sendo demonstrados são os mesmos.
 
-## Problema de segurança - abril de 2023
+## Problema de segurança – abril de 2023
 
-Com efeito imediato, a senha Admin será removida dos arquivos de parâmetro do modelo JSON. Isso significa que os alunos terão que fornecer uma senha quando o modelo for implantado. Isso afeta os laboratórios 4, 5, 6, 7, 10 e 11.  As instruções do laboratório serão alteradas para refletir essa alteração. 
+Com efeito imediato, a senha de administrador será removida dos arquivos de parâmetro do modelo JSON. Isso significa que os alunos terão que fornecer uma senha quando o modelo for implantado. Isso afeta os laboratórios 4, 5, 6, 7, 10 e 11.  As instruções do laboratório serão alteradas para refletir essa alteração. 
 
 ## O que estamos implementando?
 
@@ -42,7 +34,7 @@ Com efeito imediato, a senha Admin será removida dos arquivos de parâmetro do 
 
 ## E as alterações no manual do aluno?
 
-- Este repositório é apenas para Problemas com os laboratórios do curso. Você pode enviar comentários ou correções sobre o conteúdo[ do ](https://docs.microsoft.com/learn/certifications/courses/az-104t00)curso. Use o _link de relatório de um problema_ na parte inferior de cada página de conteúdo.
+- Esse repositório é apenas para problemas com os laboratórios de curso. Você pode enviar comentários ou correções sobre o [conteúdo do curso](https://docs.microsoft.com/learn/certifications/courses/az-104t00). Use o link _relatar um problema_ na parte inferior de cada página de conteúdo.
 
 ## Observações
 

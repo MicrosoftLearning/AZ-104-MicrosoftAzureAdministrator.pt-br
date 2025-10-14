@@ -120,7 +120,7 @@ Nesta tarefa, você trocará o slot de preparo pelo slot de produção. A troca 
 
 1. Examine as configurações padrão e clique em **Iniciar a Troca**. Aguarde a notificação de que a troca foi concluída.
 
-1. Retorne à home page do portal. Você terá um aplicativo Web de produção e o slot de preparo.
+1. Retorne à home page do portal. Você terá o aplicativo Web de produção e o slot de preparo.
 
 1. Pesquise `App Services` e selecione o seu aplicativo Web do Serviço de Aplicativo. Isso levará você de volta ao slot Implantação de Produção.
 
