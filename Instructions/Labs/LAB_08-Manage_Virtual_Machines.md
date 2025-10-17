@@ -18,10 +18,6 @@ Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode af
 
 Sua organização deseja explorar a implantação e a configuração de máquinas virtuais do Azure. Primeiro, você implementa uma máquina virtual do Azure com dimensionamento manual. Em seguida, implemente um Conjunto de Dimensionamento de Máquinas Virtuais e explore o dimensionamento automático.
 
-## Simulações interativas de laboratório
-
->**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
-
 ## Habilidades de trabalho
 
 + Tarefa 1: implantar máquinas virtuais do Azure resilientes por zona usando o portal do Azure.

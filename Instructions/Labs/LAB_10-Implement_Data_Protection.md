@@ -18,10 +18,6 @@ Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode af
 
 Sua organização está avaliando como fazer backup e restaurar as máquinas virtuais do Azure contra perda de dados acidental ou mal-intencionada. Além disso, a organização deseja explorar o uso do Azure Site Recovery para cenários de recuperação de desastre. 
 
-## Simulações interativas de laboratório
-
->**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
-
 ## Habilidades de trabalho
 
 + Tarefa 1: Usar um modelo para provisionar uma infraestrutura.
@@ -46,7 +42,7 @@ Nesta tarefa, você usará um modelo para implantar uma máquina virtual. A máq
 
 1. Pesquise e selecione `Deploy a custom template`.
 
-1. Na página de implantação personalizada, selecione **Criar seu próprio modelo no editor**.
+1. Na página de implantação personalizada, selecione **Criar seu modelo no editor**.
 
 1. Na página Editar modelo, selecione **Carregar arquivo**.
 

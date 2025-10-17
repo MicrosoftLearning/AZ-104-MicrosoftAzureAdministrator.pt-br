@@ -18,10 +18,6 @@ Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode af
 
 Sua organização tem um aplicativo Web que é executado em uma máquina virtual em seu data center local. A organização deseja mover todos os aplicativos para a nuvem, mas não quer ter um grande número de servidores para gerenciar. Você decide avaliar as Instâncias de Contêiner do Azure e o Docker. 
 
-## Simulações interativas do laboratório
-
->**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
-
 ## Diagrama de arquitetura
 
 ![Diagrama das tarefas.](../media/az104-lab09b-aci-architecture.png)

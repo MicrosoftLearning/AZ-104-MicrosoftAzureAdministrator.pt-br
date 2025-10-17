@@ -18,14 +18,10 @@ Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode af
 
 Sua organização tem um site público. Você precisa balancear a carga de solicitações públicas de entrada em diferentes máquinas virtuais. Você também precisa fornecer imagens e vídeos de diferentes máquinas virtuais. Você planeja implementar um Azure Load Balancer e um Gateway de Aplicativo do Azure. Todos os recursos estão na mesma região.
 
-## Simulações interativas do laboratório
-
->**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
-
 ## Habilidades de trabalho
 
 + Tarefa 1: Use um modelo para provisionar uma infraestrutura.
-+ Tarefa 2: Configurar o Azure Load Balancer.
++ Tarefa 2: configurar um Azure Load Balancer.
 + Tarefa 3: Configure o Gateway de Aplicativo do Azure.
 
 ## Tarefa 1: Usar um modelo para provisionar uma infraestrutura

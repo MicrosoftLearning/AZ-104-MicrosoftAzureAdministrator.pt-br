@@ -14,10 +14,6 @@ Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode af
 
 ## Tempo estimado: 50 minutos
 
-## Simulações interativas de laboratório
-
->**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
-  
 ## Cenário do laboratório
 
 Sua equipe deseja procurar maneiras de automatizar e simplificar as implantações de recursos. Sua organização está procurando maneiras de reduzir a sobrecarga administrativa, reduzir o erro humano e aumentar a consistência.  

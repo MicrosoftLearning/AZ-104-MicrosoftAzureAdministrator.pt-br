@@ -19,10 +19,6 @@ Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode af
 
 Sua organização está interessada nos aplicativos Web do Azure para hospedar seus sites da empresa. Atualmente, os sites estão hospedados em um data center local. Os sites estão em execução em servidores Windows usando a pilha de runtime do PHP. O hardware está se aproximando do fim da vida útil e em breve precisará ser substituído. Sua organização deseja evitar novos custos de hardware usando o Azure para hospedar os sites. 
 
-## Simulações interativas de laboratório
-
->**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
-
 ## Diagrama de arquitetura
 
 ![Diagrama das tarefas.](../media/az104-lab09a-architecture.png)
@@ -124,7 +120,7 @@ Nesta tarefa, você trocará o slot de preparo pelo slot de produção. A troca 
 
 1. Examine as configurações padrão e clique em **Iniciar a Troca**. Aguarde a notificação de que a troca foi concluída.
 
-1. Retorne à home page do portal. Você terá um aplicativo Web de produção e o slot de preparo.
+1. Retorne à home page do portal. Você terá o aplicativo Web de produção e o slot de preparo.
 
 1. Pesquise `App Services` e selecione o seu aplicativo Web do Serviço de Aplicativo. Isso levará você de volta ao slot Implantação de Produção.
 

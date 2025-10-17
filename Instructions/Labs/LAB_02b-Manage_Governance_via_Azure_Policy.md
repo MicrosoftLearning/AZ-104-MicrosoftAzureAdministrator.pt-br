@@ -26,10 +26,6 @@ O volume de nuvem da sua organização cresceu consideravelmente no último ano.
 
 - usar bloqueios de recursos para proteger os recursos configurados
 
-## Simulações interativas de laboratório
-
->**Observação**: as simulações de laboratório fornecidas anteriormente foram desativadas.
-
 ## Diagrama de arquitetura
 
 ![Faça um diagrama da arquitetura da tarefa.](../media/az104-lab02b-architecture.png)
@@ -95,7 +91,7 @@ Nesta tarefa, você atribuirá a política interna *Exigir uma marca e seu valor
 
     | Configuração | Valor |
     | --- | --- |
-    | Nome da atribuição | Exigir rótulo do Centro de custo e seu valor em recursos |
+    | Nome da atribuição | `Require Cost Center tag and its value on resources` |
     | Descrição | `Require Cost Center tag and its value on all resources in the resource group`|
     | Aplicação de políticas | Enabled |
 
