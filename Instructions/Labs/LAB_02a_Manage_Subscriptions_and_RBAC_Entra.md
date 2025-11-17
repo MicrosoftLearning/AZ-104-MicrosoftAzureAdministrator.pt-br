@@ -48,7 +48,7 @@ Nesta tarefa, você criará e configurará grupos de gerenciamento. Os grupos de
 
 1. Examine a área **Gerenciamento de acesso de recursos do Azure**. Certifique-se de que consegue gerenciar o acesso a todas as assinaturas e grupos de gerenciamento do Azure no locatário.
    
-1. Pesquise e selecione `Management groups`.
+1. Pesquise e selecione **Grupos de gerenciamento**.
 
 1. Na folha **Grupos de gerenciamento**, clique em **+ Criar**.
 
@@ -168,6 +168,7 @@ Parabéns por concluir o laboratório. Aqui estão as principais lições deste 
 + Você pode criar novas funções ou personalizar as funções existentes.
 + As funções são definidas em um arquivo formatado JSON e incluem *Actions*, *NotActions* e *AssignableScopes*.
 + Você pode usar o Log de Atividades para monitorar as atribuições de função.
+
 
 
 
