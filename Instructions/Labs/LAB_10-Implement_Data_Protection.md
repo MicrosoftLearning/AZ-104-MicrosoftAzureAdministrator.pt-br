@@ -126,7 +126,7 @@ Nesta tarefa, você implementará o backup no nível da máquina virtual do Azur
     | Configurações | Valor |
     | --- | --- |
     | Onde a carga de trabalho está sendo executada? | **Azure** (observe suas outras opções) |
-    | Do que você deseja fazer backup? | **Máquina virtual** (observe suas outras opções |
+    | Do que você deseja fazer backup? | **Máquina virtual** (observe as outras opções)|
 
 1. Selecionar **Backup**.
 

@@ -61,7 +61,9 @@ A organização planeja uma grande quantidade de crescimento para os principais 
     | ------------------ | -------------------- |
     | Espaço de endereço IPv4 | Substitua o espaço `10.20.0.0/16` de endereço IPv4 pré-preenchido por (separe as entradas)  |
 
-1. Selecione **+Adicionar uma sub-rede**. Conclua as informações de nome e endereço de cada sub-rede. Certifique-se de selecionar **Adicionar** para cada nova sub-rede. Exclua a sub-rede padrão antes ou depois de criar as outras sub-redes.
+1. Selecione **+Adicionar uma sub-rede**. Conclua as informações de nome e endereço de cada sub-rede. Certifique-se de selecionar **Adicionar** para cada nova sub-rede. 
+
+    >**Observação:** Exclua a sub-rede padrão antes ou depois de criar as outras sub-redes.
 
     | **Sub-rede**             | **Opção**           | **Valor**              |
     | ---------------------- | -------------------- | ---------------------- |
@@ -226,7 +228,7 @@ Nesta tarefa, criamos um Grupo de Segurança de Aplicativos e um Grupo de Segura
 
 1. Depois de criar a sua regra do NSG de entrada, selecione **Regras de segurança de saída**. 
 
-1. Observe a regra **AllowInternetOutboundRule**. Observe também que a regra não pode ser excluída e a prioridade é 65001.
+1. Observe a regra **AllowInternetOutBound**. Observe também que a regra não pode ser excluída e a prioridade é 65001.
 
 1. Selecione **+ Adicionar** e configure uma regra de saída que negue acesso à Internet. Quando terminar, selecione **Adicionar**.
 
@@ -265,7 +267,7 @@ Você pode configurar o DNS do Azure para resolver nomes de host em seu domínio
     | Nome | `contoso.com` (se reservado ajuste o nome) |
     | Region |**Leste dos EUA** (revise o ícone informativo) |
 
-1. Selecione **Revisar + criar** e, em seguida, **Criar**.
+1. Selecione **Examinar + criar** e depois **Criar**.
    
 1. Aguarde a implantação da zona DNS e selecione **Ir para o recurso**.
 
@@ -308,7 +310,7 @@ Uma zona DNS privada fornece serviços de resolução de nomes em redes virtuais
     | Nome | `private.contoso.com` (ajuste se você tiver que renomear) |
     | Region |**Leste dos EUA** |
 
-1. Selecione **Revisar + criar** e, em seguida, **Criar**.
+1. Selecione **Examinar + criar** e depois **Criar**.
    
 1. Aguarde a implantação da zona DNS e selecione **Ir para o recurso**.
 
@@ -368,6 +370,8 @@ Parabéns por concluir o laboratório. Aqui estão as principais lições deste 
 + Um grupo de segurança de rede contém regras de segurança que permitem ou negam o tráfego de rede. Há regras de entrada e saída padrão que você pode personalizar de acordo com suas necessidades.
 + Os grupos de segurança de aplicativos são usados para proteger grupos de servidores com uma função comum, como servidores Web ou servidores de banco de dados.
 + O DNS do Azure é um serviço de hospedagem para domínios DNS que fornece a resolução de nomes. Você pode configurar o DNS do Azure para resolver nomes de host em seu domínio público.  Você também pode usar zonas DNS privadas para atribuir nomes DNS a máquinas virtuais (VMs) em suas redes virtuais do Azure.
+
+
 
 
 

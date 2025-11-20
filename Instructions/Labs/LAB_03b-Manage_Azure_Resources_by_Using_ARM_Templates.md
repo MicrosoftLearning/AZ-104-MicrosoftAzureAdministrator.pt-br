@@ -198,7 +198,7 @@ Nesta tarefa, você trabalha com o Azure Cloud Shell e o Azure PowerShell. O Azu
 1. Confirme se o disco foi criado.
 
      ```sh
-     az disk list --output table
+     az disk list --resource-group az104-rg3 --output table
      ```
    
 ## Tarefa 5: Implantar um recurso usando o Azure Bicep
@@ -234,7 +234,7 @@ Nesta tarefa, você usará um arquivo do Bicep para implantar um disco gerenciad
 1. Confirme se o disco foi criado.
 
     ```sh
-    az disk list --output table
+    az disk list --resource-group az104-rg3 --output table
     ```
 
     >**Observação:** Você implantou com sucesso cinco discos gerenciados, cada um de uma maneira diferente. Bom trabalho!

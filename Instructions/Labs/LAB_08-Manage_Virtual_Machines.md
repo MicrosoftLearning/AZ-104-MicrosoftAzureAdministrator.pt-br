@@ -54,7 +54,7 @@ Nesta tarefa, você implantará duas máquinas virtuais do Azure em zonas de dis
     | Opções de disponibilidade | **Zona de disponibilidade** |
     | Zona de disponibilidade | **Zona 1, 2** (leia a nota sobre o uso de conjuntos de dimensionamento de máquinas virtuais) |
     | Tipo de segurança | **Standard** |
-    | Imagem | **Datacenter do Windows Server 2019 – x64 Gen2** |
+    | Imagem (Ver todas as imagens) | **Datacenter do Windows Server 2019 – x64 Gen2** |
     | Instância do Azure Spot | **unchecked** |
     | Tamanho | **Standard D2s v3** |
     | Nome de usuário | `localadmin` |
@@ -80,11 +80,7 @@ Nesta tarefa, você implantará duas máquinas virtuais do Azure em zonas de dis
     | Opções de balanceamento de carga | **Nenhuma** |
 
 
-1. Clique em **Avançar: Gerenciamento >** e especifique as seguintes configurações (deixe as outras com seus valores padrão):
-
-    | Configuração | Valor |
-    | --- | --- |
-    | Opções de orquestração de patch | **Orquestrado pelo Azure** |  
+1. Clique em **Avançar: Gerenciamento >** e revise as configurações. Não faça nenhuma alteração. 
 
 1. Clique em **Avançar: Monitoramento >** e especifique as seguintes configurações (deixe as outras com seus valores padrão):
 
@@ -172,7 +168,7 @@ Nesta tarefa, você implantará um conjunto de dimensionamento de máquinas virt
     | Modo de orquestração | **Uniforme** |
     | Tipo de segurança | **Standard** |
     | Opções de dimensionamento | **Revise e aceite os padrões**. Vamos mudar isso na próxima tarefa. |
-    | Imagem | **Datacenter do Windows Server 2019 – x64 Gen2** |
+    | Imagem (Ver todas as imagens) | **Datacenter do Windows Server 2019 – x64 Gen2** |
     | Executar com desconto do Spot do Azure | **Desmarcado** |
     | Tamanho | **Standard D2s_v3** |
     | Nome de usuário | `localadmin` |

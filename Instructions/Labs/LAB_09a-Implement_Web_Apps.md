@@ -37,7 +37,7 @@ Nesta tarefa, você cria um aplicativo Web do Azure. Os Serviços de Aplicativo 
 
 1. Entre no **portal do Azure** - `https://portal.azure.com`.
 
-1. Pesquise e selecione `App services`.
+1. Pesquise e selecione `App Services`.
 
 1. Selecione **+ Criar**, no menu suspenso, **Aplicativo Web**. Observe as outras opções. 
 
@@ -146,7 +146,7 @@ Nesta tarefa, você configurará o dimensionamento automático do aplicativo Web
 
 1. Selecione **Salvar**.
 
-1. Selecione **Diagnosticar e solucionar problemas** (painel esquerdo).
+1. Selecione **Diagnosticar e resolver problemas** (painel esquerdo da página principal do aplicativo Web).
 
 1. Na caixa **Executar teste de carga do aplicativo**, selecione **Criar teste de carga**.
 

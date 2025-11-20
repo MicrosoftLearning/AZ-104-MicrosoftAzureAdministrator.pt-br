@@ -46,9 +46,9 @@ Nesta tarefa, você criará e configurará grupos de gerenciamento. Os grupos de
 
 1. Na folha **Gerenciar**, selecione **Propriedades**.
 
-1. Examine a área **Gerenciamento de acesso de recursos do Azure**. Certifique-se de que consegue gerenciar o acesso a todas as assinaturas e grupos de gerenciamento do Azure no locatário.
+1. Examine a área **Gerenciamento de acesso de recursos do Azure**. Observe que você pode gerenciar o acesso a todas as assinaturas do Azure e aos grupos de gerenciamento no locatário.
    
-1. Pesquise e selecione `Management groups`.
+1. Pesquise e selecione **Grupos de gerenciamento**.
 
 1. Na folha **Grupos de gerenciamento**, clique em **+ Criar**.
 
@@ -67,6 +67,8 @@ Nesta tarefa, você criará e configurará grupos de gerenciamento. Os grupos de
 
 Nesta tarefa, você examinará as funções internas e atribuirá a função Colaborador de VM a um membro do Suporte Técnico. O Azure fornece um grande número de [funções internas](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles). 
 
+>**Observação:** Nas etapas a seguir, você atribuirá a função ao **grupo de suporte técnico**. Se você não tiver um grupo do Suporte Técnico, reserve um minuto para criá-lo.
+
 1. Selecione o grupo de gerenciamento **az104-mg1**.
 
 1. Selecione a folha **Controle de acesso (IAM)** e, em seguida, a guia **Funções**.
@@ -77,11 +79,9 @@ Nesta tarefa, você examinará as funções internas e atribuirá a função Col
 
 1. Na folha **Adicionar atribuição de função**, pesquise e selecione o **Colaborador da Máquina Virtual**. A função de colaborador da máquina virtual permite que você gerencie máquinas virtuais, mas não acesse seu sistema operacional ou gerencie a rede virtual e a conta de armazenamento às quais estão conectadas. Essa é uma boa função para o Suporte Técnico. Selecione **Avançar**.
 
-    >**Você sabia?** O Azure originalmente forneceu apenas o modelo de implantação **Clássico**. Isso foi substituído pelo modelo de implantação do **Azure Resource Manager**. Como melhor prática, não use os recursos clássicos. 
+    >**Você sabia?** O Azure originalmente forneceu apenas o modelo de implantação **Clássico**. Isso foi substituído pelo modelo de implantação do **Azure Resource Manager**. Como melhor prática, não use os recursos clássicos.
 
 1. Na guia **Membros**, **Selecionar Membros**.
-
-    >**Observação:** A próxima etapa atribui a função ao grupo de **suporte técnico**. Se você não tiver um grupo do Suporte Técnico, reserve um minuto para criá-lo.
 
 1. Pesquise e selecione o grupo `helpdesk`. Clique em **Selecionar**. 
 
@@ -168,6 +168,10 @@ Parabéns por concluir o laboratório. Aqui estão as principais lições deste 
 + Você pode criar novas funções ou personalizar as funções existentes.
 + As funções são definidas em um arquivo formatado JSON e incluem *Actions*, *NotActions* e *AssignableScopes*.
 + Você pode usar o Log de Atividades para monitorar as atribuições de função.
+
+
+
+
 
 
 
