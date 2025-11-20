@@ -80,11 +80,7 @@ Nesta tarefa, você implantará duas máquinas virtuais do Azure em zonas de dis
     | Opções de balanceamento de carga | **Nenhuma** |
 
 
-1. Clique em **Avançar: Gerenciamento >** e especifique as seguintes configurações (deixe as outras com seus valores padrão):
-
-    | Configuração | Valor |
-    | --- | --- |
-    | Opções de orquestração de patch | **Orquestrado pelo Azure** |  
+1. Clique em **Avançar: Gerenciamento >** e revise as configurações. Não faça nenhuma alteração. 
 
 1. Clique em **Avançar: Monitoramento >** e especifique as seguintes configurações (deixe as outras com seus valores padrão):
 
