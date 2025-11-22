@@ -207,7 +207,7 @@ Insira estas configurações para o agendamento da regra de processamento de ale
 
 Nesta tarefa, você usará o Azure Monitor para consultar os dados capturados da máquina virtual.
 
-    >**Note:** It can take 15-30 minutes for data to appear. Concentrate on the method and types of queries, rather than the results. 
+   >**Observação:** Tudo bem se os dados não aparecerem. Concentre-se nas etapas para revisar informações de monitoramento, incluindo consultas de log pré-configuradas e personalizadas. 
 
 1. No portal do Azure, pesquise e selecione `Monitor` e clique em **Logs**.
 
