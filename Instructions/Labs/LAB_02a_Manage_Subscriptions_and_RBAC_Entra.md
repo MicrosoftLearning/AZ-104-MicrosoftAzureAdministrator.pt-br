@@ -12,7 +12,7 @@ Neste laboratório, você aprenderá sobre o controle de acesso baseado em funç
 
 Este laboratório requer uma assinatura do Azure. Seu tipo de assinatura pode afetar a disponibilidade de recursos neste laboratório. Você pode alterar a região, mas as etapas são escritas usando o **Leste dos EUA**. 
 
-## Tempo estimado: 30 minutos
+## Tempo estimado: 20 minutos
 
 ## Cenário do laboratório
 
@@ -168,6 +168,7 @@ Parabéns por concluir o laboratório. Aqui estão as principais lições deste 
 + Você pode criar novas funções ou personalizar as funções existentes.
 + As funções são definidas em um arquivo formatado JSON e incluem *Actions*, *NotActions* e *AssignableScopes*.
 + Você pode usar o Log de Atividades para monitorar as atribuições de função.
+
 
 
 
